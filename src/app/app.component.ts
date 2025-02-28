@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { GoGlobalComponent } from './goglobal/goglobal.component';
 import { ItemService } from './item.service';
 import { HeaderComponent } from './header/header.component';
-import { IssonlineComponent } from './issonline/issonline.component';
 import { EgovComponent } from './egov/egov.component';
 import { EgovDevComponent } from './egov-dev/egov-dev.component';
 import { InterfacesComponent } from './interfaces/interfaces.component';
@@ -15,7 +14,7 @@ import { LoginNovoComponent } from './login-novo/login-novo.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, GoGlobalComponent, HeaderComponent, IssonlineComponent, EgovComponent,
+  imports: [CommonModule, GoGlobalComponent, HeaderComponent, EgovComponent,
     EgovDevComponent, InterfacesComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent
   ],
   templateUrl: './app.component.html',
@@ -23,7 +22,7 @@ import { LoginNovoComponent } from './login-novo/login-novo.component';
   providers: [ItemService]
 })
 export class AppComponent {
-  title= 'trib'
+  title= 'atalhos'
 
 currentComponent: string = '';
 

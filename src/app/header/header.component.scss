@@ -43,15 +43,14 @@ a{
       height: 100%;
       list-style: none;
       position: absolute;
-      top: 150px;
+      top: 14%;
 }
 
-.bot{
+.bot, .bot-tit{
   font-size: 2.5vh;
   font-size: 1.1vw;
   padding-left: 6%;
   margin-bottom: 7%;
-  border-radius: 10px;
   justify-content: left;
   align-items: center;
   display: flex;
@@ -60,9 +59,17 @@ a{
   color: rgb(233, 233, 233);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
-  cursor: pointer;
 }
 
+.bot{
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.bot-tit{
+  border-bottom: 1px solid white;
+  margin-bottom: 13%;
+}
 
 .bot:hover{
   background-color: rgb(74, 89, 97);
