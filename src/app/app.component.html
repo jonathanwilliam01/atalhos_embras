@@ -1,0 +1,34 @@
+<app-header (componentSelected)="setComponent($event)"></app-header>
+<ng-container *ngIf="currentComponent === 'GoGlobal'">
+  <app-goglobal></app-goglobal>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'IssOnline'">
+  <app-issonline></app-issonline>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'egov'">
+  <app-egov></app-egov>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'egov_dev'">
+  <app-egov-dev></app-egov-dev>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'config'">
+  <app-config-egov></app-config-egov>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'interfaces'">
+  <app-interfaces></app-interfaces>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'links'">
+  <app-links></app-links>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'login-novo'">
+  <app-login-novo></app-login-novo>
+</ng-container>
+
+

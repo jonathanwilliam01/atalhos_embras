@@ -1,0 +1,93 @@
+.lateral_menu {
+  background-color: rgb(41, 49, 53);
+  justify-content: center;
+  //align-items: center;
+  display: flex;
+  height: 97vh;
+  width: 13.5vw;
+  border-radius: 5px;
+  box-shadow: 4px 3px 10px 0px black;
+  border: 1px solid rgb(80, 80, 80);
+}
+
+
+a{
+ color: inherit;
+ text-decoration: none;
+}
+
+
+.logo{
+  width: 80%;
+  height: 10%;
+  margin-top: 8%;
+  position: flex;
+  display: block;
+  cursor: pointer;
+}
+
+.logo img{
+  width: 100%;
+  height: auto;
+  top: 25px;
+  display: block;
+  cursor: pointer;
+}
+
+
+.menu{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 10%;
+      height: 100%;
+      list-style: none;
+      position: absolute;
+      top: 150px;
+}
+
+.bot{
+  font-size: 2.5vh;
+  font-size: 1.1vw;
+  padding-left: 6%;
+  margin-bottom: 7%;
+  border-radius: 10px;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 5%;
+  color: rgb(233, 233, 233);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.bot:hover{
+  background-color: rgb(74, 89, 97);
+  color: rgb(74, 194, 194);
+}
+
+.versao{
+  bottom:4%;
+  position: fixed;
+  display: flex;
+  color: rgb(130, 142, 150);
+  font-size: 1vh;
+  font-size: 0.8vw;
+}
+
+.sobre{
+  bottom:1.5%;
+  position: fixed;
+  display: flex;
+  color: rgb(130, 142, 150);
+  font-size: 1vh;
+  font-size: 0.8vw;
+}
+
+.sobre:hover{
+  color: rgb(74, 194, 194);
+  cursor: pointer;
+}

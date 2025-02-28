@@ -1,0 +1,73 @@
+<div class="container" *ngIf="currentComponent === 'GoGlobal'">
+
+  <div class="titulo">
+   Atalhos GoGlobal
+  </div>
+
+  <div class="blocos">
+    <div class="bloco-1">
+      <div class="overlay">
+        <div class="content" *ngIf="currentPage === 1">
+          <div class="est"> São Paulo </div>
+          <div class="li"> <a href="https://painel-arapei.geosiap.net.br/" target="_blank"> Arapei </a> </div>
+          <div class="li"> <a href="http://painel-biritibamirim.geosiap.net.br/" target="_blank"> Biritiba Mirim </a> </div>
+          <div class="li"> <a href="https://painel-pmcaraguatatuba.geosiap.net.br/" target="_blank"> Caraguatatuba </a> </div>
+          <div class="li"> <a href="https://painel-pmcruzeiro.geosiap.net.br/" target="_blank"> Cruzeiro </a> </div>
+          <div class="li"> <a href="http://geosiap.guararema.sp.gov.br/" target="_blank"> Guararema </a> </div>
+          <div class="li"> <a href="https://painel-pmguaratingueta.geosiap.net.br/" target="_blank"> Guaratingueta </a> </div>
+          <div class="li"> <a href="https://painel-pmjacarei.geosiap.net.br/" target="_blank"> Jacarei </a> </div>
+          <div class="li"> <a href="http://painel-lavrinhas.geosiap.net.br/" target="_blank"> Lavrinhas </a> </div>
+          <div class="li"> <a href="http://web.geosiap.net/pmpinda/" target="_blank"> Pindamonhangaba </a> </div>
+          <div class="li"> <a href="https://painel-santabranca.geosiap.net.br/" target="_blank"> Santa Branca </a> </div>
+          <div class="li"> <a href="https://painel-salesopolis.geosiap.net.br/" target="_blank"> Salesopolis </a> </div>
+          <div class="paginas">
+            <button (click)="pag(1)" class="pag"> 1 </button>
+            <button (click)="pag(2)" class="pag"> 2 </button>
+          </div>
+        </div>
+        <div class="content" *ngIf="currentPage === 2">
+          <div class="est"> São Paulo </div>
+          <div class="li"> <a href="http://painel-pmsaovicente.geosiap.net.br/" target="_blank"> São Vicente </a> </div>
+          <div class="li"> <a href="https://painel-aparecida.geosiap.net.br/" target="_blank"> Aparecida </a> </div>
+          <div class="li"> <a href="https://painel-pmfrancodarocha.geosiap.net.br/" target="_blank"> Franco da Rocha </a> </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="paginas2">
+          <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
+          <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco-2">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> Rio de Janeiro </div>
+           <div class="li"> <a href="http://painel-pmbarradopirai.geosiap.net.br/" target="_blank"> Barra do Piraí </a> </div>
+           <div class="li"> <a href="https://painel-pmjaperi.geosiap.net.br/" target="_blank"> Japeri </a> </div>
+           <div class="li"> <a href="https://painel-pmnilopolis.geosiap.net.br/" target="_blank"> Nilópolis </a> </div>
+           <div class="li"> <a href="https://cloud.pmsg.rj.gov.br/#/client/ODIAYwBteXNxbA" target="_blank"> São Gonçalo </a> </div>
+           <div class="li"> <a href="https://painel-mangaratiba.geosiap.net.br/" target="_blank"> Mangaratiba </a> </div>
+           <div class="li"> <a href="https://painel-pmnovaiguacu.geosiap.net.br/" target="_blank"> Nova Iguaçu </a> </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco-3">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> Minas Gerais </div>
+          <div class="li"> <a href="https://painel-pmibirite.geosiap.net.br/" target="_blank"> Ibirité </a> </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

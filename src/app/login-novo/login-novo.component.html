@@ -1,0 +1,70 @@
+<div class="container" *ngIf="currentComponent === 'login-novo'">
+
+    <div class="titulo">
+     Config Login Novo
+    </div>
+
+    <div class="blocos">
+      <div class="bloco-1">
+        <div class="overlay">
+          <div class="content" *ngIf="currentPage === 1">
+            <div class="est"> São Paulo </div>
+            <div class="li"> <a href="https://siap.jacarei.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.jacarei.sp.gov.br%2Fconfig" target="_blank"> Jacarei </a> </div>
+            <div class="li"> <a href="https://siap.pompeia.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.pompeia.sp.gov.br%2Fconfig" target="_blank"> Pompeia </a> </div>
+            <div class="li"> <a href="https://pmsilveiras.geosiap.net.br:8080/contas/login?returnUrl=https:%2F%2Fpmsilveiras.geosiap.net.br:8080%2Fconfig" target="_blank"> Silveiras </a> </div>
+            <div class="li"> <a href="https://pmbananal.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmbananal.geosiap.net.br%2Fconfig" target="_blank"> Bananal </a> </div>
+            <div class="li"> <a href="https://pmqueluz.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmqueluz.geosiap.net.br%2Fconfig" target="_blank"> Queluz </a> </div>
+            <div class="li"> <a href="https://pmroseira.geosiap.net.br:8443/contas/login?returnUrl=https:%2F%2Fpmroseira.geosiap.net.br:8443%2Fconfig" target="_blank"> Roseira </a> </div>
+            <div class="li"> <a href="https://arapei.geosiap.net.br/contas/login?returnUrl=https:%2F%2Farapei.geosiap.net.br%2Fconfig" target="_blank"> Arapei </a> </div>
+            <div class="li"> <a href="https://pmbiritibamirim.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmbiritibamirim.geosiap.net.br%2Fconfig" target="_blank"> Biritiba Mirim </a> </div>
+            <div class="li"> <a href="https://pmsalesopolis.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmsalesopolis.geosiap.net.br%2Fconfig" target="_blank"> Salesópolis </a> </div>
+            <div class="li"> <a href="https://pmlavrinhas.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmlavrinhas.geosiap.net.br%2Fconfig" target="_blank"> Lavrinhas </a> </div>
+            <div class="li"> <a href="https://pmsantabranca.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmsantabranca.geosiap.net.br%2Fconfig" target="_blank"> Santa Branca </a> </div>
+            <div class="paginas">
+              <button (click)="pag(1)" class="pag"> 1 </button>
+              <button (click)="pag(2)" class="pag"> 2 </button>
+            </div>
+          </div>
+          <div class="content" *ngIf="currentPage === 2">
+            <div class="est"> São Paulo </div>
+            <div class="li"> <a href="https://pmcruzeiro.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmcruzeiro.geosiap.net.br%2Fconfig" target="_blank"> Cruzeiro </a> </div>
+            <div class="li"> <a href="https://redencaodaserra.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fredencaodaserra.geosiap.net.br%2Fconfig" target="_blank"> Redenção da Serra </a> </div>
+            <div class="li"> <a href="https://siap.lorena.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.lorena.sp.gov.br%2Fconfig" target="_blank"> Lorena </a> </div>
+            <div class="li"> <a href="https://pedrotoledo.geosiap.net.br:8843/contas/login?returnUrl=https:%2F%2Fpedrotoledo.geosiap.net.br:8843%2Fconfig" target="_blank"> Pedro de Toledo </a> </div>
+            <div class="li"> <a href="https://cachoeirapaulista.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fcachoeirapaulista.geosiap.net.br%2Fconfig" target="_blank"> Cachoeira Paulista </a> </div>
+            <div class="li"> <a href="https://pmcanas.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmcanas.geosiap.net.br%2Fconfig" target="_blank"> Canas </a> </div>
+            <div class="li2">  </div>
+            <div class="li2">  </div>
+            <div class="li2">  </div>
+            <div class="li2">  </div>
+            <div class="li2">  </div>
+            <div class="paginas2">
+            <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
+            <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco-2">
+        <div class="overlay">
+          <div class="content">
+            <div class="est"> Rio de Janeiro </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco-3">
+        <div class="overlay">
+          <div class="content">
+            <div class="est"> Minas Gerais </div>
+            <div class="li"> <a href="https://pmibirite.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmibirite.geosiap.net.br%2Fconfig" target="_blank"> Ibirité </a> </div>
+            <div class="li"> <a href="https://pmpousoalto.geosiap.net.br:8443/contas/login?returnUrl=https:%2F%2Fpmpousoalto.geosiap.net.br:8443%2Fconfig" target="_blank"> Pouso Alto </a> </div>
+            <div class="li"> <a href="https://pmitamonte.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmitamonte.geosiap.net.br%2Fconfig" target="_blank"> Itamonte </a> </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

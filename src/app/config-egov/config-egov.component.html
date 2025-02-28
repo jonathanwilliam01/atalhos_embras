@@ -1,0 +1,74 @@
+<div class="container" *ngIf="currentComponent === 'config'">
+
+  <div class="titulo">
+   Config Serviços Online
+  </div>
+
+  <div class="blocos">
+
+    <div class="bloco-1">
+      <div class="overlay">
+        <div class="content" *ngIf="currentPage === 1">
+          <div class="est"> São Paulo </div>
+          <div class="li"> <a href="https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/websis/config/login.php" target="_blank"> Pindamonhangaba </a> </div>
+          <div class="li"> <a href="https://pmcaraguatatuba.geosiap.net.br/pmcaraguatatuba/websis/config/login.php" target="_blank"> Caraguatatuba </a> </div>
+          <div class="li"> <a href="https://portal.guararema.sp.gov.br/pmguararema/websis/config/login.php" target="_blank"> Guararema </a> </div>
+          <div class="li"> <a href="https://pmguaratingueta.geosiap.net.br/pmguaratingueta/websis/config/login.php" target="_blank"> Guaratinguetá </a> </div>
+          <div class="li"> <a href="https://siap.jacarei.sp.gov.br/pmjacarei/websis/config/login.php" target="_blank"> Jacarei </a> </div>
+          <div class="li"> <a href="https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/websis/config/login.php" target="_blank"> Cachoeira Paulista </a> </div>
+          <div class="li"> <a href="https://siap.lorena.sp.gov.br/pmlorena/websis/config/login.php" target="_blank"> Lorena </a> </div>
+          <div class="li"> <a href="https://online.saovicente.sp.gov.br/pmsaovicente/websis/config/login.php" target="_blank"> São Vicente </a> </div>
+          <div class="li"> <a href="https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/config/login.php" target="_blank"> Biritiba Mirim </a> </div>
+          <div class="li"> <a href="https://pmcruzeiro.geosiap.net.br/pmcruzeiro/websis/config/login.php" target="_blank"> Cruzeiro </a> </div>
+          <div class="li"> <a href="https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/config/login.php" target="_blank"> Lavrinhas </a> </div>
+          <div class="paginas">
+            <button (click)="pag(1)" class="pag"> 1 </button>
+            <button (click)="pag(2)" class="pag"> 2 </button>
+          </div>
+        </div>
+        <div class="content" *ngIf="currentPage === 2">
+          <div class="est"> São Paulo </div>
+          <div class="li"> <a href="https://pmcanas.geosiap.net.br/pmcanas/websis/config/login.php" target="_blank"> Canas </a> </div>
+          <div class="li"> <a href="http://pmpedrotoledo.geosiap.net.br/pmpedrotoledo/websis/config/login.php" target="_blank"> Pedro de Toledo </a> </div>
+          <div class="li"> <a href="https://pmarapei.geosiap.net.br/pmarapei/websis/config/login.php" target="_blank"> Arapei </a> </div>
+          <div class="li"> <a href="https://siap.pompeia.sp.gov.br/pmpompeia/websis/config/login.php" target="_blank"> Pompéia </a> </div>
+          <div class="li"> <a href="https://pmqueluz.geosiap.net.br/pmqueluz/websis/config/login.php" target="_blank"> Queluz </a> </div>
+          <div class="li"> <a href="https://pmredencao.geosiap.net.br/pmredencaodaserra/websis/config/login.php" target="_blank"> Redenção da Serra </a> </div>
+          <div class="li"> <a href="https://pmroseira.geosiap.net.br:8443/pmroseira/websis/config/login.php" target="_blank"> Roseira </a> </div>
+          <div class="li"> <a href="https://pmsalesopolis.geosiap.net.br/pmsalesopolis/websis/config/login.php" target="_blank"> Salesópolis </a> </div>
+          <div class="li"> <a href="https://pmsantabranca.geosiap.net.br/pmsantabranca/websis/config/login.php" target="_blank"> Santa Branca </a> </div>
+          <div class="li"> <a href="https://pmbananal.geosiap.net.br/pmbananal/websis/config/login.php" target="_blank"> Bananal </a> </div>
+          <div class="li"> <a href="" target="_blank"> Silveiras </a> </div>
+          <div class="paginas">
+            <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
+            <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco-2">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> Rio de Janeiro </div>
+           <div class="li"> <a href="https://pmbarradopirai.geosiap.net.br/pmbarradopirai/websis/config/login.php" target="_blank"> Barra do Piraí </a> </div>
+           <div class="li"> <a href="https://pmjaperi.geosiap.net.br/pmjaperi/websis/config/login.php" target="_blank"> Japeri </a> </div>
+           <div class="li"> <a href="https://pmnilopolis.geosiap.net.br/pmnilopolis/websis/config/login.php" target="_blank"> Nilópolis </a> </div>
+           <div class="li"> <a href="https://servidor.pmsg.rj.gov.br/pmsaogoncalo/websis/config/login.php" target="_blank"> São Gonçalo </a> </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco-3">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> Minas Gerais </div>
+          <div class="li"> <a href="https://pmibirite.geosiap.net.br/pmibirite/websis/config/login.php" target="_blank"> Ibirité </a> </div>
+          <div class="li"> <a href="https://pmitamonte.geosiap.net.br/pmitamonte/websis/config/login.php" target="_blank"> Itamonte </a> </div>
+          <div class="li"> <a href="https://pousoalto.mg.gov.br/aviso-servicos-online-temporariamente-fora-do-ar/" target="_blank"> Pouso Alto </a> </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
