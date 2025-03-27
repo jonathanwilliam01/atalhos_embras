@@ -9,13 +9,15 @@ import { InterfacesComponent } from './interfaces/interfaces.component';
 import { LinksComponent } from './links/links.component';
 import { ConfigEgovComponent } from './config-egov/config-egov.component';
 import { LoginNovoComponent } from './login-novo/login-novo.component';
+import { InfraComponent } from './infra/infra.component';
+import { SaibaMaisComponent } from './saiba-mais/saiba-mais.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, GoGlobalComponent, HeaderComponent, EgovComponent,
-    EgovDevComponent, InterfacesComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent
+    EgovDevComponent, InterfacesComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, InfraComponent, SaibaMaisComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

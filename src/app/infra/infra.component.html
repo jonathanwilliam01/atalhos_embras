@@ -1,0 +1,85 @@
+<div class="container" *ngIf="currentComponent === 'infra'">
+
+  <div class="titulo">
+   Infraestrutura
+  </div>
+
+  <div class="blocos">
+    <div class="bloco-1">
+      <div class="overlay">
+        <div class="content" *ngIf="currentPage === 1">
+          <div class="est"> User GoGlobal </div>
+          <div class="li"> <a href="https://arapei.geosiap.net.br/createuser/login.php" target="_blank"> Arapei </a> </div>
+          <div class="li"> <a href="https://pmibirite.geosiap.net.br/createuser/login.php" target="_blank"> Ibirité </a> </div>
+          <div class="li"> <a href="https://pmlavrinhas.geosiap.net.br/createuser/login.php" target="_blank"> Lavrinhas </a> </div>
+          <div class="li"> <a href="https://pmaparecida.geosiap.net.br/createuser/menu.html" target="_blank"> Aparecida </a> </div>
+          <div class="li"> <a href="https://guaratingueta.geosiap.net.br/createuser/login.php" target="_blank"> Guaratingueta </a> </div>
+          <div class="li"> <a href="https://pmbarradopirai.geosiap.net.br/createuser/login.php" target="_blank"> Bara do Piraí </a> </div>
+          <div class="li"> <a href="https://pmnovaiguacu.geosiap.net.br/createuser/login.php" target="_blank"> Nova Iguaçu </a> </div>
+          <div class="li"> <a href="https://pmmangaratiba.geosiap.net.br/createuser/login.php" target="_blank"> Mangaratiba </a> </div>
+          <div class="li"> <a href="https://pmjaperi.geosiap.net.br/createuser/login.php" target="_blank"> Japeri </a> </div>
+          <div class="li"> <a href="https://pmcruzeiro.geosiap.net.br/createuser/login.php" target="_blank"> Cruzeiro </a> </div>
+          <div class="li"> <a href="https://pmfrancodarocha.geosiap.net.br/createuser/login.php" target="_blank"> Fraco da Rocha </a> </div>
+          <div class="paginas" style="visibility: hidden;">
+            <button (click)="pag(1)" class="pag"> 1 </button>
+            <button (click)="pag(2)" class="pag"> 2 </button>
+          </div>
+        </div>
+        <div class="content" *ngIf="currentPage === 2" style="visibility: hidden;">
+          <div class="est"> User GoGlobal </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="paginas2">
+          <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
+          <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco-2">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> Geosiap Setup </div>
+            <div class="li"> <a href="https://siap.jacarei.sp.gov.br/geosiap-setup/login" target="_blank"> Jacarei </a> </div>
+            <div class="li"> <a href="https://pmsilveiras.geosiap.net.br:8443/geosiap-setup/login" target="_blank"> Silveiras </a> </div>
+            <div class="li"> <a href="https://pmsantabranca.geosiap.net.br/geosiap-setup/login" target="_blank"> Santa Branca </a> </div>
+            <div class="li"> <a href="https://portal.guararema.sp.gov.br/geosiap-setup/login" target="_blank"> Guararema </a> </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco-3">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> Links diversos </div>
+          <div class="li"> <a href="https://jwt.io/" target="_blank"> JWT.IO </a> </div>
+          <div class="li"> <a href="http://172.16.80.62/bancos_pg.php?tab=bancos" target="_blank"> Bancos Geosiap </a> </div>
+          <div class="li"> <a href="http://172.16.80.62:12345/logs" target="_blank"> Logs Local  </a> </div>
+          <div class="li"> <a href="http://172.16.80.62/tunnel.php" target="_blank"> Tunel Bancos  </a> </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="bloco-4">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> Minas Gerais </div>
+          <div class="li"> <a href="https://pmibirite.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmibirite.geosiap.net.br%2Fconfig" target="_blank"> Ibirité </a> </div>
+          <div class="li"> <a href="https://pmpousoalto.geosiap.net.br:8443/contas/login?returnUrl=https:%2F%2Fpmpousoalto.geosiap.net.br:8443%2Fconfig" target="_blank"> Pouso Alto </a> </div>
+          <div class="li"> <a href="https://pmitamonte.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmitamonte.geosiap.net.br%2Fconfig" target="_blank"> Itamonte </a> </div>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</div>

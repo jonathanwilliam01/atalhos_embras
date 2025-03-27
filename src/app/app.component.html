@@ -27,4 +27,11 @@
   <app-login-novo></app-login-novo>
 </ng-container>
 
+<ng-container *ngIf="currentComponent === 'infra'">
+  <app-infra></app-infra>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'SaibaMais'">
+  <app-saiba-mais></app-saiba-mais>
+</ng-container>
 
