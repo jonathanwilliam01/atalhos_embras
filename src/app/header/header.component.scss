@@ -77,7 +77,7 @@ a{
 }
 
 .versao{
-  bottom:4%;
+  bottom:55;
   position: fixed;
   display: flex;
   color: rgb(130, 142, 150);
@@ -86,7 +86,16 @@ a{
 }
 
 .sobre{
-  bottom:1.5%;
+  bottom:35px;
+  position: fixed;
+  display: flex;
+  color: rgb(130, 142, 150);
+  font-size: 1vh;
+  font-size: 0.8vw;
+}
+
+.creditos{
+  bottom:15px;
   position: fixed;
   display: flex;
   color: rgb(130, 142, 150);
