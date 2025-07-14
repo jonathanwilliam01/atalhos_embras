@@ -1,0 +1,73 @@
+<div class="container" *ngIf="currentComponent === 'setup'">
+
+    <div class="titulo">
+     Geosiap Setup
+    </div>
+
+    <div class="blocos">
+      <div class="bloco-1">
+        <div class="overlay">
+          <div class="content" *ngIf="currentPage === 1">
+            <div class="est"> São Paulo </div>
+            <div class="li"> <a href="https://siap.jacarei.sp.gov.br/geosiap-setup/login" target="_blank"> Jacarei </a> </div>
+            <div class="li"> <a href="https://siap.pompeia.sp.gov.br/geosiap-setup/login" target="_blank"> Pompeia </a> </div>
+            <div class="li"> <a href="https://pmsilveiras.geosiap.net.br:8443/geosiap-setup/login" target="_blank"> Silveiras </a> </div>
+            <div class="li"> <a href="https://pmbananal.geosiap.net.br/geosiap-setup/login" target="_blank"> Bananal </a> </div>
+            <div class="li"> <a href="https://pmqueluz.geosiap.net.br/geosiap-setup/login" target="_blank"> Queluz </a> </div>
+            <div class="li"> <a href="https://pmroseira.geosiap.net.br:8443/geosiap-setup/login" target="_blank"> Roseira </a> </div>
+            <div class="li"> <a href="https://arapei.geosiap.net.br/geosiap-setup/login" target="_blank"> Arapei </a> </div>
+            <div class="li"> <a href="https://pmbiritibamirim.geosiap.net.br/geosiap-setup/login" target="_blank"> Biritiba Mirim </a> </div>
+            <div class="li"> <a href="https://pmsalesopolis.geosiap.net.br/geosiap-setup/login" target="_blank"> Salesópolis </a> </div>
+            <div class="li"> <a href="https://pmlavrinhas.geosiap.net.br/geosiap-setup/login" target="_blank"> Lavrinhas </a> </div>
+            <div class="li"> <a href="https://pmsantabranca.geosiap.net.br/geosiap-setup/login" target="_blank"> Santa Branca </a> </div>
+            <div class="paginas">
+              <button (click)="pag(1)" class="pag"> 1 </button>
+              <button (click)="pag(2)" class="pag"> 2 </button>
+            </div>
+          </div>
+          <div class="content" *ngIf="currentPage === 2">
+            <div class="est"> São Paulo </div>
+            <div class="li"> <a href="https://pmcruzeiro.geosiap.net.br/geosiap-setup/login" target="_blank"> Cruzeiro </a> </div>
+            <div class="li"> <a href="https://redencaodaserra.geosiap.net.br/geosiap-setup/login" target="_blank"> Redenção da Serra </a> </div>
+            <div class="li"> <a href="https://siap.lorena.sp.gov.br/geosiap-setup/login" target="_blank"> Lorena </a> </div>
+            <div class="li"> <a href="https://pedrotoledo.geosiap.net.br:8843/geosiap-setup/login" target="_blank"> Pedro de Toledo </a> </div>
+            <div class="li"> <a href="https://cachoeirapaulista.geosiap.net.br/geosiap-setup/login" target="_blank"> Cachoeira Paulista </a> </div>
+            <div class="li"> <a href="https://pmcanas.geosiap.net.br/geosiap-setup/login" target="_blank"> Canas </a> </div>
+            <div class="li"> <a href="https://guaratingueta.geosiap.net.br/geosiap-setup/login" target="_blank"> Guaratingueta </a> </div>
+            <div class="li"> <a href="https://caraguatatuba.geosiap.net.br/geosiap-setup/login" target="_blank"> Caraguatatuba </a> </div>
+            <div class="li2">  </div>
+            <div class="li2">  </div>
+            <div class="li2">  </div>
+            <div class="paginas2">
+            <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
+            <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco-2">
+        <div class="overlay">
+          <div class="content">
+            <div class="est"> Rio de Janeiro </div>
+            <div class="li"> <a href="https://japeri.geosiap.net.br/geosiap-setup/login" target="_blank"> Japeri </a> </div>
+            <div class="li"> <a href="https://sistema.pmsg.rj.gov.br/geosiap-setup/login" target="_blank"> São Gonçalo </a> </div>
+            <div class="li"> <a href="https://barradopirai.geosiap.net.br/geosiap-setup/login" target="_blank"> Barra do Piraí </a> </div>
+            <div class="li"> <a href="https://pmnovaiguacu.geosiap.net.br/geosiap-setup/login" target="_blank"> Nova Iguaçu </a> </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco-3">
+        <div class="overlay">
+          <div class="content">
+            <div class="est"> Minas Gerais </div>
+            <div class="li"> <a href="https://pmibirite.geosiap.net.br/geosiap-setup/login" target="_blank"> Ibirité </a> </div>
+            <div class="li"> <a href="https://pmpousoalto.geosiap.net.br:8443/geosiap-setup/login" target="_blank"> Pouso Alto </a> </div>
+            <div class="li"> <a href="https://pmitamonte.geosiap.net.br/geosiap-setup/login" target="_blank"> Itamonte </a> </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
