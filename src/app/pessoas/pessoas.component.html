@@ -1,0 +1,61 @@
+<div class="container" *ngIf="currentComponent === 'pessoas'">
+
+    <div class="titulo">
+     Cadastro de Pessoas
+    </div>
+
+    <div class="blocos">
+      <div class="bloco-1">
+        <div class="overlay">
+          <div class="content" *ngIf="currentPage === 1">
+            <div class="est"> São Paulo </div>
+            <div class="li"> <a href="https://pmroseira.geosiap.net.br:8443/pessoas/" target="_blank"> Roseira </a> </div>
+            <div class="li"> <a href="https://arapei.geosiap.net.br/pessoas/" target="_blank"> Arapei </a> </div>
+            <div class="li"> <a href="https://pmlavrinhas.geosiap.net.br/pessoas/" target="_blank"> Lavrinhas </a> </div>
+            <div class="li"> <a href="https://cachoeirapaulista.geosiap.net.br/pessoas/" target="_blank"> Cachoeira Paulista </a> </div>
+            <!-- <div class="paginas">
+              <button (click)="pag(1)" class="pag"> 1 </button>
+              <button (click)="pag(2)" class="pag"> 2 </button>
+            </div> -->
+          </div>
+          <!-- <div class="content" *ngIf="currentPage === 2">
+            <div class="est"> São Paulo </div>
+            <div class="li"> <a href="https://pmcruzeiro.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmcruzeiro.geosiap.net.br%2Fconfig" target="_blank"> Cruzeiro </a> </div>
+            <div class="li"> <a href="https://redencaodaserra.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fredencaodaserra.geosiap.net.br%2Fconfig" target="_blank"> Redenção da Serra </a> </div>
+            <div class="li"> <a href="https://siap.lorena.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.lorena.sp.gov.br%2Fconfig" target="_blank"> Lorena </a> </div>
+            <div class="li"> <a href="https://pedrotoledo.geosiap.net.br:8843/contas/login?returnUrl=https:%2F%2Fpedrotoledo.geosiap.net.br:8843%2Fconfig" target="_blank"> Pedro de Toledo </a> </div>
+            <div class="li"> <a href="https://cachoeirapaulista.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fcachoeirapaulista.geosiap.net.br%2Fconfig" target="_blank"> Cachoeira Paulista </a> </div>
+            <div class="li"> <a href="https://pmcanas.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmcanas.geosiap.net.br%2Fconfig" target="_blank"> Canas </a> </div>
+            <div class="li"> <a href="https://guaratingueta.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fguaratingueta.geosiap.net.br%2Fconfig" target="_blank"> Guaratingueta </a> </div>
+            <div class="li"> <a href="https://caraguatatuba.geosiap.net.br/config/" target="_blank"> Caraguatatuba </a> </div>
+            <div class="li2">  </div>
+            <div class="li2">  </div>
+            <div class="li2">  </div>
+            <div class="paginas2">
+            <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
+            <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="bloco-2">
+        <div class="overlay">
+          <div class="content">
+            <div class="est"> Rio de Janeiro </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco-3">
+        <div class="overlay">
+          <div class="content">
+            <div class="est"> Minas Gerais </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>

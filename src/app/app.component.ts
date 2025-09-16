@@ -12,13 +12,14 @@ import { LoginNovoComponent } from './login-novo/login-novo.component';
 import { InfraComponent } from './infra/infra.component';
 import { SaibaMaisComponent } from './saiba-mais/saiba-mais.component';
 import { SetupComponent } from './setup/setup.component';
+import { PessoasComponent } from './pessoas/pessoas.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, GoGlobalComponent, HeaderComponent, EgovComponent,
-    EgovDevComponent, InterfacesComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, InfraComponent, SaibaMaisComponent, SetupComponent
+    EgovDevComponent, InterfacesComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, InfraComponent, SaibaMaisComponent, SetupComponent, PessoasComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
