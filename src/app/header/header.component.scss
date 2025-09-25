@@ -78,6 +78,12 @@ a{
   transform: translateX(5px);
 }
 
+.bot.active {
+  background-color: rgb(74, 89, 97);
+  color: rgb(74, 194, 194);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .versao{
   bottom:55px;
   position: fixed;

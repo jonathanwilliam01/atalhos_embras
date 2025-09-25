@@ -10,15 +10,16 @@ import { CommonModule } from '@angular/common';
 })
 
 export class HeaderComponent {
-
   @Output() componentSelected = new EventEmitter<string>();
+  selectedComponent: string = ''; // Adicione esta propriedade
 
   selectComponent(componentName: string) {
+    this.selectedComponent = componentName; // Define o componente selecionado
     this.componentSelected.emit(componentName);
   }
 
   reloadPage() {
     window.location.reload();
-    ;
+  }
 }
-}
+
