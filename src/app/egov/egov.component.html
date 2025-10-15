@@ -24,6 +24,7 @@
           <div class="paginas">
             <button (click)="pag(1)" class="pag"> 1 </button>
             <button (click)="pag(2)" class="pag"> 2 </button>
+            <button (click)="pag(3)" class="pag"> 3 </button>
           </div>
         </div>
         <div class="content" *ngIf="currentPage === 2">
@@ -42,6 +43,26 @@
           <div class="paginas">
             <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
             <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+            <button (click)="pag(3)" class="pag" [class.active]> 3 </button>
+          </div>
+        </div>
+        <div class="content" *ngIf="currentPage === 3">
+          <div class="est"> São Paulo </div>
+          <div class="li"> <a href="https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/portal/index.php" target="_blank"> Lagoinha </a> </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div> 
+          <div class="paginas">
+            <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
+            <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+            <button (click)="pag(3)" class="pag" [class.active]> 3 </button>
           </div>
         </div>
       </div>
