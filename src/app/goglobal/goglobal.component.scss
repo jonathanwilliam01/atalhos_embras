@@ -1,8 +1,8 @@
 .container{
-  margin-left: 17%;
+  margin-left: 19%;
   background-color: rgb(41, 49, 53);
   border-radius: 7px;
-  width: 80%;
+  width: 78%;
   height: 97%;
   top: 9px;
   position: absolute;
@@ -49,7 +49,7 @@
 .bloco-1{
   flex: 1;
   margin-right: 30px;
-  background-image: url('https://i.pinimg.com/564x/4e/ea/ef/4eeaef9977d18d9d7ec3ab9cd0384559.jpg');
+  background-image: url('/assets/4eeaef9977d18d9d7ec3ab9cd0384559.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -58,7 +58,7 @@
 .bloco-2{
   flex: 1;
   margin-right: 30px;
-  background-image: url('https://i.pinimg.com/736x/c5/d9/50/c5d950bbb0a9410e5bfcb7e97ffeee2e.jpg');
+  background-image: url('/assets/c5d950bbb0a9410e5bfcb7e97ffeee2e.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 90%;
@@ -67,7 +67,7 @@
 .bloco-3{
   flex:1;
   margin-right: 0px;
-  background-image: url('https://wallpapercave.com/wp/wp4201740.jpg');
+  background-image: url('/assets/wp4201740.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 35%;

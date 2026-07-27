@@ -1,10 +1,17 @@
+:host {
+  position: relative;
+}
+
 .lateral_menu {
   background-color: rgb(41, 49, 53);
   justify-content: center;
   //align-items: center;
   display: flex;
+  position: absolute;
+  top: 9px;
+  left: 8px;
   height: 97vh;
-  width: 13.5vw;
+  width: 15vw;
   border-radius: 5px;
   box-shadow: 4px 3px 10px 0px black;
   border: 1px solid rgb(80, 80, 80);
@@ -26,6 +33,12 @@ a{
   cursor: pointer;
 }
 
+@media (max-width: 1366px) {
+  .logo {
+    margin-top: 5%;
+  }
+}
+
 .logo img{
   width: 100%;
   height: auto;
@@ -39,22 +52,23 @@ a{
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      width: 10%;
-      height: 100%;
+      width: 12vw;
+      height: 86%; /* top(14%) + height(86%) = 100%, fits exactly inside .lateral_menu */
       list-style: none;
       position: absolute;
+      left: 1.5vw;
       top: 14%;
 }
 
 .bot, .bot-tit{
-  font-size: 2.5vh;
-  font-size: 1.1vw;
+  font-size: 2.3vh;
+  font-size: 1.0vw;
   padding-left: 6%;
-  margin-bottom: 7%;
+  margin-bottom: 5%;
   justify-content: left;
   align-items: center;
   display: flex;
-  width: 100%;
+  width: 12vw;
   height: 5%;
   color: rgb(233, 233, 233);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -70,6 +84,14 @@ a{
 .bot-tit{
   border-bottom: 1px solid white;
   margin-bottom: 13%;
+  justify-content: center;
+  padding-left: 0;
+}
+
+@media (max-width: 1366px) {
+  .bot {
+    margin-bottom: 6%;
+  }
 }
 
 .bot:hover{
@@ -84,10 +106,100 @@ a{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.has-submenu {
+  position: relative;
+}
+
+.submenu-caret {
+  margin-left: auto;
+  margin-right: 5%;
+  font-size: 0.7vw;
+  transition: transform 0.5s ease;
+}
+
+.has-submenu.open .submenu-caret {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  margin: 0 0 0 0;
+  padding: 0;
+  width: 12vw;
+  transition: max-height 0.2s ease, opacity 0.15s ease, margin 0.2s ease;
+}
+
+.submenu.open {
+  max-height: 200px;
+  opacity: 1;
+  margin: -3% 0 5% 0;
+}
+
+@media (max-width: 1366px) {
+  .submenu.open {
+    margin: -4% 0 6% 0;
+  }
+}
+
+.submenu li {
+  padding: 6px 6px 6px 15%;
+  margin-bottom: 2px;
+  color: rgb(200, 208, 212);
+  font-size: 0.88vw;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+}
+
+.submenu li::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: rgb(140, 150, 155);
+  transition: background-color 0.5s ease;
+  flex-shrink: 0;
+}
+
+.submenu li:hover::before,
+.submenu li.active::before {
+  background-color: rgb(74, 194, 194);
+}
+
+.submenu li:hover {
+  background-color: rgb(74, 89, 97);
+  color: rgb(74, 194, 194);
+}
+
+.submenu li.active {
+  background-color: rgb(74, 89, 97);
+  color: rgb(74, 194, 194);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.active{
+  transition: all 0.3s ease;
+}
+
 .versao{
   bottom:55px;
-  position: fixed;
+  left: 0;
+  width: 100%;
+  position: absolute;
   display: flex;
+  justify-content: center;
+  text-align: center;
   color: rgb(130, 142, 150);
   font-size: 1vh;
   font-size: 0.8vw;
@@ -95,23 +207,216 @@ a{
 
 .sobre{
   bottom:35px;
-  position: fixed;
+  left: 0;
+  width: 100%;
+  position: absolute;
   display: flex;
+  justify-content: center;
+  text-align: center;
+  color: rgb(130, 142, 150);
+  font-size: 1vh;
+  font-size: 0.8vw;
+  transition: all 0.3s ease;
+}
+
+.creditos{
+  bottom:15px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   color: rgb(130, 142, 150);
   font-size: 1vh;
   font-size: 0.8vw;
 }
 
-.creditos{
-  bottom:15px;
-  position: fixed;
-  display: flex;
-  color: rgb(130, 142, 150);
-  font-size: 1vh;
-  font-size: 0.8vw;
+@media (max-width: 1366px) {
+  .sobre {
+    bottom:33px
+  }
+}
+
+@media (max-width: 1366px) {
+  .versao {
+    bottom:53px
+  }
+}
+
+@media (max-width: 1366px) {
+  .creditos {
+    bottom:13px
+  }
+}
+
+@media (max-width: 1366px) {
+  .creditos,
+  .versao,
+  .sobre {
+    font-size: 0.7vw;
+  }
 }
 
 .sobre:hover{
   color: rgb(74, 194, 194);
   cursor: pointer;
+}
+
+/* ===================== Mobile top bar + drawer =====================
+   Hidden on desktop; shown/activated at <= 900px. */
+.mobile-topbar { display: none; }
+.menu-backdrop { display: none; }
+
+@media (max-width: 900px) {
+
+  /* Fixed top bar with the hamburger toggle. */
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    padding: 0 14px;
+    background-color: rgb(41, 49, 53);
+    border-bottom: 1px solid rgb(80, 80, 80);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: rgb(233, 233, 233);
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .hamburger:active { background-color: rgb(74, 89, 97); }
+
+  .mobile-title {
+    color: rgb(233, 233, 233);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* Backdrop behind the open drawer. */
+  .menu-backdrop.show {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+  }
+
+  /* The sidebar becomes a slide-in drawer. The drawer itself does not
+     scroll — only the nav list (.menu) does — so the logo stays on
+     top and the footer texts stay pinned at the bottom. */
+  .lateral_menu {
+    flex-direction: column;
+    align-items: stretch;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    height: 100dvh;
+    width: 80vw;
+    max-width: 300px;
+    border-radius: 0;
+    border-right: 1px solid rgb(80, 80, 80);
+    overflow: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+    z-index: 1002;
+  }
+
+  .lateral_menu.open { transform: translateX(0); }
+
+  .logo {
+    width: 60%;
+    margin: 16px auto 4px auto;
+    height: auto;
+  }
+
+  /* Menu back into normal flow, full drawer width, px-based sizing.
+     flex:1 + its own scroll keeps the footer pinned below it without
+     scrolling the whole drawer (logo/title stay put too). */
+  .menu {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    align-items: stretch;
+    padding: 8px 12px 12px 12px;
+    margin: 0;
+    overflow-y: auto;
+  }
+
+  .bot,
+  .bot-tit {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    font-size: 16px;
+    padding: 13px 14px;
+    margin-bottom: 4px;
+  }
+
+  .bot-tit {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .bot:hover { transform: none; }
+
+  .submenu {
+    width: 100%;
+    /* Without this, flex items with overflow:hidden get an automatic
+       min-height of 0 (per spec) instead of sizing to content, so the
+       flex column shrinks a just-opened submenu down to 0px whenever
+       the nav list doesn't have enough room — instead of leaving the
+       menu's own overflow-y:auto to scroll. flex-shrink:0 forces the
+       submenu to keep its real content height so it stays visible. */
+    flex-shrink: 0;
+  }
+
+  .submenu.open { margin: 2px 0 6px 0; }
+
+  .submenu li {
+    font-size: 15px;
+    padding: 12px 12px 12px 34px;
+    white-space: normal;
+  }
+
+  .submenu-caret { font-size: 13px; }
+
+  /* Footer info flows at the bottom of the drawer instead of fixed. */
+  .versao,
+  .sobre,
+  .creditos {
+    position: static;
+    flex-shrink: 0;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    margin: 0 0 4px 0;
+  }
+
+  .versao { margin-top: 12px; }
+  .creditos { margin-bottom: 16px; }
 }

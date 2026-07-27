@@ -1,8 +1,8 @@
 .container{
-  margin-left: 17%;
+  margin-left: 19%;
   background-color: rgb(41, 49, 53);
   border-radius: 7px;
-  width: 80%;
+  width: 78%;
   height: 97%;
   top: 9px;
   position: absolute;
@@ -49,7 +49,7 @@
 .bloco-1{
   flex: 1;
   margin-right: 30px;
-  background-image: url('https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZG9jdW1lbnRvc3xlbnwwfHwwfHx8MA%3D%3D');
+  background-image: url('/assets/photo-1562240020-ce31ccb0fa7d.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 80%;
@@ -59,7 +59,7 @@
 .bloco-2{
   flex: 1;
   margin-right: 30px;
-  background-image: url('https://images.unsplash.com/photo-1522252234503-e356532cafd5?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGV2ZWxvcGVyfGVufDB8fDB8fHww');
+  background-image: url('/assets/photo-1522252234503-e356532cafd5.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
@@ -68,7 +68,7 @@
 .bloco-3{
   flex:1;
   margin-right: 0px;
-  background-image: url('https://wallpapers.com/images/high/coding-background-avcywmlgtr48wj7s.webp');
+  background-image: url('/assets/coding-background-avcywmlgtr48wj7s.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 70%;

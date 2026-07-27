@@ -1,8 +1,8 @@
 .container{
-  margin-left: 17%;
+  margin-left: 19%;
   background-color: rgb(41, 49, 53);
   border-radius: 7px;
-  width: 80%;
+  width: 78%;
   height: 97%;
   top: 9px;
   position: absolute;
@@ -49,7 +49,7 @@
 .bloco-1{
   flex: 1;
   margin-right: 30px;
-  background-image: url('https://images.unsplash.com/photo-1531097842074-4a80589a7d07?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image: url('/assets/photo-1531097842074-4a80589a7d07.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -58,7 +58,7 @@
 .bloco-2{
   flex: 1;
   margin-right: 30px;
-  background-image: url('https://images.unsplash.com/photo-1544989164-31dc3c645987?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image: url('/assets/photo-1544989164-31dc3c645987.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 90%;
@@ -67,7 +67,7 @@
 .bloco-3{
   flex:1;
   margin-right: 0px;
-  background-image: url('https://media.istockphoto.com/id/1351677112/pt/foto/a-quiet-historic-street-in-the-city-of-tiradentes-in-minas-gerais.jpg?s=2048x2048&w=is&k=20&c=DQHOK2ffHyNAwdhHEfOOYXeBw4l_svDMTD8AfSM3Iao=');
+  background-image: url('/assets/istockphoto-1351677112-2048x2048.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 35%;

@@ -1,8 +1,8 @@
 .container{
-  margin-left: 17%;
+  margin-left: 19%;
   background-color: rgb(41, 49, 53);
   border-radius: 7px;
-  width: 80%;
+  width: 78%;
   height: 97%;
   top: 9px;
   position: absolute;
@@ -49,7 +49,7 @@
 .bloco-1{
   flex: 1;
   margin-right: 30px;
-  background-image: url('https://images.pexels.com/photos/15384280/pexels-photo-15384280/free-photo-of-cidade-meio-urbano-arranha-ceus-arranha-ceu.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-image: url('/assets/pexels-photo-15384280.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 80%;
@@ -68,7 +68,7 @@
 .bloco-3{
   flex:1;
   margin-right: 0px;
-  background-image: url('https://images.pexels.com/photos/12795930/pexels-photo-12795930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-image: url('/assets/pexels-photo-12795930.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100%;
