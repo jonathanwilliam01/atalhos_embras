@@ -13,13 +13,18 @@ import { InfraComponent } from './infra/infra.component';
 import { SaibaMaisComponent } from './saiba-mais/saiba-mais.component';
 import { SetupComponent } from './setup/setup.component';
 import { PessoasComponent } from './pessoas/pessoas.component';
+import { GccComponent } from './gcc/gcc.component';
+import { SuprimentosComponent } from './suprimentos/suprimentos.component';
+import { PortalTransparenciaComponent } from './portal-transparencia/portal-transparencia.component';
+import { TransparenciaEgovComponent } from './transparencia-egov/transparencia-egov.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, GoGlobalComponent, HeaderComponent, EgovComponent,
-    EgovDevComponent, InterfacesComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, InfraComponent, SaibaMaisComponent, SetupComponent, PessoasComponent
+    EgovDevComponent, InterfacesComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, InfraComponent, SaibaMaisComponent, SetupComponent, PessoasComponent,
+    GccComponent, SuprimentosComponent, PortalTransparenciaComponent, TransparenciaEgovComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

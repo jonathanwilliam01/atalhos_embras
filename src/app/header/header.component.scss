@@ -53,11 +53,36 @@ a{
       flex-direction: column;
       align-items: flex-start;
       width: 12vw;
-      height: 86%; /* top(14%) + height(86%) = 100%, fits exactly inside .lateral_menu */
+      /* top(14%) + 86% would reach exactly the bottom of .lateral_menu,
+         overlapping the footer texts (versao/sobre/creditos), which are
+         absolutely positioned within that same last ~75px. Reserve that
+         px gap so the scrollable nav area stops above the footer. */
+      height: calc(86% - 75px);
       list-style: none;
       position: absolute;
       left: 1.5vw;
       top: 14%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.menu::-webkit-scrollbar {
+  width: 5px;
+}
+
+.menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 .bot, .bot-tit{
@@ -68,7 +93,8 @@ a{
   justify-content: left;
   align-items: center;
   display: flex;
-  width: 12vw;
+  flex-shrink: 0;
+  width: 100%;
   height: 5%;
   color: rgb(233, 233, 233);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -124,13 +150,14 @@ a{
 .submenu {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   list-style: none;
   overflow: hidden;
   max-height: 0;
   opacity: 0;
   margin: 0 0 0 0;
   padding: 0;
-  width: 12vw;
+  width: 100%;
   transition: max-height 0.2s ease, opacity 0.15s ease, margin 0.2s ease;
 }
 

@@ -1,0 +1,94 @@
+<div class="container" *ngIf="currentComponent === 'transparencia-egov'">
+
+  <div class="titulo">
+   Transparência E-Gov
+  </div>
+
+  <div class="blocos">
+
+    <div class="bloco-1">
+      <div class="overlay">
+        <div class="content" *ngIf="currentPage === 1">
+          <div class="est"> São Paulo </div>
+          <div class="li"> <a href="https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Pindamonhangaba </a> </div>
+          <div class="li"> <a href="https://caraguatatuba.geosiap.net.br/pmcaraguatatuba/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Caraguatatuba </a> </div>
+          <div class="li"> <a href="https://portal.guararema.sp.gov.br/pmguararema/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Guararema </a> </div>
+          <div class="li"> <a href="https://pmguaratingueta.geosiap.net.br/pmguaratingueta/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Guaratinguetá </a> </div>
+          <div class="li"> <a href="https://siap.jacarei.sp.gov.br/pmjacarei/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Jacarei </a> </div>
+          <div class="li"> <a href="https://pmcachoeirapaulista.geosiap.net.br/pmcachoeira/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Cachoeira Paulista </a> </div>
+          <div class="li"> <a href="https://siap.lorena.sp.gov.br/pmlorena/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Lorena </a> </div>
+          <div class="li"> <a href="https://online.saovicente.sp.gov.br/pmsaovicente/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> São Vicente </a> </div>
+          <div class="li"> <a href="https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Biritiba Mirim </a> </div>
+          <div class="li"> <a href="https://pmcruzeiro.geosiap.net.br/pmcruzeiro/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Cruzeiro </a> </div>
+          <div class="li"> <a href="https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Lavrinhas </a> </div>
+          <div class="paginas">
+            <button (click)="pag(1)" class="pag"> 1 </button>
+            <button (click)="pag(2)" class="pag"> 2 </button>
+            <button (click)="pag(3)" class="pag"> 3 </button>
+          </div>
+        </div>
+        <div class="content" *ngIf="currentPage === 2">
+          <div class="est"> São Paulo </div>
+          <div class="li"> <a href="https://pmcanas.geosiap.net.br/pmcanas/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Canas </a> </div>
+          <div class="li"> <a href="https://pedrotoledo.geosiap.net.br:8843/pmpedrotoledo/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Pedro de Toledo </a> </div>
+          <div class="li"> <a href="https://pmarapei.geosiap.net.br/pmarapei/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Arapei </a> </div>
+          <div class="li"> <a href="https://siap.pompeia.sp.gov.br/pmpompeia/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Pompéia </a> </div>
+          <div class="li"> <a href="https://pmqueluz.geosiap.net.br/pmqueluz/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Queluz </a> </div>
+          <div class="li"> <a href="https://pmredencao.geosiap.net.br/pmredencaodaserra/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Redenção da Serra </a> </div>
+          <div class="li"> <a href="https://pmroseira.geosiap.net.br:8443/pmroseira/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Roseira </a> </div>
+          <div class="li"> <a href="https://pmsalesopolis.geosiap.net.br/pmsalesopolis/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Salesópolis </a> </div>
+          <div class="li"> <a href="https://pmsantabranca.geosiap.net.br/pmsantabranca/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Santa Branca </a> </div>
+          <div class="li"> <a href="https://pmbananal.geosiap.net.br/pmbananal/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Bananal </a> </div>
+          <div class="li"> <a href="https://pmsilveiras.geosiap.net.br:8443/pmsilveiras/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Silveiras </a> </div>
+          <div class="paginas">
+            <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
+            <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+            <button (click)="pag(3)" class="pag" [class.active]> 3 </button>
+          </div>
+        </div>
+        <div class="content" *ngIf="currentPage === 3">
+          <div class="est"> São Paulo </div>
+          <div class="li"> <a href="https://lagoinha.geosiap.net.br/lagoinha/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Lagoinha </a> </div>
+          <div class="li"> <a href="https://pmaparecida.geosiap.net.br/pmaparecida/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Aparecida </a> </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="li2">  </div>
+          <div class="paginas">
+            <button (click)="pag(1)" class="pag" [class.active]> 1 </button>
+            <button (click)="pag(2)" class="pag" [class.active]> 2 </button>
+            <button (click)="pag(3)" class="pag" [class.active]> 3 </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco-2">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> Rio de Janeiro </div>
+           <div class="li"> <a href="https://pmbarradopirai.geosiap.net.br/pmbarradopirai/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Barra do Piraí </a> </div>
+           <div class="li"> <a href="https://pmjaperi.geosiap.net.br/pmjaperi/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Japeri </a> </div>
+           <div class="li"> <a href="https://pmnilopolis.geosiap.net.br/pmnilopolis/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Nilópolis </a> </div>
+           <div class="li"> <a href="https://sistema.pmsg.rj.gov.br/pmsaogoncalo/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> São Gonçalo </a> </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bloco-3">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> Minas Gerais </div>
+          <div class="li"> <a href="https://pmitamonte.geosiap.net.br/pmitamonte/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Itamonte </a> </div>
+          <div class="li"> <a href="https://pmpousoalto.geosiap.net.br:8443/pmpousoalto/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" target="_blank"> Pouso Alto </a> </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
