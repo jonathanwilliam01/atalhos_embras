@@ -1,4 +1,43 @@
 <app-header (componentSelected)="setComponent($event)"></app-header>
+
+<div class="welcome-box" *ngIf="!currentComponent">
+  <div class="welcome-content">
+    <img class="welcome-logo" src="assets/Logo_(white).png" alt="Embras">
+    <h1 class="welcome-title">Atalhos Embras</h1>
+    <p class="welcome-desc">
+      Acesso rápido aos sistemas utilizados pelas equipes da Embras.
+    </p>
+    <div class="welcome-hint">
+      <i class="fa-solid fa-hand-pointer"></i>
+      <span>Selecione uma opção no menu lateral para visualizar os links</span>
+    </div>
+    <div class="welcome-tags">
+      <span class="tag"><i class="fa-solid fa-globe"></i> GoGlobal</span>
+      <span class="tag"><i class="fa-solid fa-building-columns"></i> E-Gov</span>
+      <span class="tag"><i class="fa-solid fa-user"></i> Config</span>
+      <span class="tag"><i class="fa-solid fa-sliders"></i> Setup</span>
+      <span class="tag"><i class="fa-solid fa-users"></i> Pessoas</span>
+      <span class="tag"><i class="fa-solid fa-link"></i> Links Úteis</span>
+      <span class="tag"><i class="fa-solid fa-server"></i> Infraestrutura</span>
+      <span class="tag"><i class="fa-solid fa-file"></i> GCC</span>
+      <span class="tag"><i class="fa-solid fa-boxes-stacked"></i> Suprimentos</span>
+      <span class="tag"><i class="fa-solid fa-magnifying-glass-dollar"></i> Transparência</span>
+    </div>
+    <div class="welcome-sugestoes">
+      <i class="fa-solid fa-envelope"></i>
+      <div class="sugestoes-texto">
+        <span>Para sugestões de novos links ou melhorias, entre em contato:</span>
+        <span class="email-row">
+          <span class="email-text">Jonathan.willian&#64;embras.net</span>
+          <button class="copy-btn" (click)="copyEmail()" [title]="copied ? 'Copiado!' : 'Copiar e-mail'">
+            <i class="fa-solid" [class.fa-copy]="!copied" [class.fa-check]="copied"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <ng-container *ngIf="currentComponent === 'GoGlobal'">
   <app-goglobal></app-goglobal>
 </ng-container>

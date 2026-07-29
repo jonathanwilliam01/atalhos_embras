@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GoGlobalComponent } from './goglobal/goglobal.component';
 import { ItemService } from './item.service';
@@ -31,11 +31,19 @@ import { TransparenciaEgovComponent } from './transparencia-egov/transparencia-e
   providers: [ItemService]
 })
 export class AppComponent {
-  title= 'atalhos'
+  title = 'atalhos';
 
-currentComponent: string = '';
+  currentComponent: string = '';
+  copied = false;
 
   setComponent(componentName: string) {
     this.currentComponent = componentName;
+  }
+
+  copyEmail() {
+    navigator.clipboard.writeText('Jonathan.willian@embras.net').then(() => {
+      this.copied = true;
+      setTimeout(() => this.copied = false, 2000);
+    });
   }
 }
