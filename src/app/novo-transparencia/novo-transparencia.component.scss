@@ -52,23 +52,23 @@
   background-image: url('/assets/pexels-photo-3044565.avif');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 80%;
+  background-position: 60%;
 }
 
 
 .bloco-2{
   flex: 1;
   margin-right: 30px;
-  background-image: url('/assets/raphael-nogueira-CErddu-JwKw-unsplash.jpg');
+  background-image: url('/assets/luis-diego-aguilar-DEnsSdJHVkk-unsplash.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50%;
+  background-position: 70%;
 }
 
 .bloco-3{
   flex:1;
   margin-right: 0px;
-  background-image: url('/assets/pexels-photo-16210103.avif');
+  background-image: url('/assets/andre-antonelli-R2xICK7sS2U-unsplash.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 100%;
@@ -167,7 +167,7 @@ a{
   .bloco-1,
   .bloco-2,
   .bloco-3 {
-    font-size: 22px; 
+    font-size: 22px;
   }
 }
 
@@ -176,4 +176,3 @@ a{
     font-size: 26px;
   }
 }
-

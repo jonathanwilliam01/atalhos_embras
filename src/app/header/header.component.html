@@ -33,7 +33,14 @@
     <li class="bot" [class.active]="selectedComponent === 'infra'" (click)="selectComponent('infra')"> <i class="fa-solid fa-server" style="margin-right: 15px; font-size: 18px;"></i> Infraestrutura </li>
     <li class="bot" [class.active]="selectedComponent === 'gcc'" (click)="selectComponent('gcc')"> <i class="fa-solid fa-file-text" style="margin-right: 20px; font-size: 18px;"></i> GCC </li>
     <li class="bot" [class.active]="selectedComponent === 'suprimentos'" (click)="selectComponent('suprimentos')"> <i class="fa-solid fa-boxes-stacked" style="margin-right: 15px; font-size: 18px;"></i> Suprimentos </li>
-    <li class="bot" [class.active]="selectedComponent === 'portal-transparencia'" (click)="selectComponent('portal-transparencia')"> <i class="fa-solid fa-magnifying-glass-dollar" style="margin-right: 15px; font-size: 18px;"></i> Transparência </li>
+    <li class="bot has-submenu" [class.open]="openSubmenu === 'transparencia'" (click)="toggleSubmenu('transparencia', $event)">
+      <i class="fa-solid fa-magnifying-glass-dollar" style="margin-right: 15px; font-size: 18px;"></i> Transparência
+      <i class="fa-solid fa-chevron-down submenu-caret"></i>
+    </li>
+    <ul class="submenu" [class.open]="openSubmenu === 'transparencia'">
+      <li (click)="$event.stopPropagation(); selectComponent('portal-transparencia', 'transparencia')" [class.active]="selectedComponent === 'portal-transparencia'"> Transparência </li>
+      <li (click)="$event.stopPropagation(); selectComponent('novo-transparencia', 'transparencia')" [class.active]="selectedComponent === 'novo-transparencia'"> Novo Transparência </li>
+    </ul>
     <li class="bot" [class.active]="selectedComponent === 'adm-web'" (click)="selectComponent('adm-web')"> <i class="fa-solid fa-desktop" style="margin-right: 15px; font-size: 18px;"></i> ADM-Web </li>
   </div>
     <p class="versao"> V2.26.07.04 </p>

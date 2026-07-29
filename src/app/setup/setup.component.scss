@@ -1,8 +1,8 @@
 .container{
-  margin-left: 19%;
+  margin-left: 21%;
   background-color: rgb(41, 49, 53);
   border-radius: 7px;
-  width: 78%;
+  width: 76%;
   height: 97%;
   top: 9px;
   position: absolute;
@@ -49,9 +49,10 @@
 .bloco-1{
   flex: 1;
   margin-right: 30px;
-  background-image: url('/assets/photo-1572894234976-d961418c709d.avif');
+  background-image: url('/assets/joao-tzanno-jv_84by5ARA-unsplash.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 80%;
 }
 
 
@@ -175,7 +176,7 @@ a{
   .bloco-1,
   .bloco-2,
   .bloco-3 {
-    font-size: 22px; 
+    font-size: 22px;
   }
 }
 

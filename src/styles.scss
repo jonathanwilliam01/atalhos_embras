@@ -13,6 +13,8 @@ html, body {
    On desktop the content is absolutely positioned over it as before. */
 html {
   min-height: 100%;
+  height: 100%;
+  overflow: hidden;
   background-image: url('/assets/download.png');
   background-position: center;
   background-size: cover;
@@ -22,6 +24,8 @@ html {
 
 body {
   min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Component hosts must behave as blocks so the mobile flow layout
@@ -48,6 +52,12 @@ app-saiba-mais {
    (they all share the same class names). !important is required to
    win over Angular's scoped component styles. */
 @media (max-width: 900px) {
+
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
+    overflow-y: auto !important;
+  }
 
   /* Content card: from an absolutely-positioned desktop panel to a
      normal flowing, full-width, scrollable block below the top bar. */
