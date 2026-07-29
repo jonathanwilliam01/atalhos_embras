@@ -17,6 +17,7 @@ import { GccComponent } from './gcc/gcc.component';
 import { SuprimentosComponent } from './suprimentos/suprimentos.component';
 import { PortalTransparenciaComponent } from './portal-transparencia/portal-transparencia.component';
 import { TransparenciaEgovComponent } from './transparencia-egov/transparencia-egov.component';
+import { AdmWebComponent } from './adm-web/adm-web.component';
 
 
 @Component({
@@ -24,7 +25,7 @@ import { TransparenciaEgovComponent } from './transparencia-egov/transparencia-e
   standalone: true,
   imports: [CommonModule, GoGlobalComponent, HeaderComponent, EgovComponent,
     EgovDevComponent, InterfacesComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, InfraComponent, SaibaMaisComponent, SetupComponent, PessoasComponent,
-    GccComponent, SuprimentosComponent, PortalTransparenciaComponent, TransparenciaEgovComponent
+    GccComponent, SuprimentosComponent, PortalTransparenciaComponent, TransparenciaEgovComponent, AdmWebComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

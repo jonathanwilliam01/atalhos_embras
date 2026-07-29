@@ -19,9 +19,10 @@
       <span class="tag"><i class="fa-solid fa-users"></i> Pessoas</span>
       <span class="tag"><i class="fa-solid fa-link"></i> Links Úteis</span>
       <span class="tag"><i class="fa-solid fa-server"></i> Infraestrutura</span>
-      <span class="tag"><i class="fa-solid fa-file"></i> GCC</span>
+      <span class="tag"><i class="fa-solid fa-file-text"></i> GCC</span>
       <span class="tag"><i class="fa-solid fa-boxes-stacked"></i> Suprimentos</span>
       <span class="tag"><i class="fa-solid fa-magnifying-glass-dollar"></i> Transparência</span>
+      <span class="tag"><i class="fa-solid fa-desktop"></i> ADM-Web</span>
     </div>
     <div class="welcome-sugestoes">
       <i class="fa-solid fa-envelope"></i>
@@ -96,4 +97,8 @@
 
 <ng-container *ngIf="currentComponent === 'transparencia-egov'">
   <app-transparencia-egov></app-transparencia-egov>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'adm-web'">
+  <app-adm-web></app-adm-web>
 </ng-container>
