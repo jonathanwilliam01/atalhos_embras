@@ -43,7 +43,7 @@
     </ul>
     <li class="bot" [class.active]="selectedComponent === 'adm-web'" (click)="selectComponent('adm-web')"> <i class="fa-solid fa-desktop" style="margin-right: 15px; font-size: 18px;"></i> ADM-Web </li>
   </div>
-    <p class="versao"> V2.26.07.05 </p>
+    <p class="versao" (click)="abrirNotasVersao($event)" title="Ver notas de versão"> {{ versaoAtual }} </p>
     <p class="sobre" (click)="selectComponent('SaibaMais')"> Saiba Mais </p>
     <p class="creditos"> Criado por Jonathan William </p>
 </div>

@@ -1,0 +1,23 @@
+<div class="notas-backdrop" *ngIf="visible" (click)="fechar()">
+  <div class="notas-modal" (click)="$event.stopPropagation()">
+    <div class="notas-header">
+      <h2><i class="fa-solid fa-clock-rotate-left"></i> Notas de Versão</h2>
+      <button class="notas-close" (click)="fechar()" aria-label="Fechar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="notas-body">
+      <div class="notas-item" *ngFor="let item of versoes">
+        <div class="notas-item-header" [class.open]="expandedVersao === item.versao" (click)="toggle(item.versao)">
+          <span class="notas-item-versao">{{ item.versao }}</span>
+          <span class="notas-item-data">{{ item.data }}</span>
+          <i class="fa-solid fa-chevron-down notas-item-caret"></i>
+        </div>
+        <ul class="notas-item-desc" [class.open]="expandedVersao === item.versao">
+          <li *ngFor="let linha of item.descricao">{{ linha }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

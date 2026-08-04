@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import notasVersaoData from '../notas-versao/notas_versao.json';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +12,19 @@ import { CommonModule } from '@angular/common';
 
 export class HeaderComponent {
   @Output() componentSelected = new EventEmitter<string>();
+  @Output() verNotasVersao = new EventEmitter<void>();
   selectedComponent: string = ''; // Adicione esta propriedade
   openSubmenu: string | null = null;
   menuOpen = false; // controla o drawer no mobile
 
+  versaoAtual = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao))[0]?.versao ?? '';
+
   constructor(private elementRef: ElementRef) {}
+
+  abrirNotasVersao(event: Event) {
+    event.stopPropagation();
+    this.verNotasVersao.emit();
+  }
 
   selectComponent(componentName: string, group: string | null = null) {
     this.selectedComponent = componentName; // Define o componente selecionado

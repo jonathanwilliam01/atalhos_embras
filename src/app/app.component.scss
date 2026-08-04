@@ -59,6 +59,38 @@
   i { font-size: 1.1rem; flex-shrink: 0; }
 }
 
+.welcome-notas-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgb(84, 210, 210), rgb(50, 150, 150));
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: rgb(22, 30, 33);
+  font-size: 0.82rem;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(74, 194, 194, 0.4);
+  transition: all 0.2s ease;
+
+  i { color: rgb(22, 30, 33); }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(74, 194, 194, 0.55);
+  }
+}
+
+.welcome-notas-btn-versao {
+  background-color: rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  padding: 2px 8px;
+  color: rgb(22, 30, 33);
+  font-size: 0.72rem;
+}
+
 .welcome-tags {
   display: flex;
   flex-wrap: wrap;

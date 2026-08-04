@@ -225,6 +225,12 @@ a{
   color: rgb(130, 142, 150);
   font-size: 0.8vw;
   margin-top: 2px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.versao:hover{
+  color: rgb(74, 194, 194);
 }
 
 .sobre{

@@ -1,0 +1,23 @@
+{
+  "versoes": [
+    {
+      "versao": "V2.26.07.02",
+      "data": "28/07/2026",
+      "descricao": [
+        "Ajustado as aba do E-Gov para agrupar em submenu as opções relacionadas",
+        "Criado a aba de transparência dentro do menu do E-gov, trazendo os links das prefeituras que possuem portal da transparencia no E-Gov",
+        "Criado a aba do GCC com os links das prefeituras que usam este sistema",
+        "Criado a aba do SUPWEB com os links das prefeituras que usam este sistema",
+        "Criado a aba do Porta da Transparência com os links das prefeituras que usam este sistema",
+        "Ajustado a responsividade do sistema possibilitando a visualização em celular"
+      ]
+    },
+    {
+      "versao": "V2.26.08.01",
+      "data": "04/08/2026",
+      "descricao": [
+        "Criado a tela de notas de versão."
+      ]
+    }
+  ]
+}

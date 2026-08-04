@@ -19,6 +19,8 @@ import { PortalTransparenciaComponent } from './portal-transparencia/portal-tran
 import { TransparenciaEgovComponent } from './transparencia-egov/transparencia-egov.component';
 import { AdmWebComponent } from './adm-web/adm-web.component';
 import { NovoTransparenciaComponent } from './novo-transparencia/novo-transparencia.component';
+import { NotasVersaoComponent } from './notas-versao/notas-versao.component';
+import notasVersaoData from './notas-versao/notas_versao.json';
 
 
 @Component({
@@ -26,7 +28,7 @@ import { NovoTransparenciaComponent } from './novo-transparencia/novo-transparen
   standalone: true,
   imports: [CommonModule, GoGlobalComponent, HeaderComponent, EgovComponent,
     EgovDevComponent, InterfacesComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, InfraComponent, SaibaMaisComponent, SetupComponent, PessoasComponent,
-    GccComponent, SuprimentosComponent, PortalTransparenciaComponent, TransparenciaEgovComponent, AdmWebComponent, NovoTransparenciaComponent
+    GccComponent, SuprimentosComponent, PortalTransparenciaComponent, TransparenciaEgovComponent, AdmWebComponent, NovoTransparenciaComponent, NotasVersaoComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -37,9 +39,19 @@ export class AppComponent {
 
   currentComponent: string = '';
   copied = false;
+  notasVersaoVisivel = false;
+  versaoAtual = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao))[0]?.versao ?? '';
 
   setComponent(componentName: string) {
     this.currentComponent = componentName;
+  }
+
+  abrirNotasVersao() {
+    this.notasVersaoVisivel = true;
+  }
+
+  fecharNotasVersao() {
+    this.notasVersaoVisivel = false;
   }
 
   copyEmail() {
