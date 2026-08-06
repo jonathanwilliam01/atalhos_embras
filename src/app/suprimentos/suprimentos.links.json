@@ -1,0 +1,56 @@
+{
+  "sistema": "Suprimentos",
+  "titulo": "Suprimentos",
+  "imagens": [
+    "/assets/photo-1572894234976-d961418c709d.avif",
+    "/assets/photo-1626568941852-70bc179e493e.avif",
+    "/assets/pexels-photo-16210103.avif"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/suprimentos" },
+        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/suprimentos" },
+        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/suprimentos" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/suprimentos" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/suprimentos" },
+        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/suprimentos" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/suprimentos" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/suprimentos" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/suprimentos" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/suprimentos" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/suprimentos" },
+        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/suprimentos" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/suprimentos" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/suprimentos" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/suprimentos" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/suprimentos" },
+        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/suprimentos" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/suprimentos" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/suprimentos" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/suprimentos" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/suprimentos" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/suprimentos" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/suprimentos" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/suprimentos" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/suprimentos" },
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/suprimentos" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/suprimentos" },
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/suprimentos" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/suprimentos" },
+        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/suprimentos" }
+      ]
+    }
+  ]
+}

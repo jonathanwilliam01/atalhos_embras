@@ -1,4 +1,4 @@
-<app-header (componentSelected)="setComponent($event)" (verNotasVersao)="abrirNotasVersao()"></app-header>
+<app-header (componentSelected)="setComponent($event)" (verNotasVersao)="abrirNotasVersao()" (pesquisar)="buscar($event)"></app-header>
 
 <app-notas-versao [visible]="notasVersaoVisivel" (close)="fecharNotasVersao()"></app-notas-versao>
 
@@ -32,6 +32,28 @@
     </div>
   </div>
 </div>
+
+<ng-container *ngIf="currentComponent === 'busca'">
+  <div class="busca-resultados">
+    <div class="titulo"> Resultados para "{{ termoBusca }}" </div>
+
+    <div class="busca-lista" *ngIf="resultadosBusca && resultadosBusca.length">
+      <a class="busca-item" *ngFor="let r of resultadosBusca" [href]="r.url" target="_blank">
+        <span class="busca-item-principal">
+          <span class="busca-item-cliente"> {{ r.sistema }} - {{ r.cliente }} </span>
+          <button class="busca-item-copy" (click)="copiarLink(r.url, $event)" [title]="linkCopiado === r.url ? 'Copiado!' : 'Copiar link'">
+            <i class="fa-solid" [class.fa-copy]="linkCopiado !== r.url" [class.fa-check]="linkCopiado === r.url"></i>
+          </button>
+        </span>
+        <span class="busca-item-meta"> {{ r.local }} </span>
+      </a>
+    </div>
+
+    <div class="busca-vazio" *ngIf="!resultadosBusca || !resultadosBusca.length">
+      Nenhum resultado encontrado.
+    </div>
+  </div>
+</ng-container>
 
 <ng-container *ngIf="currentComponent === 'GoGlobal'">
   <app-goglobal></app-goglobal>

@@ -1,19 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SistemaLinksComponent } from '../shared/sistema-links/sistema-links.component';
+import dados from './transparencia-egov.links.json';
 
 @Component({
   selector: 'app-transparencia-egov',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './transparencia-egov.component.html',
-  styleUrl: './transparencia-egov.component.scss'
+  imports: [SistemaLinksComponent],
+  templateUrl: './transparencia-egov.component.html'
 })
 export class TransparenciaEgovComponent {
-  currentComponent = 'transparencia-egov';
-
-  currentPage: number = 1;
-
-  pag(page: number): void {
-    this.currentPage = page;
-}
+  dados = dados;
 }

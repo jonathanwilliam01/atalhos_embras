@@ -10,6 +10,102 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.busca-resultados {
+  margin-left: 21%;
+  background-color: rgb(41, 49, 53);
+  border-radius: 7px;
+  width: 76%;
+  height: 97%;
+  top: 9px;
+  position: absolute;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-shadow: 4px 3px 15px 0px black;
+  border: 1px solid rgb(80, 80, 80);
+  box-sizing: border-box;
+  padding: 90px 2% 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(80, 80, 80) transparent;
+
+  .titulo {
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    font-size: 30px;
+    color: aliceblue;
+    font-weight: bold;
+  }
+}
+
+.busca-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.busca-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background-color: rgb(55, 65, 71);
+  border: 1px solid rgb(80, 90, 96);
+  color: rgb(233, 233, 233);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.busca-item:hover {
+  background-color: rgb(74, 89, 97);
+  color: rgb(74, 194, 194);
+  transform: translateX(5px);
+}
+
+.busca-item-principal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.busca-item-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid rgb(80, 90, 96);
+  background-color: rgba(255, 255, 255, 0.04);
+  color: rgb(150, 160, 166);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.busca-item-copy:hover {
+  color: rgb(74, 194, 194);
+  border-color: rgba(74, 194, 194, 0.5);
+  background-color: rgba(74, 194, 194, 0.12);
+}
+
+.busca-item-cliente {
+  font-weight: bold;
+}
+
+.busca-item-meta {
+  color: rgb(150, 160, 166);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.busca-vazio {
+  color: rgb(180, 190, 196);
+  font-size: 1rem;
+}
+
 .welcome-content {
   display: flex;
   flex-direction: column;
@@ -203,4 +299,22 @@
   .tag { font-size: 0.78rem; padding: 4px 10px; }
 
   .welcome-sugestoes { font-size: 0.84rem; padding: 10px 14px; }
+
+  .busca-resultados {
+    position: fixed;
+    margin-left: 0;
+    left: 0;
+    top: 56px;
+    width: 100%;
+    height: calc(100vh - 56px);
+    height: calc(100dvh - 56px);
+    border-radius: 0;
+    padding: 85px 4% 20px;
+  }
+
+  .busca-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
 }

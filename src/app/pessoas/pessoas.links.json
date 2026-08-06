@@ -1,0 +1,54 @@
+{
+  "sistema": "Pessoas",
+  "titulo": "Cadastro de Pessoas",
+  "imagens": [
+    "/assets/pexels-photo-15384280.avif",
+    "/assets/landscape-rio-de-janeiro-surrounded-by-sea-blue-sky-brazil.jpg",
+    "/assets/nathalia-segato-KiS0X-J65jw-unsplash.jpg"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/pessoas/" },
+        { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/pessoas/" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pessoas/" },
+        { "cliente": "Cachoeira Paulista", "url": "https://cachoeirapaulista.geosiap.net.br/pessoas/" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pessoas/" },
+        { "cliente": "Salesopolis", "url": "https://pmsalesopolis.geosiap.net.br/pessoas/" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pessoas/" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/pessoas/" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pessoas/" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pessoas" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/pessoas" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/pessoas" },
+        { "cliente": "Pompeia", "url": "https://siap.pompeia.sp.gov.br/pessoas" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/pessoas" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/pessoas/" },
+        { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/pessoas/" },
+        { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/pessoas/" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/pessoas/" },
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pessoas/" },
+        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/pessoas/" },
+        { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/pessoas/" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pessoas/" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/pessoas/" },
+        { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/pessoas/" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/pessoas/" },
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pessoas/" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/pessoas/" },
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/pessoas/" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "sistema": "Infraestrutura",
+  "titulo": "Infraestrutura",
+  "imagens": [
+    "/assets/4eeaef9977d18d9d7ec3ab9cd0384559.jpg",
+    "/assets/pexels-photo-3648269.avif",
+    "/assets/pexels-photo-12795930.avif"
+  ],
+  "grupos": [
+    {
+      "nome": "User GoGlobal",
+      "itens": [
+        { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/createuser/menu.html" },
+        { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Bara do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Mangaratiba", "url": "https://pmmangaratiba.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Fraco da Rocha", "url": "https://pmfrancodarocha.geosiap.net.br/createuser/login.php" }
+      ]
+    },
+    {
+      "nome": "Geosiap Setup",
+      "itens": [
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/geosiap-setup/login" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/geosiap-setup/login" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/geosiap-setup/login" },
+        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/geosiap-setup/login" }
+      ]
+    },
+    {
+      "nome": "Links diversos",
+      "itens": [
+        { "cliente": "JWT.IO", "url": "https://jwt.io/" },
+        { "cliente": "Bancos Geosiap", "url": "http://172.16.80.62/bancos_pg.php?tab=bancos" },
+        { "cliente": "Logs Local", "url": "http://172.16.80.62:12345/logs" },
+        { "cliente": "Tunel Bancos", "url": "http://172.16.80.62/tunnel.php" }
+      ]
+    }
+  ]
+}

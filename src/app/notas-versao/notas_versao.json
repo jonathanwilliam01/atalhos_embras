@@ -18,6 +18,15 @@
       "descricao": [
         "Criado a tela de notas de versão."
       ]
+    },
+    {
+      "versao": "V3.26.08.01",
+      "data": "05/08/2026",
+      "descricao": [
+        "Adicionado mecanismo de pesquisa de links no menu lateral",
+        "Adicionado busca por cliente, sistema e estado exibindo na seção de conteudo os resultados da busca.",
+        "Implementado opção de copiar link dos resultados da busca e também dos links do menu lateral."
+      ]
     }
   ]
 }

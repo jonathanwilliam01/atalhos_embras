@@ -1,0 +1,46 @@
+{
+  "sistema": "Novo Transparência",
+  "titulo": "Transparência",
+  "imagens": [
+    "/assets/pexels-photo-3044565.avif",
+    "/assets/luis-diego-aguilar-DEnsSdJHVkk-unsplash.jpg",
+    "/assets/andre-antonelli-R2xICK7sS2U-unsplash.jpg"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/transparencia" },
+        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/transparencia" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/transparencia" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/transparencia" },
+        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/transparencia" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/transparencia" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/transparencia" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/transparencia" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/transparencia" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/transparencia" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/transparencia" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/transparencia" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/transparencia" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/transparencia" },
+        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/transparencia" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/transparencia" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/transparencia" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/transparencia" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/transparencia" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/transparencia" }
+      ]
+    }
+  ]
+}

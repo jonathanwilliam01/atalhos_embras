@@ -1,19 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SistemaLinksComponent } from '../shared/sistema-links/sistema-links.component';
+import dados from './login-novo.links.json';
 
 @Component({
   selector: 'app-login-novo',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './login-novo.component.html',
-  styleUrl: './login-novo.component.scss'
+  imports: [SistemaLinksComponent],
+  templateUrl: './login-novo.component.html'
 })
 export class LoginNovoComponent {
-  currentComponent = 'login-novo';
-
-  currentPage: number = 1;
-
-  pag(page: number): void {
-    this.currentPage = page;
-}
+  dados = dados;
 }

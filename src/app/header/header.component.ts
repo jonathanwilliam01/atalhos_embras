@@ -13,6 +13,7 @@ import notasVersaoData from '../notas-versao/notas_versao.json';
 export class HeaderComponent {
   @Output() componentSelected = new EventEmitter<string>();
   @Output() verNotasVersao = new EventEmitter<void>();
+  @Output() pesquisar = new EventEmitter<string>();
   selectedComponent: string = ''; // Adicione esta propriedade
   openSubmenu: string | null = null;
   menuOpen = false; // controla o drawer no mobile
@@ -31,6 +32,14 @@ export class HeaderComponent {
     this.componentSelected.emit(componentName);
     this.openSubmenu = group;
     this.menuOpen = false; // fecha o drawer ao escolher uma opção (mobile)
+  }
+
+  buscar(termo: string) {
+    if (termo.trim()) {
+      this.selectedComponent = '';
+      this.openSubmenu = null;
+    }
+    this.pesquisar.emit(termo);
   }
 
   toggleSubmenu(name: string, event: Event) {

@@ -1,19 +1,13 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { SistemaLinksComponent } from '../shared/sistema-links/sistema-links.component';
+import dados from './goglobal.links.json';
 
 @Component({
   selector: 'app-goglobal',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './goglobal.component.html',
-  styleUrls: ['./goglobal.component.scss']
+  imports: [SistemaLinksComponent],
+  templateUrl: './goglobal.component.html'
 })
 export class GoGlobalComponent {
-  currentComponent = 'GoGlobal';
-  
-  currentPage: number = 1;
-
-  pag(page: number): void {
-    this.currentPage = page;
-}
+  dados = dados;
 }

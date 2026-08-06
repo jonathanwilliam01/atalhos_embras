@@ -1,0 +1,48 @@
+{
+  "sistema": "Links Uteis",
+  "titulo": "Links Uteis",
+  "imagens": [
+    "/assets/photo-1562240020-ce31ccb0fa7d.avif",
+    "/assets/photo-1522252234503-e356532cafd5.avif",
+    "/assets/coding-background-avcywmlgtr48wj7s.webp"
+  ],
+  "grupos": [
+    {
+      "nome": "Documentos",
+      "itens": [
+        { "cliente": "Cheat Sheet", "url": "https://docs.google.com/spreadsheets/d/1L1x8ciR39cm7Gy1FK3GqPam9p7SmWAoroaqxdwSgqac/edit#gid=0" },
+        { "cliente": "Contatos Clientes", "url": "https://docs.google.com/spreadsheets/d/1BOOO4ETpJ4fXcVJOxQ5RN54Vy7N8R4lBFI6cHq6y47c/edit?gid=267894435#gid=267894435" }
+      ]
+    },
+    {
+      "nome": "Links",
+      "itens": [
+        { "cliente": "SOS - Legado", "url": "https://sos-legado.embras.net/index.php" },
+        { "cliente": "GeoSiap - EAD", "url": "https://geosiap.eadplataforma.app/" },
+        { "cliente": "Geração de N° de série", "url": "https://numeroserie-beta.geosiap.net/#/login" },
+        { "cliente": "Github - Geosiap Suporte", "url": "https://github.com/orgs/geosiap-suporte/teams/suporte" },
+        { "cliente": "Wiki Embras", "url": "http://wiki.embras.net/login" },
+        { "cliente": "TiFlux", "url": "https://demandas.embras.net/v/" },
+        { "cliente": "Tunel Bancos", "url": "http://172.16.80.62/tunnel.php" },
+        { "cliente": "Consulta Parametros", "url": "http://172.16.80.62/doc/" },
+        { "cliente": "Config Contas Local", "url": "https://dev.geosiap.net/contas/login" },
+        { "cliente": "JWT.IO", "url": "https://jwt.io/" },
+        { "cliente": "Bancos atualização", "url": "http://172.16.80.62/index.php?tab=bancos" },
+        { "cliente": "Logs local", "url": "http://172.16.80.62:12345/logs" },
+        { "cliente": "Geosiap Setup", "url": "https://dev.geosiap.net/geosiap-setup/login" },
+        { "cliente": "CORE Local", "url": "https://dev.geosiap.net/core/entrar" },
+        { "cliente": "EXEs Pessoas", "url": "http://dl.embras.net/dlpessoas/index.php" }
+      ]
+    },
+    {
+      "nome": "Adicionais",
+      "itens": [
+        { "cliente": "Bancos GoGlobal", "url": "https://demandas.embras.net/v/knowledge/11353/25447" },
+        { "cliente": "Historico de Versões", "url": "https://demandas.embras.net/v/knowledge_folder/11608" },
+        { "cliente": "Conhecimentos Tiflux", "url": "https://demandas.embras.net/v/knowledge_folders" },
+        { "cliente": "Atalhos Tributário", "url": "https://projeto-tributario.vercel.app/" },
+        { "cliente": "CAUC", "url": "https://siconfi.tesouro.gov.br/siconfi/pages/public/sti/iframe_sti.jsf" }
+      ]
+    }
+  ]
+}

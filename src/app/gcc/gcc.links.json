@@ -1,0 +1,51 @@
+{
+  "sistema": "GCC",
+  "titulo": "GCC - Gestão de Contratos e Convênios",
+  "imagens": [
+    "/assets/pexels-photo-15384280.avif",
+    "/assets/pexels-photo-7768028.jpg",
+    "/assets/pexels-photo-12795930.avif"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/gcc-web" },
+        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/gcc-web" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/gcc-web" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/gcc-web" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/gcc-web" },
+        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/gcc-web" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/gcc-web" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/gcc-web" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/gcc-web" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/gcc-web" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/gcc-web" },
+        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/gcc-web" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/gcc-web" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/gcc-web" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/gcc-web" },
+        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/gcc-web" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br/gcc-web" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/gcc-web" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/gcc-web" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/gcc-web" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/gcc-web" },
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/gcc-web" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/gcc-web" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/gcc-web" },
+        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br/gcc-web" }
+      ]
+    }
+  ]
+}

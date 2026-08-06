@@ -1,0 +1,56 @@
+{
+  "sistema": "Portal da Transparência",
+  "titulo": "Portal da Transparência",
+  "imagens": [
+    "/assets/pexels-photo-3044565.avif",
+    "/assets/luis-diego-aguilar-DEnsSdJHVkk-unsplash.jpg",
+    "/assets/andre-antonelli-R2xICK7sS2U-unsplash.jpg"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/portal-transparencia/home" },
+        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/portal-transparencia/home" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/portal-transparencia/home" },
+        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/portal-transparencia/home" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/portal-transparencia/home" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/portal-transparencia/home" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/portal-transparencia/home" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/portal-transparencia/home" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/portal-transparencia/home" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/portal-transparencia/home" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/portal-transparencia/home" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/portal-transparencia/home" },
+        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/portal-transparencia/home" }
+      ]
+    }
+  ]
+}

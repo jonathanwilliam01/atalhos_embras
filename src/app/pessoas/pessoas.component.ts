@@ -1,19 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SistemaLinksComponent } from '../shared/sistema-links/sistema-links.component';
+import dados from './pessoas.links.json';
 
 @Component({
   selector: 'app-pessoas',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './pessoas.component.html',
-  styleUrl: './pessoas.component.scss'
+  imports: [SistemaLinksComponent],
+  templateUrl: './pessoas.component.html'
 })
 export class PessoasComponent {
-  currentComponent = 'pessoas';
-
-  currentPage: number = 1;
-
-  pag(page: number): void {
-    this.currentPage = page;
-}
+  dados = dados;
 }

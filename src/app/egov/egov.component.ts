@@ -1,19 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SistemaLinksComponent } from '../shared/sistema-links/sistema-links.component';
+import dados from './egov.links.json';
 
 @Component({
   selector: 'app-egov',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './egov.component.html',
-  styleUrl: './egov.component.scss'
+  imports: [SistemaLinksComponent],
+  templateUrl: './egov.component.html'
 })
 export class EgovComponent {
-  currentComponent = 'egov';
-
-  currentPage: number = 1;
-
-  pag(page: number): void {
-    this.currentPage = page;
-}
+  dados = dados;
 }

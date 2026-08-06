@@ -1,0 +1,56 @@
+{
+  "sistema": "E-Gov Homolog.",
+  "titulo": "Serviços Online Homologação",
+  "imagens": [
+    "/assets/pexels-photo-15384280.avif",
+    "/assets/pexels-photo-7768028.jpg",
+    "/assets/wp4201740.jpg"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://dev.geosiap.net/pmpinda/websis/siapegov/portal/index.php" },
+        { "cliente": "Caraguatatuba", "url": "https://dev.geosiap.net/pmcaraguatatuba/websis/siapegov/portal/index.php" },
+        { "cliente": "Guararema", "url": "https://dev.geosiap.net/pmguararema/websis/siapegov/portal/index.php" },
+        { "cliente": "Guaratinguetá", "url": "https://dev.geosiap.net/pmguaratingueta/websis/siapegov/portal/" },
+        { "cliente": "Jacarei", "url": "https://dev.geosiap.net/pmjacarei/websis/siapegov/portal/index.php" },
+        { "cliente": "Cachoeira Paulista", "url": "https://dev.geosiap.net/pmcachoeirapaulista/websis/siapegov/portal/index.php" },
+        { "cliente": "Lorena", "url": "https://dev.geosiap.net/pmlorena/websis/siapegov/portal/index.php" },
+        { "cliente": "São Vicente", "url": "https://dev.geosiap.net/pmsaovicente/websis/siapegov/portal/index.php" },
+        { "cliente": "Biritiba Mirim", "url": "https://dev.geosiap.net/pmbiritibamirim/websis/siapegov/portal/index.php" },
+        { "cliente": "Cruzeiro", "url": "https://dev.geosiap.net/pmcruzeiro/websis/siapegov/portal/index.php" },
+        { "cliente": "Lavrinhas", "url": "https://dev.geosiap.net/pmlavrinhas/websis/siapegov/portal/index.php" },
+        { "cliente": "Canas", "url": "https://dev.geosiap.net/pmcanas/websis/siapegov/portal/" },
+        { "cliente": "Pedro de Toledo", "url": "http://dev.geosiap.net/pmpedrotoledo/websis/siapegov/portal/index.php" },
+        { "cliente": "Arapei", "url": "https://dev.geosiap.net/pmarapei/websis/siapegov/portal/index.php" },
+        { "cliente": "Pompéia", "url": "https://dev.geosiap.net/pmpompeia/websis/siapegov/portal/index.php" },
+        { "cliente": "Queluz", "url": "https://dev.geosiap.net/pmqueluz/websis/siapegov/portal/index.php" },
+        { "cliente": "Redenção da Serra", "url": "https://dev.geosiap.net/pmredencaodaserra/websis/siapegov/portal/index.php" },
+        { "cliente": "Roseira", "url": "https://dev.geosiap.net/pmroseira/websis/siapegov/portal/index.php" },
+        { "cliente": "Salesópolis", "url": "https://dev.geosiap.net/pmsalesopolis/websis/siapegov/portal/" },
+        { "cliente": "Santa Branca", "url": "https://dev.geosiap.net/pmsantabranca/websis/siapegov/portal/index.php" },
+        { "cliente": "Bananal", "url": "https://dev.geosiap.net/pmbananal/websis/siapegov/portal/index.php" },
+        { "cliente": "Silveiras", "url": "" },
+        { "cliente": "Lagoinha", "url": "https://dev.geosiap.net/lagoinha/websis/siapegov/portal/index.php" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "https://dev.geosiap.net/pmbarradopirai/websis/siapegov/portal/index.php" },
+        { "cliente": "Japeri", "url": "https://dev.geosiap.net/pmjaperi/websis/siapegov/portal/index.php" },
+        { "cliente": "Nilópolis", "url": "https://dev.geosiap.net/pmnilopolis/websis/siapegov/portal/index.php" },
+        { "cliente": "São Gonçalo", "url": "https://dev.geosiap.net/pmsaogoncalo/websis/siapegov/portal/index.php" },
+        { "cliente": "São Gonçalo Homolog.", "url": "https://homolog-embras.pmsg.rj.gov.br/pmsaogoncalo/websis/siapegov/portal/index.php" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://dev.geosiap.net/pmitamonte/websis/siapegov/portal/index.php" },
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.mg.gov.br/aviso-servicos-online-temporariamente-fora-do-ar/" }
+      ]
+    }
+  ]
+}

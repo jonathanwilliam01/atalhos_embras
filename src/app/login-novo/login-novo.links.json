@@ -1,0 +1,54 @@
+{
+  "sistema": "Config Login Novo",
+  "titulo": "Config Login Novo",
+  "imagens": [
+    "/assets/photo-1531097842074-4a80589a7d07.jpeg",
+    "/assets/photo-1544989164-31dc3c645987.avif",
+    "/assets/istockphoto-1351677112-2048x2048.jpg"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.jacarei.sp.gov.br%2Fconfig" },
+        { "cliente": "Pompeia", "url": "https://siap.pompeia.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.pompeia.sp.gov.br%2Fconfig" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/contas/login?returnUrl=https:%2F%2Fpmsilveiras.geosiap.net.br:8080%2Fconfig" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmbananal.geosiap.net.br%2Fconfig" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmqueluz.geosiap.net.br%2Fconfig" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/contas/login?returnUrl=https:%2F%2Fpmroseira.geosiap.net.br:8443%2Fconfig" },
+        { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/contas/login?returnUrl=https:%2F%2Farapei.geosiap.net.br%2Fconfig" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmbiritibamirim.geosiap.net.br%2Fconfig" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmsalesopolis.geosiap.net.br%2Fconfig" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmlavrinhas.geosiap.net.br%2Fconfig" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmsantabranca.geosiap.net.br%2Fconfig" },
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiapegov.pindamonhangaba.sp.gov.br%2Fconfig" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmcruzeiro.geosiap.net.br%2Fconfig" },
+        { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fredencaodaserra.geosiap.net.br%2Fconfig" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.lorena.sp.gov.br%2Fconfig" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/contas/login?returnUrl=https:%2F%2Fpedrotoledo.geosiap.net.br:8843%2Fconfig" },
+        { "cliente": "Cachoeira Paulista", "url": "https://cachoeirapaulista.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fcachoeirapaulista.geosiap.net.br%2Fconfig" },
+        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmcanas.geosiap.net.br%2Fconfig" },
+        { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fguaratingueta.geosiap.net.br%2Fconfig" },
+        { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fcaraguatatuba.geosiap.net.br%2Fconfig" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/config/" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/config/" },
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/config/" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/config" },
+        { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/config/" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/config/" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/contas/login?returnUrl=https:%2F%2Fpmpousoalto.geosiap.net.br:8443%2Fconfig" },
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmitamonte.geosiap.net.br%2Fconfig" }
+      ]
+    }
+  ]
+}

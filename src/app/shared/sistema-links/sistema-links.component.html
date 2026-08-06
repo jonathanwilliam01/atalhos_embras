@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="titulo"> {{ titulo }} </div>
+
+  <div class="blocos">
+    <div class="bloco" *ngFor="let grupo of grupos; let i = index"
+         [style.background-image]="imagemDoGrupo(i) ? 'url(' + imagemDoGrupo(i) + ')' : null">
+      <div class="overlay">
+        <div class="content">
+          <div class="est"> {{ grupo.nome }} </div>
+
+          <div class="li" *ngFor="let item of itensDaPagina(grupo, i)">
+            <a [href]="item.url" target="_blank"> {{ item.cliente }} </a>
+            <button class="li-copy" (click)="copiarLink(item.url, $event)" [title]="linkCopiado === item.url ? 'Copiado!' : 'Copiar link'">
+              <i class="fa-solid" [class.fa-copy]="linkCopiado !== item.url" [class.fa-check]="linkCopiado === item.url"></i>
+            </button>
+          </div>
+          <div class="li2" *ngFor="let _ of fillerDaPagina(grupo, i)"></div>
+
+          <div class="paginas" *ngIf="totalPaginas(grupo) > 1">
+            <button *ngFor="let p of paginasDoGrupo(grupo)" class="pag" [class.active]="paginaDoGrupo(i) === p" (click)="irParaPagina(i, p)"> {{ p }} </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

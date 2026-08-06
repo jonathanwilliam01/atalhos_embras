@@ -1,0 +1,51 @@
+{
+  "sistema": "GoGlobal",
+  "titulo": "Atalhos GoGlobal",
+  "imagens": [
+    "/assets/4eeaef9977d18d9d7ec3ab9cd0384559.jpg",
+    "/assets/c5d950bbb0a9410e5bfcb7e97ffeee2e.jpg",
+    "/assets/wp4201740.jpg"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Arapei", "url": "https://painel-arapei.geosiap.net.br/" },
+        { "cliente": "Biritiba Mirim", "url": "http://painel-biritibamirim.geosiap.net.br/" },
+        { "cliente": "Caraguatatuba", "url": "https://painel-pmcaraguatatuba.geosiap.net.br/" },
+        { "cliente": "Cruzeiro", "url": "https://painel-pmcruzeiro.geosiap.net.br/" },
+        { "cliente": "Guararema", "url": "https://painel-guararema.geosiap.net.br/" },
+        { "cliente": "Guaratingueta", "url": "https://painel-pmguaratingueta.geosiap.net.br/" },
+        { "cliente": "Jacarei", "url": "https://painel-pmjacarei.geosiap.net.br/" },
+        { "cliente": "Lavrinhas", "url": "http://painel-lavrinhas.geosiap.net.br/" },
+        { "cliente": "Pindamonhangaba", "url": "https://painel-pindamonhangaba.geosiap.net.br/" },
+        { "cliente": "Santa Branca", "url": "https://painel-santabranca.geosiap.net.br/" },
+        { "cliente": "Salesopolis", "url": "https://painel-salesopolis.geosiap.net.br/" },
+        { "cliente": "São Vicente", "url": "http://painel-pmsaovicente.geosiap.net.br/" },
+        { "cliente": "Aparecida", "url": "https://painel-aparecida.geosiap.net.br/" },
+        { "cliente": "Cachoeira P.", "url": "https://painel-cachoeirapaulista.geosiap.net.br/" },
+        { "cliente": "Lagoinha", "url": "https://painel-lagoinha.geosiap.net.br/" },
+        { "cliente": "Franco da Rocha", "url": "https://painel-pmfrancodarocha.geosiap.net.br/" },
+        { "cliente": "Caragua Homolog.", "url": "https://painel-caraguatatuba-homologacao.geosiap.net.br/" },
+        { "cliente": "Silveiras", "url": "https://painel-silveiras.geosiap.net.br/" },
+        { "cliente": "Santa Genebra", "url": "https://painel-santagenebra.geosiap.net.br/" },
+        { "cliente": "Imodernizar", "url": "https://painel-imodernizar.geosiap.net.br/" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "http://painel-pmbarradopirai.geosiap.net.br/" },
+        { "cliente": "Japeri", "url": "https://painel-japeri.geosiap.net.br" },
+        { "cliente": "Nilópolis", "url": "https://painel-pmnilopolis.geosiap.net.br/" },
+        { "cliente": "São Gonçalo", "url": "https://cloud.pmsg.rj.gov.br/#/client/ODIAYwBteXNxbA" },
+        { "cliente": "Mangaratiba", "url": "https://painel-mangaratiba.geosiap.net.br/" },
+        { "cliente": "Nova Iguaçu", "url": "https://painel-pmnovaiguacu.geosiap.net.br/" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": []
+    }
+  ]
+}

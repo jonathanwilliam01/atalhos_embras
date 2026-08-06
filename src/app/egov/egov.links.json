@@ -1,0 +1,55 @@
+{
+  "sistema": "E-Gov",
+  "titulo": "E-Gov - Serviços Online",
+  "imagens": [
+    "/assets/pexels-photo-3044565.avif",
+    "/assets/pexels-photo-3648269.avif",
+    "/assets/pexels-photo-16210103.avif"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/websis/siapegov/portal/index.php" },
+        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/pmcaraguatatuba/websis/siapegov/portal/index.php" },
+        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/pmguararema/websis/siapegov/portal/index.php" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/pmguaratingueta/websis/siapegov/portal/" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pmjacarei/websis/siapegov/portal/index.php" },
+        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/websis/siapegov/portal/index.php" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/pmlorena/websis/siapegov/portal/index.php" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/pmsaovicente/websis/siapegov/portal/index.php" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/siapegov/portal/index.php" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/websis/siapegov/portal/index.php" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/siapegov/portal/index.php" },
+        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/pmcanas/websis/siapegov/portal/" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/pmpedrotoledo/websis/siapegov/portal/index.php" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/pmarapei/websis/siapegov/portal/index.php" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/websis/siapegov/portal/index.php" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/pmqueluz/websis/siapegov/portal/index.php" },
+        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/pmredencaodaserra/websis/siapegov/portal/index.php" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/pmroseira/websis/siapegov/portal/index.php" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/pmsalesopolis/websis/siapegov/portal/" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pmsantabranca/websis/siapegov/portal/index.php" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/websis/siapegov/portal/index.php" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/pmsilveiras/websis/siapegov/portal/" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/portal/index.php" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/pmbarradopirai/websis/siapegov/portal/index.php" },
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/pmjaperi/websis/siapegov/portal/index.php" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/pmnilopolis/websis/siapegov/portal/index.php" },
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pmsaogoncalo/websis/siapegov/portal/index.php" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/pmitamonte/websis/siapegov/portal/index.php" },
+        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/pmpousoalto/websis/siapegov/portal/index.php" }
+      ]
+    }
+  ]
+}

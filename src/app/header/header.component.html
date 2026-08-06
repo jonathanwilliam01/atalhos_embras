@@ -13,8 +13,12 @@
     <img src="assets/Logo_(white).png">
     </a>
   </div>
+  <div class="bot-tit"> Atalhos Embras </div>
+  <div class="busca">
+    <i class="fa-solid fa-magnifying-glass busca-icon"></i>
+    <input #buscaInput type="text" class="busca-input" placeholder="Buscar links" (keyup.enter)="buscar(buscaInput.value)">
+  </div>
   <div class="menu">
-    <li class="bot-tit"> Atalhos Embras </li>
     <li class="bot" [class.active]="selectedComponent === 'GoGlobal'" (click)="selectComponent('GoGlobal')"> <i class="fa-solid fa-globe" style="margin-right: 15px; font-size: 18px;"></i> GoGlobal </li>
     <li class="bot has-submenu" [class.open]="openSubmenu === 'egov'" (click)="toggleSubmenu('egov', $event)">
       <i class="fa-solid fa-building-columns" style="margin-right: 15px; font-size: 18px;"></i> E-Gov

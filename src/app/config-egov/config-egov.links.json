@@ -1,0 +1,54 @@
+{
+  "sistema": "Config E-Gov",
+  "titulo": "Config Serviços Online",
+  "imagens": [
+    "/assets/4eeaef9977d18d9d7ec3ab9cd0384559.jpg",
+    "/assets/pexels-photo-3648269.avif",
+    "/assets/pexels-photo-12795930.avif"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/websis/config/login.php" },
+        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/pmcaraguatatuba/websis/config/login.php" },
+        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/pmguararema/websis/config/login.php" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/pmguaratingueta/websis/config/login.php" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pmjacarei/websis/config/login.php" },
+        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/websis/config/login.php" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/pmlorena/websis/config/login.php" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/pmsaovicente/websis/config/login.php" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/config/login.php" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/websis/config/login.php" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/config/login.php" },
+        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/pmcanas/websis/config/login.php" },
+        { "cliente": "Pedro de Toledo", "url": "http://pmpedrotoledo.geosiap.net.br/pmpedrotoledo/websis/config/login.php" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/pmarapei/websis/config/login.php" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/websis/config/login.php" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/pmqueluz/websis/config/login.php" },
+        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/pmredencaodaserra/websis/config/login.php" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/pmroseira/websis/config/login.php" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/pmsalesopolis/websis/config/login.php" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pmsantabranca/websis/config/login.php" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/websis/config/login.php" },
+        { "cliente": "Silveiras", "url": "" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/pmbarradopirai/websis/config/login.php" },
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/pmjaperi/websis/config/login.php" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/pmnilopolis/websis/config/login.php" },
+        { "cliente": "São Gonçalo", "url": "https://servidor.pmsg.rj.gov.br/pmsaogoncalo/websis/config/login.php" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/pmitamonte/websis/config/login.php" },
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.mg.gov.br/aviso-servicos-online-temporariamente-fora-do-ar/" }
+      ]
+    }
+  ]
+}

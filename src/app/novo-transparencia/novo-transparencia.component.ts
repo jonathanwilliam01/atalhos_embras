@@ -1,19 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { SistemaLinksComponent } from '../shared/sistema-links/sistema-links.component';
+import dados from './novo-transparencia.links.json';
 
 @Component({
   selector: 'app-novo-transparencia',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './novo-transparencia.component.html',
-  styleUrl: './novo-transparencia.component.scss'
+  imports: [SistemaLinksComponent],
+  templateUrl: './novo-transparencia.component.html'
 })
 export class NovoTransparenciaComponent {
-  currentComponent = 'novo-transparencia';
-
-  currentPage: number = 1;
-
-  pag(page: number): void {
-    this.currentPage = page;
-  }
+  dados = dados;
 }

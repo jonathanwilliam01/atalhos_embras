@@ -21,6 +21,7 @@ import { AdmWebComponent } from './adm-web/adm-web.component';
 import { NovoTransparenciaComponent } from './novo-transparencia/novo-transparencia.component';
 import { NotasVersaoComponent } from './notas-versao/notas-versao.component';
 import notasVersaoData from './notas-versao/notas_versao.json';
+import { SearchService, ResultadoBusca } from './search/search.service';
 
 
 @Component({
@@ -42,8 +43,36 @@ export class AppComponent {
   notasVersaoVisivel = false;
   versaoAtual = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao))[0]?.versao ?? '';
 
+  termoBusca = '';
+  resultadosBusca: ResultadoBusca[] | null = null;
+  linkCopiado: string | null = null;
+
+  constructor(private searchService: SearchService) {}
+
   setComponent(componentName: string) {
+    this.resultadosBusca = null;
     this.currentComponent = componentName;
+  }
+
+  buscar(termo: string) {
+    const query = termo.trim();
+    if (!query) {
+      this.resultadosBusca = null;
+      this.currentComponent = '';
+      return;
+    }
+    this.termoBusca = query;
+    this.resultadosBusca = this.searchService.buscar(query);
+    this.currentComponent = 'busca';
+  }
+
+  copiarLink(url: string, event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+    navigator.clipboard.writeText(url).then(() => {
+      this.linkCopiado = url;
+      setTimeout(() => this.linkCopiado = null, 2000);
+    });
   }
 
   abrirNotasVersao() {

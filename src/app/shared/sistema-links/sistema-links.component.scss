@@ -1,0 +1,239 @@
+.container{
+  margin-left: 21%;
+  background-color: rgb(41, 49, 53);
+  border-radius: 7px;
+  width: 76%;
+  height: 97%;
+  top: 9px;
+  position: absolute;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-shadow: 4px 3px 15px 0px black;
+  border: 1px solid rgb(80, 80, 80);
+}
+
+.titulo{
+  position: absolute;
+  top: 3%;
+  font-size: 30px;
+  margin-left: 2%;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+@media (max-width: 1366px) {
+  .titulo { font-size: 26px; }
+}
+
+.blocos{
+  position: absolute;
+  display: flex;
+  margin-left: 2%;
+  width: 96%;
+  height: 88%;
+  top: 10%;
+  float: left;
+  justify-content: center;
+}
+
+.bloco{
+  position: relative;
+  font-size: 27px;
+  color: aliceblue;
+  border-radius: 7px;
+  border: 1px solid rgb(116, 115, 115);
+  background-color: rgb(118, 119, 119);
+  width: 25%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  box-shadow: 4px 3px 10px 0px black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.bloco:not(:last-child){
+  margin-right: 30px;
+}
+
+a{
+  text-decoration-line: none;
+  color: inherit;
+  margin-left: 3%;
+}
+
+.li a, .li2 a{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.est{
+  margin-left: 3%;
+  margin-top: 2%;
+  font-size: 110%;
+  width: 200px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: left;
+}
+
+.li, .li2{
+  margin-left: 8%;
+  margin-top: 3.8%;
+  width: 85%;
+  min-height: 4.3vh;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.li:hover{
+  background-color: rgba(150, 148, 148, 0.753);
+  color: rgb(0, 0, 0);
+  transform: translateX(5px);
+}
+
+.li:hover .li-copy,
+.li-copy:focus-visible{
+  opacity: 1;
+}
+
+.li-copy{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0;
+  width: 22px;
+  height: 22px;
+  margin-right: 4%;
+  border-radius: 5px;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.li-copy:hover{
+  background: rgba(74, 194, 194, 0.35);
+  color: rgb(74, 194, 194);
+}
+
+.paginas{
+  margin-top: 5%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 6%;
+}
+
+.pag{
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 1px solid;
+  width: 6%;
+  height: 60%;
+  background-color: rgba(240, 248, 255, 0.527);
+  cursor: pointer;
+}
+
+.pag:hover{
+  background-color: rgba(255, 255, 255, 0.89);
+  transition: all 0.3s ease;
+}
+
+.pag.active{
+  background-color: rgb(74, 194, 194);
+  border-color: rgb(74, 194, 194);
+}
+
+@media (max-width: 1366px) {
+  .bloco { font-size: 22px; }
+  .paginas { margin-top: 4%; }
+  .pag { width: 6%; height: 70%; }
+}
+
+@media (max-width: 900px) {
+  .container {
+    position: fixed;
+    margin-left: 0;
+    left: 0;
+    top: 56px;
+    width: 100%;
+    height: calc(100vh - 56px);
+    height: calc(100dvh - 56px);
+    border-radius: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(80, 80, 80) transparent;
+  }
+
+  .titulo {
+    position: static;
+    margin: 0 0 16px 4%;
+    font-size: 22px;
+  }
+
+  .blocos {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    top: auto;
+    padding: 0 4% 24px;
+    gap: 16px;
+  }
+
+  .bloco {
+    width: 100%;
+    min-height: 260px;
+    font-size: 18px;
+  }
+
+  .bloco:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .overlay {
+    opacity: 1;
+  }
+
+  .li-copy {
+    opacity: 1;
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+  }
+}
