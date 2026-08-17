@@ -84,7 +84,7 @@ export class AppComponent {
   }
 
   copyEmail() {
-    navigator.clipboard.writeText('Jonathan.willian@embras.net').then(() => {
+    navigator.clipboard.writeText('jonathan.willian@embras.net').then(() => {
       this.copied = true;
       setTimeout(() => this.copied = false, 2000);
     });
