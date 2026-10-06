@@ -1,10 +1,10 @@
 {
-  "sistema": "Config Login Novo",
-  "titulo": "Config Login Novo",
+  "sistema": "Config Contas",
+  "titulo": "Config Contas",
   "imagens": [
-    "/assets/photo-1531097842074-4a80589a7d07.jpeg",
+    "/assets/photo-1531097842074-4a80589a7d07.webp",
     "/assets/photo-1544989164-31dc3c645987.avif",
-    "/assets/istockphoto-1351677112-2048x2048.jpg"
+    "/assets/istockphoto-1351677112-2048x2048.webp"
   ],
   "grupos": [
     {
@@ -47,7 +47,7 @@
     {
       "nome": "Minas Gerais",
       "itens": [
-        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/contas/login?returnUrl=https:%2F%2Fpmpousoalto.geosiap.net.br:8443%2Fconfig" },
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/config/" },
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmitamonte.geosiap.net.br%2Fconfig" }
       ]
     }

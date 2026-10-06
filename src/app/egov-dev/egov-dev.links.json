@@ -3,8 +3,8 @@
   "titulo": "Serviços Online Homologação",
   "imagens": [
     "/assets/pexels-photo-15384280.avif",
-    "/assets/pexels-photo-7768028.jpg",
-    "/assets/wp4201740.jpg"
+    "/assets/pexels-photo-7768028.webp",
+    "/assets/wp4201740.webp"
   ],
   "grupos": [
     {
@@ -17,7 +17,7 @@
         { "cliente": "Jacarei", "url": "https://dev.geosiap.net/pmjacarei/websis/siapegov/portal/index.php" },
         { "cliente": "Cachoeira Paulista", "url": "https://dev.geosiap.net/pmcachoeirapaulista/websis/siapegov/portal/index.php" },
         { "cliente": "Lorena", "url": "https://dev.geosiap.net/pmlorena/websis/siapegov/portal/index.php" },
-        { "cliente": "São Vicente", "url": "https://dev.geosiap.net/pmsaovicente/websis/siapegov/portal/index.php" },
+        { "cliente": "São Vicente", "url": "https://dev.geosiap.net/pmsaovicente/websis/siapegov/portal/index.php", "inativo": true },
         { "cliente": "Biritiba Mirim", "url": "https://dev.geosiap.net/pmbiritibamirim/websis/siapegov/portal/index.php" },
         { "cliente": "Cruzeiro", "url": "https://dev.geosiap.net/pmcruzeiro/websis/siapegov/portal/index.php" },
         { "cliente": "Lavrinhas", "url": "https://dev.geosiap.net/pmlavrinhas/websis/siapegov/portal/index.php" },

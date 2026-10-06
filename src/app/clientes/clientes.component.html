@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="topo">
+    <div class="titulo"> Clientes </div>
+    <div class="filtro">
+      <i class="fa-solid fa-filter"></i>
+      <input #filtro type="text" placeholder="Filtrar por cliente ou estado" (input)="filtrar(filtro.value)">
+    </div>
+  </div>
+
+  <div class="grade">
+    <div class="cliente" *ngFor="let c of clientes">
+      <div class="cliente-topo">
+        <span class="cliente-nome"> {{ c.cliente }} </span>
+        <span class="estado"> {{ c.estado }} </span>
+      </div>
+      <div class="chips">
+        <a class="chip" *ngFor="let l of c.itens" [href]="l.url" target="_blank" [class.homolog]="l.homolog" [title]="l.url">
+          {{ l.nomeSistema }}{{ l.homolog ? ' Homolog.' : '' }}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="vazio" *ngIf="!clientes.length"> Nenhum cliente encontrado. </div>
+</div>

@@ -58,6 +58,8 @@
 .notas-body {
   overflow-y: auto;
   padding: 14px 18px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(80, 90, 96) transparent;
 }
 
 .notas-item {
@@ -133,9 +135,33 @@
 }
 
 .notas-item-desc.open {
-  max-height: 400px;
+  max-height: 240px;
   opacity: 1;
   padding: 8px 16px 12px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(80, 90, 96) transparent;
+}
+
+.notas-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 20px;
+  border-top: 1px solid rgb(70, 78, 83);
+}
+
+.notas-ok {
+  border: none;
+  border-radius: 18px;
+  padding: 8px 22px;
+  background: linear-gradient(135deg, rgb(84, 210, 210), rgb(50, 150, 150));
+  color: rgb(22, 30, 33);
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+
+  &:hover { box-shadow: 0 3px 10px rgba(74, 194, 194, 0.45); }
 }
 
 @media (max-width: 600px) {

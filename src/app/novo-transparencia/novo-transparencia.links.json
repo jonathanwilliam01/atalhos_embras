@@ -3,8 +3,8 @@
   "titulo": "Transparência",
   "imagens": [
     "/assets/pexels-photo-3044565.avif",
-    "/assets/luis-diego-aguilar-DEnsSdJHVkk-unsplash.jpg",
-    "/assets/andre-antonelli-R2xICK7sS2U-unsplash.jpg"
+    "/assets/luis-diego-aguilar-DEnsSdJHVkk-unsplash.webp",
+    "/assets/andre-antonelli-R2xICK7sS2U-unsplash.webp"
   ],
   "grupos": [
     {
@@ -16,7 +16,7 @@
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/transparencia" },
         { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/transparencia" },
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/transparencia" },
-        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/transparencia" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/transparencia", "inativo": true },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/transparencia" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/transparencia" },
         { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/transparencia" },

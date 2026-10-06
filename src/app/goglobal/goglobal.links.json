@@ -3,8 +3,8 @@
   "titulo": "Atalhos GoGlobal",
   "imagens": [
     "/assets/4eeaef9977d18d9d7ec3ab9cd0384559.jpg",
-    "/assets/c5d950bbb0a9410e5bfcb7e97ffeee2e.jpg",
-    "/assets/wp4201740.jpg"
+    "/assets/c5d950bbb0a9410e5bfcb7e97ffeee2e.webp",
+    "/assets/wp4201740.webp"
   ],
   "grupos": [
     {
@@ -21,12 +21,12 @@
         { "cliente": "Pindamonhangaba", "url": "https://painel-pindamonhangaba.geosiap.net.br/" },
         { "cliente": "Santa Branca", "url": "https://painel-santabranca.geosiap.net.br/" },
         { "cliente": "Salesopolis", "url": "https://painel-salesopolis.geosiap.net.br/" },
-        { "cliente": "São Vicente", "url": "http://painel-pmsaovicente.geosiap.net.br/" },
+        { "cliente": "São Vicente", "url": "http://painel-pmsaovicente.geosiap.net.br/", "inativo": true },
         { "cliente": "Aparecida", "url": "https://painel-aparecida.geosiap.net.br/" },
-        { "cliente": "Cachoeira P.", "url": "https://painel-cachoeirapaulista.geosiap.net.br/" },
+        { "cliente": "Cachoeira Paulista", "url": "https://painel-cachoeirapaulista.geosiap.net.br/" },
         { "cliente": "Lagoinha", "url": "https://painel-lagoinha.geosiap.net.br/" },
         { "cliente": "Franco da Rocha", "url": "https://painel-pmfrancodarocha.geosiap.net.br/" },
-        { "cliente": "Caragua Homolog.", "url": "https://painel-caraguatatuba-homologacao.geosiap.net.br/" },
+        { "cliente": "Caraguatatuba Homolog.", "url": "https://painel-caraguatatuba-homologacao.geosiap.net.br/" },
         { "cliente": "Silveiras", "url": "https://painel-silveiras.geosiap.net.br/" },
         { "cliente": "Santa Genebra", "url": "https://painel-santagenebra.geosiap.net.br/" },
         { "cliente": "Imodernizar", "url": "https://painel-imodernizar.geosiap.net.br/" }
@@ -45,7 +45,9 @@
     },
     {
       "nome": "Minas Gerais",
-      "itens": []
+      "itens": [
+        { "cliente": "Pouso Alto", "url": "https://painel-pousoalto.geosiap.net.br/" }
+      ]
     }
   ]
 }

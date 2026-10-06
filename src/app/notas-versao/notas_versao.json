@@ -37,6 +37,26 @@
         "Adicionado link para Guararema no Config Login Novo.",
         "Adicionado link para Guararema no ADM-Web, GCC e Novo Transparência."
       ]
+    },
+    {
+      "versao": "V3.26.10.02",
+      "data": "06/10/2026",
+      "descricao": [
+        "Criada a tela de Clientes, reunindo em um só lugar todos os links de cada município.",
+        "A busca agora mostra os resultados enquanto digita, agrupados por cliente e indicando os links de homologação.",
+        "Adicionado o atalho Ctrl+K para abrir a busca.",
+        "Renomeado o menu Config Login Novo para Config Contas.",
+        "Atualizados os links de Pouso Alto no E-Gov, Config E-Gov, Config Contas e Pessoas, e adicionado o link no GoGlobal.",
+        "Removido São Vicente dos links.",
+        "Corrigida a paginação das listas, que sumia em algumas telas no Firefox.",
+        "As notas de versão passam a abrir automaticamente quando houver novidades.",
+        "Otimizadas as imagens, deixando as telas bem mais rápidas para abrir.",
+        "Itens marcados como Não Utilizado passam a ser apenas informativos, sem abrir nova aba.",
+        "Criada a opção ATEN no menu, com os links de todos os clientes do E-Gov.",
+        "Adicionados Favoritos e Recentes na tela inicial: clique na estrela ao lado de um link para fixá-lo.",
+        "Listas de clientes em ordem alfabética e com rolagem no lugar da paginação.",
+        "Agora é possível instalar o Atalhos como aplicativo pelo botão Instalar app no menu (Chrome e Edge)."
+      ]
     }
   ]
 }

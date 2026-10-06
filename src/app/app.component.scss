@@ -5,8 +5,9 @@
   top: 9px;
   position: absolute;
   display: flex;
-  align-items: center;
+  align-items: safe center;
   justify-content: center;
+  overflow-y: auto;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -22,19 +23,64 @@
   box-shadow: 4px 3px 15px 0px black;
   border: 1px solid rgb(80, 80, 80);
   box-sizing: border-box;
-  padding: 90px 2% 20px;
+  padding: 0 2% 20px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgb(80, 80, 80) transparent;
 
   .titulo {
-    position: absolute;
-    top: 3%;
-    left: 2%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 24px 0 16px;
+    background-color: rgb(41, 49, 53);
     font-size: 30px;
     color: aliceblue;
     font-weight: bold;
   }
+}
+
+.busca-total {
+  color: rgb(150, 160, 166);
+  font-size: 0.95rem;
+  font-weight: normal;
+}
+
+.busca-grupo + .busca-grupo {
+  margin-top: 22px;
+}
+
+.busca-grupo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px 2px;
+  color: rgb(74, 194, 194);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.estado {
+  padding: 1px 8px;
+  border-radius: 10px;
+  border: 1px solid rgb(80, 90, 96);
+  color: rgb(150, 160, 166);
+  font-size: 0.72rem;
+  font-weight: bold;
+}
+
+.badge-homolog {
+  padding: 2px 8px;
+  border-radius: 10px;
+  background-color: rgba(240, 173, 78, 0.15);
+  border: 1px solid rgba(240, 173, 78, 0.6);
+  color: rgb(240, 173, 78);
+  font-size: 0.72rem;
+  font-weight: bold;
+  flex-shrink: 0;
 }
 
 .busca-lista {
@@ -98,7 +144,10 @@
 .busca-item-meta {
   color: rgb(150, 160, 166);
   font-size: 0.85rem;
-  flex-shrink: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .busca-vazio {
@@ -187,14 +236,6 @@
   font-size: 0.72rem;
 }
 
-.welcome-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 4px;
-}
-
 .welcome-sugestoes {
   display: flex;
   flex-direction: column;
@@ -246,20 +287,6 @@
   &:hover { color: rgb(74, 194, 194); background-color: rgba(74, 194, 194, 0.12); }
 }
 
-.tag {
-  background-color: rgb(55, 65, 71);
-  border: 1px solid rgb(80, 90, 96);
-  border-radius: 20px;
-  padding: 5px 14px;
-  color: rgb(180, 190, 196);
-  font-size: 0.82rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
-  i { color: rgb(74, 194, 194); font-size: 0.78rem; }
-}
-
 @media (max-width: 900px) {
   .welcome-box {
     position: fixed;
@@ -294,10 +321,6 @@
     padding: 10px 14px;
   }
 
-  .welcome-tags { gap: 6px; margin-top: 0; }
-
-  .tag { font-size: 0.78rem; padding: 4px 10px; }
-
   .welcome-sugestoes { font-size: 0.84rem; padding: 10px 14px; }
 
   .busca-resultados {
@@ -309,7 +332,14 @@
     height: calc(100vh - 56px);
     height: calc(100dvh - 56px);
     border-radius: 0;
-    padding: 85px 4% 20px;
+    padding: 0 4% 20px;
+
+    .titulo {
+      flex-wrap: wrap;
+      gap: 4px 12px;
+      padding: 16px 0 12px;
+      font-size: 22px;
+    }
   }
 
   .busca-item {
@@ -317,4 +347,126 @@
     align-items: flex-start;
     gap: 4px;
   }
+
+  .busca-item-meta { max-width: 100%; }
+}
+
+.welcome-content.com-atalhos {
+  max-width: 820px;
+  width: 80%;
+}
+
+.atalhos-pessoais {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px 18px;
+  width: 100%;
+  text-align: left;
+}
+
+.atalhos-titulo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  color: rgb(74, 194, 194);
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.atalhos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &.expandida {
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(80, 90, 96) transparent;
+  }
+}
+
+.atalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 6px 5px 10px;
+  border-radius: 6px;
+  background-color: rgb(55, 65, 71);
+  border: 1px solid rgb(70, 80, 86);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  &:hover { background-color: rgb(74, 89, 97); }
+}
+
+.atalho-texto {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.atalho-cliente {
+  flex-shrink: 0;
+  color: rgb(233, 233, 233);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.atalho-sistema {
+  color: rgb(150, 160, 166);
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &::before { content: '·'; margin-right: 6px; }
+}
+
+.atalhos-ver-todos {
+  margin-top: 4px;
+  padding: 2px 0;
+  border: none;
+  background: none;
+  color: rgb(74, 194, 194);
+  font-family: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+
+  &:hover { text-decoration: underline; }
+}
+
+.estrela {
+  flex-shrink: 0;
+  border: none;
+  background: none;
+  color: rgb(130, 142, 150);
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
+
+  &:hover, &.ativa { color: rgb(240, 173, 78); }
+}
+
+.busca-item-copy.estrela.ativa {
+  border-color: rgba(240, 173, 78, 0.5);
+}
+
+.atalhos-dica {
+  color: rgb(150, 160, 166);
+  font-size: 0.82rem;
+
+  i { color: rgb(240, 173, 78); margin-right: 4px; }
+}
+
+@media (max-width: 900px) {
+  .welcome-content.com-atalhos { width: 88%; }
 }
