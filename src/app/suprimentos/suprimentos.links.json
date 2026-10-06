@@ -17,7 +17,7 @@
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/suprimentos" },
         { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/suprimentos" },
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/suprimentos" },
-        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/suprimentos" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/suprimentos", "inativo": true },
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/suprimentos" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/suprimentos" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/suprimentos" },

@@ -8,16 +8,22 @@
         <div class="content">
           <div class="est"> {{ grupo.nome }} </div>
 
-          <div class="li" *ngFor="let item of itensDaPagina(grupo, i)">
-            <a [href]="item.url" target="_blank"> {{ item.cliente }} </a>
-            <button class="li-copy" (click)="copiarLink(item.url, $event)" [title]="linkCopiado === item.url ? 'Copiado!' : 'Copiar link'">
-              <i class="fa-solid" [class.fa-copy]="linkCopiado !== item.url" [class.fa-check]="linkCopiado === item.url"></i>
-            </button>
-          </div>
-          <div class="li2" *ngFor="let _ of fillerDaPagina(grupo, i)"></div>
-
-          <div class="paginas" *ngIf="totalPaginas(grupo) > 1">
-            <button *ngFor="let p of paginasDoGrupo(grupo)" class="pag" [class.active]="paginaDoGrupo(i) === p" (click)="irParaPagina(i, p)"> {{ p }} </button>
+          <div class="itens">
+            <div class="li" *ngFor="let item of grupo.itens" [class.sem-link]="!item.url">
+              <ng-container *ngIf="item.url; else semLink">
+                <a [href]="item.url" target="_blank"> {{ item.cliente }} </a>
+                <span class="li-acoes">
+                  <button class="li-copy li-fav" [class.ativa]="favoritos.isFavorito(item.url)" (click)="favoritos.alternar(item.url, $event)"
+                          [title]="favoritos.isFavorito(item.url) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'">
+                    <i [class]="favoritos.isFavorito(item.url) ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+                  </button>
+                  <button class="li-copy" (click)="copiarLink(item.url, $event)" [title]="linkCopiado === item.url ? 'Copiado!' : 'Copiar link'">
+                    <i class="fa-solid" [class.fa-copy]="linkCopiado !== item.url" [class.fa-check]="linkCopiado === item.url"></i>
+                  </button>
+                </span>
+              </ng-container>
+              <ng-template #semLink><span class="texto"> {{ item.cliente }} </span></ng-template>
+            </div>
           </div>
         </div>
       </div>

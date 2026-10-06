@@ -17,7 +17,7 @@
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pmjacarei/websis/config/login.php" },
         { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/websis/config/login.php" },
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/pmlorena/websis/config/login.php" },
-        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/pmsaovicente/websis/config/login.php" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/pmsaovicente/websis/config/login.php", "inativo": true },
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/config/login.php" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/websis/config/login.php" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/config/login.php" },
@@ -48,7 +48,7 @@
       "nome": "Minas Gerais",
       "itens": [
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/pmitamonte/websis/config/login.php" },
-        { "cliente": "Pouso Alto", "url": "https://pousoalto.mg.gov.br/aviso-servicos-online-temporariamente-fora-do-ar/" }
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/pmpousoalto/websis/config/" }
       ]
     }
   ]

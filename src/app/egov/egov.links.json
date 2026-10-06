@@ -17,7 +17,7 @@
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pmjacarei/websis/siapegov/portal/index.php" },
         { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/websis/siapegov/portal/index.php" },
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/pmlorena/websis/siapegov/portal/index.php" },
-        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/pmsaovicente/websis/siapegov/portal/index.php" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/pmsaovicente/websis/siapegov/portal/index.php", "inativo": true },
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/siapegov/portal/index.php" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/websis/siapegov/portal/index.php" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/siapegov/portal/index.php" },
@@ -48,7 +48,7 @@
       "nome": "Minas Gerais",
       "itens": [
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/pmitamonte/websis/siapegov/portal/index.php" },
-        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/pmpousoalto/websis/siapegov/portal/index.php" }
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/pmpousoalto/websis/siapegov/portal/index.php" }
       ]
     }
   ]

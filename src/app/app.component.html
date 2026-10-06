@@ -3,15 +3,50 @@
 <app-notas-versao [visible]="notasVersaoVisivel" (close)="fecharNotasVersao()"></app-notas-versao>
 
 <div class="welcome-box" *ngIf="!currentComponent">
-  <div class="welcome-content">
+  <div class="welcome-content" [class.com-atalhos]="favoritos.favoritos.length || favoritos.recentes.length">
     <img class="welcome-logo" src="assets/Logo_(white).png" alt="Embras">
     <h1 class="welcome-title">Atalhos Embras</h1>
     <p class="welcome-desc">
       Acesso rápido aos sistemas utilizados pelas equipes da Embras.
     </p>
-    <div class="welcome-hint">
+    <div class="atalhos-pessoais" *ngIf="favoritos.favoritos.length || favoritos.recentes.length">
+      <div class="atalhos-secao" *ngIf="favoritos.favoritos.length">
+        <div class="atalhos-titulo"><i class="fa-solid fa-star"></i> Favoritos</div>
+        <ng-container *ngTemplateOutlet="listaAtalhos; context: { $implicit: verTodosFavoritos ? favoritos.favoritos : favoritos.favoritos.slice(0, 3), todos: verTodosFavoritos }"></ng-container>
+        <button class="atalhos-ver-todos" *ngIf="favoritos.favoritos.length > 3" (click)="verTodosFavoritos = !verTodosFavoritos">
+          {{ verTodosFavoritos ? 'Ver menos' : 'Ver todos (' + favoritos.favoritos.length + ')' }}
+        </button>
+      </div>
+      <div class="atalhos-secao" *ngIf="favoritos.recentes.length">
+        <div class="atalhos-titulo"><i class="fa-solid fa-clock-rotate-left"></i> Recentes</div>
+        <ng-container *ngTemplateOutlet="listaAtalhos; context: { $implicit: verTodosRecentes ? favoritos.recentes : favoritos.recentes.slice(0, 3), todos: verTodosRecentes }"></ng-container>
+        <button class="atalhos-ver-todos" *ngIf="favoritos.recentes.length > 3" (click)="verTodosRecentes = !verTodosRecentes">
+          {{ verTodosRecentes ? 'Ver menos' : 'Ver todos (' + favoritos.recentes.length + ')' }}
+        </button>
+      </div>
+    </div>
+
+    <ng-template #listaAtalhos let-itens let-todos="todos">
+      <div class="atalhos-lista" [class.expandida]="todos">
+        <a class="atalho" *ngFor="let r of itens" [href]="r.url" target="_blank" [title]="r.url">
+          <span class="atalho-texto">
+            <span class="atalho-cliente">{{ r.cliente }}</span>
+            <span class="atalho-sistema">{{ r.sistema }}</span>
+          </span>
+          <button class="estrela" [class.ativa]="favoritos.isFavorito(r.url)" (click)="favoritos.alternar(r.url, $event)"
+                  [title]="favoritos.isFavorito(r.url) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'">
+            <i [class]="favoritos.isFavorito(r.url) ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+          </button>
+        </a>
+      </div>
+    </ng-template>
+
+    <div class="welcome-hint" *ngIf="!favoritos.favoritos.length && !favoritos.recentes.length">
       <i class="fa-solid fa-hand-pointer"></i>
       <span>Selecione uma opção no menu lateral para visualizar os links</span>
+    </div>
+    <div class="atalhos-dica" *ngIf="!favoritos.favoritos.length">
+      <i class="fa-regular fa-star"></i> Clique na estrela ao lado de um link para fixá-lo aqui
     </div>
     <button class="welcome-notas-btn" (click)="abrirNotasVersao()">
       <i class="fa-solid fa-clock-rotate-left"></i>
@@ -35,18 +70,32 @@
 
 <ng-container *ngIf="currentComponent === 'busca'">
   <div class="busca-resultados">
-    <div class="titulo"> Resultados para "{{ termoBusca }}" </div>
+    <div class="titulo">
+      Resultados para "{{ termoBusca }}"
+      <span class="busca-total" *ngIf="totalResultados"> {{ totalResultados }} {{ totalResultados === 1 ? 'link' : 'links' }} </span>
+    </div>
 
-    <div class="busca-lista" *ngIf="resultadosBusca && resultadosBusca.length">
-      <a class="busca-item" *ngFor="let r of resultadosBusca" [href]="r.url" target="_blank">
-        <span class="busca-item-principal">
-          <span class="busca-item-cliente"> {{ r.sistema }} - {{ r.cliente }} </span>
-          <button class="busca-item-copy" (click)="copiarLink(r.url, $event)" [title]="linkCopiado === r.url ? 'Copiado!' : 'Copiar link'">
-            <i class="fa-solid" [class.fa-copy]="linkCopiado !== r.url" [class.fa-check]="linkCopiado === r.url"></i>
-          </button>
-        </span>
-        <span class="busca-item-meta"> {{ r.local }} </span>
-      </a>
+    <div class="busca-grupo" *ngFor="let g of resultadosBusca">
+      <div class="busca-grupo-titulo">
+        {{ g.cliente }}
+        <span class="estado" *ngIf="g.estado"> {{ g.estado }} </span>
+      </div>
+      <div class="busca-lista">
+        <a class="busca-item" *ngFor="let r of g.itens" [href]="r.url" target="_blank">
+          <span class="busca-item-principal">
+            <span class="busca-item-cliente"> {{ r.nomeSistema }} </span>
+            <span class="badge-homolog" *ngIf="r.homolog"> Homolog. </span>
+            <button class="busca-item-copy estrela" [class.ativa]="favoritos.isFavorito(r.url)" (click)="favoritos.alternar(r.url, $event)"
+                    [title]="favoritos.isFavorito(r.url) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'">
+              <i [class]="favoritos.isFavorito(r.url) ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+            </button>
+            <button class="busca-item-copy" (click)="copiarLink(r.url, $event)" [title]="linkCopiado === r.url ? 'Copiado!' : 'Copiar link'">
+              <i class="fa-solid" [class.fa-copy]="linkCopiado !== r.url" [class.fa-check]="linkCopiado === r.url"></i>
+            </button>
+          </span>
+          <span class="busca-item-meta"> {{ r.host }} </span>
+        </a>
+      </div>
     </div>
 
     <div class="busca-vazio" *ngIf="!resultadosBusca || !resultadosBusca.length">
@@ -55,8 +104,16 @@
   </div>
 </ng-container>
 
+<ng-container *ngIf="currentComponent === 'clientes'">
+  <app-clientes></app-clientes>
+</ng-container>
+
 <ng-container *ngIf="currentComponent === 'GoGlobal'">
   <app-goglobal></app-goglobal>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'aten'">
+  <app-aten></app-aten>
 </ng-container>
 
 <ng-container *ngIf="currentComponent === 'egov'">
@@ -69,10 +126,6 @@
 
 <ng-container *ngIf="currentComponent === 'config'">
   <app-config-egov></app-config-egov>
-</ng-container>
-
-<ng-container *ngIf="currentComponent === 'interfaces'">
-  <app-interfaces></app-interfaces>
 </ng-container>
 
 <ng-container *ngIf="currentComponent === 'links'">

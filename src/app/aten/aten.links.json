@@ -1,0 +1,55 @@
+{
+  "sistema": "ATEN",
+  "titulo": "ATEN",
+  "imagens": [
+    "/assets/photo-1572894234976-d961418c709d.avif",
+    "/assets/c5d950bbb0a9410e5bfcb7e97ffeee2e.webp",
+    "/assets/Belo-Horizonte-Minas-Gerais-Brazil-Best-Wallpaper-122007.webp"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/pmcaraguatatuba/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/pmguararema/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/pmguaratingueta/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pmjacarei/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/pmlorena/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/pmsaovicente/websis/siapegov/administrativo/aten/aten_valida.php", "inativo": true },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/pmcanas/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/pmpedrotoledo/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/pmarapei/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/pmqueluz/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/pmredencaodaserra/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/pmroseira/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/pmsalesopolis/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pmsantabranca/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/pmsilveiras/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/pmlagoinha/websis/siapegov/administrativo/aten/aten_valida.php" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/pmbarradopirai/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/pmjaperi/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/pmnilopolis/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pmsaogoncalo/websis/siapegov/administrativo/aten/aten_valida.php" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/pmitamonte/websis/siapegov/administrativo/aten/aten_valida.php" },
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/pmpousoalto/websis/siapegov/administrativo/aten/aten_valida.php" }
+      ]
+    }
+  ]
+}

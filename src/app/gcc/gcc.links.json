@@ -3,7 +3,7 @@
   "titulo": "GCC - Gestão de Contratos e Convênios",
   "imagens": [
     "/assets/pexels-photo-15384280.avif",
-    "/assets/pexels-photo-7768028.jpg",
+    "/assets/pexels-photo-7768028.webp",
     "/assets/pexels-photo-12795930.avif"
   ],
   "grupos": [
@@ -17,7 +17,7 @@
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/gcc-web" },
         { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/gcc-web" },
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/gcc-web" },
-        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/gcc-web" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/gcc-web", "inativo": true },
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/gcc-web" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/gcc-web" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/gcc-web" },

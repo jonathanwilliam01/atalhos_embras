@@ -2,9 +2,9 @@
   "sistema": "ADM-Web",
   "titulo": "Administrativo Web",
   "imagens": [
-    "/assets/photo-1531097842074-4a80589a7d07.jpeg",
+    "/assets/photo-1531097842074-4a80589a7d07.webp",
     "/assets/photo-1626568941852-70bc179e493e.avif",
-    "/assets/Belo-Horizonte-Minas-Gerais-Brazil-Best-Wallpaper-122007.jpg"
+    "/assets/Belo-Horizonte-Minas-Gerais-Brazil-Best-Wallpaper-122007.webp"
   ],
   "grupos": [
     {
@@ -17,7 +17,7 @@
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/administracao" },
         { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/administracao" },
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/administracao" },
-        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/administracao" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/administracao", "inativo": true },
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/administracao" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/administracao" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/administracao" },

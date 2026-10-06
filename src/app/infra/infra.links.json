@@ -14,12 +14,12 @@
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/createuser/login.php" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/createuser/menu.html" },
         { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/createuser/login.php" },
-        { "cliente": "Bara do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/createuser/login.php" },
         { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/createuser/login.php" },
         { "cliente": "Mangaratiba", "url": "https://pmmangaratiba.geosiap.net.br/createuser/login.php" },
         { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/createuser/login.php" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/createuser/login.php" },
-        { "cliente": "Fraco da Rocha", "url": "https://pmfrancodarocha.geosiap.net.br/createuser/login.php" }
+        { "cliente": "Franco da Rocha", "url": "https://pmfrancodarocha.geosiap.net.br/createuser/login.php" }
       ]
     },
     {

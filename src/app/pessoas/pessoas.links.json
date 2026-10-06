@@ -3,8 +3,8 @@
   "titulo": "Cadastro de Pessoas",
   "imagens": [
     "/assets/pexels-photo-15384280.avif",
-    "/assets/landscape-rio-de-janeiro-surrounded-by-sea-blue-sky-brazil.jpg",
-    "/assets/nathalia-segato-KiS0X-J65jw-unsplash.jpg"
+    "/assets/landscape-rio-de-janeiro-surrounded-by-sea-blue-sky-brazil.webp",
+    "/assets/nathalia-segato-KiS0X-J65jw-unsplash.webp"
   ],
   "grupos": [
     {
@@ -46,7 +46,7 @@
     {
       "nome": "Minas Gerais",
       "itens": [
-        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/pessoas/" },
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/pessoas/" },
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/pessoas/" }
       ]
     }

@@ -16,9 +16,11 @@
   <div class="bot-tit"> Atalhos Embras </div>
   <div class="busca">
     <i class="fa-solid fa-magnifying-glass busca-icon"></i>
-    <input #buscaInput type="text" class="busca-input" placeholder="Buscar links" (keyup.enter)="buscar(buscaInput.value)">
+    <input #buscaInput type="text" class="busca-input" placeholder="Buscar links" (input)="buscarAoDigitar(buscaInput.value)" (keyup.enter)="buscar(buscaInput.value); closeMenu()" (keyup.escape)="limparBusca()">
+    <kbd class="busca-atalho" title="Atalho para buscar"> Ctrl K </kbd>
   </div>
   <div class="menu">
+    <li class="bot" [class.active]="selectedComponent === 'clientes'" (click)="selectComponent('clientes')"> <i class="fa-solid fa-city" style="margin-right: 15px; font-size: 18px;"></i> Clientes </li>
     <li class="bot" [class.active]="selectedComponent === 'GoGlobal'" (click)="selectComponent('GoGlobal')"> <i class="fa-solid fa-globe" style="margin-right: 15px; font-size: 18px;"></i> GoGlobal </li>
     <li class="bot has-submenu" [class.open]="openSubmenu === 'egov'" (click)="toggleSubmenu('egov', $event)">
       <i class="fa-solid fa-building-columns" style="margin-right: 15px; font-size: 18px;"></i> E-Gov
@@ -30,7 +32,8 @@
       <li (click)="$event.stopPropagation(); selectComponent('config', 'egov')" [class.active]="selectedComponent === 'config'"> Config E-Gov </li>
       <li (click)="$event.stopPropagation(); selectComponent('transparencia-egov', 'egov')" [class.active]="selectedComponent === 'transparencia-egov'"> Transparência </li>
     </ul>
-    <li class="bot" [class.active]="selectedComponent === 'login-novo'" (click)="selectComponent('login-novo')"> <i class="fa-solid fa-user" style="margin-right: 15px; font-size: 18px;"></i> Config </li>
+    <li class="bot" [class.active]="selectedComponent === 'aten'" (click)="selectComponent('aten')"> <i class="fa-solid fa-clipboard-list" style="margin-right: 15px; font-size: 18px;"></i> ATEN </li>
+    <li class="bot" [class.active]="selectedComponent === 'login-novo'" (click)="selectComponent('login-novo')"> <i class="fa-solid fa-user" style="margin-right: 15px; font-size: 18px;"></i> Config Contas </li>
     <li class="bot" [class.active]="selectedComponent === 'setup'" (click)="selectComponent('setup')"> <i class="fa-solid fa-sliders" style="margin-right: 15px; font-size: 18px;"></i> Setup </li>
     <li class="bot" [class.active]="selectedComponent === 'pessoas'" (click)="selectComponent('pessoas')"> <i class="fa-solid fa-users" style="margin-right: 15px; font-size: 18px;"></i> Pessoas </li>
     <li class="bot" [class.active]="selectedComponent === 'links'" (click)="selectComponent('links')"> <i class="fa-solid fa-link" style="margin-right: 15px; font-size: 18px;"></i> Links Uteis </li>
@@ -47,6 +50,9 @@
     </ul>
     <li class="bot" [class.active]="selectedComponent === 'adm-web'" (click)="selectComponent('adm-web')"> <i class="fa-solid fa-desktop" style="margin-right: 15px; font-size: 18px;"></i> ADM-Web </li>
   </div>
+    <p class="instalar" *ngIf="promptInstalacao" (click)="instalarApp()" title="Instalar como aplicativo">
+      <i class="fa-solid fa-download"></i> Instalar app
+    </p>
     <p class="versao" (click)="abrirNotasVersao($event)" title="Ver notas de versão"> {{ versaoAtual }} </p>
     <p class="sobre" (click)="selectComponent('SaibaMais')"> Saiba Mais </p>
     <p class="creditos"> Criado por Jonathan William </p>
