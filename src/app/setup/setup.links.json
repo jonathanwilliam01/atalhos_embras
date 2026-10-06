@@ -28,7 +28,10 @@
         { "cliente": "Cachoeira Paulista", "url": "https://cachoeirapaulista.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/geosiap-setup/login" },
-        { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/geosiap-setup/login" }
+        { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/geosiap-setup/login" },
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/geosiap-setup/login" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/geosiap-setup/login" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/geosiap-setup/login" }
       ]
     },
     {

@@ -12,7 +12,7 @@
       "itens": [
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.jacarei.sp.gov.br%2Fconfig" },
         { "cliente": "Pompeia", "url": "https://siap.pompeia.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.pompeia.sp.gov.br%2Fconfig" },
-        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/contas/login?returnUrl=https:%2F%2Fpmsilveiras.geosiap.net.br:8080%2Fconfig" },
+        { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fsilveiras.geosiap.net.br%2Fconfig" },
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmbananal.geosiap.net.br%2Fconfig" },
         { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmqueluz.geosiap.net.br%2Fconfig" },
         { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/contas/login?returnUrl=https:%2F%2Fpmroseira.geosiap.net.br:8443%2Fconfig" },
@@ -30,6 +30,7 @@
         { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmcanas.geosiap.net.br%2Fconfig" },
         { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fguaratingueta.geosiap.net.br%2Fconfig" },
         { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fcaraguatatuba.geosiap.net.br%2Fconfig" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fguararema.geosiap.net.br%2Fconfig" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/config/" }
       ]
     },
@@ -39,7 +40,7 @@
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/config/" },
         { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/config/" },
         { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/config" },
-        { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/config/" },
+        { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fbarradopirai.geosiap.net.br%2Fconfig" },
         { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/config/" }
       ]
     },

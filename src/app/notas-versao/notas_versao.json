@@ -27,6 +27,16 @@
         "Adicionado busca por cliente, sistema e estado exibindo na seção de conteudo os resultados da busca.",
         "Implementado opção de copiar link dos resultados da busca e também dos links do menu lateral."
       ]
+    },
+    {
+      "versao": "V3.26.10.01",
+      "data": "06/10/2026",
+      "descricao": [
+        "Adicionado link para Lagoinha no Config E-Gov.",
+        "Adicionado links para Pindamonhangaba, Guararema e Lagoinha no Setup.",
+        "Adicionado link para Guararema no Config Login Novo.",
+        "Adicionado link para Guararema no ADM-Web, GCC e Novo Transparência."
+      ]
     }
   ]
 }

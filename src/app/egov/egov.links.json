@@ -12,7 +12,7 @@
       "itens": [
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/websis/siapegov/portal/index.php" },
         { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/pmcaraguatatuba/websis/siapegov/portal/index.php" },
-        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/pmguararema/websis/siapegov/portal/index.php" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/pmguararema/websis/siapegov/portal/index.php" },
         { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/pmguaratingueta/websis/siapegov/portal/" },
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pmjacarei/websis/siapegov/portal/index.php" },
         { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/websis/siapegov/portal/index.php" },
@@ -32,7 +32,7 @@
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pmsantabranca/websis/siapegov/portal/index.php" },
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/websis/siapegov/portal/index.php" },
         { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/pmsilveiras/websis/siapegov/portal/" },
-        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/portal/index.php" }
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/pmlagoinha/websis/siapegov/portal/index.php" }
       ]
     },
     {

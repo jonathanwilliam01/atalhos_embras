@@ -26,7 +26,8 @@
         { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/transparencia" },
         { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/transparencia" },
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/transparencia" },
-        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/transparencia" }
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/transparencia" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/transparencia" }
       ]
     },
     {

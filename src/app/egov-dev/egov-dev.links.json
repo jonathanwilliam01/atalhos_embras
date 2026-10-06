@@ -31,8 +31,8 @@
         { "cliente": "Salesópolis", "url": "https://dev.geosiap.net/pmsalesopolis/websis/siapegov/portal/" },
         { "cliente": "Santa Branca", "url": "https://dev.geosiap.net/pmsantabranca/websis/siapegov/portal/index.php" },
         { "cliente": "Bananal", "url": "https://dev.geosiap.net/pmbananal/websis/siapegov/portal/index.php" },
-        { "cliente": "Silveiras", "url": "" },
-        { "cliente": "Lagoinha", "url": "https://dev.geosiap.net/lagoinha/websis/siapegov/portal/index.php" }
+        { "cliente": "Silveiras", "url": "https://dev.geosiap.net/pmsilveiras/websis/siapegov/portal/index.php" },
+        { "cliente": "Lagoinha", "url": "https://dev.geosiap.net/pmlagoinha/websis/siapegov/portal/index.php" }
       ]
     },
     {
