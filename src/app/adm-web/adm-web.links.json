@@ -29,7 +29,8 @@
         { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br/administracao" },
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/administracao" },
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/administracao" },
-        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/administracao" }
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/administracao" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/administracao/" }
       ]
     },
     {

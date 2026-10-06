@@ -29,7 +29,8 @@
         { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br/gcc-web" },
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/gcc-web" },
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/gcc-web" },
-        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/gcc-web" }
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/gcc-web" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/gcc-web" }
       ]
     },
     {

@@ -12,7 +12,7 @@
       "itens": [
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/portal-transparencia/home" },
         { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/portal-transparencia/home" },
-        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/portal-transparencia/home" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/portal-transparencia/home" },
         { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/portal-transparencia/home" },
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/portal-transparencia/home" },
         { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/portal-transparencia/home" },

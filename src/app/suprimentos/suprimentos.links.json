@@ -12,7 +12,7 @@
       "itens": [
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/suprimentos" },
         { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/suprimentos" },
-        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/suprimentos" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/suprimentos" },
         { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/suprimentos" },
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/suprimentos" },
         { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/suprimentos" },

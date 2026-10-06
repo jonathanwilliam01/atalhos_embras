@@ -28,7 +28,7 @@
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/geosiap-setup/login" },
         { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/geosiap-setup/login" },
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/geosiap-setup/login" },
-        { "cliente": "Guararema", "url": "https://portal.guararema.sp.gov.br/geosiap-setup/login" }
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/geosiap-setup/login" }
       ]
     },
     {
