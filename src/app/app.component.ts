@@ -9,8 +9,6 @@ import { EgovDevComponent } from './egov-dev/egov-dev.component';
 import { LinksComponent } from './links/links.component';
 import { ConfigEgovComponent } from './config-egov/config-egov.component';
 import { LoginNovoComponent } from './login-novo/login-novo.component';
-import { InfraComponent } from './infra/infra.component';
-import { SaibaMaisComponent } from './saiba-mais/saiba-mais.component';
 import { SetupComponent } from './setup/setup.component';
 import { PessoasComponent } from './pessoas/pessoas.component';
 import { GccComponent } from './gcc/gcc.component';
@@ -35,7 +33,7 @@ const DIAS_EXIBINDO_NOTAS = 7;
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, GoGlobalComponent, HeaderComponent, EgovComponent,
-    EgovDevComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, InfraComponent, SaibaMaisComponent, SetupComponent, PessoasComponent,
+    EgovDevComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, SetupComponent, PessoasComponent,
     GccComponent, SuprimentosComponent, PortalTransparenciaComponent, TransparenciaEgovComponent, AdmWebComponent, NovoTransparenciaComponent, NotasVersaoComponent, ClientesComponent, AtenComponent, GproWebComponent
   ],
   templateUrl: './app.component.html',
@@ -45,7 +43,7 @@ export class AppComponent implements OnInit {
   currentComponent: string = '';
   copied = false;
   notasVersaoVisivel = false;
-  ultimaVersao = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao))[0];
+  ultimaVersao = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao, undefined, { numeric: true }))[0];
   versaoAtual = this.ultimaVersao?.versao ?? '';
   private platformId = inject(PLATFORM_ID);
   favoritos = inject(FavoritosService);

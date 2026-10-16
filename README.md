@@ -12,9 +12,8 @@ Acesse: https://atalhos-embras.vercel.app/
 - **E-Gov**: produção, homologação, Transparência E-Gov e configurações.
 - **ATEN**, **GPRO WEB**, **ADM-Web**, **GCC** (Gestão de Contratos e Convênios) e **Suprimentos**.
 - **Transparência**: Portal da Transparência e Novo Transparência.
-- **Infraestrutura**: ferramentas de apoio da equipe de infra.
 - **GoGlobal**, **Setup**, **Pessoas**, **Config Contas** e **Links Úteis** (documentação, wiki, demandas e planilhas).
-- **Versão dos clientes**: E-Gov, Transparência E-Gov e Portal da Transparência mostram a versão atual de cada município ao lado do nome.
+- **Versão dos clientes**: E-Gov, ATEN, GPRO WEB, Transparência E-Gov e Portal da Transparência mostram a versão atual de cada município ao lado do nome.
 - Pode ser instalado como aplicativo pelo botão **Instalar app**.
 
 ## Projeto irmão

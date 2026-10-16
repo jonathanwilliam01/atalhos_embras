@@ -65,6 +65,22 @@
         "Criada a opção GPRO WEB no menu, com os links de todos os clientes.",
         "Adicionada a versão de cada cliente ao lado do nome nas telas de E-Gov, Transparência E-Gov e Portal da Transparência. Em nomes longos, a versão aparece ao passar o mouse."
       ]
+    },
+    {
+      "versao": "V3.26.10.04",
+      "data": "16/10/2026",
+      "descricao": [
+        "Adicionada a versão de cada cliente nas telas de ATEN e GPRO WEB.",
+        "A versão que mais se repete entre os clientes aparece ao lado do título da tela, e clientes com versão abaixo dela ficam com a versão destacada em vermelho.",
+        "Em nomes longos, a versão passa a aparecer abaixo do nome do cliente, sem ficar escondida.",
+        "Agora toda a linha do cliente é clicável para abrir o link, não só o nome.",
+        "As versões carregam mais rápido: a última consulta aparece na hora enquanto a nova é buscada, com o aviso Carregando versões ao lado do título.",
+        "Removida a aba Infraestrutura: os links que só existiam nela (User GoGlobal e Bancos Geosiap) foram para Links Úteis.",
+        "Removido o item Saiba Mais do menu.",
+        "Corrigidos os links de Silveiras, Lagoinha, Cachoeira Paulista e Pouso Alto que não abriam no E-Gov, ATEN, GPRO WEB, Transparência E-Gov e Portal da Transparência.",
+        "Adicionado o link de Pompeia no GCC.",
+        "Otimizadas as imagens de fundo e removidos componentes sem uso, deixando o sistema mais leve."
+      ]
     }
   ]
 }

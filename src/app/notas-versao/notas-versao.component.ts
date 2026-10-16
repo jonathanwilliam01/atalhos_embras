@@ -19,7 +19,7 @@ export class NotasVersaoComponent {
   @Input() visible = false;
   @Output() close = new EventEmitter<void>();
 
-  versoes: VersaoNota[] = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao));
+  versoes: VersaoNota[] = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao, undefined, { numeric: true }));
   expandedVersao: string | null = this.versoes[0]?.versao ?? null;
 
   toggle(versao: string) {

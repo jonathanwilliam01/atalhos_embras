@@ -7,7 +7,6 @@ import gproWeb from '../gpro-web/gpro-web.links.json';
 import configEgov from '../config-egov/config-egov.links.json';
 import links from '../links/links.links.json';
 import loginNovo from '../login-novo/login-novo.links.json';
-import infra from '../infra/infra.links.json';
 import setup from '../setup/setup.links.json';
 import pessoas from '../pessoas/pessoas.links.json';
 import gcc from '../gcc/gcc.links.json';
@@ -36,7 +35,7 @@ export interface GrupoBusca {
 
 const SISTEMAS: DadosSistema[] = [
   goglobal, egov, egovDev, configEgov, transparenciaEgov, aten, gproWeb, loginNovo, setup, pessoas,
-  gcc, suprimentos, portalTransparencia, novoTransparencia, admWeb, infra, links
+  gcc, suprimentos, portalTransparencia, novoTransparencia, admWeb, links
 ];
 
 export const ESTADOS: Record<string, string> = { 'São Paulo': 'SP', 'Rio de Janeiro': 'RJ', 'Minas Gerais': 'MG' };

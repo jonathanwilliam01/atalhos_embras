@@ -30,7 +30,8 @@
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/gcc-web" },
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/gcc-web" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/gcc-web" },
-        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/gcc-web" }
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/gcc-web" },
+        { "cliente": "Pompeia", "url": "https://siap.pompeia.sp.gov.br/gcc-web" }
       ]
     },
     {

@@ -4,7 +4,8 @@
   "imagens": [
     "/assets/photo-1562240020-ce31ccb0fa7d.avif",
     "/assets/photo-1522252234503-e356532cafd5.avif",
-    "/assets/coding-background-avcywmlgtr48wj7s.webp"
+    "/assets/coding-background-avcywmlgtr48wj7s.webp",
+    "/assets/4eeaef9977d18d9d7ec3ab9cd0384559.jpg"
   ],
   "grupos": [
     {
@@ -28,6 +29,7 @@
         { "cliente": "Config Contas Local", "url": "https://dev.geosiap.net/contas/login" },
         { "cliente": "JWT.IO", "url": "https://jwt.io/" },
         { "cliente": "Bancos atualização", "url": "http://172.16.80.62/index.php?tab=bancos" },
+        { "cliente": "Bancos Geosiap", "url": "http://172.16.80.62/bancos_pg.php?tab=bancos" },
         { "cliente": "Logs local", "url": "http://172.16.80.62:12345/logs" },
         { "cliente": "Geosiap Setup", "url": "https://dev.geosiap.net/geosiap-setup/login" },
         { "cliente": "CORE Local", "url": "https://dev.geosiap.net/core/entrar" },
@@ -42,6 +44,21 @@
         { "cliente": "Conhecimentos Tiflux", "url": "https://demandas.embras.net/v/knowledge_folders" },
         { "cliente": "Atalhos Tributário", "url": "https://projeto-tributario.vercel.app/" },
         { "cliente": "CAUC", "url": "https://siconfi.tesouro.gov.br/siconfi/pages/public/sti/iframe_sti.jsf" }
+      ]
+    },
+    {
+      "nome": "User GoGlobal",
+      "itens": [
+        { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/createuser/menu.html" },
+        { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Mangaratiba", "url": "https://pmmangaratiba.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/createuser/login.php" },
+        { "cliente": "Franco da Rocha", "url": "https://pmfrancodarocha.geosiap.net.br/createuser/login.php" }
       ]
     }
   ]

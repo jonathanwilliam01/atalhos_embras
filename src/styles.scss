@@ -8,6 +8,15 @@ html, body {
   padding: 0;
 }
 
+/* Herdado do tema do PrimeNG, removido do projeto. */
+html {
+  font-family: "Inter var", sans-serif;
+}
+
+button {
+  border-radius: 0;
+}
+
 /* Background is a fixed backdrop (via background-attachment) so the
    document can scroll normally on mobile while the image stays put.
    On desktop the content is absolutely positioned over it as before. */

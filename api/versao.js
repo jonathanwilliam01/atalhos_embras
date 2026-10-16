@@ -4,6 +4,8 @@ const TENTATIVAS = 2;
 
 // e-Gov: "((2.2.240.7)" no rodapé; transparência do e-Gov: "(2.2.240.7)".
 const VERSAO_EGOV = /\((\d+\.\d+\.\d+\.\d+)\)/;
+// GPRO WEB: "Servicos On-line 2.2.240.7" no título, sem parênteses.
+const VERSAO_TITULO = /<title>[^<]*?(\d+\.\d+\.\d+\.\d+)/;
 const BASE_HREF = /<base href="([^"]+)"/;
 const BUNDLE = /src="(main-es2015\.\w+\.js)"/;
 const VERSAO_PORTAL = /"name":"portal-transparencia","version":"([\d.]+)"/;
@@ -27,6 +29,10 @@ async function versaoEgov(url) {
   return (await texto(url)).match(VERSAO_EGOV)?.[1] ?? null;
 }
 
+async function versaoTitulo(url) {
+  return (await texto(url)).match(VERSAO_TITULO)?.[1] ?? null;
+}
+
 // Portal é SPA: a versão está no bundle (~7MB). Clientes na mesma build compartilham o arquivo, então baixa uma vez por nome.
 const versoesBundle = new Map();
 
@@ -46,6 +52,8 @@ async function versaoPortal(url) {
 
 const sistemas = {
   egov: { dados: require('../src/app/egov/egov.links.json'), versao: versaoEgov },
+  aten: { dados: require('../src/app/aten/aten.links.json'), versao: versaoEgov },
+  'gpro-web': { dados: require('../src/app/gpro-web/gpro-web.links.json'), versao: versaoTitulo },
   'transparencia-egov': { dados: require('../src/app/transparencia-egov/transparencia-egov.links.json'), versao: versaoEgov },
   'portal-transparencia': { dados: require('../src/app/portal-transparencia/portal-transparencia.links.json'), versao: versaoPortal }
 };
@@ -58,8 +66,9 @@ module.exports = async (req, res) => {
   const urls = sistema.dados.grupos.flatMap(g => g.itens).filter(i => i.url && !i.inativo).map(i => i.url);
   const versoes = await Promise.all(urls.map(url => comRetentativa(sistema.versao, url)));
 
+  // Versão muda pouco: o CDN responde na hora e atualiza em segundo plano.
   // Com cliente que não respondeu, cache curto para a falha não ficar presa.
-  const cache = versoes.includes(undefined) ? 's-maxage=60, stale-while-revalidate=600' : 's-maxage=600, stale-while-revalidate=3600';
+  const cache = versoes.includes(undefined) ? 's-maxage=60, stale-while-revalidate=600' : 's-maxage=1800, stale-while-revalidate=86400';
   res.setHeader('Cache-Control', cache);
   res.status(200).json(Object.fromEntries(urls.map((url, i) => [url, versoes[i] ?? null])));
 };

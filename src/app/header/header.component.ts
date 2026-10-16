@@ -22,7 +22,7 @@ export class HeaderComponent {
   promptInstalacao: (Event & { prompt: () => Promise<void> }) | null = null;
   private telaAnterior: { tela: string; grupo: string | null } | null = null;
 
-  versaoAtual = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao))[0]?.versao ?? '';
+  versaoAtual = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao, undefined, { numeric: true }))[0]?.versao ?? '';
 
   constructor(private elementRef: ElementRef) {}
 

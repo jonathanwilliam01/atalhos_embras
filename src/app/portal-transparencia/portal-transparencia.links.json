@@ -49,7 +49,7 @@
       "nome": "Minas Gerais",
       "itens": [
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/portal-transparencia/home" },
-        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/portal-transparencia/home" }
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/portal-transparencia/home" }
       ]
     }
   ]
