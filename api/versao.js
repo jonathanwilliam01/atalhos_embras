@@ -1,5 +1,6 @@
-const TIMEOUT_MS = 8000;
-const TIMEOUT_BUNDLE_MS = 25000;
+const TIMEOUT_MS = 12000;
+const TIMEOUT_BUNDLE_MS = 17000;
+const TENTATIVAS = 2;
 
 // e-Gov: "((2.2.240.7)" no rodapé; transparência do e-Gov: "(2.2.240.7)".
 const VERSAO_EGOV = /\((\d+\.\d+\.\d+\.\d+)\)/;
@@ -10,6 +11,16 @@ const VERSAO_PORTAL = /"name":"portal-transparencia","version":"([\d.]+)"/;
 async function texto(url, timeout = TIMEOUT_MS) {
   const resposta = await fetch(url, { signal: AbortSignal.timeout(timeout) });
   return Buffer.from(await resposta.arrayBuffer()).toString('latin1');
+}
+
+// Tenta de novo em falha de rede/timeout: alguns servidores demoram quando recebem vários pedidos juntos.
+// null = página sem versão; undefined = não respondeu.
+async function comRetentativa(versao, url, tentativa = 1) {
+  try {
+    return await versao(url);
+  } catch {
+    return tentativa < TENTATIVAS ? comRetentativa(versao, url, tentativa + 1) : undefined;
+  }
 }
 
 async function versaoEgov(url) {
@@ -45,8 +56,10 @@ module.exports = async (req, res) => {
   if (!sistema) return res.status(400).json({ erro: 'Sistema inválido' });
 
   const urls = sistema.dados.grupos.flatMap(g => g.itens).filter(i => i.url && !i.inativo).map(i => i.url);
-  const versoes = await Promise.all(urls.map(url => sistema.versao(url).catch(() => null)));
+  const versoes = await Promise.all(urls.map(url => comRetentativa(sistema.versao, url)));
 
-  res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate=3600');
-  res.status(200).json(Object.fromEntries(urls.map((url, i) => [url, versoes[i]])));
+  // Com cliente que não respondeu, cache curto para a falha não ficar presa.
+  const cache = versoes.includes(undefined) ? 's-maxage=60, stale-while-revalidate=600' : 's-maxage=600, stale-while-revalidate=3600';
+  res.setHeader('Cache-Control', cache);
+  res.status(200).json(Object.fromEntries(urls.map((url, i) => [url, versoes[i] ?? null])));
 };

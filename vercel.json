@@ -1,0 +1,5 @@
+{
+  "functions": {
+    "api/versao.js": { "maxDuration": 60 }
+  }
+}
