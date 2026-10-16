@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter, HostListener, ElementRef, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Output, EventEmitter, HostListener, ElementRef, ViewChild, OnInit, PLATFORM_ID, inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import notasVersaoData from '../notas-versao/notas_versao.json';
 
 @Component({
@@ -10,7 +10,7 @@ import notasVersaoData from '../notas-versao/notas_versao.json';
   styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @Output() componentSelected = new EventEmitter<string>();
   @Output() verNotasVersao = new EventEmitter<void>();
   @Output() pesquisar = new EventEmitter<string>();
@@ -24,7 +24,28 @@ export class HeaderComponent {
 
   versaoAtual = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao, undefined, { numeric: true }))[0]?.versao ?? '';
 
+  private platformId = inject(PLATFORM_ID);
+
   constructor(private elementRef: ElementRef) {}
+
+  ngOnInit() {
+    // Fora do ciclo atual: abrir a tela altera o AppComponent.
+    if (isPlatformBrowser(this.platformId)) setTimeout(() => this.abrirTelaDaUrl());
+  }
+
+  // Tela na URL (#egov): F5 mantém a tela e o link pode ser compartilhado.
+  @HostListener('window:hashchange')
+  abrirTelaDaUrl() {
+    const tela = decodeURIComponent(location.hash.slice(1));
+    if (tela === this.selectedComponent) return;
+    if (!tela) {
+      this.selectedComponent = '';
+      this.openSubmenu = null;
+      this.componentSelected.emit('');
+      return;
+    }
+    this.elementRef.nativeElement.querySelector(`[data-tela="${CSS.escape(tela)}"]`)?.click();
+  }
 
   abrirNotasVersao(event: Event) {
     event.stopPropagation();
@@ -45,6 +66,7 @@ export class HeaderComponent {
     clearTimeout(this.timerBusca);
     if (termo.trim()) {
       if (this.selectedComponent) this.telaAnterior = { tela: this.selectedComponent, grupo: this.openSubmenu };
+      history.replaceState(null, '', location.pathname + location.search);
       this.selectedComponent = '';
       this.openSubmenu = null;
     } else if (this.telaAnterior) {
@@ -60,6 +82,7 @@ export class HeaderComponent {
     if (this.buscaInput) this.buscaInput.nativeElement.value = '';
     this.telaAnterior = null;
     this.selectedComponent = componentName; // Define o componente selecionado
+    if (location.hash.slice(1) !== componentName) location.hash = componentName;
     this.componentSelected.emit(componentName);
     this.openSubmenu = group;
     this.menuOpen = false; // fecha o drawer ao escolher uma opção (mobile)
@@ -102,14 +125,20 @@ export class HeaderComponent {
     }
   }
 
+  // Itens do menu são <li>: Enter e Espaço acionam como botão.
+  @HostListener('keydown', ['$event'])
+  acionarPeloTeclado(event: KeyboardEvent) {
+    const item = event.target as HTMLElement;
+    if ((event.key === 'Enter' || event.key === ' ') && item.getAttribute('role') === 'button') {
+      event.preventDefault();
+      item.click();
+    }
+  }
+
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.openSubmenu = null;
     }
-  }
-
-  reloadPage() {
-    window.location.reload();
   }
 }

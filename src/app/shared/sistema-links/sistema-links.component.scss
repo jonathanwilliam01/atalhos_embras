@@ -27,6 +27,27 @@
   .titulo { font-size: 26px; }
 }
 
+.aviso-fora{
+  margin-left: 12px;
+  font-size: 0.5em;
+  font-weight: normal;
+  vertical-align: middle;
+  color: rgb(255, 120, 130);
+
+  i { font-size: 0.7em; vertical-align: middle; }
+}
+
+.fora-do-ar{
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 8px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: rgb(220, 53, 69);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.3);
+}
+
 .carregando{
   margin-left: 12px;
   font-size: 0.5em;
@@ -40,7 +61,15 @@
   display: flex;
   flex: 1 1 auto;
   min-height: 0;
-  justify-content: center;
+  // Até 3 blocos visíveis; com mais, rolagem lateral.
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(74, 194, 194) rgba(255, 255, 255, 0.15);
+}
+
+.blocos:has(> .bloco:nth-child(4)){
+  padding-bottom: 10px;
 }
 
 .bloco{
@@ -50,8 +79,8 @@
   border-radius: 7px;
   border: 1px solid rgb(116, 115, 115);
   background-color: rgb(118, 119, 119);
-  width: 25%;
-  flex: 1;
+  flex: 1 0 calc((100% - 60px) / 3);
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -266,6 +295,7 @@ a{
     position: static;
     display: flex;
     flex-direction: column;
+    overflow: visible;
     margin: 0;
     width: 100%;
     height: auto;

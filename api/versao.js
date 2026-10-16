@@ -58,7 +58,7 @@ const sistemas = {
   'portal-transparencia': { dados: require('../src/app/portal-transparencia/portal-transparencia.links.json'), versao: versaoPortal }
 };
 
-// Retorna { url: versão | null } de todos os clientes ativos do sistema.
+// Retorna { url: versão | null | false } de todos os clientes ativos do sistema; false = não respondeu.
 module.exports = async (req, res) => {
   const sistema = sistemas[req.query.sistema];
   if (!sistema) return res.status(400).json({ erro: 'Sistema inválido' });
@@ -70,5 +70,5 @@ module.exports = async (req, res) => {
   // Com cliente que não respondeu, cache curto para a falha não ficar presa.
   const cache = versoes.includes(undefined) ? 's-maxage=60, stale-while-revalidate=600' : 's-maxage=1800, stale-while-revalidate=86400';
   res.setHeader('Cache-Control', cache);
-  res.status(200).json(Object.fromEntries(urls.map((url, i) => [url, versoes[i] ?? null])));
+  res.status(200).json(Object.fromEntries(urls.map((url, i) => [url, versoes[i] === undefined ? false : versoes[i]])));
 };

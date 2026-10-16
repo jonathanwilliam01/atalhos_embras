@@ -19,6 +19,6 @@ export class ClientesComponent {
 
   filtrar(termo: string): void {
     const alvo = normalizar(termo);
-    this.clientes = this.todos.filter(c => normalizar(`${c.cliente} ${c.estado}`).includes(alvo));
+    this.clientes = this.todos.filter(c => normalizar(`${c.cliente} ${c.estado} ${c.itens[0]?.local ?? ''}`).includes(alvo));
   }
 }

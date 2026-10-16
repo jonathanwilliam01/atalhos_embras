@@ -9,8 +9,8 @@
 
 <div class="lateral_menu" [class.open]="menuOpen">
   <div class="logo">
-    <a (click)="reloadPage()">
-    <img src="assets/Logo_(white).png">
+    <a href="/" title="Início">
+    <img src="assets/Logo_(white).png" alt="Embras">
     </a>
   </div>
   <div class="bot-tit"> Atalhos Embras </div>
@@ -20,35 +20,35 @@
     <kbd class="busca-atalho" title="Atalho para buscar"> Ctrl K </kbd>
   </div>
   <div class="menu">
-    <li class="bot" [class.active]="selectedComponent === 'clientes'" (click)="selectComponent('clientes')"> <i class="fa-solid fa-city"></i> Clientes </li>
-    <li class="bot" [class.active]="selectedComponent === 'GoGlobal'" (click)="selectComponent('GoGlobal')"> <i class="fa-solid fa-globe"></i> GoGlobal </li>
-    <li class="bot has-submenu" [class.open]="openSubmenu === 'egov'" (click)="toggleSubmenu('egov', $event)">
+    <li data-tela="clientes" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'clientes'" (click)="selectComponent('clientes')"> <i class="fa-solid fa-city"></i> Clientes </li>
+    <li data-tela="GoGlobal" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'GoGlobal'" (click)="selectComponent('GoGlobal')"> <i class="fa-solid fa-globe"></i> GoGlobal </li>
+    <li role="button" tabindex="0" [attr.aria-expanded]="openSubmenu === 'egov'" class="bot has-submenu" [class.open]="openSubmenu === 'egov'" (click)="toggleSubmenu('egov', $event)">
       <i class="fa-solid fa-building-columns"></i> E-Gov
       <i class="fa-solid fa-chevron-down submenu-caret"></i>
     </li>
     <ul class="submenu" [class.open]="openSubmenu === 'egov'">
-      <li (click)="$event.stopPropagation(); selectComponent('egov', 'egov')" [class.active]="selectedComponent === 'egov'"> E-Gov Prod. </li>
-      <li (click)="$event.stopPropagation(); selectComponent('egov_dev', 'egov')" [class.active]="selectedComponent === 'egov_dev'"> E-Gov Homol. </li>
-      <li (click)="$event.stopPropagation(); selectComponent('config', 'egov')" [class.active]="selectedComponent === 'config'"> Config E-Gov </li>
-      <li (click)="$event.stopPropagation(); selectComponent('transparencia-egov', 'egov')" [class.active]="selectedComponent === 'transparencia-egov'"> Transparência </li>
+      <li data-tela="egov" role="button" [attr.tabindex]="openSubmenu === 'egov' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('egov', 'egov')" [class.active]="selectedComponent === 'egov'"> E-Gov Prod. </li>
+      <li data-tela="egov_dev" role="button" [attr.tabindex]="openSubmenu === 'egov' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('egov_dev', 'egov')" [class.active]="selectedComponent === 'egov_dev'"> E-Gov Homol. </li>
+      <li data-tela="config" role="button" [attr.tabindex]="openSubmenu === 'egov' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('config', 'egov')" [class.active]="selectedComponent === 'config'"> Config E-Gov </li>
+      <li data-tela="transparencia-egov" role="button" [attr.tabindex]="openSubmenu === 'egov' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('transparencia-egov', 'egov')" [class.active]="selectedComponent === 'transparencia-egov'"> Transparência </li>
     </ul>
-    <li class="bot" [class.active]="selectedComponent === 'aten'" (click)="selectComponent('aten')"> <i class="fa-solid fa-clipboard-list"></i> ATEN </li>
-    <li class="bot" [class.active]="selectedComponent === 'gpro-web'" (click)="selectComponent('gpro-web')"> <i class="fa-solid fa-folder-open"></i> GPRO WEB </li>
-    <li class="bot" [class.active]="selectedComponent === 'login-novo'" (click)="selectComponent('login-novo')"> <i class="fa-solid fa-user"></i> Config Contas </li>
-    <li class="bot" [class.active]="selectedComponent === 'setup'" (click)="selectComponent('setup')"> <i class="fa-solid fa-sliders"></i> Setup </li>
-    <li class="bot" [class.active]="selectedComponent === 'pessoas'" (click)="selectComponent('pessoas')"> <i class="fa-solid fa-users"></i> Pessoas </li>
-    <li class="bot" [class.active]="selectedComponent === 'links'" (click)="selectComponent('links')"> <i class="fa-solid fa-link"></i> Links Uteis </li>
-    <li class="bot" [class.active]="selectedComponent === 'gcc'" (click)="selectComponent('gcc')"> <i class="fa-solid fa-file-text"></i> GCC </li>
-    <li class="bot" [class.active]="selectedComponent === 'suprimentos'" (click)="selectComponent('suprimentos')"> <i class="fa-solid fa-boxes-stacked"></i> Suprimentos </li>
-    <li class="bot has-submenu" [class.open]="openSubmenu === 'transparencia'" (click)="toggleSubmenu('transparencia', $event)">
+    <li data-tela="aten" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'aten'" (click)="selectComponent('aten')"> <i class="fa-solid fa-clipboard-list"></i> ATEN </li>
+    <li data-tela="gpro-web" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'gpro-web'" (click)="selectComponent('gpro-web')"> <i class="fa-solid fa-folder-open"></i> GPRO WEB </li>
+    <li data-tela="login-novo" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'login-novo'" (click)="selectComponent('login-novo')"> <i class="fa-solid fa-user"></i> Config Contas </li>
+    <li data-tela="setup" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'setup'" (click)="selectComponent('setup')"> <i class="fa-solid fa-sliders"></i> Setup </li>
+    <li data-tela="pessoas" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'pessoas'" (click)="selectComponent('pessoas')"> <i class="fa-solid fa-users"></i> Pessoas </li>
+    <li data-tela="links" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'links'" (click)="selectComponent('links')"> <i class="fa-solid fa-link"></i> Links Uteis </li>
+    <li data-tela="gcc" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'gcc'" (click)="selectComponent('gcc')"> <i class="fa-solid fa-file-text"></i> GCC </li>
+    <li data-tela="suprimentos" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'suprimentos'" (click)="selectComponent('suprimentos')"> <i class="fa-solid fa-boxes-stacked"></i> Suprimentos </li>
+    <li role="button" tabindex="0" [attr.aria-expanded]="openSubmenu === 'transparencia'" class="bot has-submenu" [class.open]="openSubmenu === 'transparencia'" (click)="toggleSubmenu('transparencia', $event)">
       <i class="fa-solid fa-magnifying-glass-dollar"></i> Transparência
       <i class="fa-solid fa-chevron-down submenu-caret"></i>
     </li>
     <ul class="submenu" [class.open]="openSubmenu === 'transparencia'">
-      <li (click)="$event.stopPropagation(); selectComponent('portal-transparencia', 'transparencia')" [class.active]="selectedComponent === 'portal-transparencia'"> Transparência </li>
-      <li (click)="$event.stopPropagation(); selectComponent('novo-transparencia', 'transparencia')" [class.active]="selectedComponent === 'novo-transparencia'"> Novo Transparência </li>
+      <li data-tela="portal-transparencia" role="button" [attr.tabindex]="openSubmenu === 'transparencia' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('portal-transparencia', 'transparencia')" [class.active]="selectedComponent === 'portal-transparencia'"> Transparência </li>
+      <li data-tela="novo-transparencia" role="button" [attr.tabindex]="openSubmenu === 'transparencia' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('novo-transparencia', 'transparencia')" [class.active]="selectedComponent === 'novo-transparencia'"> Novo Transparência </li>
     </ul>
-    <li class="bot" [class.active]="selectedComponent === 'adm-web'" (click)="selectComponent('adm-web')"> <i class="fa-solid fa-desktop"></i> ADM-Web </li>
+    <li data-tela="adm-web" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'adm-web'" (click)="selectComponent('adm-web')"> <i class="fa-solid fa-desktop"></i> ADM-Web </li>
   </div>
     <p class="instalar" *ngIf="promptInstalacao" (click)="instalarApp()" title="Instalar como aplicativo">
       <i class="fa-solid fa-download"></i> Instalar app

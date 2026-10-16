@@ -5,11 +5,14 @@ import { FavoritosService } from '../../favoritos/favoritos.service';
 // Espaço dos botões: só a estrela (favorito fixo) e estrela + copiar (hover).
 const RESERVA_FIXA = 36;
 const RESERVA_HOVER = 60;
+// false = cliente não respondeu na última verificação.
+type Versoes = Record<string, string | null | false>;
+
 const CHAVE_VERSOES = 'versoesClientes';
-const cacheVersoes = new Map<string, Record<string, string | null>>();
+const cacheVersoes = new Map<string, Versoes>();
 
 // Última consulta de cada sistema, exibida enquanto a nova carrega.
-function versoesSalvas(): Record<string, Record<string, string | null>> {
+function versoesSalvas(): Record<string, Versoes> {
   try {
     return JSON.parse(localStorage.getItem(CHAVE_VERSOES) ?? '{}') ?? {};
   } catch {
@@ -17,16 +20,39 @@ function versoesSalvas(): Record<string, Record<string, string | null>> {
   }
 }
 
-function salvarVersoes(sistema: string, versoes: Record<string, string | null>): void {
+function salvarVersoes(sistema: string, versoes: Versoes): void {
   try {
     localStorage.setItem(CHAVE_VERSOES, JSON.stringify({ ...versoesSalvas(), [sistema]: versoes }));
   } catch {}
 }
 
+// Telas do E-Gov (portal, ATEN, GPRO, ITBI, transparência) ficam em /<alias>/websis/ e têm a mesma versão por cliente.
+function baseEgov(url: string): string | null {
+  const i = url.indexOf('/websis/');
+  return i < 0 ? null : url.slice(0, i);
+}
+
+// Versões que outra tela do E-Gov já carregou para estes clientes.
+function versoesDoMesmoSistema(urls: string[]): Versoes {
+  const porBase = new Map<string, string | null | false>();
+  for (const versoes of cacheVersoes.values()) {
+    for (const [url, v] of Object.entries(versoes)) {
+      const base = baseEgov(url);
+      if (base) porBase.set(base, v);
+    }
+  }
+  const resultado: Versoes = {};
+  for (const url of urls) {
+    const base = baseEgov(url);
+    if (base && porBase.has(base)) resultado[url] = porBase.get(base)!;
+  }
+  return resultado;
+}
+
 const compararVersao = (a: string, b: string) => a.localeCompare(b, undefined, { numeric: true });
 
 // Versão mais comum entre os clientes; empate fica com a maior.
-function versaoPredominante(versoes: (string | null)[]): string | null {
+function versaoPredominante(versoes: (string | null | false)[]): string | null {
   const contagem = new Map<string, number>();
   for (const v of versoes) if (v) contagem.set(v, (contagem.get(v) ?? 0) + 1);
   let atual: string | null = null;
@@ -80,8 +106,9 @@ export class SistemaLinksComponent implements OnInit {
 
   favoritos = inject(FavoritosService);
   linkCopiado: string | null = null;
-  versoes: Record<string, string | null> = {};
+  versoes: Versoes = {};
   versaoAtual: string | null = null;
+  foraDoArTotal = 0;
   carregandoVersoes = false;
   private destruido = false;
   // aperta: versão some no hover; quebra: versão vai para a linha de baixo.
@@ -103,10 +130,20 @@ export class SistemaLinksComponent implements OnInit {
       setTimeout(() => this.aplicarVersoes(cache));
       return;
     }
-    const salvas = versoesSalvas()[sistema];
+
+    // Com tudo vindo de outra tela não consulta; com parte, mostra e busca o resto sem aviso de carregando.
+    const urls = this.grupos.flatMap(g => g.itens).filter(i => i.url).map(i => i.url);
+    const doMesmoSistema = versoesDoMesmoSistema(urls);
+    const encontradas = Object.keys(doMesmoSistema).length;
+    if (encontradas === urls.length) {
+      cacheVersoes.set(sistema, doMesmoSistema);
+      setTimeout(() => this.aplicarVersoes(doMesmoSistema));
+      return;
+    }
+    const salvas = encontradas ? doMesmoSistema : versoesSalvas()[sistema];
     if (salvas) setTimeout(() => this.aplicarVersoes(salvas));
 
-    this.carregandoVersoes = true;
+    this.carregandoVersoes = !encontradas;
     fetch(`/api/versao?sistema=${sistema}`)
       .then(r => r.ok ? r.json() : Promise.reject())
       .then(v => {
@@ -119,7 +156,11 @@ export class SistemaLinksComponent implements OnInit {
   }
 
   versao(item: ItemLink): string | null {
-    return this.versoes[item.url] ?? null;
+    return this.versoes[item.url] || null;
+  }
+
+  foraDoAr(item: ItemLink): boolean {
+    return this.versoes[item.url] === false;
   }
 
   desatualizada(item: ItemLink): boolean {
@@ -133,9 +174,10 @@ export class SistemaLinksComponent implements OnInit {
     return this.desatualizada(item) ? `Versão ${v} (abaixo da atual ${this.versaoAtual})` : `Versão ${v}`;
   }
 
-  private aplicarVersoes(versoes: Record<string, string | null>): void {
+  private aplicarVersoes(versoes: Versoes): void {
     this.versoes = versoes;
     this.versaoAtual = versaoPredominante(Object.values(versoes));
+    this.foraDoArTotal = Object.values(versoes).filter(v => v === false).length;
     this.ajustarVersoes();
   }
 

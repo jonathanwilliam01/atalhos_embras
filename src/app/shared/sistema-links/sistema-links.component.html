@@ -1,5 +1,8 @@
 <div class="container">
   <div class="titulo"> {{ titulo }}<ng-container *ngIf="versaoAtual"> - {{ versaoAtual }}</ng-container>
+    <span class="aviso-fora" *ngIf="foraDoArTotal" title="Clientes que não responderam na última verificação">
+      <i class="fa-solid fa-circle"></i> {{ foraDoArTotal }} sem resposta
+    </span>
     <span class="carregando" *ngIf="carregandoVersoes"><i class="fa-solid fa-spinner fa-spin"></i> Carregando versões</span>
   </div>
 
@@ -13,7 +16,8 @@
           <div class="itens">
             <div class="li" *ngFor="let item of grupo.itens" [class.sem-link]="!item.url">
               <ng-container *ngIf="item.url; else semLink">
-                <a [href]="item.url" target="_blank" [attr.title]="espaco.get(item.url) === 'aperta' ? dicaVersao(item) : null"> {{ item.cliente }}
+                <a [href]="item.url" target="_blank" [attr.title]="foraDoAr(item) ? 'Não respondeu na última verificação' : espaco.get(item.url) === 'aperta' ? dicaVersao(item) : null"> {{ item.cliente }}
+                  <span class="fora-do-ar" *ngIf="foraDoAr(item)"></span>
                   <span class="versao" [class.aperta]="espaco.get(item.url) === 'aperta'" [class.quebra]="espaco.get(item.url) === 'quebra'" [class.desatualizada]="desatualizada(item)" [attr.title]="desatualizada(item) ? dicaVersao(item) : null" *ngIf="versao(item)">{{ versao(item) }}</span>
                 </a>
                 <span class="li-acoes">

@@ -71,15 +71,23 @@
       "data": "16/10/2026",
       "descricao": [
         "Adicionada a versão de cada cliente nas telas de ATEN e GPRO WEB.",
-        "A versão que mais se repete entre os clientes aparece ao lado do título da tela, e clientes com versão abaixo dela ficam com a versão destacada em vermelho.",
-        "Em nomes longos, a versão passa a aparecer abaixo do nome do cliente, sem ficar escondida.",
+        "Em nomes longos, a versão passa a aparecer abaixo do nome do cliente.",
         "Agora toda a linha do cliente é clicável para abrir o link, não só o nome.",
-        "As versões carregam mais rápido: a última consulta aparece na hora enquanto a nova é buscada, com o aviso Carregando versões ao lado do título.",
-        "Removida a aba Infraestrutura: os links que só existiam nela (User GoGlobal e Bancos Geosiap) foram para Links Úteis.",
-        "Removido o item Saiba Mais do menu.",
-        "Corrigidos os links de Silveiras, Lagoinha, Cachoeira Paulista e Pouso Alto que não abriam no E-Gov, ATEN, GPRO WEB, Transparência E-Gov e Portal da Transparência.",
-        "Adicionado o link de Pompeia no GCC.",
-        "Otimizadas as imagens de fundo e removidos componentes sem uso, deixando o sistema mais leve."
+        "As versões carregam mais rápido, com o aviso Carregando versões ao lado do título.",
+        "A aba Infraestrutura saiu do menu: os links que só existiam nela (User GoGlobal e Bancos Geosiap) estão em Links Úteis.",
+        "Adicionado o link de Pompeia no GCC."
+      ]
+    },
+    {
+      "versao": "V3.26.10.05",
+      "data": "16/10/2026",
+      "descricao": [
+        "A tela aberta fica salva no endereço: ao atualizar a página ela continua aberta, e o link pode ser enviado para outra pessoa.",
+        "As versões de E-Gov, ATEN, GPRO WEB e Transparência E-Gov aparecem na hora ao trocar entre essas telas.",
+        "Clientes que não responderam na última verificação aparecem com um ponto vermelho, e o total aparece ao lado do título.",
+        "Adicionado o botão Sugestões no GitHub na tela inicial, com formulário para enviar a sugestão.",
+        "O filtro da tela Clientes agora também encontra pelo nome do estado (ex.: Rio, Minas).",
+        "O menu pode ser usado pelo teclado (Tab, Enter e Espaço)."
       ]
     }
   ]

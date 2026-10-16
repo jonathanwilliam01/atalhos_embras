@@ -274,6 +274,24 @@
   font-size: 0.87rem;
 }
 
+.sugestao-link {
+  display: inline-flex;
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  color: rgb(74, 194, 194);
+  font-size: 0.82rem;
+  text-decoration: none;
+  padding: 3px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+
+  &:hover { background-color: rgba(74, 194, 194, 0.12); }
+}
+
 .copy-btn {
   background: none;
   border: none;

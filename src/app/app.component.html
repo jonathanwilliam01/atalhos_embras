@@ -1,6 +1,7 @@
 <app-header (componentSelected)="setComponent($event)" (verNotasVersao)="abrirNotasVersao()" (pesquisar)="buscar($event)"></app-header>
 
 <app-notas-versao [visible]="notasVersaoVisivel" (close)="fecharNotasVersao()"></app-notas-versao>
+<app-sugestao [visible]="sugestaoVisivel" [link]="linkSugestao" [origem]="'Atalhos Embras ' + versaoAtual" (close)="sugestaoVisivel = false"></app-sugestao>
 
 <div class="welcome-box" *ngIf="!currentComponent">
   <div class="welcome-content" [class.com-atalhos]="favoritos.favoritos.length || favoritos.recentes.length">
@@ -58,11 +59,14 @@
       <div class="sugestoes-texto">
         <span>Para sugestões de novos links ou melhorias, entre em contato:</span>
         <span class="email-row">
-          <span class="email-text">jonathan.willian&#64;embras.net</span>
+          <span class="email-text">{{ email }}</span>
           <button class="copy-btn" (click)="copyEmail()" [title]="copied ? 'Copiado!' : 'Copiar e-mail'">
             <i class="fa-solid" [class.fa-copy]="!copied" [class.fa-check]="copied"></i>
           </button>
         </span>
+        <button type="button" class="sugestao-link" (click)="sugestaoVisivel = true">
+          <i class="fa-brands fa-github"></i> Sugestões no GitHub
+        </button>
       </div>
     </div>
   </div>

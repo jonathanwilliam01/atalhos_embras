@@ -1,0 +1,41 @@
+<div class="sug-backdrop" *ngIf="visible" (click)="fechar()">
+  <form class="sug-modal" (click)="$event.stopPropagation()" (submit)="$event.preventDefault(); enviar()">
+    <div class="sug-header">
+      <h2><i class="fa-regular fa-lightbulb"></i> Enviar sugestão</h2>
+      <button type="button" class="sug-close" (click)="fechar()" aria-label="Fechar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="sug-body">
+      <div class="sug-tipos" role="radiogroup" aria-label="Tipo">
+        <button type="button" *ngFor="let t of tipos" class="sug-tipo" [class.ativo]="tipo === t" role="radio" [attr.aria-checked]="tipo === t" (click)="tipo = t">{{ t }}</button>
+      </div>
+
+      <label class="sug-campo">
+        <span>Seu nome</span>
+        <input #nomeInput type="text" maxlength="80" required placeholder="Quem está solicitando"
+               [value]="nome" (input)="nome = nomeInput.value">
+      </label>
+
+      <label class="sug-campo">
+        <span>Título</span>
+        <input #tituloInput type="text" maxlength="120" required placeholder="Ex.: Adicionar o link do GCC de Lorena"
+               [value]="titulo" (input)="titulo = tituloInput.value">
+      </label>
+
+      <label class="sug-campo">
+        <span>Descrição <small>(opcional)</small></span>
+        <textarea #descInput rows="6" placeholder="Detalhes, links, cliente, como reproduzir o erro..."
+                  [value]="descricao" (input)="descricao = descInput.value"></textarea>
+      </label>
+
+      <p class="sug-dica"><i class="fa-brands fa-github"></i> Ao enviar, o GitHub abre com a sugestão preenchida; é só confirmar em Create.</p>
+    </div>
+
+    <div class="sug-footer">
+      <button type="button" class="sug-cancelar" (click)="fechar()"> Cancelar </button>
+      <button type="submit" class="sug-enviar" [disabled]="!valido"> Enviar no GitHub </button>
+    </div>
+  </form>
+</div>
