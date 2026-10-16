@@ -164,6 +164,15 @@ a{
   transition: all 0.3s ease;
 }
 
+// Largura fixa para o texto alinhar independente do ícone.
+.bot > i:first-child {
+  width: 22px;
+  margin-right: 15px;
+  font-size: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
 .bot-tit{
   border-bottom: 1px solid white;
   margin-bottom: 6%;
@@ -489,7 +498,7 @@ a{
     flex-shrink: 0;
   }
 
-  .submenu.open { margin: 2px 0 6px 0; }
+  .submenu.open { max-height: 600px; margin: 2px 0 6px 0; }
 
   .submenu li {
     font-size: 15px;

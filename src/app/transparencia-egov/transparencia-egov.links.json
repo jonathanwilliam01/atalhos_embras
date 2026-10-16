@@ -32,7 +32,7 @@
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pmsantabranca/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/pmsilveiras/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
-        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/pmlagoinha/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pmaparecida/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" }
       ]
     },

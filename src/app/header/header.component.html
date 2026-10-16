@@ -20,10 +20,10 @@
     <kbd class="busca-atalho" title="Atalho para buscar"> Ctrl K </kbd>
   </div>
   <div class="menu">
-    <li class="bot" [class.active]="selectedComponent === 'clientes'" (click)="selectComponent('clientes')"> <i class="fa-solid fa-city" style="margin-right: 15px; font-size: 18px;"></i> Clientes </li>
-    <li class="bot" [class.active]="selectedComponent === 'GoGlobal'" (click)="selectComponent('GoGlobal')"> <i class="fa-solid fa-globe" style="margin-right: 15px; font-size: 18px;"></i> GoGlobal </li>
+    <li class="bot" [class.active]="selectedComponent === 'clientes'" (click)="selectComponent('clientes')"> <i class="fa-solid fa-city"></i> Clientes </li>
+    <li class="bot" [class.active]="selectedComponent === 'GoGlobal'" (click)="selectComponent('GoGlobal')"> <i class="fa-solid fa-globe"></i> GoGlobal </li>
     <li class="bot has-submenu" [class.open]="openSubmenu === 'egov'" (click)="toggleSubmenu('egov', $event)">
-      <i class="fa-solid fa-building-columns" style="margin-right: 15px; font-size: 18px;"></i> E-Gov
+      <i class="fa-solid fa-building-columns"></i> E-Gov
       <i class="fa-solid fa-chevron-down submenu-caret"></i>
     </li>
     <ul class="submenu" [class.open]="openSubmenu === 'egov'">
@@ -32,23 +32,24 @@
       <li (click)="$event.stopPropagation(); selectComponent('config', 'egov')" [class.active]="selectedComponent === 'config'"> Config E-Gov </li>
       <li (click)="$event.stopPropagation(); selectComponent('transparencia-egov', 'egov')" [class.active]="selectedComponent === 'transparencia-egov'"> Transparência </li>
     </ul>
-    <li class="bot" [class.active]="selectedComponent === 'aten'" (click)="selectComponent('aten')"> <i class="fa-solid fa-clipboard-list" style="margin-right: 15px; font-size: 18px;"></i> ATEN </li>
-    <li class="bot" [class.active]="selectedComponent === 'login-novo'" (click)="selectComponent('login-novo')"> <i class="fa-solid fa-user" style="margin-right: 15px; font-size: 18px;"></i> Config Contas </li>
-    <li class="bot" [class.active]="selectedComponent === 'setup'" (click)="selectComponent('setup')"> <i class="fa-solid fa-sliders" style="margin-right: 15px; font-size: 18px;"></i> Setup </li>
-    <li class="bot" [class.active]="selectedComponent === 'pessoas'" (click)="selectComponent('pessoas')"> <i class="fa-solid fa-users" style="margin-right: 15px; font-size: 18px;"></i> Pessoas </li>
-    <li class="bot" [class.active]="selectedComponent === 'links'" (click)="selectComponent('links')"> <i class="fa-solid fa-link" style="margin-right: 15px; font-size: 18px;"></i> Links Uteis </li>
-    <li class="bot" [class.active]="selectedComponent === 'infra'" (click)="selectComponent('infra')"> <i class="fa-solid fa-server" style="margin-right: 15px; font-size: 18px;"></i> Infraestrutura </li>
-    <li class="bot" [class.active]="selectedComponent === 'gcc'" (click)="selectComponent('gcc')"> <i class="fa-solid fa-file-text" style="margin-right: 20px; font-size: 18px;"></i> GCC </li>
-    <li class="bot" [class.active]="selectedComponent === 'suprimentos'" (click)="selectComponent('suprimentos')"> <i class="fa-solid fa-boxes-stacked" style="margin-right: 15px; font-size: 18px;"></i> Suprimentos </li>
+    <li class="bot" [class.active]="selectedComponent === 'aten'" (click)="selectComponent('aten')"> <i class="fa-solid fa-clipboard-list"></i> ATEN </li>
+    <li class="bot" [class.active]="selectedComponent === 'gpro-web'" (click)="selectComponent('gpro-web')"> <i class="fa-solid fa-folder-open"></i> GPRO WEB </li>
+    <li class="bot" [class.active]="selectedComponent === 'login-novo'" (click)="selectComponent('login-novo')"> <i class="fa-solid fa-user"></i> Config Contas </li>
+    <li class="bot" [class.active]="selectedComponent === 'setup'" (click)="selectComponent('setup')"> <i class="fa-solid fa-sliders"></i> Setup </li>
+    <li class="bot" [class.active]="selectedComponent === 'pessoas'" (click)="selectComponent('pessoas')"> <i class="fa-solid fa-users"></i> Pessoas </li>
+    <li class="bot" [class.active]="selectedComponent === 'links'" (click)="selectComponent('links')"> <i class="fa-solid fa-link"></i> Links Uteis </li>
+    <li class="bot" [class.active]="selectedComponent === 'infra'" (click)="selectComponent('infra')"> <i class="fa-solid fa-server"></i> Infraestrutura </li>
+    <li class="bot" [class.active]="selectedComponent === 'gcc'" (click)="selectComponent('gcc')"> <i class="fa-solid fa-file-text"></i> GCC </li>
+    <li class="bot" [class.active]="selectedComponent === 'suprimentos'" (click)="selectComponent('suprimentos')"> <i class="fa-solid fa-boxes-stacked"></i> Suprimentos </li>
     <li class="bot has-submenu" [class.open]="openSubmenu === 'transparencia'" (click)="toggleSubmenu('transparencia', $event)">
-      <i class="fa-solid fa-magnifying-glass-dollar" style="margin-right: 15px; font-size: 18px;"></i> Transparência
+      <i class="fa-solid fa-magnifying-glass-dollar"></i> Transparência
       <i class="fa-solid fa-chevron-down submenu-caret"></i>
     </li>
     <ul class="submenu" [class.open]="openSubmenu === 'transparencia'">
       <li (click)="$event.stopPropagation(); selectComponent('portal-transparencia', 'transparencia')" [class.active]="selectedComponent === 'portal-transparencia'"> Transparência </li>
       <li (click)="$event.stopPropagation(); selectComponent('novo-transparencia', 'transparencia')" [class.active]="selectedComponent === 'novo-transparencia'"> Novo Transparência </li>
     </ul>
-    <li class="bot" [class.active]="selectedComponent === 'adm-web'" (click)="selectComponent('adm-web')"> <i class="fa-solid fa-desktop" style="margin-right: 15px; font-size: 18px;"></i> ADM-Web </li>
+    <li class="bot" [class.active]="selectedComponent === 'adm-web'" (click)="selectComponent('adm-web')"> <i class="fa-solid fa-desktop"></i> ADM-Web </li>
   </div>
     <p class="instalar" *ngIf="promptInstalacao" (click)="instalarApp()" title="Instalar como aplicativo">
       <i class="fa-solid fa-download"></i> Instalar app

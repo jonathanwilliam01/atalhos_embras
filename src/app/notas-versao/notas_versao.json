@@ -57,6 +57,14 @@
         "Listas de clientes em ordem alfabética e com rolagem no lugar da paginação.",
         "Agora é possível instalar o Atalhos como aplicativo pelo botão Instalar app no menu (Chrome e Edge)."
       ]
+    },
+    {
+      "versao": "V3.26.10.03",
+      "data": "16/10/2026",
+      "descricao": [
+        "Criada a opção GPRO WEB no menu, com os links de todos os clientes.",
+        "Adicionada a versão de cada cliente ao lado do nome nas telas de E-Gov, Transparência E-Gov e Portal da Transparência. Em nomes longos, a versão aparece ao passar o mouse."
+      ]
     }
   ]
 }

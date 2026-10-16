@@ -80,21 +80,8 @@ app-root > * {
     gap: 16px !important;
   }
 
-  /* Overlay reveals content on hover on desktop — on touch there is no
-     hover, so make it permanently visible and part of the flow. */
   .overlay {
-    position: static !important;
-    opacity: 1 !important;
-    width: 100% !important;
-    height: auto !important;
     background-color: rgba(0, 0, 0, 0.55) !important;
-    padding: 6px 0 14px 0 !important;
-  }
-
-  .content {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
   }
 
   .est {

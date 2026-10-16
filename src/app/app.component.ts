@@ -4,6 +4,7 @@ import { GoGlobalComponent } from './goglobal/goglobal.component';
 import { HeaderComponent } from './header/header.component';
 import { EgovComponent } from './egov/egov.component';
 import { AtenComponent } from './aten/aten.component';
+import { GproWebComponent } from './gpro-web/gpro-web.component';
 import { EgovDevComponent } from './egov-dev/egov-dev.component';
 import { LinksComponent } from './links/links.component';
 import { ConfigEgovComponent } from './config-egov/config-egov.component';
@@ -35,7 +36,7 @@ const DIAS_EXIBINDO_NOTAS = 7;
   standalone: true,
   imports: [CommonModule, GoGlobalComponent, HeaderComponent, EgovComponent,
     EgovDevComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, InfraComponent, SaibaMaisComponent, SetupComponent, PessoasComponent,
-    GccComponent, SuprimentosComponent, PortalTransparenciaComponent, TransparenciaEgovComponent, AdmWebComponent, NovoTransparenciaComponent, NotasVersaoComponent, ClientesComponent, AtenComponent
+    GccComponent, SuprimentosComponent, PortalTransparenciaComponent, TransparenciaEgovComponent, AdmWebComponent, NovoTransparenciaComponent, NotasVersaoComponent, ClientesComponent, AtenComponent, GproWebComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

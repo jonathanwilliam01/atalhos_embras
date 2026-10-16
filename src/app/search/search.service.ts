@@ -3,6 +3,7 @@ import goglobal from '../goglobal/goglobal.links.json';
 import egov from '../egov/egov.links.json';
 import egovDev from '../egov-dev/egov-dev.links.json';
 import aten from '../aten/aten.links.json';
+import gproWeb from '../gpro-web/gpro-web.links.json';
 import configEgov from '../config-egov/config-egov.links.json';
 import links from '../links/links.links.json';
 import loginNovo from '../login-novo/login-novo.links.json';
@@ -34,7 +35,7 @@ export interface GrupoBusca {
 }
 
 const SISTEMAS: DadosSistema[] = [
-  goglobal, egov, egovDev, configEgov, transparenciaEgov, aten, loginNovo, setup, pessoas,
+  goglobal, egov, egovDev, configEgov, transparenciaEgov, aten, gproWeb, loginNovo, setup, pessoas,
   gcc, suprimentos, portalTransparencia, novoTransparencia, admWeb, infra, links
 ];
 

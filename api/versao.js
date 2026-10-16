@@ -1,0 +1,52 @@
+const TIMEOUT_MS = 8000;
+const TIMEOUT_BUNDLE_MS = 25000;
+
+// e-Gov: "((2.2.240.7)" no rodapé; transparência do e-Gov: "(2.2.240.7)".
+const VERSAO_EGOV = /\((\d+\.\d+\.\d+\.\d+)\)/;
+const BASE_HREF = /<base href="([^"]+)"/;
+const BUNDLE = /src="(main-es2015\.\w+\.js)"/;
+const VERSAO_PORTAL = /"name":"portal-transparencia","version":"([\d.]+)"/;
+
+async function texto(url, timeout = TIMEOUT_MS) {
+  const resposta = await fetch(url, { signal: AbortSignal.timeout(timeout) });
+  return Buffer.from(await resposta.arrayBuffer()).toString('latin1');
+}
+
+async function versaoEgov(url) {
+  return (await texto(url)).match(VERSAO_EGOV)?.[1] ?? null;
+}
+
+// Portal é SPA: a versão está no bundle (~7MB). Clientes na mesma build compartilham o arquivo, então baixa uma vez por nome.
+const versoesBundle = new Map();
+
+async function versaoPortal(url) {
+  const html = await texto(url);
+  const bundle = html.match(BUNDLE)?.[1];
+  if (!bundle) return null;
+
+  if (!versoesBundle.has(bundle)) {
+    const urlBundle = new URL(bundle, new URL(html.match(BASE_HREF)?.[1] ?? './', url));
+    const versao = texto(urlBundle, TIMEOUT_BUNDLE_MS).then(js => js.match(VERSAO_PORTAL)?.[1] ?? null);
+    versao.then(v => v || versoesBundle.delete(bundle), () => versoesBundle.delete(bundle));
+    versoesBundle.set(bundle, versao);
+  }
+  return versoesBundle.get(bundle);
+}
+
+const sistemas = {
+  egov: { dados: require('../src/app/egov/egov.links.json'), versao: versaoEgov },
+  'transparencia-egov': { dados: require('../src/app/transparencia-egov/transparencia-egov.links.json'), versao: versaoEgov },
+  'portal-transparencia': { dados: require('../src/app/portal-transparencia/portal-transparencia.links.json'), versao: versaoPortal }
+};
+
+// Retorna { url: versão | null } de todos os clientes ativos do sistema.
+module.exports = async (req, res) => {
+  const sistema = sistemas[req.query.sistema];
+  if (!sistema) return res.status(400).json({ erro: 'Sistema inválido' });
+
+  const urls = sistema.dados.grupos.flatMap(g => g.itens).filter(i => i.url && !i.inativo).map(i => i.url);
+  const versoes = await Promise.all(urls.map(url => sistema.versao(url).catch(() => null)));
+
+  res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate=3600');
+  res.status(200).json(Object.fromEntries(urls.map((url, i) => [url, versoes[i]])));
+};
