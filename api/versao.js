@@ -9,6 +9,8 @@ const VERSAO_TITULO = /<title>[^<]*?(\d+\.\d+\.\d+\.\d+)/;
 const BASE_HREF = /<base href="([^"]+)"/;
 const BUNDLE = /src="(main-es2015\.\w+\.js)"/;
 const VERSAO_ISS = /ISS Online v\.\s*([\d.]+)/;
+// ITBI: versão própria no cabeçalho, "Versão: 1.000007" (o título traz a do E-Gov).
+const VERSAO_ITBI = /Vers.{1,8}o:\s*([\d.]+)/;
 const VERSAO_PORTAL = /"name":"portal-transparencia","version":"([\d.]+)"/;
 
 async function texto(url, timeout = TIMEOUT_MS) {
@@ -38,6 +40,10 @@ async function versaoIss(url) {
   return (await texto(url)).match(VERSAO_ISS)?.[1] ?? null;
 }
 
+async function versaoItbi(url) {
+  return (await texto(url)).match(VERSAO_ITBI)?.[1] ?? null;
+}
+
 // Portal é SPA: a versão está no bundle (~7MB). Clientes na mesma build compartilham o arquivo, então baixa uma vez por nome.
 const versoesBundle = new Map();
 
@@ -60,6 +66,7 @@ const sistemas = {
   aten: { dados: require('../src/app/dados/aten.json'), versao: versaoEgov },
   'gpro-web': { dados: require('../src/app/dados/gpro-web.json'), versao: versaoTitulo },
   issonline: { dados: require('../src/app/dados/issonline.json'), versao: versaoIss },
+  itbi: { dados: require('../src/app/dados/itbi.json'), versao: versaoItbi },
   'transparencia-egov': { dados: require('../src/app/dados/transparencia-egov.json'), versao: versaoEgov },
   'portal-transparencia': { dados: require('../src/app/dados/portal-transparencia.json'), versao: versaoPortal }
 };

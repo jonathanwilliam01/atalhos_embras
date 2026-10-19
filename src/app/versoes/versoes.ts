@@ -20,7 +20,9 @@ function salvarVersoes(sistema: string, versoes: Versoes): void {
   } catch {}
 }
 
-// Telas do E-Gov (portal, ATEN, GPRO, ITBI, transparência) ficam em /<alias>/websis/ e têm a mesma versão por cliente.
+// Telas do E-Gov que têm a mesma versão por cliente; ficam em /<alias>/websis/. O ITBI tem versão própria.
+const MESMA_VERSAO_EGOV = new Set(['egov', 'aten', 'gpro-web', 'transparencia-egov']);
+
 function baseEgov(url: string): string | null {
   const i = url.indexOf('/websis/');
   return i < 0 ? null : url.slice(0, i);
@@ -29,7 +31,8 @@ function baseEgov(url: string): string | null {
 // Versões que outra tela do E-Gov já carregou para estes clientes.
 function versoesDoMesmoSistema(urls: string[]): Versoes {
   const porBase = new Map<string, string | null | false>();
-  for (const versoes of cacheVersoes.values()) {
+  for (const [sistema, versoes] of cacheVersoes) {
+    if (!MESMA_VERSAO_EGOV.has(sistema)) continue;
     for (const [url, v] of Object.entries(versoes)) {
       const base = baseEgov(url);
       if (base) porBase.set(base, v);
@@ -67,7 +70,7 @@ export function carregarVersoes(sistema: string, urls: string[], aoMudar: (verso
     aoMudar(cache, false);
     return;
   }
-  const doMesmoSistema = versoesDoMesmoSistema(urls);
+  const doMesmoSistema = MESMA_VERSAO_EGOV.has(sistema) ? versoesDoMesmoSistema(urls) : {};
   const encontradas = Object.keys(doMesmoSistema).length;
   if (encontradas === urls.length) {
     cacheVersoes.set(sistema, doMesmoSistema);

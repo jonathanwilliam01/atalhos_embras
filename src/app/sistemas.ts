@@ -60,7 +60,7 @@ export const MENU: ItemMenu[] = [
       { id: 'egov_dev', nome: 'E-Gov Homol.', dados: egovDev },
       { id: 'config', nome: 'Config E-Gov', dados: configEgov },
       { id: 'segunda-via', nome: 'Nova Segunda Via', dados: segundaVia, areas: ['arrecadacao'] },
-      { id: 'itbi', nome: 'ITBI', dados: itbi, areas: ['arrecadacao'] },
+      { id: 'itbi', nome: 'ITBI', dados: itbi, areas: ['arrecadacao'], versao: 'itbi' },
       { id: 'transparencia-egov', nome: 'Transparência', dados: transparenciaEgov, areas: ['financas'], versao: 'transparencia-egov' }
     ]
   },
