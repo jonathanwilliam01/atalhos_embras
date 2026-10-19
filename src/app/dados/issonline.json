@@ -1,0 +1,50 @@
+{
+  "sistema": "IssOnline",
+  "titulo": "ISS-Online",
+  "imagens": [
+    "/assets/pexels-photo-15384280.avif",
+    "/assets/pexels-photo-7768028.webp",
+    "/assets/pexels-photo-12795930.avif"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/issonline/iss.login.php" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/pmguaratingueta/issonline/iss.login.php" },
+        { "cliente": "Jacarei", "url": "https://egov.jacarei.sp.gov.br/pmjacarei/issonline/iss.login.php" },
+        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/issonline/iss.login.php" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/pmlorena/issonline/iss.login.php" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/issonline/iss.login.php" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/issonline/iss.login.php" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/issonline/iss.login.php" },
+        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/pmcanas/issonline/iss.login.php" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/issonline/iss.login.php" },
+        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/pmredencaodaserra/issonline/iss.login.php" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/pmsalesopolis/issonline/iss.login.php" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pmsantabranca/issonline/iss.login.php" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/pmsilveiras/issonline/iss.login.php" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/pmarapei/issonline/iss.login.php" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/pmqueluz/issonline/iss.login.php" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/issonline/iss.login.php" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/pmroseira/issonline/iss.login.php" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/pmpedrotoledo/issonline/iss.login.php" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/pmlagoinha/issonline/iss.login.php" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/pmjaperi/issonline/iss.login.php" },
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pmsaogoncalo/issonline/iss.login.php" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/pmitamonte/issonline/iss.login.php" },
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/pmpousoalto/issonline/iss.login.php" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "sistema": "Facilita-SP / Jucesp",
+  "titulo": "Facilita-SP / Jucesp",
+  "imagens": [
+    "/assets/vitor-mendes-stafusa-o3jiiES00cI-unsplash.webp",
+    "/assets/raphael-nogueira-CErddu-JwKw-unsplash.webp",
+    "/assets/andre-antonelli-R2xICK7sS2U-unsplash.webp"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/jucesp/dashboard" },
+        { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/jucesp/dashboard" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/jucesp/dashboard" },
+        { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/jucesp/dashboard" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/jucesp/dashboard" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/jucesp/dashboard" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/jucesp/dashboard" },
+        { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/jucesp/dashboard" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/jucesp/dashboard" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Não Utilizado", "url": "" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Não Utilizado", "url": "" }
+      ]
+    }
+  ]
+}

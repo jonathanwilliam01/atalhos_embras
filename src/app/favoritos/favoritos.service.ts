@@ -51,6 +51,14 @@ export class FavoritosService {
     this.carregar();
   }
 
+  // Junta favoritos e recentes vindos do Atalhos Tributário, sem repetir.
+  importar(favoritos: string[], recentes: string[]): void {
+    const unir = (atuais: string[], novos: unknown[]) => [...new Set([...atuais, ...novos.filter((u): u is string => typeof u === 'string')])];
+    gravar(CHAVE_FAVORITOS, unir(ler(CHAVE_FAVORITOS), favoritos));
+    gravar(CHAVE_RECENTES, unir(ler(CHAVE_RECENTES), recentes).slice(0, MAX_HISTORICO));
+    this.carregar();
+  }
+
   private resolver(urls: string[]): ResultadoBusca[] {
     return urls.map(u => this.searchService.porUrl(u)).filter((r): r is ResultadoBusca => !!r);
   }

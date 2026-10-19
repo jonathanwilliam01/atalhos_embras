@@ -1,0 +1,41 @@
+name: Verificar links
+
+# Toda segunda às 7h (Brasília) e sob demanda pela aba Actions.
+on:
+  schedule:
+    - cron: '0 10 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Testar links
+        run: node scripts/verificar-links.mjs relatorio.md
+
+      # Uma issue aberta por vez: atualiza a existente, abre se não houver e fecha quando tudo voltar.
+      - name: Abrir, atualizar ou fechar a issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          numero=$(gh issue list --state open --label links-quebrados --json number --jq '.[0].number')
+          if [ -s relatorio.md ]; then
+            if [ -n "$numero" ]; then
+              gh issue edit "$numero" --body-file relatorio.md
+            else
+              gh label create links-quebrados --color d73a4a --description "Aberta pela verificação semanal de links" --force
+              gh issue create --title "Links quebrados" --label links-quebrados --body-file relatorio.md
+            fi
+          elif [ -n "$numero" ]; then
+            gh issue close "$numero" --comment "Todos os links voltaram a abrir."
+          fi

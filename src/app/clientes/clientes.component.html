@@ -1,25 +1,63 @@
-<div class="container">
+<div class="container" [class.modo-tabela]="modo === 'versoes'">
   <div class="topo">
     <div class="titulo"> Clientes </div>
-    <div class="filtro">
-      <i class="fa-solid fa-filter"></i>
-      <input #filtro type="text" placeholder="Filtrar por cliente ou estado" (input)="filtrar(filtro.value)">
+    <div class="acoes">
+      @if (versoes.carregando) {
+        <span class="carregando"><i class="fa-solid fa-spinner fa-spin"></i> Carregando versões</span>
+      } @else {
+        <button type="button" class="atualizar-versoes" (click)="versoes.recarregar()" title="Busca de novo a versão de cada cliente. Não altera nada nos sistemas.">
+          <i class="fa-solid fa-rotate-right"></i> Atualizar visualização
+        </button>
+      }
+      <div class="modos" role="tablist" aria-label="Visão">
+        <button type="button" role="tab" [class.ativo]="modo === 'cartoes'" [attr.aria-selected]="modo === 'cartoes'" (click)="mudarModo('cartoes')">
+          <i class="fa-solid fa-table-cells-large"></i> Cartões
+        </button>
+        <button type="button" role="tab" [class.ativo]="modo === 'versoes'" [attr.aria-selected]="modo === 'versoes'" (click)="mudarModo('versoes')">
+          <i class="fa-solid fa-code-branch"></i> Versões
+        </button>
+      </div>
+      @if (modo === 'versoes') {
+        <button type="button" class="pendencias" [class.ativo]="soPendencias" [attr.aria-pressed]="soPendencias" (click)="soPendencias = !soPendencias">
+          <i class="fa-solid fa-triangle-exclamation"></i> Só desatualizados ou sem resposta
+        </button>
+      }
+      <div class="filtro">
+        <i class="fa-solid fa-filter"></i>
+        <input #filtroInput type="text" placeholder="Filtrar por cliente ou estado" [value]="filtro" (input)="filtrar(filtroInput.value)">
+      </div>
     </div>
   </div>
 
-  <div class="grade">
-    <div class="cliente" *ngFor="let c of clientes">
-      <div class="cliente-topo">
-        <span class="cliente-nome"> {{ c.cliente }} </span>
-        <span class="estado"> {{ c.estado }} </span>
-      </div>
-      <div class="chips">
-        <a class="chip" *ngFor="let l of c.itens" [href]="l.url" target="_blank" [class.homolog]="l.homolog" [title]="l.url">
-          {{ l.nomeSistema }}{{ l.homolog ? ' Homolog.' : '' }}
-        </a>
-      </div>
+  @if (modo === 'versoes') {
+    <app-versoes [filtro]="filtro" [soPendencias]="soPendencias"></app-versoes>
+  } @else {
+    <div class="grade">
+      @for (c of clientes; track c) {
+        <div class="cliente">
+          <div class="cliente-topo">
+            <span class="cliente-nome"> {{ c.cliente }} </span>
+            <span class="estado"> {{ c.estado }} </span>
+          </div>
+          <div class="chips">
+            @for (l of c.itens; track l) {
+              @let info = versoes.info(l.url);
+              <a class="chip" [href]="l.url" target="_blank" [class.homolog]="l.homolog" [title]="info.versao === false ? 'Não respondeu na última verificação' : l.url">
+                {{ l.nomeSistema }}{{ l.homolog ? ' Homolog.' : '' }}
+                @if (info.versao) {
+                  <span class="chip-versao" [class.desatualizada]="info.desatualizada">{{ info.versao }}</span>
+                } @else if (info.versao === false) {
+                  <span class="chip-fora"></span>
+                }
+              </a>
+            }
+          </div>
+        </div>
+      }
     </div>
-  </div>
 
-  <div class="vazio" *ngIf="!clientes.length"> Nenhum cliente encontrado. </div>
+    @if (!clientes.length) {
+      <div class="vazio"> Nenhum cliente encontrado. </div>
+    }
+  }
 </div>

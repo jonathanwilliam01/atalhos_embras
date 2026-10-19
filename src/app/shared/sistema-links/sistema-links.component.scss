@@ -48,6 +48,23 @@
   box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.3);
 }
 
+.atualizar-versoes {
+  margin-left: 12px;
+  padding: 4px 10px;
+  border: 1px solid rgb(70, 78, 83);
+  border-radius: 6px;
+  background: none;
+  color: rgb(150, 160, 166);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover { border-color: rgb(74, 194, 194); color: rgb(74, 194, 194); }
+}
+
 .carregando{
   margin-left: 12px;
   font-size: 0.5em;

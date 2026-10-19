@@ -1,21 +1,6 @@
 import { Injectable } from '@angular/core';
-import goglobal from '../goglobal/goglobal.links.json';
-import egov from '../egov/egov.links.json';
-import egovDev from '../egov-dev/egov-dev.links.json';
-import aten from '../aten/aten.links.json';
-import gproWeb from '../gpro-web/gpro-web.links.json';
-import configEgov from '../config-egov/config-egov.links.json';
-import links from '../links/links.links.json';
-import loginNovo from '../login-novo/login-novo.links.json';
-import setup from '../setup/setup.links.json';
-import pessoas from '../pessoas/pessoas.links.json';
-import gcc from '../gcc/gcc.links.json';
-import suprimentos from '../suprimentos/suprimentos.links.json';
-import portalTransparencia from '../portal-transparencia/portal-transparencia.links.json';
-import transparenciaEgov from '../transparencia-egov/transparencia-egov.links.json';
-import admWeb from '../adm-web/adm-web.links.json';
-import novoTransparencia from '../novo-transparencia/novo-transparencia.links.json';
 import { DadosSistema } from '../shared/sistema-links/sistema-links.component';
+import { TELAS } from '../sistemas';
 
 export interface ResultadoBusca {
   sistema: string;
@@ -33,10 +18,7 @@ export interface GrupoBusca {
   itens: ResultadoBusca[];
 }
 
-const SISTEMAS: DadosSistema[] = [
-  goglobal, egov, egovDev, configEgov, transparenciaEgov, aten, gproWeb, loginNovo, setup, pessoas,
-  gcc, suprimentos, portalTransparencia, novoTransparencia, admWeb, links
-];
+const SISTEMAS: DadosSistema[] = TELAS.map(t => t.dados);
 
 export const ESTADOS: Record<string, string> = { 'São Paulo': 'SP', 'Rio de Janeiro': 'RJ', 'Minas Gerais': 'MG' };
 const SUFIXO_HOMOLOG = /\s+homolog\.?$/i;

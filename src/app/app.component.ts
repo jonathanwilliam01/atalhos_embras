@@ -1,22 +1,8 @@
-import { Component, HostListener, OnInit, PLATFORM_ID, inject } from '@angular/core';
+import { Component, HostListener, OnInit, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { GoGlobalComponent } from './goglobal/goglobal.component';
 import { HeaderComponent } from './header/header.component';
-import { EgovComponent } from './egov/egov.component';
-import { AtenComponent } from './aten/aten.component';
-import { GproWebComponent } from './gpro-web/gpro-web.component';
-import { EgovDevComponent } from './egov-dev/egov-dev.component';
-import { LinksComponent } from './links/links.component';
-import { ConfigEgovComponent } from './config-egov/config-egov.component';
-import { LoginNovoComponent } from './login-novo/login-novo.component';
-import { SetupComponent } from './setup/setup.component';
-import { PessoasComponent } from './pessoas/pessoas.component';
-import { GccComponent } from './gcc/gcc.component';
-import { SuprimentosComponent } from './suprimentos/suprimentos.component';
-import { PortalTransparenciaComponent } from './portal-transparencia/portal-transparencia.component';
-import { TransparenciaEgovComponent } from './transparencia-egov/transparencia-egov.component';
-import { AdmWebComponent } from './adm-web/adm-web.component';
-import { NovoTransparenciaComponent } from './novo-transparencia/novo-transparencia.component';
+import { SistemaLinksComponent } from './shared/sistema-links/sistema-links.component';
+import { Tela, telaPorId } from './sistemas';
 import { NotasVersaoComponent } from './notas-versao/notas-versao.component';
 import notasVersaoData from './notas-versao/notas_versao.json';
 import { SearchService, GrupoBusca, slug } from './search/search.service';
@@ -26,21 +12,17 @@ import { FavoritosService } from './favoritos/favoritos.service';
 import { ClientesComponent } from './clientes/clientes.component';
 import { SugestaoComponent } from './sugestao/sugestao.component';
 
-
 const CHAVE_NOTAS = 'notasVersaoVistas';
 const EMAIL_CONTATO = 'jonathan.willian@embras.net';
 const LINK_SUGESTAO = 'https://github.com/jonathanwilliam01/atalhos_embras/issues/new';
 const DIAS_EXIBINDO_NOTAS = 7;
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, GoGlobalComponent, HeaderComponent, EgovComponent,
-    EgovDevComponent, LinksComponent, ConfigEgovComponent, LoginNovoComponent, SetupComponent, PessoasComponent,
-    GccComponent, SuprimentosComponent, PortalTransparenciaComponent, TransparenciaEgovComponent, AdmWebComponent, NovoTransparenciaComponent, NotasVersaoComponent, SugestaoComponent, ClientesComponent, AtenComponent, GproWebComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    imports: [CommonModule, HeaderComponent, SistemaLinksComponent, NotasVersaoComponent, SugestaoComponent, ClientesComponent],
+    templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   currentComponent: string = '';
@@ -63,6 +45,10 @@ export class AppComponent implements OnInit {
   linkCopiado: string | null = null;
 
   constructor(private searchService: SearchService) {}
+
+  get tela(): Tela | undefined {
+    return telaPorId(this.currentComponent);
+  }
 
   setComponent(componentName: string) {
     this.resultadosBusca = null;
@@ -107,6 +93,23 @@ export class AppComponent implements OnInit {
     });
   }
 
+  focarResultado(indice: number) {
+    setTimeout(() => document.querySelectorAll<HTMLElement>('.busca-item')[indice]?.focus());
+  }
+
+  // Setas percorrem os resultados da busca; Enter abre o link em foco. Acima do primeiro volta para a busca.
+  @HostListener('document:keydown', ['$event'])
+  navegarResultados(event: KeyboardEvent) {
+    if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+    const itens = [...document.querySelectorAll<HTMLElement>('.busca-item')];
+    const atual = itens.indexOf(document.activeElement as HTMLElement);
+    if (atual < 0) return;
+    event.preventDefault();
+    const proximo = atual + (event.key === 'ArrowDown' ? 1 : -1);
+    if (proximo < 0) document.querySelector<HTMLInputElement>('.busca-input')?.focus();
+    else itens[Math.min(proximo, itens.length - 1)].focus();
+  }
+
   abrirNotasVersao() {
     this.notasVersaoVisivel = true;
   }
@@ -121,11 +124,23 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (!isPlatformBrowser(this.platformId)) return;
     this.favoritos.carregar();
+    this.importarDoTributario();
     // App instalado: quando o service worker baixa uma versão nova, recarrega para usá-la.
     if (this.swUpdate.isEnabled) {
       this.swUpdate.versionUpdates.subscribe(e => { if (e.type === 'VERSION_READY') document.location.reload(); });
     }
     if (this.deveExibirNotas()) this.notasVersaoVisivel = true;
+  }
+
+  // O Atalhos Tributário redireciona para cá com ?importar={favoritos, recentes}.
+  private importarDoTributario() {
+    const dados = new URLSearchParams(location.search).get('importar');
+    if (!dados) return;
+    try {
+      const { favoritos = [], recentes = [] } = JSON.parse(dados);
+      this.favoritos.importar(favoritos, recentes);
+    } catch {}
+    history.replaceState(null, '', location.pathname + location.hash);
   }
 
   // Versão nova abre sempre; depois, no máximo uma vez por dia enquanto a versão for recente.

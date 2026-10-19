@@ -1,40 +1,58 @@
 <div class="container">
-  <div class="titulo"> {{ titulo }}<ng-container *ngIf="versaoAtual"> - {{ versaoAtual }}</ng-container>
-    <span class="aviso-fora" *ngIf="foraDoArTotal" title="Clientes que não responderam na última verificação">
+  <div class="titulo"> {{ titulo }}@if (versaoAtual) {
+    - {{ versaoAtual }}
+  }
+  @if (foraDoArTotal) {
+    <span class="aviso-fora" title="Clientes que não responderam na última verificação">
       <i class="fa-solid fa-circle"></i> {{ foraDoArTotal }} sem resposta
     </span>
-    <span class="carregando" *ngIf="carregandoVersoes"><i class="fa-solid fa-spinner fa-spin"></i> Carregando versões</span>
-  </div>
+  }
+  @if (carregandoVersoes) {
+    <span class="carregando"><i class="fa-solid fa-spinner fa-spin"></i> Carregando versões</span>
+  } @else if (versaoSistema) {
+    <button type="button" class="atualizar-versoes" (click)="atualizarVisualizacao()" title="Busca de novo a versão de cada cliente. Não altera nada nos sistemas.">
+      <i class="fa-solid fa-rotate-right"></i> Atualizar visualização
+    </button>
+  }
+</div>
 
-  <div class="blocos">
-    <div class="bloco" *ngFor="let grupo of grupos; let i = index"
-         [style.background-image]="imagemDoGrupo(i) ? 'url(' + imagemDoGrupo(i) + ')' : null">
+<div class="blocos">
+  @for (grupo of grupos; track grupo; let i = $index) {
+    <div class="bloco"
+      [style.background-image]="imagemDoGrupo(i) ? 'url(' + imagemDoGrupo(i) + ')' : null">
       <div class="overlay">
         <div class="content">
           <div class="est"> {{ grupo.nome }} </div>
-
           <div class="itens">
-            <div class="li" *ngFor="let item of grupo.itens" [class.sem-link]="!item.url">
-              <ng-container *ngIf="item.url; else semLink">
-                <a [href]="item.url" target="_blank" [attr.title]="foraDoAr(item) ? 'Não respondeu na última verificação' : espaco.get(item.url) === 'aperta' ? dicaVersao(item) : null"> {{ item.cliente }}
-                  <span class="fora-do-ar" *ngIf="foraDoAr(item)"></span>
-                  <span class="versao" [class.aperta]="espaco.get(item.url) === 'aperta'" [class.quebra]="espaco.get(item.url) === 'quebra'" [class.desatualizada]="desatualizada(item)" [attr.title]="desatualizada(item) ? dicaVersao(item) : null" *ngIf="versao(item)">{{ versao(item) }}</span>
-                </a>
-                <span class="li-acoes">
-                  <button class="li-copy li-fav" [class.ativa]="favoritos.isFavorito(item.url)" (click)="favoritos.alternar(item.url, $event)"
-                          [title]="favoritos.isFavorito(item.url) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'">
-                    <i [class]="favoritos.isFavorito(item.url) ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
-                  </button>
-                  <button class="li-copy" (click)="copiarLink(item.url, $event)" [title]="linkCopiado === item.url ? 'Copiado!' : 'Copiar link'">
-                    <i class="fa-solid" [class.fa-copy]="linkCopiado !== item.url" [class.fa-check]="linkCopiado === item.url"></i>
-                  </button>
-                </span>
-              </ng-container>
-              <ng-template #semLink><span class="texto"> {{ item.cliente }} </span></ng-template>
-            </div>
+            @for (item of grupo.itens; track item) {
+              <div class="li" [class.sem-link]="!item.url">
+                @if (item.url) {
+                  <a [href]="item.url" target="_blank" [attr.title]="foraDoAr(item) ? 'Não respondeu na última verificação' : espaco.get(item.url) === 'aperta' ? dicaVersao(item) : null"> {{ item.cliente }}
+                    @if (foraDoAr(item)) {
+                      <span class="fora-do-ar"></span>
+                    }
+                    @if (versao(item)) {
+                      <span class="versao" [class.aperta]="espaco.get(item.url) === 'aperta'" [class.quebra]="espaco.get(item.url) === 'quebra'" [class.desatualizada]="desatualizada(item)" [attr.title]="desatualizada(item) ? dicaVersao(item) : null">{{ versao(item) }}</span>
+                    }
+                  </a>
+                  <span class="li-acoes">
+                    <button class="li-copy li-fav" [class.ativa]="favoritos.isFavorito(item.url)" (click)="favoritos.alternar(item.url, $event)"
+                      [title]="favoritos.isFavorito(item.url) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'">
+                      <i [class]="favoritos.isFavorito(item.url) ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+                    </button>
+                    <button class="li-copy" (click)="copiarLink(item.url, $event)" [title]="linkCopiado === item.url ? 'Copiado!' : 'Copiar link'">
+                      <i class="fa-solid" [class.fa-copy]="linkCopiado !== item.url" [class.fa-check]="linkCopiado === item.url"></i>
+                    </button>
+                  </span>
+                } @else {
+                  <span class="texto"> {{ item.cliente }} </span>
+                }
+              </div>
+            }
           </div>
         </div>
       </div>
     </div>
-  </div>
+  }
+</div>
 </div>

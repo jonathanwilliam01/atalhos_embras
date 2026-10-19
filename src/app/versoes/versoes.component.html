@@ -1,0 +1,43 @@
+<div class="tabela-rolagem">
+  <table>
+    <thead>
+      <tr>
+        <th class="col-cliente">Cliente</th>
+        @for (c of colunas; track c.tela.id) {
+          <th>
+            <span class="sistema">{{ c.tela.dados.sistema }}</span>
+            @if (c.carregando) {
+              <span class="atual carregando"><i class="fa-solid fa-spinner fa-spin"></i></span>
+            } @else if (c.atual) {
+              <span class="atual" title="Maior versão entre os clientes">{{ c.atual }}</span>
+            }
+          </th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (l of linhas; track l.cliente + l.estado) {
+        <tr>
+          <td class="col-cliente">{{ l.cliente }} <span class="estado">{{ l.estado }}</span></td>
+          @for (c of colunas; track c.tela.id) {
+            <td>
+              @if (l.urls[c.tela.id]; as url) {
+                <a [href]="url" target="_blank" [title]="'Abrir ' + c.tela.dados.sistema + ' de ' + l.cliente">
+                  @switch (versao(c, l)) {
+                    @case (false) { <span class="fora-do-ar" title="Não respondeu na última verificação"></span> }
+                    @case (null) { <span class="sem-versao">sem versão</span> }
+                    @case (undefined) { <span class="sem-versao">…</span> }
+                    @default { <span class="versao" [class.desatualizada]="desatualizada(c, l)">{{ versao(c, l) }}</span> }
+                  }
+                </a>
+              }
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+  @if (!linhas.length) {
+    <div class="vazio"> Nenhum cliente encontrado. </div>
+  }
+</div>

@@ -1,0 +1,35 @@
+{
+  "sistema": "Inscritos em Dívida",
+  "titulo": "Transparência - Inscritos em Dívida",
+  "imagens": [
+    "/assets/pexels-photo-3044565.avif",
+    "/assets/luis-diego-aguilar-DEnsSdJHVkk-unsplash.webp",
+    "/assets/andre-antonelli-R2xICK7sS2U-unsplash.webp"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/transparencia/inscritos-divida" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/transparencia/inscritos-divida" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/transparencia/inscritos-divida" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Não Utilizado", "url": "" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/transparencia/inscritos-divida" }
+      ]
+    }
+  ]
+}

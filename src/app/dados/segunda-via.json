@@ -1,0 +1,34 @@
+{
+  "sistema": "Nova Segunda Via",
+  "titulo": "Nova Segunda Via",
+  "imagens": [
+    "/assets/vinicius-low-iH6YdIZhDaY-unsplash.webp",
+    "/assets/luis-diego-aguilar-DEnsSdJHVkk-unsplash.webp",
+    "/assets/fpcamp-IBTCrlvKc2g-unsplash.webp"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/websis/siapegov/pagamento_online/index.php" },
+        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/pmcaraguatatuba/websis/siapegov/pagamento_online/index.php" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/pmguararema/websis/siapegov/pagamento_online/index.php" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/pmguaratingueta/websis/siapegov/pagamento_online/index.php" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pmjacarei/websis/siapegov/pagamento_online/index.php" },
+        { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/pmarapei/websis/siapegov/pagamento_online/index.php" },
+        { "cliente": "Pompeia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/websis/siapegov/pagamento_online/index.php" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/pagamento_online/index.php" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/pmnilopolis/websis/siapegov/pagamento_online/index.php" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": []
+    }
+  ]
+}

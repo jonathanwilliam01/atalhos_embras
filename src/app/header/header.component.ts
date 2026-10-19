@@ -1,19 +1,23 @@
-import { Component, Output, EventEmitter, HostListener, ElementRef, ViewChild, OnInit, PLATFORM_ID, inject } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Output, EventEmitter, HostListener, ElementRef, ViewChild, OnInit, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import notasVersaoData from '../notas-versao/notas_versao.json';
+import { AREAS, Area, ItemMenu, MENU, Tela, naArea, telaPorId } from '../sistemas';
+
+const CHAVE_AREA = 'areaMenu';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    imports: [],
+    templateUrl: './header.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrls: ['./header.component.scss']
 })
 
 export class HeaderComponent implements OnInit {
   @Output() componentSelected = new EventEmitter<string>();
   @Output() verNotasVersao = new EventEmitter<void>();
   @Output() pesquisar = new EventEmitter<string>();
+  @Output() focarResultados = new EventEmitter<void>();
   @ViewChild('buscaInput') buscaInput?: ElementRef<HTMLInputElement>;
   selectedComponent = '';
   openSubmenu: string | null = null;
@@ -25,12 +29,30 @@ export class HeaderComponent implements OnInit {
   versaoAtual = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao, undefined, { numeric: true }))[0]?.versao ?? '';
 
   private platformId = inject(PLATFORM_ID);
+  readonly menu = MENU;
+  readonly areas = AREAS;
+  area: Area | '' = '';
 
   constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
     // Fora do ciclo atual: abrir a tela altera o AppComponent.
-    if (isPlatformBrowser(this.platformId)) setTimeout(() => this.abrirTelaDaUrl());
+    if (!isPlatformBrowser(this.platformId)) return;
+    try { this.area = (localStorage.getItem(CHAVE_AREA) ?? '') as Area | ''; } catch {}
+    setTimeout(() => this.abrirTelaDaUrl());
+  }
+
+  mudarArea(area: Area | '') {
+    this.area = area;
+    try { localStorage.setItem(CHAVE_AREA, area); } catch {}
+  }
+
+  visivel(tela: Tela): boolean {
+    return naArea(tela, this.area);
+  }
+
+  grupoVisivel(item: ItemMenu): boolean {
+    return !!item.telas?.some(t => this.visivel(t));
   }
 
   // Tela na URL (#egov): F5 mantém a tela e o link pode ser compartilhado.
@@ -44,6 +66,9 @@ export class HeaderComponent implements OnInit {
       this.componentSelected.emit('');
       return;
     }
+    // Tela fora da área filtrada: volta para todas as áreas.
+    const t = telaPorId(tela);
+    if (t && !this.visivel(t)) this.mudarArea('');
     this.elementRef.nativeElement.querySelector(`[data-tela="${CSS.escape(tela)}"]`)?.click();
   }
 
@@ -55,6 +80,13 @@ export class HeaderComponent implements OnInit {
   buscarAoDigitar(termo: string) {
     clearTimeout(this.timerBusca);
     this.timerBusca = setTimeout(() => this.buscar(termo), 250);
+  }
+
+  // Enter ou seta para baixo: busca na hora e passa o foco para o primeiro resultado.
+  irParaResultados(termo: string) {
+    if (!termo.trim()) return;
+    this.buscar(termo);
+    this.focarResultados.emit();
   }
 
   limparBusca() {
@@ -116,7 +148,7 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('document:keydown', ['$event'])
   onKeydown(event: KeyboardEvent) {
-    const digitando = (event.target as HTMLElement).closest('input, textarea');
+    const digitando = (event.target as Element).closest?.('input, textarea, select');
     const atalho = (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k';
     if (atalho || (event.key === '/' && !digitando)) {
       event.preventDefault();

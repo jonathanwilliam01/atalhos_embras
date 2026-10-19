@@ -1,0 +1,54 @@
+{
+  "sistema": "Atende Mais",
+  "titulo": "Atende Mais",
+  "imagens": [
+    "/assets/photo-1531097842074-4a80589a7d07.webp",
+    "/assets/photo-1626568941852-70bc179e493e.webp",
+    "/assets/Belo-Horizonte-Minas-Gerais-Brazil-Best-Wallpaper-122007.webp"
+  ],
+  "grupos": [
+    {
+      "nome": "São Paulo",
+      "itens": [
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/arrecadacao/debitos" },
+        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/arrecadacao/debitos" },
+        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/arrecadacao/debitos" },
+        { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/arrecadacao/debitos", "inativo": true },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/arrecadacao/debitos" },
+        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/arrecadacao/debitos" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/arrecadacao/debitos" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/arrecadacao/debitos" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/arrecadacao/debitos" }
+      ]
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "itens": [
+        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/arrecadacao/debitos" }
+      ]
+    },
+    {
+      "nome": "Minas Gerais",
+      "itens": [
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/arrecadacao/debitos" }
+      ]
+    }
+  ]
+}

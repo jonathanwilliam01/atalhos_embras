@@ -10,49 +10,50 @@
 <div class="lateral_menu" [class.open]="menuOpen">
   <div class="logo">
     <a href="/" title="Início">
-    <img src="assets/Logo_(white).png" alt="Embras">
+      <img src="assets/Logo_(white).png" alt="Embras">
     </a>
   </div>
   <div class="bot-tit"> Atalhos Embras </div>
   <div class="busca">
     <i class="fa-solid fa-magnifying-glass busca-icon"></i>
-    <input #buscaInput type="text" class="busca-input" placeholder="Buscar links" (input)="buscarAoDigitar(buscaInput.value)" (keyup.enter)="buscar(buscaInput.value); closeMenu()" (keyup.escape)="limparBusca()">
+    <input #buscaInput type="text" class="busca-input" placeholder="Buscar links" (input)="buscarAoDigitar(buscaInput.value)" (keydown.enter)="irParaResultados(buscaInput.value); closeMenu()" (keydown.arrowdown)="$event.preventDefault(); irParaResultados(buscaInput.value)" (keyup.escape)="limparBusca()">
     <kbd class="busca-atalho" title="Atalho para buscar"> Ctrl K </kbd>
   </div>
+  <label class="area" title="Filtrar o menu por área">
+    <i class="fa-solid fa-layer-group"></i>
+    <select (change)="mudarArea($any($event.target).value)" aria-label="Área">
+      @for (a of areas; track a) {
+        <option [value]="a.id" [selected]="a.id === area">{{ a.id ? a.nome : 'Todas as áreas' }}</option>
+      }
+    </select>
+    <i class="fa-solid fa-chevron-down area-caret"></i>
+  </label>
   <div class="menu">
     <li data-tela="clientes" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'clientes'" (click)="selectComponent('clientes')"> <i class="fa-solid fa-city"></i> Clientes </li>
-    <li data-tela="GoGlobal" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'GoGlobal'" (click)="selectComponent('GoGlobal')"> <i class="fa-solid fa-globe"></i> GoGlobal </li>
-    <li role="button" tabindex="0" [attr.aria-expanded]="openSubmenu === 'egov'" class="bot has-submenu" [class.open]="openSubmenu === 'egov'" (click)="toggleSubmenu('egov', $event)">
-      <i class="fa-solid fa-building-columns"></i> E-Gov
-      <i class="fa-solid fa-chevron-down submenu-caret"></i>
-    </li>
-    <ul class="submenu" [class.open]="openSubmenu === 'egov'">
-      <li data-tela="egov" role="button" [attr.tabindex]="openSubmenu === 'egov' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('egov', 'egov')" [class.active]="selectedComponent === 'egov'"> E-Gov Prod. </li>
-      <li data-tela="egov_dev" role="button" [attr.tabindex]="openSubmenu === 'egov' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('egov_dev', 'egov')" [class.active]="selectedComponent === 'egov_dev'"> E-Gov Homol. </li>
-      <li data-tela="config" role="button" [attr.tabindex]="openSubmenu === 'egov' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('config', 'egov')" [class.active]="selectedComponent === 'config'"> Config E-Gov </li>
-      <li data-tela="transparencia-egov" role="button" [attr.tabindex]="openSubmenu === 'egov' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('transparencia-egov', 'egov')" [class.active]="selectedComponent === 'transparencia-egov'"> Transparência </li>
-    </ul>
-    <li data-tela="aten" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'aten'" (click)="selectComponent('aten')"> <i class="fa-solid fa-clipboard-list"></i> ATEN </li>
-    <li data-tela="gpro-web" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'gpro-web'" (click)="selectComponent('gpro-web')"> <i class="fa-solid fa-folder-open"></i> GPRO WEB </li>
-    <li data-tela="login-novo" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'login-novo'" (click)="selectComponent('login-novo')"> <i class="fa-solid fa-user"></i> Config Contas </li>
-    <li data-tela="setup" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'setup'" (click)="selectComponent('setup')"> <i class="fa-solid fa-sliders"></i> Setup </li>
-    <li data-tela="pessoas" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'pessoas'" (click)="selectComponent('pessoas')"> <i class="fa-solid fa-users"></i> Pessoas </li>
-    <li data-tela="links" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'links'" (click)="selectComponent('links')"> <i class="fa-solid fa-link"></i> Links Uteis </li>
-    <li data-tela="gcc" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'gcc'" (click)="selectComponent('gcc')"> <i class="fa-solid fa-file-text"></i> GCC </li>
-    <li data-tela="suprimentos" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'suprimentos'" (click)="selectComponent('suprimentos')"> <i class="fa-solid fa-boxes-stacked"></i> Suprimentos </li>
-    <li role="button" tabindex="0" [attr.aria-expanded]="openSubmenu === 'transparencia'" class="bot has-submenu" [class.open]="openSubmenu === 'transparencia'" (click)="toggleSubmenu('transparencia', $event)">
-      <i class="fa-solid fa-magnifying-glass-dollar"></i> Transparência
-      <i class="fa-solid fa-chevron-down submenu-caret"></i>
-    </li>
-    <ul class="submenu" [class.open]="openSubmenu === 'transparencia'">
-      <li data-tela="portal-transparencia" role="button" [attr.tabindex]="openSubmenu === 'transparencia' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('portal-transparencia', 'transparencia')" [class.active]="selectedComponent === 'portal-transparencia'"> Transparência </li>
-      <li data-tela="novo-transparencia" role="button" [attr.tabindex]="openSubmenu === 'transparencia' ? 0 : -1" (click)="$event.stopPropagation(); selectComponent('novo-transparencia', 'transparencia')" [class.active]="selectedComponent === 'novo-transparencia'"> Novo Transparência </li>
-    </ul>
-    <li data-tela="adm-web" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'adm-web'" (click)="selectComponent('adm-web')"> <i class="fa-solid fa-desktop"></i> ADM-Web </li>
+    @for (item of menu; track item) {
+      @if (item.tela; as t) {
+        <li [attr.data-tela]="t.id" role="button" tabindex="0" class="bot" [hidden]="!visivel(t)" [class.active]="selectedComponent === t.id" (click)="selectComponent(t.id)"> <i [class]="item.icone"></i> {{ item.nome }}
+        </li>
+      }
+      @if (item.grupo; as g) {
+        <li role="button" tabindex="0" [hidden]="!grupoVisivel(item)" [attr.aria-expanded]="openSubmenu === g" class="bot has-submenu" [class.open]="openSubmenu === g" (click)="toggleSubmenu(g, $event)">
+          <i [class]="item.icone"></i> {{ item.nome }}
+          <i class="fa-solid fa-chevron-down submenu-caret"></i>
+        </li>
+        <ul class="submenu" [hidden]="!grupoVisivel(item)" [class.open]="openSubmenu === g">
+          @for (t of item.telas; track t) {
+            <li [attr.data-tela]="t.id" role="button" [hidden]="!visivel(t)" [attr.tabindex]="openSubmenu === g ? 0 : -1" (click)="$event.stopPropagation(); selectComponent(t.id, g)" [class.active]="selectedComponent === t.id"> {{ t.nome }}
+            </li>
+          }
+        </ul>
+      }
+    }
   </div>
-    <p class="instalar" *ngIf="promptInstalacao" (click)="instalarApp()" title="Instalar como aplicativo">
+  @if (promptInstalacao) {
+    <p class="instalar" (click)="instalarApp()" title="Instalar como aplicativo">
       <i class="fa-solid fa-download"></i> Instalar app
     </p>
-    <p class="versao" (click)="abrirNotasVersao($event)" title="Ver notas de versão"> {{ versaoAtual }} </p>
-    <p class="creditos"> Criado por Jonathan William </p>
+  }
+  <p class="versao" (click)="abrirNotasVersao($event)" title="Ver notas de versão"> {{ versaoAtual }} </p>
+  <p class="creditos"> Criado por Jonathan William </p>
 </div>

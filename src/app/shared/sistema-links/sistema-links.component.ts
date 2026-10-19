@@ -1,67 +1,11 @@
-import { ChangeDetectorRef, Component, DestroyRef, ElementRef, HostListener, Input, OnInit, PLATFORM_ID, inject } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { ChangeDetectorRef, Component, DestroyRef, ElementRef, HostListener, Input, OnInit, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { FavoritosService } from '../../favoritos/favoritos.service';
+import { Versoes, carregarVersoes, compararVersao, recarregarVersoes, versaoMaisRecente } from '../../versoes/versoes';
 
 // Espaço dos botões: só a estrela (favorito fixo) e estrela + copiar (hover).
 const RESERVA_FIXA = 36;
 const RESERVA_HOVER = 60;
-// false = cliente não respondeu na última verificação.
-type Versoes = Record<string, string | null | false>;
-
-const CHAVE_VERSOES = 'versoesClientes';
-const cacheVersoes = new Map<string, Versoes>();
-
-// Última consulta de cada sistema, exibida enquanto a nova carrega.
-function versoesSalvas(): Record<string, Versoes> {
-  try {
-    return JSON.parse(localStorage.getItem(CHAVE_VERSOES) ?? '{}') ?? {};
-  } catch {
-    return {};
-  }
-}
-
-function salvarVersoes(sistema: string, versoes: Versoes): void {
-  try {
-    localStorage.setItem(CHAVE_VERSOES, JSON.stringify({ ...versoesSalvas(), [sistema]: versoes }));
-  } catch {}
-}
-
-// Telas do E-Gov (portal, ATEN, GPRO, ITBI, transparência) ficam em /<alias>/websis/ e têm a mesma versão por cliente.
-function baseEgov(url: string): string | null {
-  const i = url.indexOf('/websis/');
-  return i < 0 ? null : url.slice(0, i);
-}
-
-// Versões que outra tela do E-Gov já carregou para estes clientes.
-function versoesDoMesmoSistema(urls: string[]): Versoes {
-  const porBase = new Map<string, string | null | false>();
-  for (const versoes of cacheVersoes.values()) {
-    for (const [url, v] of Object.entries(versoes)) {
-      const base = baseEgov(url);
-      if (base) porBase.set(base, v);
-    }
-  }
-  const resultado: Versoes = {};
-  for (const url of urls) {
-    const base = baseEgov(url);
-    if (base && porBase.has(base)) resultado[url] = porBase.get(base)!;
-  }
-  return resultado;
-}
-
-const compararVersao = (a: string, b: string) => a.localeCompare(b, undefined, { numeric: true });
-
-// Versão mais comum entre os clientes; empate fica com a maior.
-function versaoPredominante(versoes: (string | null | false)[]): string | null {
-  const contagem = new Map<string, number>();
-  for (const v of versoes) if (v) contagem.set(v, (contagem.get(v) ?? 0) + 1);
-  let atual: string | null = null;
-  for (const [v, n] of contagem) {
-    const nAtual = atual ? contagem.get(atual)! : 0;
-    if (n > nAtual || (n === nAtual && compararVersao(v, atual!) > 0)) atual = v;
-  }
-  return atual;
-}
 
 export interface ItemLink {
   cliente: string;
@@ -82,11 +26,11 @@ export interface DadosSistema {
 }
 
 @Component({
-  selector: 'app-sistema-links',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './sistema-links.component.html',
-  styleUrl: './sistema-links.component.scss'
+    selector: 'app-sistema-links',
+    imports: [],
+    templateUrl: './sistema-links.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './sistema-links.component.scss'
 })
 export class SistemaLinksComponent implements OnInit {
   @Input() titulo = '';
@@ -125,35 +69,19 @@ export class SistemaLinksComponent implements OnInit {
     const sistema = this.versaoSistema;
     if (!sistema || !isPlatformBrowser(this.platformId)) return;
 
-    const cache = cacheVersoes.get(sistema);
-    if (cache) {
-      setTimeout(() => this.aplicarVersoes(cache));
-      return;
-    }
-
-    // Com tudo vindo de outra tela não consulta; com parte, mostra e busca o resto sem aviso de carregando.
     const urls = this.grupos.flatMap(g => g.itens).filter(i => i.url).map(i => i.url);
-    const doMesmoSistema = versoesDoMesmoSistema(urls);
-    const encontradas = Object.keys(doMesmoSistema).length;
-    if (encontradas === urls.length) {
-      cacheVersoes.set(sistema, doMesmoSistema);
-      setTimeout(() => this.aplicarVersoes(doMesmoSistema));
-      return;
-    }
-    const salvas = encontradas ? doMesmoSistema : versoesSalvas()[sistema];
-    if (salvas) setTimeout(() => this.aplicarVersoes(salvas));
-
-    this.carregandoVersoes = !encontradas;
-    fetch(`/api/versao?sistema=${sistema}`)
-      .then(r => r.ok ? r.json() : Promise.reject())
-      .then(v => {
-        cacheVersoes.set(sistema, v);
-        salvarVersoes(sistema, v);
-        if (!this.destruido) this.aplicarVersoes(v);
-      })
-      .catch(() => {})
-      .finally(() => this.carregandoVersoes = false);
+    carregarVersoes(sistema, urls, this.aoReceberVersoes);
   }
+
+  atualizarVisualizacao(): void {
+    if (this.versaoSistema) recarregarVersoes(this.versaoSistema, this.versoes, this.aoReceberVersoes);
+  }
+
+  private aoReceberVersoes = (versoes: Versoes, carregando: boolean) => {
+    this.carregandoVersoes = carregando;
+    // Depois da renderização: a medição de espaço precisa das linhas na tela.
+    setTimeout(() => { if (!this.destruido) this.aplicarVersoes(versoes); });
+  };
 
   versao(item: ItemLink): string | null {
     return this.versoes[item.url] || null;
@@ -176,7 +104,7 @@ export class SistemaLinksComponent implements OnInit {
 
   private aplicarVersoes(versoes: Versoes): void {
     this.versoes = versoes;
-    this.versaoAtual = versaoPredominante(Object.values(versoes));
+    this.versaoAtual = versaoMaisRecente(Object.values(versoes));
     this.foraDoArTotal = Object.values(versoes).filter(v => v === false).length;
     this.ajustarVersoes();
   }

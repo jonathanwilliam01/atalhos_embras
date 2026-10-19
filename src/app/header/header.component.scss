@@ -26,8 +26,8 @@ a{
 
 
 .logo{
-  width: 80%;
-  margin-top: 8%;
+  width: 60%;
+  margin-top: 6%;
   display: block;
   flex-shrink: 0;
   cursor: pointer;
@@ -35,7 +35,7 @@ a{
 
 @media (max-width: 1366px) {
   .logo {
-    margin-top: 5%;
+    margin-top: 4%;
   }
 }
 
@@ -97,6 +97,56 @@ a{
   .busca-icon, .busca-input {
     font-size: 12px;
   }
+}
+
+.area{
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 14vw;
+  margin: 0 0 4%;
+  padding: 0 3%;
+  background-color: rgb(30, 36, 39);
+  border: 1px solid rgb(70, 78, 83);
+  border-radius: 8px;
+  flex-shrink: 0;
+  color: rgb(130, 142, 150);
+  font-size: 0.85vw;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+
+  &:focus-within { border-color: rgb(74, 194, 194); }
+
+  select {
+    flex: 1;
+    min-width: 0;
+    appearance: none;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 8px 8%;
+    color: rgb(233, 233, 233);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: inherit;
+    cursor: pointer;
+
+    option { background-color: rgb(30, 36, 39); }
+  }
+}
+
+.area-caret{
+  pointer-events: none;
+  font-size: 0.7em;
+}
+
+@media (max-width: 1366px) {
+  .area { font-size: 12px; }
+}
+
+// [hidden] perde para o display das classes do menu.
+.menu [hidden]{
+  display: none !important;
 }
 
 .logo img{
@@ -429,8 +479,8 @@ a{
   .lateral_menu.open { transform: translateX(0); }
 
   .logo {
-    width: 60%;
-    margin: 16px auto 4px auto;
+    width: 50%;
+    margin: 12px auto 4px auto;
     height: auto;
   }
 
@@ -466,10 +516,12 @@ a{
     margin-bottom: 10px;
   }
 
-  .busca {
+  .busca, .area {
     width: 100%;
     margin: 0 0 10px;
   }
+
+  .area { font-size: 14px; }
 
   .busca-atalho { display: none; }
 

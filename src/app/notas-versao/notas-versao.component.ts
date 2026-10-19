@@ -1,5 +1,5 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, HostListener, Input, Output, ChangeDetectionStrategy } from '@angular/core';
+
 import notasVersaoData from './notas_versao.json';
 
 interface VersaoNota {
@@ -9,11 +9,11 @@ interface VersaoNota {
 }
 
 @Component({
-  selector: 'app-notas-versao',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './notas-versao.component.html',
-  styleUrl: './notas-versao.component.scss'
+    selector: 'app-notas-versao',
+    imports: [],
+    templateUrl: './notas-versao.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './notas-versao.component.scss'
 })
 export class NotasVersaoComponent {
   @Input() visible = false;

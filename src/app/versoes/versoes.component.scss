@@ -1,0 +1,122 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.tabela-rolagem {
+  flex: 1 1 auto;
+  margin-bottom: 4px;
+  min-height: 0;
+  overflow: auto;
+  border: 1px solid rgb(70, 78, 83);
+  border-radius: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(80, 90, 96) transparent;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: rgb(220, 226, 230);
+  font-size: 0.9rem;
+}
+
+th, td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgb(58, 66, 71);
+  text-align: center;
+  white-space: nowrap;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgb(48, 57, 62);
+  vertical-align: bottom;
+}
+
+.sistema {
+  display: block;
+  color: rgb(233, 233, 233);
+  font-weight: bold;
+}
+
+.atual {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(74, 194, 194, 0.25);
+  color: rgb(140, 225, 225);
+  font-size: 0.75rem;
+  font-weight: normal;
+
+  &.carregando { background: none; }
+}
+
+.col-cliente {
+  position: sticky;
+  left: 0;
+  text-align: left;
+  background-color: rgb(41, 49, 53);
+  font-weight: bold;
+}
+
+thead .col-cliente {
+  z-index: 2;
+  background-color: rgb(48, 57, 62);
+}
+
+tbody tr:hover td { background-color: rgb(50, 59, 64); }
+
+.estado {
+  margin-left: 4px;
+  color: rgb(130, 142, 150);
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+
+td a {
+  display: inline-block;
+  min-width: 60px;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 2px 4px;
+
+  &:hover { background-color: rgba(74, 194, 194, 0.12); }
+}
+
+.versao {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(74, 194, 194, 0.25);
+  color: rgb(140, 225, 225);
+  font-size: 0.8rem;
+
+  &.desatualizada {
+    background: rgba(220, 53, 69, 0.85);
+    color: #fff;
+  }
+}
+
+.sem-versao {
+  color: rgb(110, 122, 130);
+  font-size: 0.75rem;
+}
+
+.fora-do-ar {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgb(220, 53, 69);
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.3);
+}
+
+.vazio {
+  padding: 20px;
+  color: rgb(180, 190, 196);
+}

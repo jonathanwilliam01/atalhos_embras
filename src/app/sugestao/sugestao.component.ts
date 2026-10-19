@@ -1,15 +1,15 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, Output, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, Output, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+
 
 const CHAVE_NOME = 'sugestaoNome';
 
 // O GitHub não abre em iframe: o formulário monta a issue e abre o GitHub já preenchido.
 @Component({
-  selector: 'app-sugestao',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './sugestao.component.html',
-  styleUrl: './sugestao.component.scss'
+    selector: 'app-sugestao',
+    imports: [],
+    templateUrl: './sugestao.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    styleUrl: './sugestao.component.scss'
 })
 export class SugestaoComponent implements OnChanges {
   @Input() visible = false;

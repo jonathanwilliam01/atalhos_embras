@@ -89,6 +89,19 @@
         "O filtro da tela Clientes agora também encontra pelo nome do estado (ex.: Rio, Minas).",
         "O menu pode ser usado pelo teclado (Tab, Enter e Espaço)."
       ]
+    },
+    {
+      "versao": "V3.26.10.06",
+      "data": "19/10/2026",
+      "descricao": [
+        "O Atalhos Tributário agora faz parte do Atalhos Embras: todos os sistemas num lugar só. Quem acessar o endereço antigo é levado para cá com os favoritos e recentes.",
+        "Adicionado o filtro de área no menu lateral (Arrecadação, Administração/RH, Finanças e Suprimentos), que fica lembrado para a próxima visita.",
+        "Novas telas: IssOnline, ITBI, Nova Segunda Via, Facilita-SP, Atende Mais e Inscritos em Dívida, com a versão dos clientes no IssOnline.",
+        "Links Úteis reúne agora os links das duas equipes.",
+        "A tela Clientes mostra a versão de cada sistema e ganhou a visão Versões: todos os clientes e sistemas numa tabela, com quem está desatualizado em vermelho e quem não respondeu.",
+        "Na busca, as setas percorrem os resultados e o Enter abre o link escolhido.",
+        "Adicionado o botão Atualizar visualização nas telas com versão e em Clientes, que busca na hora a versão de cada cliente."
+      ]
     }
   ]
 }

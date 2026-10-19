@@ -89,6 +89,11 @@
   gap: 6px;
 }
 
+.busca-item:focus-visible {
+  outline: 2px solid rgb(74, 194, 194);
+  outline-offset: 2px;
+}
+
 .busca-item {
   display: flex;
   align-items: center;
