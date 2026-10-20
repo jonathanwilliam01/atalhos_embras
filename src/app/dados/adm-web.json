@@ -10,41 +10,41 @@
     {
       "nome": "São Paulo",
       "itens": [
-        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/administracao" },
-        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/administracao" },
-        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/administracao" },
-        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/administracao" },
-        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/administracao" },
-        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/administracao" },
-        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/administracao" },
+        { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/administracao/" },
+        { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/administracao/" },
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/administracao/" },
+        { "cliente": "Guaratinguetá", "url": "https://guaratingueta.geosiap.net.br/administracao/" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/administracao/" },
+        { "cliente": "Cachoeira Paulista", "url": "https://cachoeirapaulista.geosiap.net.br/administracao/" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/administracao/" },
         { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/administracao", "inativo": true },
-        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/administracao" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/administracao/" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/administracao" },
-        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/administracao" },
-        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/administracao" },
-        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/administracao" },
-        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/administracao" },
-        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/administracao" },
-        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/administracao" },
-        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br/administracao" },
-        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/administracao" },
-        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/administracao" },
-        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/administracao" },
+        { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/administracao/" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/administracao/" },
+        { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/administracao/" },
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/administracao/" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/administracao/" },
+        { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/administracao/" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/administracao" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/administracao/" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/administracao/" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/administracao/" },
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/administracao/" }
       ]
     },
     {
       "nome": "Rio de Janeiro",
       "itens": [
-        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/administracao" },
-        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/administracao" },
-        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/administracao" }
+        { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/administracao/" },
+        { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/administracao/" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/administracao/" }
       ]
     },
     {
       "nome": "Minas Gerais",
       "itens": [
-        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/administracao" },
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/administracao/" },
         { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br/administracao" }
       ]
     }

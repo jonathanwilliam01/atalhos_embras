@@ -1,0 +1,20 @@
+name: Testes
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # COMMIT_MSG: commit com nome de versão precisa ter a nota dessa versão.
+      - run: npm test
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}

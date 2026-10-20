@@ -7,8 +7,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   issues: write
+  pull-requests: write
 
 jobs:
   verificar:
@@ -20,8 +21,26 @@ jobs:
         with:
           node-version: 24
 
-      - name: Testar links
-        run: node scripts/verificar-links.mjs relatorio.md
+      - name: Testar e corrigir links
+        run: node scripts/verificar-links.mjs relatorio.md --corrigir
+
+      # Trocas vão num PR para aprovar; a branch é recriada a cada execução a partir da main.
+      - name: Abrir ou atualizar o PR das correções
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git diff --quiet -- src/app/dados && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git switch -c correcao-links
+          git add src/app/dados
+          git commit -m "Correção automática de links"
+          git push --force origin correcao-links
+          if gh pr view correcao-links --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit correcao-links --body-file correcoes.md
+          else
+            gh pr create --head correcao-links --base main --title "Correção automática de links" --body-file correcoes.md
+          fi
 
       # Uma issue aberta por vez: atualiza a existente, abre se não houver e fecha quando tudo voltar.
       - name: Abrir, atualizar ou fechar a issue

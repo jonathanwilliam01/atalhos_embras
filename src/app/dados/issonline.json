@@ -11,20 +11,20 @@
       "nome": "São Paulo",
       "itens": [
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/issonline/iss.login.php" },
-        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/pmguaratingueta/issonline/iss.login.php" },
+        { "cliente": "Guaratinguetá", "url": "https://guaratingueta.geosiap.net.br/pmguaratingueta/issonline/iss.login.php" },
         { "cliente": "Jacarei", "url": "https://egov.jacarei.sp.gov.br/pmjacarei/issonline/iss.login.php" },
-        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/issonline/iss.login.php" },
+        { "cliente": "Cachoeira Paulista", "url": "https://cachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/issonline/iss.login.php" },
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/pmlorena/issonline/iss.login.php" },
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/issonline/iss.login.php" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/issonline/iss.login.php" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/issonline/iss.login.php" },
         { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/pmcanas/issonline/iss.login.php" },
         { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/issonline/iss.login.php" },
-        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/pmredencaodaserra/issonline/iss.login.php" },
+        { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/pmredencaodaserra/issonline/iss.login.php" },
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/pmsalesopolis/issonline/iss.login.php" },
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pmsantabranca/issonline/iss.login.php" },
-        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/pmsilveiras/issonline/iss.login.php" },
-        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/pmarapei/issonline/iss.login.php" },
+        { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/pmsilveiras/issonline/iss.login.php" },
+        { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/pmarapei/issonline/iss.login.php" },
         { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/pmqueluz/issonline/iss.login.php" },
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/issonline/iss.login.php" },
         { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/pmroseira/issonline/iss.login.php" },
@@ -35,7 +35,7 @@
     {
       "nome": "Rio de Janeiro",
       "itens": [
-        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/pmjaperi/issonline/iss.login.php" },
+        { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/pmjaperi/issonline/iss.login.php" },
         { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pmsaogoncalo/issonline/iss.login.php" }
       ]
     },

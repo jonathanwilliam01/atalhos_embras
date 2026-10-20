@@ -11,11 +11,11 @@
       "nome": "São Paulo",
       "itens": [
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pmpinda/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Caraguatatuba", "url": "https://pmcaraguatatuba.geosiap.net.br/pmcaraguatatuba/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/pmcaraguatatuba/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/pmguararema/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Guaratinguetá", "url": "https://pmguaratingueta.geosiap.net.br/pmguaratingueta/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Guaratinguetá", "url": "https://guaratingueta.geosiap.net.br/pmguaratingueta/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pmjacarei/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Cachoeira Paulista", "url": "https://pmcachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Cachoeira Paulista", "url": "https://cachoeirapaulista.geosiap.net.br/pmcachoeirapaulista/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/pmlorena/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/pmsaovicente/websis/siapegov/arrecadacao/itbi/itbi_login.php", "inativo": true },
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
@@ -23,23 +23,23 @@
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/pmcanas/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/pmpedrotoledo/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Arapei", "url": "https://pmarapei.geosiap.net.br/pmarapei/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/pmarapei/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/pmqueluz/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Redenção da Serra", "url": "https://pmredencao.geosiap.net.br/pmredencaodaserra/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/pmredencaodaserra/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/pmroseira/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/pmsalesopolis/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pmsantabranca/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/silveiras/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/silveiras/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/arrecadacao/itbi/itbi_login.php" }
       ]
     },
     {
       "nome": "Rio de Janeiro",
       "itens": [
-        { "cliente": "Barra do Piraí", "url": "https://pmbarradopirai.geosiap.net.br/pmbarradopirai/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Japeri", "url": "https://pmjaperi.geosiap.net.br/pmjaperi/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/pmbarradopirai/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/pmjaperi/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/pmnilopolis/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pmsaogoncalo/websis/siapegov/arrecadacao/itbi/itbi_login.php" }
       ]

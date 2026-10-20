@@ -85,7 +85,7 @@ export const MENU: ItemMenu[] = [
     ]
   },
   { nome: 'Config Contas', icone: 'fa-solid fa-user', tela: { id: 'login-novo', nome: 'Config Contas', dados: loginNovo } },
-  { nome: 'Setup', icone: 'fa-solid fa-sliders', tela: { id: 'setup', nome: 'Setup', dados: setup } },
+  { nome: 'Setup', icone: 'fa-solid fa-sliders', tela: { id: 'setup', nome: 'Setup', dados: setup, versao: 'setup' } },
   { nome: 'Pessoas', icone: 'fa-solid fa-users', tela: { id: 'pessoas', nome: 'Pessoas', dados: pessoas } },
   { nome: 'Links Úteis', icone: 'fa-solid fa-link', tela: { id: 'links', nome: 'Links Úteis', dados: links } }
 ];

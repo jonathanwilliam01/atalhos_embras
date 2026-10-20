@@ -37,6 +37,10 @@ yarn-error.log
 testem.log
 /typings
 
+# Saída do scripts/verificar-links.mjs
+relatorio.md
+correcoes.md
+
 # System files
 .DS_Store
 Thumbs.db

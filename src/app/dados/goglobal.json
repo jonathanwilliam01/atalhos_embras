@@ -35,7 +35,7 @@
     {
       "nome": "Rio de Janeiro",
       "itens": [
-        { "cliente": "Barra do Piraí", "url": "http://painel-pmbarradopirai.geosiap.net.br/" },
+        { "cliente": "Barra do Piraí", "url": "https://painel-pmbarradopirai.geosiap.net.br/" },
         { "cliente": "Japeri", "url": "https://painel-japeri.geosiap.net.br" },
         { "cliente": "Nilópolis", "url": "https://painel-pmnilopolis.geosiap.net.br/" },
         { "cliente": "São Gonçalo", "url": "https://cloud.pmsg.rj.gov.br/#/client/ODIAYwBteXNxbA" },

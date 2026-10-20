@@ -8,6 +8,8 @@ const VERSAO_EGOV = /\((\d+\.\d+\.\d+\.\d+)\)/;
 const VERSAO_TITULO = /<title>[^<]*?(\d+\.\d+\.\d+\.\d+)/;
 const BASE_HREF = /<base href="([^"]+)"/;
 const BUNDLE = /src="(main-es2015\.\w+\.js)"/;
+// Setup: "geoSiap Setup - v1.26.11.231" no rodapé do login.
+const VERSAO_SETUP = /Setup - v([\d.]+)/;
 const VERSAO_ISS = /ISS Online v\.\s*([\d.]+)/;
 // ITBI: versão própria no cabeçalho, "Versão: 1.000007" (o título traz a do E-Gov).
 const VERSAO_ITBI = /Vers.{1,8}o:\s*([\d.]+)/;
@@ -40,6 +42,10 @@ async function versaoIss(url) {
   return (await texto(url)).match(VERSAO_ISS)?.[1] ?? null;
 }
 
+async function versaoSetup(url) {
+  return (await texto(url)).match(VERSAO_SETUP)?.[1] ?? null;
+}
+
 async function versaoItbi(url) {
   return (await texto(url)).match(VERSAO_ITBI)?.[1] ?? null;
 }
@@ -66,6 +72,7 @@ const sistemas = {
   aten: { dados: require('../src/app/dados/aten.json'), versao: versaoEgov },
   'gpro-web': { dados: require('../src/app/dados/gpro-web.json'), versao: versaoTitulo },
   issonline: { dados: require('../src/app/dados/issonline.json'), versao: versaoIss },
+  setup: { dados: require('../src/app/dados/setup.json'), versao: versaoSetup },
   itbi: { dados: require('../src/app/dados/itbi.json'), versao: versaoItbi },
   'transparencia-egov': { dados: require('../src/app/dados/transparencia-egov.json'), versao: versaoEgov },
   'portal-transparencia': { dados: require('../src/app/dados/portal-transparencia.json'), versao: versaoPortal }
@@ -85,3 +92,6 @@ module.exports = async (req, res) => {
   res.setHeader('Cache-Control', cache);
   res.status(200).json(Object.fromEntries(urls.map((url, i) => [url, versoes[i] === undefined ? false : versoes[i]])));
 };
+
+// Para os testes conferirem as telas com versão.
+module.exports.sistemas = sistemas;

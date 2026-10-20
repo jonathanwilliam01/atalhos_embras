@@ -12,7 +12,7 @@
       "itens": [
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/geosiap-setup/login" },
         { "cliente": "Pompeia", "url": "https://siap.pompeia.sp.gov.br/geosiap-setup/login" },
-        { "cliente": "Silveiras", "url": "https://pmsilveiras.geosiap.net.br:8443/geosiap-setup/login" },
+        { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/geosiap-setup/login" },

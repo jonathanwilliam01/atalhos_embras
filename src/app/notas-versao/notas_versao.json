@@ -102,6 +102,15 @@
         "Na busca, as setas percorrem os resultados e o Enter abre o link escolhido.",
         "Adicionado o botão Atualizar visualização nas telas com versão e em Clientes, que busca na hora a versão de cada cliente."
       ]
+    },
+    {
+      "versao": "V4.26.10.02",
+      "data": "20/10/2026",
+      "descricao": [
+        "O Setup agora mostra a versão de cada cliente, destacando quem está desatualizado e quem não respondeu.",
+        "A versão do Setup aparece também na tela Clientes, nos cartões e na visão Versões.",
+        "Atualizado o endereço dos links dos clientes que mudaram de servidor."
+      ]
     }
   ]
 }

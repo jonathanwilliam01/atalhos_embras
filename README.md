@@ -17,7 +17,7 @@ O antigo Atalhos Tributário (https://projeto-tributario.vercel.app/) redirecion
 - **ATEN**, **GPRO WEB**, **ADM-Web**, **GCC** (Gestão de Contratos e Convênios) e **Suprimentos**.
 - **Transparência**: Portal da Transparência, Novo Transparência e Inscritos em Dívida.
 - **GoGlobal**, **Setup**, **Pessoas**, **Config Contas** e **Links Úteis** (documentação, wiki, demandas e planilhas).
-- **Versão dos clientes**: E-Gov, ITBI, IssOnline, ATEN, GPRO WEB, Transparência E-Gov e Portal da Transparência mostram a versão de cada município, destacam quem está desatualizado e quem não respondeu, com o botão **Atualizar visualização** para buscar de novo na hora.
+- **Versão dos clientes**: E-Gov, ITBI, IssOnline, Setup, ATEN, GPRO WEB, Transparência E-Gov e Portal da Transparência mostram a versão de cada município, destacam quem está desatualizado e quem não respondeu, com o botão **Atualizar visualização** para buscar de novo na hora.
 - **Link direto para a tela** (ex.: `#egov`) e **sugestões pelo GitHub** na tela inicial.
 - Pode ser instalado como aplicativo pelo botão **Instalar app**.
 
@@ -25,4 +25,5 @@ O antigo Atalhos Tributário (https://projeto-tributario.vercel.app/) redirecion
 
 - Telas, menu, áreas e versões ficam em `src/app/sistemas.ts`; os links de cada tela, em `src/app/dados/<tela>.json`.
 - Tela nova: criar o JSON em `dados/` e uma linha no `MENU`. Com versão, incluir também o sistema em `api/versao.js`.
-- Toda segunda o GitHub Actions roda `scripts/verificar-links.mjs` e mantém aberta uma issue "Links quebrados" com os links que não abriram (dá para rodar na aba Actions ou com `node scripts/verificar-links.mjs`).
+- Toda segunda o GitHub Actions roda `scripts/verificar-links.mjs --corrigir`: links com endereço novo comprovado vão para o PR "Correção automática de links" (branch `correcao-links`) e os que continuam sem abrir ficam na issue "Links quebrados". Dá para rodar na aba Actions ou com `node scripts/verificar-links.mjs [--corrigir]`.
+- `npm test` confere os JSONs de dados, as notas de versão e se as telas com versão batem com `api/versao.js`. Roda no GitHub a cada push e PR.
