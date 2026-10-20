@@ -108,7 +108,7 @@
           @for (r of g.itens; track r) {
             <a class="busca-item" [href]="r.url" target="_blank">
               <span class="busca-item-principal">
-                <span class="busca-item-cliente"> {{ r.nomeSistema }} </span>
+                <span class="busca-item-cliente"> {{ g.porSistema ? r.cliente : r.nomeSistema }} </span>
                 @if (r.homolog) {
                   <span class="badge-homolog"> Homolog. </span>
                 }

@@ -14,7 +14,10 @@ export interface ResultadoBusca {
 
 export interface GrupoBusca {
   cliente: string;
+  // Sigla do estado, ou a categoria em grupo por sistema.
   estado: string;
+  // Tela que não é por município (Links Úteis): agrupa por sistema + categoria e o item mostra o nome do link.
+  porSistema?: boolean;
   itens: ResultadoBusca[];
 }
 
@@ -41,10 +44,13 @@ const temAcento = (texto: string) => /[^\x00-\x7F]/.test(texto);
 function agruparPorCliente(itens: ResultadoBusca[]): GrupoBusca[] {
   const grupos = new Map<string, GrupoBusca>();
   for (const r of itens) {
-    const nome = r.cliente.replace(SUFIXO_HOMOLOG, '');
-    const chave = normalizar(nome);
+    const porSistema = !(r.local in ESTADOS);
+    const nome = porSistema ? r.nomeSistema : r.cliente.replace(SUFIXO_HOMOLOG, '');
+    const chave = porSistema ? `${normalizar(nome)}|${r.local}` : normalizar(nome);
     let grupo = grupos.get(chave);
-    if (!grupo) grupos.set(chave, grupo = { cliente: nome, estado: ESTADOS[r.local] ?? '', itens: [] });
+    if (!grupo) grupos.set(chave, grupo = porSistema
+      ? { cliente: nome, estado: r.local, porSistema, itens: [] }
+      : { cliente: nome, estado: ESTADOS[r.local], itens: [] });
     if (temAcento(nome) && !temAcento(grupo.cliente)) grupo.cliente = nome;
     grupo.itens.push(r);
   }

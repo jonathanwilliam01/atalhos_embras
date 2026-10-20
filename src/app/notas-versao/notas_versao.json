@@ -111,6 +111,13 @@
         "A versão do Setup aparece também na tela Clientes, nos cartões e na visão Versões.",
         "Atualizado o endereço dos links dos clientes que mudaram de servidor."
       ]
+    },
+    {
+      "versao": "V4.26.10.03",
+      "data": "20/10/2026",
+      "descricao": [
+        "Na busca, os Links Úteis aparecem agrupados por categoria, com o nome de cada link."
+      ]
     }
   ]
 }

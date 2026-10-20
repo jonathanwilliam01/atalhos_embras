@@ -40,6 +40,7 @@ testem.log
 # Saída do scripts/verificar-links.mjs
 relatorio.md
 correcoes.md
+notas.md
 
 # System files
 .DS_Store

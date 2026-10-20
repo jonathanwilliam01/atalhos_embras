@@ -1,0 +1,45 @@
+name: Release
+
+# Commit de versão (mensagem "V4.26.10.02") na main vira tag + release com o texto da nota.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: startsWith(github.event.head_commit.message, 'V')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # Mesma versão subida de novo (commit corrigido): move a tag e atualiza o texto.
+      - name: Criar ou atualizar o release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          nota=$(node -e "
+            const { versoes } = require('./src/app/notas-versao/notas_versao.json');
+            const v = versoes.sort((a, b) => a.versao.localeCompare(b.versao, undefined, { numeric: true })).at(-1);
+            require('fs').writeFileSync('notas.md', v.descricao.map(l => '- ' + l).join('\n') + '\n');
+            console.log(v.versao + ' · ' + v.data);
+          ")
+          versao=${nota%% *}
+          if [ "$versao" != "$(echo "$COMMIT_MSG" | head -1 | xargs)" ]; then
+            echo "Commit não é a versão mais nova das notas ($versao)."
+            exit 0
+          fi
+          if gh release view "$versao" > /dev/null 2>&1; then
+            git tag -f "$versao"
+            git push -f origin "refs/tags/$versao"
+            gh release edit "$versao" --title "$nota" --notes-file notas.md
+          else
+            gh release create "$versao" --target "$GITHUB_SHA" --title "$nota" --notes-file notas.md
+          fi

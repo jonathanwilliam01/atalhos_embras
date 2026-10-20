@@ -26,4 +26,5 @@ O antigo Atalhos Tributário (https://projeto-tributario.vercel.app/) redirecion
 - Telas, menu, áreas e versões ficam em `src/app/sistemas.ts`; os links de cada tela, em `src/app/dados/<tela>.json`.
 - Tela nova: criar o JSON em `dados/` e uma linha no `MENU`. Com versão, incluir também o sistema em `api/versao.js`.
 - Toda segunda o GitHub Actions roda `scripts/verificar-links.mjs --corrigir`: links com endereço novo comprovado vão para o PR "Correção automática de links" (branch `correcao-links`) e os que continuam sem abrir ficam na issue "Links quebrados". Dá para rodar na aba Actions ou com `node scripts/verificar-links.mjs [--corrigir]`.
+- Commit de versão na `main` (mensagem igual à nota mais nova, ex.: `V4.26.10.02`) vira tag e release com o texto da nota.
 - `npm test` confere os JSONs de dados, as notas de versão e se as telas com versão batem com `api/versao.js`. Roda no GitHub a cada push e PR.
