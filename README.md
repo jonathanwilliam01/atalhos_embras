@@ -6,7 +6,7 @@ Acesse: https://atalhos-embras.vercel.app/
 
 O antigo Atalhos Tributário (https://projeto-tributario.vercel.app/) redireciona para cá e traz junto os favoritos e recentes.
 
-## O que tem
+## Funcionalidades
 
 - **Filtro de área** no menu lateral: Arrecadação, Administração/RH, Finanças ou Suprimentos.
 - **Favoritos e Recentes**: marque links com estrela e veja os últimos abertos na tela inicial.
@@ -20,11 +20,3 @@ O antigo Atalhos Tributário (https://projeto-tributario.vercel.app/) redirecion
 - **Versão dos clientes**: E-Gov, ITBI, IssOnline, Setup, ATEN, GPRO WEB, Transparência E-Gov e Portal da Transparência mostram a versão de cada município, destacam quem está desatualizado e quem não respondeu, com o botão **Atualizar visualização** para buscar de novo na hora.
 - **Link direto para a tela** (ex.: `#egov`) e **sugestões pelo GitHub** na tela inicial.
 - Pode ser instalado como aplicativo pelo botão **Instalar app**.
-
-## Desenvolvimento
-
-- Telas, menu, áreas e versões ficam em `src/app/sistemas.ts`; os links de cada tela, em `src/app/dados/<tela>.json`.
-- Tela nova: criar o JSON em `dados/` e uma linha no `MENU`. Com versão, incluir também o sistema em `api/versao.js`.
-- Toda segunda o GitHub Actions roda `scripts/verificar-links.mjs --corrigir`: links com endereço novo comprovado vão para o PR "Correção automática de links" (branch `correcao-links`) e os que continuam sem abrir ficam na issue "Links quebrados". Dá para rodar na aba Actions ou com `node scripts/verificar-links.mjs [--corrigir]`.
-- Commit de versão na `main` (mensagem igual à nota mais nova, ex.: `V4.26.10.02`) vira tag e release com o texto da nota.
-- `npm test` confere os JSONs de dados, as notas de versão e se as telas com versão batem com `api/versao.js`. Roda no GitHub a cada push e PR.
