@@ -47,7 +47,7 @@
       "nome": "Minas Gerais",
       "itens": [
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/arrecadacao/debitos" },
-        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/arrecadacao/debitos" }
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/arrecadacao/debitos" }
       ]
     }
   ]

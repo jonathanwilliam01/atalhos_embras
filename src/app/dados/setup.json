@@ -46,7 +46,7 @@
     {
       "nome": "Minas Gerais",
       "itens": [
-        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/geosiap-setup/login" },
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/geosiap-setup/login" }
       ]
     }

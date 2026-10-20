@@ -19,14 +19,14 @@
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/administracao/" },
         { "cliente": "São Vicente", "url": "https://online.saovicente.sp.gov.br/administracao", "inativo": true },
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/administracao/" },
-        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/administracao" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/administracao/" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/administracao/" },
         { "cliente": "Canas", "url": "https://canas.geosiap.net.br/administracao/" },
         { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/administracao/" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/administracao/" },
         { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/administracao/" },
         { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/administracao/" },
-        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/administracao" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/administracao/" },
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/administracao/" },
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/administracao/" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/administracao/" },
@@ -45,7 +45,7 @@
       "nome": "Minas Gerais",
       "itens": [
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/administracao/" },
-        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br/administracao" }
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/administracao" }
       ]
     }
   ]
