@@ -46,7 +46,7 @@
       "nome": "Minas Gerais",
       "itens": [
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/gcc-web" },
-        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br/gcc-web" }
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/gcc-web" }
       ]
     }
   ]

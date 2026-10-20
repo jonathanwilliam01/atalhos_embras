@@ -49,7 +49,7 @@
       "nome": "Minas Gerais",
       "itens": [
         { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/suprimentos" },
-        { "cliente": "Pouso Alto", "url": "https://pmpousoalto.geosiap.net.br:8443/suprimentos" }
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/suprimentos" }
       ]
     }
   ]
