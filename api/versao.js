@@ -14,6 +14,7 @@ const VERSAO_ISS = /ISS Online v\.\s*([\d.]+)/;
 // ITBI: versão própria no cabeçalho, "Versão: 1.000007" (o título traz a do E-Gov).
 const VERSAO_ITBI = /Vers.{1,8}o:\s*([\d.]+)/;
 const VERSAO_PORTAL = /"name":"portal-transparencia","version":"([\d.]+)"/;
+const VERSAO_API = /"version":"v?([\d.]+)"/;
 
 async function texto(url, timeout = TIMEOUT_MS) {
   const resposta = await fetch(url, { signal: AbortSignal.timeout(timeout) });
@@ -67,6 +68,12 @@ async function versaoPortal(url) {
   return versoesBundle.get(bundle);
 }
 
+// Sistemas Java: /<sistema>/api devolve "version" em JSON. Sem login, alguns respondem 401 mas ainda trazem a versão.
+async function versaoApi(url) {
+  const base = new URL(url);
+  return (await texto(new URL(`/${base.pathname.split('/')[1]}/api`, base))).match(VERSAO_API)?.[1] ?? null;
+}
+
 const sistemas = {
   egov: { dados: require('../src/app/dados/egov.json'), versao: versaoEgov },
   aten: { dados: require('../src/app/dados/aten.json'), versao: versaoEgov },
@@ -75,7 +82,12 @@ const sistemas = {
   setup: { dados: require('../src/app/dados/setup.json'), versao: versaoSetup },
   itbi: { dados: require('../src/app/dados/itbi.json'), versao: versaoItbi },
   'transparencia-egov': { dados: require('../src/app/dados/transparencia-egov.json'), versao: versaoEgov },
-  'portal-transparencia': { dados: require('../src/app/dados/portal-transparencia.json'), versao: versaoPortal }
+  'portal-transparencia': { dados: require('../src/app/dados/portal-transparencia.json'), versao: versaoPortal },
+  jucesp: { dados: require('../src/app/dados/jucesp.json'), versao: versaoApi },
+  gcc: { dados: require('../src/app/dados/gcc.json'), versao: versaoApi },
+  pessoas: { dados: require('../src/app/dados/pessoas.json'), versao: versaoApi },
+  suprimentos: { dados: require('../src/app/dados/suprimentos.json'), versao: versaoApi },
+  'atende-mais': { dados: require('../src/app/dados/atende-mais.json'), versao: versaoApi }
 };
 
 // Retorna { url: versão | null | false } de todos os clientes ativos do sistema; false = não respondeu.

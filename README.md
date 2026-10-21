@@ -17,6 +17,6 @@ O antigo Atalhos Tributário (https://projeto-tributario.vercel.app/) redirecion
 - **ATEN**, **GPRO WEB**, **ADM-Web**, **GCC** (Gestão de Contratos e Convênios) e **Suprimentos**.
 - **Transparência**: Portal da Transparência, Novo Transparência e Inscritos em Dívida.
 - **GoGlobal**, **Setup**, **Pessoas**, **Config Contas** e **Links Úteis** (documentação, wiki, demandas e planilhas).
-- **Versão dos clientes**: E-Gov, ITBI, IssOnline, Setup, ATEN, GPRO WEB, Transparência E-Gov e Portal da Transparência mostram a versão de cada município, destacam quem está desatualizado e quem não respondeu, com o botão **Atualizar visualização** para buscar de novo na hora.
+- **Versão dos clientes**: E-Gov, ITBI, IssOnline, Setup, ATEN, GPRO WEB, Transparência E-Gov, Portal da Transparência, Facilita-SP, Atende Mais, GCC, Suprimentos e Pessoas mostram a versão de cada município, destacam quem está desatualizado e quem não respondeu, com o botão **Atualizar visualização** para buscar de novo na hora.
 - **Link direto para a tela** (ex.: `#egov`) e **sugestões pelo GitHub** na tela inicial.
 - Pode ser instalado como aplicativo pelo botão **Instalar app**.

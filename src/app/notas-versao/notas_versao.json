@@ -118,6 +118,14 @@
       "descricao": [
         "Na busca, os Links Úteis aparecem agrupados por categoria, com o nome de cada link."
       ]
+    },
+    {
+      "versao": "V4.26.10.04",
+      "data": "21/10/2026",
+      "descricao": [
+        "Facilita-SP, Atende Mais, GCC, Suprimentos e Pessoas agora mostram a versão de cada cliente, destacando quem está desatualizado e quem não respondeu.",
+        "A versão desses sistemas aparece também na tela Clientes, nos cartões e na visão Versões."
+      ]
     }
   ]
 }

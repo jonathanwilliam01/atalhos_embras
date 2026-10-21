@@ -70,13 +70,13 @@ export const MENU: ItemMenu[] = [
       { id: 'IssOnline-dev', nome: 'IssOnline Homol.', dados: issonlineDev, areas: ['arrecadacao'] }
     ]
   },
-  { nome: 'Facilita-SP', icone: 'fa-solid fa-exchange', tela: { id: 'jucesp', nome: 'Facilita-SP', dados: jucesp, areas: ['arrecadacao'] } },
-  { nome: 'Atende Mais', icone: 'fa-solid fa-phone', tela: { id: 'atende_mais', nome: 'Atende Mais', dados: atendeMais, areas: ['arrecadacao'] } },
+  { nome: 'Facilita-SP', icone: 'fa-solid fa-exchange', tela: { id: 'jucesp', nome: 'Facilita-SP', dados: jucesp, areas: ['arrecadacao'], versao: 'jucesp' } },
+  { nome: 'Atende Mais', icone: 'fa-solid fa-phone', tela: { id: 'atende_mais', nome: 'Atende Mais', dados: atendeMais, areas: ['arrecadacao'], versao: 'atende-mais' } },
   { nome: 'ATEN', icone: 'fa-solid fa-clipboard-list', tela: { id: 'aten', nome: 'ATEN', dados: aten, areas: ['administracao'], versao: 'aten' } },
   { nome: 'GPRO WEB', icone: 'fa-solid fa-folder-open', tela: { id: 'gpro-web', nome: 'GPRO WEB', dados: gproWeb, areas: ['administracao'], versao: 'gpro-web' } },
   { nome: 'ADM-Web', icone: 'fa-solid fa-desktop', tela: { id: 'adm-web', nome: 'ADM-Web', dados: admWeb, areas: ['administracao'] } },
-  { nome: 'GCC', icone: 'fa-solid fa-file-text', tela: { id: 'gcc', nome: 'GCC', dados: gcc, areas: ['suprimentos'] } },
-  { nome: 'Suprimentos', icone: 'fa-solid fa-boxes-stacked', tela: { id: 'suprimentos', nome: 'Suprimentos', dados: suprimentos, areas: ['suprimentos'] } },
+  { nome: 'GCC', icone: 'fa-solid fa-file-text', tela: { id: 'gcc', nome: 'GCC', dados: gcc, areas: ['suprimentos'], versao: 'gcc' } },
+  { nome: 'Suprimentos', icone: 'fa-solid fa-boxes-stacked', tela: { id: 'suprimentos', nome: 'Suprimentos', dados: suprimentos, areas: ['suprimentos'], versao: 'suprimentos' } },
   {
     nome: 'Transparência', icone: 'fa-solid fa-magnifying-glass-dollar', grupo: 'transparencia', telas: [
       { id: 'portal-transparencia', nome: 'Transparência', dados: portalTransparencia, areas: ['financas'], versao: 'portal-transparencia' },
@@ -86,7 +86,7 @@ export const MENU: ItemMenu[] = [
   },
   { nome: 'Config Contas', icone: 'fa-solid fa-user', tela: { id: 'login-novo', nome: 'Config Contas', dados: loginNovo } },
   { nome: 'Geosiap Setup', icone: 'fa-solid fa-sliders', tela: { id: 'setup', nome: 'Setup', dados: setup, versao: 'setup' } },
-  { nome: 'Pessoas', icone: 'fa-solid fa-users', tela: { id: 'pessoas', nome: 'Pessoas', dados: pessoas } },
+  { nome: 'Pessoas', icone: 'fa-solid fa-users', tela: { id: 'pessoas', nome: 'Pessoas', dados: pessoas, versao: 'pessoas' } },
   { nome: 'Links Úteis', icone: 'fa-solid fa-link', tela: { id: 'links', nome: 'Links Úteis', dados: links } }
 ];
 
