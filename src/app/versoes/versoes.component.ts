@@ -1,10 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { TELAS } from '../sistemas';
-import { ESTADOS, normalizar } from '../search/search.service';
+import { ESTADOS, SUFIXO_HOMOLOG, normalizar, temAcento } from '../search/search.service';
 import { ColunaVersao, VersoesClientesService } from './versoes-clientes.service';
 
-const SUFIXO_HOMOLOG = /\s+homolog\.?$/i;
-const temAcento = (texto: string) => /[^\x00-\x7F]/.test(texto);
 const NOMES_ESTADO = Object.fromEntries(Object.entries(ESTADOS).map(([nome, uf]) => [uf, nome]));
 
 interface Linha {
@@ -12,6 +10,8 @@ interface Linha {
   estado: string;
   // url do cliente em cada tela (id da tela).
   urls: Record<string, string>;
+  // Cliente + UF + estado normalizados, para o filtro.
+  texto: string;
 }
 
 // Visão Versões da tela Clientes: uma linha por cliente e uma coluna por sistema com versão.
@@ -27,11 +27,16 @@ export class VersoesComponent {
   readonly versoes = inject(VersoesClientesService);
   readonly colunas = this.versoes.colunas;
   private todas = montarLinhas();
+  private ultimas?: { chave: unknown[]; linhas: Linha[] };
 
+  // O getter roda a cada ciclo: só refiltra quando filtro, pendências ou versões mudam.
   get linhas(): Linha[] {
+    const chave = [this.filtro, this.soPendencias, ...this.colunas.map(c => c.versoes)];
+    if (this.ultimas?.chave.every((v, i) => v === chave[i])) return this.ultimas.linhas;
     const alvo = normalizar(this.filtro);
-    return this.todas.filter(l =>
-      normalizar(`${l.cliente} ${l.estado} ${NOMES_ESTADO[l.estado]}`).includes(alvo) && (!this.soPendencias || this.pendente(l)));
+    const linhas = this.todas.filter(l => l.texto.includes(alvo) && (!this.soPendencias || this.pendente(l)));
+    this.ultimas = { chave, linhas };
+    return linhas;
   }
 
   versao(coluna: ColunaVersao, linha: Linha) {
@@ -61,11 +66,12 @@ function montarLinhas(): Linha[] {
         const nome = item.cliente.replace(SUFIXO_HOMOLOG, '');
         const chave = `${normalizar(nome)}|${estado}`;
         let linha = linhas.get(chave);
-        if (!linha) linhas.set(chave, linha = { cliente: nome, estado, urls: {} });
+        if (!linha) linhas.set(chave, linha = { cliente: nome, estado, urls: {}, texto: '' });
         if (temAcento(nome) && !temAcento(linha.cliente)) linha.cliente = nome;
         linha.urls[tela.id] = item.url;
       }
     }
   }
+  for (const l of linhas.values()) l.texto = normalizar(`${l.cliente} ${l.estado} ${NOMES_ESTADO[l.estado]}`);
   return [...linhas.values()].sort((a, b) => a.cliente.localeCompare(b.cliente, 'pt-BR'));
 }

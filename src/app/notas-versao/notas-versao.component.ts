@@ -8,6 +8,10 @@ interface VersaoNota {
   descricao: string[];
 }
 
+// Mais nova primeiro; a versão do app é a maior nota.
+export const VERSOES_NOTAS: VersaoNota[] = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao, undefined, { numeric: true }));
+export const ULTIMA_VERSAO: VersaoNota | undefined = VERSOES_NOTAS[0];
+
 @Component({
     selector: 'app-notas-versao',
     imports: [],
@@ -19,7 +23,7 @@ export class NotasVersaoComponent {
   @Input() visible = false;
   @Output() close = new EventEmitter<void>();
 
-  versoes: VersaoNota[] = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao, undefined, { numeric: true }));
+  versoes = VERSOES_NOTAS;
   expandedVersao: string | null = this.versoes[0]?.versao ?? null;
 
   toggle(versao: string) {

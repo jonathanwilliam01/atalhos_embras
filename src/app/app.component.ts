@@ -4,8 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { SistemaLinksComponent } from './shared/sistema-links/sistema-links.component';
 import { Tela, telaPorId } from './sistemas';
 import { NotasVersaoComponent } from './notas-versao/notas-versao.component';
-import notasVersaoData from './notas-versao/notas_versao.json';
-import { SearchService, GrupoBusca, slug } from './search/search.service';
+import { ULTIMA_VERSAO } from './notas-versao/notas-versao.component';
+import { SearchService, GrupoBusca, host, slug } from './search/search.service';
 import { pageview } from '@vercel/analytics';
 import { SwUpdate } from '@angular/service-worker';
 import { FavoritosService } from './favoritos/favoritos.service';
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   readonly linkSugestao = LINK_SUGESTAO;
   sugestaoVisivel = false;
   notasVersaoVisivel = false;
-  ultimaVersao = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao, undefined, { numeric: true }))[0];
+  ultimaVersao = ULTIMA_VERSAO;
   versaoAtual = this.ultimaVersao?.versao ?? '';
   private platformId = inject(PLATFORM_ID);
   favoritos = inject(FavoritosService);
@@ -60,11 +60,14 @@ export class AppComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   @HostListener('document:auxclick', ['$event'])
   registrarLinkAberto(event: MouseEvent) {
+    // auxclick também dispara no botão direito; só o do meio abre o link.
+    if (event.type === 'auxclick' && event.button !== 1) return;
     const link = (event.target as HTMLElement).closest?.('a[href^="http"]');
     if (!link) return;
-    const r = this.searchService.porUrl(link.getAttribute('href') ?? '');
+    const href = link.getAttribute('href') ?? '';
+    const r = this.searchService.porUrl(href);
     if (r) this.favoritos.registrarAberto(r.url);
-    this.registrarVisita(r ? `/link/${slug(r.sistema)}/${slug(r.cliente)}` : `/link/externo/${new URL(link.getAttribute('href')!).host}`);
+    this.registrarVisita(r ? `/link/${slug(r.sistema)}/${slug(r.cliente)}` : `/link/externo/${host(href)}`);
   }
 
   private registrarVisita(caminho: string) {

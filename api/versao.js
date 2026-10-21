@@ -19,6 +19,8 @@ const VERSAO_API = /"version":"v?(\d[\w.]*)"/;
 
 async function texto(url, timeout = TIMEOUT_MS) {
   const resposta = await fetch(url, { signal: AbortSignal.timeout(timeout) });
+  // 5xx: servidor fora, conta como não respondeu.
+  if (resposta.status >= 500) throw new Error(`HTTP ${resposta.status}`);
   return Buffer.from(await resposta.arrayBuffer()).toString('latin1');
 }
 

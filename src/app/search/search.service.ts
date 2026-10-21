@@ -24,13 +24,13 @@ export interface GrupoBusca {
 const SISTEMAS: DadosSistema[] = TELAS.map(t => t.dados);
 
 export const ESTADOS: Record<string, string> = { 'São Paulo': 'SP', 'Rio de Janeiro': 'RJ', 'Minas Gerais': 'MG' };
-const SUFIXO_HOMOLOG = /\s+homolog\.?$/i;
+export const SUFIXO_HOMOLOG = /\s+homolog\.?$/i;
 
 export function normalizar(texto: string): string {
   return texto.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
 }
 
-function host(url: string): string {
+export function host(url: string): string {
   try { return new URL(url).host; } catch { return url; }
 }
 
@@ -38,7 +38,7 @@ export function slug(texto: string): string {
   return normalizar(texto).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-const temAcento = (texto: string) => /[^\x00-\x7F]/.test(texto);
+export const temAcento = (texto: string) => /[^\x00-\x7F]/.test(texto);
 
 // Agrupa ignorando acentos e o sufixo "Homolog."; exibe a grafia acentuada quando houver.
 function agruparPorCliente(itens: ResultadoBusca[]): GrupoBusca[] {
@@ -74,15 +74,14 @@ export class SearchService {
         }))
     )
   );
+  // Texto já normalizado de cada item, na ordem do índice: a busca roda a cada tecla.
+  private textos = this.indice.map(r => normalizar(`${r.sistema} ${r.local} ${r.cliente} ${r.url}`));
 
   buscar(termo: string): GrupoBusca[] {
     const termos = normalizar(termo).split(/\s+/).filter(Boolean);
     if (!termos.length) return [];
 
-    return agruparPorCliente(this.indice.filter(r => {
-      const texto = normalizar(`${r.sistema} ${r.local} ${r.cliente} ${r.url}`);
-      return termos.every(t => texto.includes(t));
-    }));
+    return agruparPorCliente(this.indice.filter((_, i) => termos.every(t => this.textos[i].includes(t))));
   }
 
   porUrl(url: string): ResultadoBusca | undefined {

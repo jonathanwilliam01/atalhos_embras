@@ -55,6 +55,7 @@ export class SistemaLinksComponent implements OnInit {
   foraDoArTotal = 0;
   carregandoVersoes = false;
   private destruido = false;
+  private timerResize?: ReturnType<typeof setTimeout>;
   // aperta: versão some no hover; quebra: versão vai para a linha de baixo.
   espaco = new Map<string, 'aperta' | 'quebra'>();
   private platformId = inject(PLATFORM_ID);
@@ -109,8 +110,14 @@ export class SistemaLinksComponent implements OnInit {
     this.ajustarVersoes();
   }
 
-  // Nome + versão que não cabem na linha: versão desce para baixo do nome.
+  // Redimensionar dispara vários eventos seguidos: mede uma vez só, quando para.
   @HostListener('window:resize')
+  aoRedimensionar(): void {
+    clearTimeout(this.timerResize);
+    this.timerResize = setTimeout(() => { if (!this.destruido) this.ajustarVersoes(); }, 150);
+  }
+
+  // Nome + versão que não cabem na linha: versão desce para baixo do nome.
   ajustarVersoes(): void {
     if (!Object.keys(this.versoes).length) return;
     this.espaco.clear();

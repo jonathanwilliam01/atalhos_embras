@@ -47,19 +47,23 @@ function versoesDoMesmoSistema(urls: string[]): Versoes {
 }
 
 // Uma consulta por sistema, mesmo com várias telas pedindo ao mesmo tempo.
-// forcar: parâmetro novo na URL para o CDN não devolver a resposta guardada.
+// forcar: parâmetro novo na URL para o CDN não devolver a resposta guardada; substitui a consulta em andamento.
 function consultar(sistema: string, forcar = false): Promise<Versoes> {
-  if (!consultas.has(sistema)) {
-    consultas.set(sistema, fetch(`/api/versao?sistema=${sistema}${forcar ? `&atualizar=${Date.now()}` : ''}`)
-      .then(r => r.ok ? r.json() : Promise.reject())
-      .then((v: Versoes) => {
+  const emAndamento = consultas.get(sistema);
+  if (emAndamento && !forcar) return emAndamento;
+  const consulta: Promise<Versoes> = fetch(`/api/versao?sistema=${sistema}${forcar ? `&atualizar=${Date.now()}` : ''}`)
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then((v: Versoes) => {
+      // Consulta substituída por uma forçada: não sobrescreve o resultado novo.
+      if (consultas.get(sistema) === consulta) {
         cacheVersoes.set(sistema, v);
         salvarVersoes(sistema, v);
-        return v;
-      })
-      .finally(() => consultas.delete(sistema)));
-  }
-  return consultas.get(sistema)!;
+      }
+      return v;
+    })
+    .finally(() => { if (consultas.get(sistema) === consulta) consultas.delete(sistema); });
+  consultas.set(sistema, consulta);
+  return consulta;
 }
 
 // Entrega na hora o que já houver (consulta desta visita, outra tela do E-Gov ou a última salva) e depois a consulta nova.

@@ -124,7 +124,11 @@
       "data": "21/10/2026",
       "descricao": [
         "Facilita-SP, Atende Mais, GCC, Suprimentos e Pessoas agora mostram a versão de cada cliente, destacando quem está desatualizado e quem não respondeu.",
-        "A versão desses sistemas aparece também na tela Clientes, nos cartões e na visão Versões."
+        "A versão desses sistemas aparece também na tela Clientes, nos cartões e na visão Versões.",
+        "Cliente com o servidor fora do ar passa a aparecer como \"não respondeu\", em vez de \"sem versão\".",
+        "Abrir o menu do botão direito sobre um link não coloca mais o link nos Recentes.",
+        "O botão Atualizar visualização sempre busca a versão na hora, mesmo com uma consulta em andamento.",
+        "Busca, visão Versões e ajuste da tela ao redimensionar mais leves; a tela inicial carrega menos arquivos."
       ]
     }
   ]

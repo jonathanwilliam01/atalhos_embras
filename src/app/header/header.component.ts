@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, HostListener, ElementRef, ViewChild, OnInit, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import notasVersaoData from '../notas-versao/notas_versao.json';
+import { ULTIMA_VERSAO } from '../notas-versao/notas-versao.component';
 import { AREAS, Area, ItemMenu, MENU, Tela, naArea, telaPorId } from '../sistemas';
 
 const CHAVE_AREA = 'areaMenu';
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   promptInstalacao: (Event & { prompt: () => Promise<void> }) | null = null;
   private telaAnterior: { tela: string; grupo: string | null } | null = null;
 
-  versaoAtual = [...notasVersaoData.versoes].sort((a, b) => b.versao.localeCompare(a.versao, undefined, { numeric: true }))[0]?.versao ?? '';
+  versaoAtual = ULTIMA_VERSAO?.versao ?? '';
 
   private platformId = inject(PLATFORM_ID);
   readonly menu = MENU;
@@ -66,10 +66,11 @@ export class HeaderComponent implements OnInit {
       this.componentSelected.emit('');
       return;
     }
-    // Tela fora da área filtrada: volta para todas as áreas.
     const t = telaPorId(tela);
+    if (!t && tela !== 'clientes') return;
+    // Tela fora da área filtrada: volta para todas as áreas.
     if (t && !this.visivel(t)) this.mudarArea('');
-    this.elementRef.nativeElement.querySelector(`[data-tela="${CSS.escape(tela)}"]`)?.click();
+    this.selectComponent(tela, MENU.find(m => t && m.telas?.includes(t))?.grupo ?? null);
   }
 
   abrirNotasVersao(event: Event) {
