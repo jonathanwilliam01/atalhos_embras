@@ -14,7 +14,8 @@ const VERSAO_ISS = /ISS Online v\.\s*([\d.]+)/;
 // ITBI: versão própria no cabeçalho, "Versão: 1.000007" (o título traz a do E-Gov).
 const VERSAO_ITBI = /Vers.{1,8}o:\s*([\d.]+)/;
 const VERSAO_PORTAL = /"name":"portal-transparencia","version":"([\d.]+)"/;
-const VERSAO_API = /"version":"v?([\d.]+)"/;
+// "v10.1.26.245"; build de staging vem como "v10.1.staging.244".
+const VERSAO_API = /"version":"v?(\d[\w.]*)"/;
 
 async function texto(url, timeout = TIMEOUT_MS) {
   const resposta = await fetch(url, { signal: AbortSignal.timeout(timeout) });
@@ -68,10 +69,13 @@ async function versaoPortal(url) {
   return versoesBundle.get(bundle);
 }
 
-// Sistemas Java: /<sistema>/api devolve "version" em JSON. Sem login, alguns respondem 401 mas ainda trazem a versão.
+// /<sistema>/api devolve "version" em JSON. Sem login, alguns respondem 401 mas ainda trazem a versão.
 async function versaoApi(url) {
   const base = new URL(url);
-  return (await texto(new URL(`/${base.pathname.split('/')[1]}/api`, base))).match(VERSAO_API)?.[1] ?? null;
+  const resposta = await fetch(new URL(`/${base.pathname.split('/')[1]}/api`, base), { signal: AbortSignal.timeout(TIMEOUT_MS) });
+  // 5xx: servidor fora, conta como não respondeu.
+  if (resposta.status >= 500) throw new Error(`HTTP ${resposta.status}`);
+  return (await resposta.text()).match(VERSAO_API)?.[1] ?? null;
 }
 
 const sistemas = {

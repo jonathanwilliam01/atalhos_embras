@@ -91,9 +91,9 @@ export function recarregarVersoes(sistema: string, atuais: Versoes, aoMudar: (ve
 
 export const compararVersao = (a: string, b: string) => a.localeCompare(b, undefined, { numeric: true });
 
-// Versão atual do sistema: a maior entre os clientes.
+// Versão atual do sistema: a maior entre os clientes. Build de staging ("10.1.staging.244") não conta.
 export function versaoMaisRecente(versoes: (string | null | false)[]): string | null {
   let atual: string | null = null;
-  for (const v of versoes) if (v && (!atual || compararVersao(v, atual) > 0)) atual = v;
+  for (const v of versoes) if (v && /^[\d.]+$/.test(v) && (!atual || compararVersao(v, atual) > 0)) atual = v;
   return atual;
 }
