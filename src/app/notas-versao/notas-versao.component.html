@@ -17,7 +17,7 @@
             </div>
             <ul class="notas-item-desc" [class.open]="expandedVersao === item.versao">
               @for (linha of item.descricao; track linha) {
-                <li>{{ linha }}</li>
+                <li><span class="tag" [class]="'tag-' + linha.tipo">{{ rotulos[linha.tipo] }}</span> {{ linha.texto }}</li>
               }
             </ul>
           </div>

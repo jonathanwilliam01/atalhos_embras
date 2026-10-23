@@ -19,7 +19,7 @@
     <input #buscaInput type="text" class="busca-input" placeholder="Buscar links" (input)="buscarAoDigitar(buscaInput.value)" (keydown.enter)="irParaResultados(buscaInput.value); closeMenu()" (keydown.arrowdown)="$event.preventDefault(); irParaResultados(buscaInput.value)" (keyup.escape)="limparBusca()">
     <kbd class="busca-atalho" title="Atalho para buscar"> Ctrl K </kbd>
   </div>
-  <label class="area" title="Filtrar o menu por área">
+  <label class="area" title="Filtrar os sistemas por área">
     <i class="fa-solid fa-layer-group"></i>
     <select (change)="mudarArea($any($event.target).value)" aria-label="Área">
       @for (a of areas; track a) {
@@ -28,24 +28,34 @@
     </select>
     <i class="fa-solid fa-chevron-down area-caret"></i>
   </label>
+  <!-- O filtro de área só esconde sistemas: Visão geral e Links aparecem sempre. -->
   <div class="menu">
-    <li data-tela="clientes" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === 'clientes'" (click)="selectComponent('clientes')"> <i class="fa-solid fa-city"></i> Clientes </li>
-    @for (item of menu; track item) {
-      @if (item.tela; as t) {
-        <li [attr.data-tela]="t.id" role="button" tabindex="0" class="bot" [hidden]="!visivel(t)" [class.active]="selectedComponent === t.id" (click)="selectComponent(t.id)"> <i [class]="item.icone"></i> {{ item.nome }}
-        </li>
+    @for (s of secoes; track s.id) {
+      <div class="secao"> {{ s.nome }} </div>
+      @if (s.id === 'geral') {
+        @for (g of telasGerais; track g.id) {
+          <li [attr.data-tela]="g.id" role="button" tabindex="0" class="bot" [class.active]="selectedComponent === g.id" (click)="selectComponent(g.id)"> <i [class]="g.icone"></i> {{ g.nome }} </li>
+        }
       }
-      @if (item.grupo; as g) {
-        <li role="button" tabindex="0" [hidden]="!grupoVisivel(item)" [attr.aria-expanded]="openSubmenu === g" class="bot has-submenu" [class.open]="openSubmenu === g" (click)="toggleSubmenu(g, $event)">
-          <i [class]="item.icone"></i> {{ item.nome }}
-          <i class="fa-solid fa-chevron-down submenu-caret"></i>
-        </li>
-        <ul class="submenu" [hidden]="!grupoVisivel(item)" [class.open]="openSubmenu === g">
-          @for (t of item.telas; track t) {
-            <li [attr.data-tela]="t.id" role="button" [hidden]="!visivel(t)" [attr.tabindex]="openSubmenu === g ? 0 : -1" (click)="$event.stopPropagation(); selectComponent(t.id, g)" [class.active]="selectedComponent === t.id"> {{ t.nome }}
+      @for (item of menu; track item) {
+        @if (naSecao(item, s.id)) {
+          @if (item.tela; as t) {
+            <li [attr.data-tela]="t.id" role="button" tabindex="0" class="bot" [hidden]="!visivel(t)" [class.active]="selectedComponent === t.id" (click)="selectComponent(t.id)"> <i [class]="item.icone"></i> {{ item.nome }}
             </li>
           }
-        </ul>
+          @if (item.grupo; as g) {
+            <li role="button" tabindex="0" [hidden]="!grupoVisivel(item)" [attr.aria-expanded]="openSubmenu === g" class="bot has-submenu" [class.open]="openSubmenu === g" (click)="toggleSubmenu(g, $event)">
+              <i [class]="item.icone"></i> {{ item.nome }}
+              <i class="fa-solid fa-chevron-down submenu-caret"></i>
+            </li>
+            <ul class="submenu" [hidden]="!grupoVisivel(item)" [class.open]="openSubmenu === g">
+              @for (t of item.telas; track t) {
+                <li [attr.data-tela]="t.id" role="button" [hidden]="!visivel(t)" [attr.tabindex]="openSubmenu === g ? 0 : -1" (click)="$event.stopPropagation(); selectComponent(t.id, g)" [class.active]="selectedComponent === t.id"> {{ t.nome }}
+                </li>
+              }
+            </ul>
+          }
+        }
       }
     }
   </div>

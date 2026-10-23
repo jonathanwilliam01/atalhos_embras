@@ -27,20 +27,29 @@
         { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/transparencia" },
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/transparencia" },
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/transparencia" },
-        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/transparencia" }
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/transparencia" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/transparencia" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/transparencia" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/transparencia" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/transparencia" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/transparencia" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/transparencia" }
       ]
     },
     {
       "nome": "Rio de Janeiro",
       "itens": [
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/transparencia" },
-        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/transparencia" }
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/transparencia" },
+        { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/transparencia" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/transparencia" }
       ]
     },
     {
       "nome": "Minas Gerais",
       "itens": [
-        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/transparencia" }
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/transparencia" },
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/transparencia" }
       ]
     }
   ]

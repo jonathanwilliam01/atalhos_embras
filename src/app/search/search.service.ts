@@ -38,6 +38,9 @@ export function slug(texto: string): string {
   return normalizar(texto).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
+// Id do cliente na tela Clientes (#clientes/lorena-sp) e no nome do brasão.
+export const idCliente = (cliente: string, uf: string) => `${slug(cliente)}-${uf.toLowerCase()}`;
+
 export const temAcento = (texto: string) => /[^\x00-\x7F]/.test(texto);
 
 // Agrupa ignorando acentos e o sufixo "Homolog."; exibe a grafia acentuada quando houver.

@@ -32,7 +32,8 @@
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/pmsantabranca/websis/siapegov/administrativo/processos/processos_index.php" },
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/websis/siapegov/administrativo/processos/processos_index.php" },
         { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/silveiras/websis/siapegov/administrativo/processos/processos_index.php" },
-        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/administrativo/processos/processos_index.php" }
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/administrativo/processos/processos_index.php" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pmaparecida/websis/siapegov/administrativo/processos/processos_index.php" }
       ]
     },
     {

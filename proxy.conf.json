@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://atalhos-embras.vercel.app",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

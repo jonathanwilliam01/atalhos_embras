@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, HostListener, ElementRef, ViewChild, OnInit, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ULTIMA_VERSAO } from '../notas-versao/notas-versao.component';
-import { AREAS, Area, ItemMenu, MENU, Tela, naArea, telaPorId } from '../sistemas';
+import { AREAS, Area, ItemMenu, MENU, SECOES, Secao, TELAS_GERAIS, Tela, naArea, telaPorId } from '../sistemas';
 
 const CHAVE_AREA = 'areaMenu';
 
@@ -31,6 +31,8 @@ export class HeaderComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
   readonly menu = MENU;
   readonly areas = AREAS;
+  readonly secoes = SECOES;
+  readonly telasGerais = TELAS_GERAIS;
   area: Area | '' = '';
 
   constructor(private elementRef: ElementRef) {}
@@ -47,6 +49,10 @@ export class HeaderComponent implements OnInit {
     try { localStorage.setItem(CHAVE_AREA, area); } catch {}
   }
 
+  naSecao(item: ItemMenu, secao: Secao): boolean {
+    return (item.secao ?? 'sistemas') === secao;
+  }
+
   visivel(tela: Tela): boolean {
     return naArea(tela, this.area);
   }
@@ -56,9 +62,10 @@ export class HeaderComponent implements OnInit {
   }
 
   // Tela na URL (#egov): F5 mantém a tela e o link pode ser compartilhado.
+  // O que vem depois da barra (#clientes/lorena-sp) é da própria tela.
   @HostListener('window:hashchange')
   abrirTelaDaUrl() {
-    const tela = decodeURIComponent(location.hash.slice(1));
+    const tela = telaDoHash();
     if (tela === this.selectedComponent) return;
     if (!tela) {
       this.selectedComponent = '';
@@ -67,7 +74,7 @@ export class HeaderComponent implements OnInit {
       return;
     }
     const t = telaPorId(tela);
-    if (!t && tela !== 'clientes') return;
+    if (!t && !TELAS_GERAIS.some(g => g.id === tela)) return;
     // Tela fora da área filtrada: volta para todas as áreas.
     if (t && !this.visivel(t)) this.mudarArea('');
     this.selectComponent(tela, MENU.find(m => t && m.telas?.includes(t))?.grupo ?? null);
@@ -115,7 +122,7 @@ export class HeaderComponent implements OnInit {
     if (this.buscaInput) this.buscaInput.nativeElement.value = '';
     this.telaAnterior = null;
     this.selectedComponent = componentName; // Define o componente selecionado
-    if (location.hash.slice(1) !== componentName) location.hash = componentName;
+    if (telaDoHash() !== componentName) location.hash = componentName;
     this.componentSelected.emit(componentName);
     this.openSubmenu = group;
     this.menuOpen = false; // fecha o drawer ao escolher uma opção (mobile)
@@ -174,4 +181,8 @@ export class HeaderComponent implements OnInit {
       this.openSubmenu = null;
     }
   }
+}
+
+function telaDoHash(): string {
+  return decodeURIComponent(location.hash.slice(1)).split('/')[0];
 }

@@ -43,9 +43,25 @@ export interface Tela {
   versao?: string;
 }
 
+// Seções do menu lateral. Item sem seção fica em Sistemas.
+export type Secao = 'geral' | 'sistemas' | 'links';
+
+export const SECOES: { id: Secao; nome: string }[] = [
+  { id: 'geral', nome: 'Visão geral' },
+  { id: 'sistemas', nome: 'Sistemas' },
+  { id: 'links', nome: 'Links' }
+];
+
+// Telas da Visão geral: todos os clientes, sem JSON próprio.
+export const TELAS_GERAIS: { id: string; nome: string; icone: string }[] = [
+  { id: 'clientes', nome: 'Clientes', icone: 'fa-solid fa-city' },
+  { id: 'versoes', nome: 'Versões', icone: 'fa-solid fa-code-branch' }
+];
+
 export interface ItemMenu {
   nome: string;
   icone: string;
+  secao?: Secao;
   tela?: Tela;
   // Submenu: id do grupo e telas.
   grupo?: string;
@@ -87,7 +103,7 @@ export const MENU: ItemMenu[] = [
   { nome: 'Config Contas', icone: 'fa-solid fa-user', tela: { id: 'login-novo', nome: 'Config Contas', dados: loginNovo } },
   { nome: 'Geosiap Setup', icone: 'fa-solid fa-sliders', tela: { id: 'setup', nome: 'Setup', dados: setup, versao: 'setup' } },
   { nome: 'Pessoas', icone: 'fa-solid fa-users', tela: { id: 'pessoas', nome: 'Pessoas', dados: pessoas, versao: 'pessoas' } },
-  { nome: 'Links Úteis', icone: 'fa-solid fa-link', tela: { id: 'links', nome: 'Links Úteis', dados: links } }
+  { nome: 'Links Úteis', icone: 'fa-solid fa-link', secao: 'links', tela: { id: 'links', nome: 'Links Úteis', dados: links } }
 ];
 
 export const TELAS: Tela[] = MENU.flatMap(m => m.tela ? [m.tela] : m.telas ?? []);

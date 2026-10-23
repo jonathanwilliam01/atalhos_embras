@@ -31,7 +31,9 @@
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/gcc-web" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/gcc-web" },
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/gcc-web" },
-        { "cliente": "Pompeia", "url": "https://siap.pompeia.sp.gov.br/gcc-web" }
+        { "cliente": "Pompeia", "url": "https://siap.pompeia.sp.gov.br/gcc-web" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/gcc-web" },
+        { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/gcc-web" }
       ]
     },
     {
@@ -39,7 +41,9 @@
       "itens": [
         { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/gcc-web" },
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/gcc-web" },
-        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/gcc-web" }
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/gcc-web" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/gcc-web" },
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/gcc-web" }
       ]
     },
     {

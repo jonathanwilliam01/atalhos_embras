@@ -31,7 +31,8 @@
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/pessoas/" },
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/pessoas/" },
         { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/pessoas/" },
-        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pessoas/" }
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pessoas/" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pessoas/" }
       ]
     },
     {
@@ -40,7 +41,8 @@
         { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/pessoas/" },
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/pessoas/" },
         { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/pessoas/" },
-        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pessoas/" }
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pessoas/" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/pessoas/" }
       ]
     },
     {

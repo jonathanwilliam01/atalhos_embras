@@ -42,7 +42,8 @@
         { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/suprimentos" },
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/suprimentos" },
         { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/suprimentos" },
-        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/suprimentos" }
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/suprimentos" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/suprimentos" }
       ]
     },
     {

@@ -4,131 +4,148 @@
       "versao": "V2.26.07.02",
       "data": "28/07/2026",
       "descricao": [
-        "Ajustado as aba do E-Gov para agrupar em submenu as opções relacionadas",
-        "Criado a aba de transparência dentro do menu do E-gov, trazendo os links das prefeituras que possuem portal da transparencia no E-Gov",
-        "Criado a aba do GCC com os links das prefeituras que usam este sistema",
-        "Criado a aba do SUPWEB com os links das prefeituras que usam este sistema",
-        "Criado a aba do Porta da Transparência com os links das prefeituras que usam este sistema",
-        "Ajustado a responsividade do sistema possibilitando a visualização em celular"
+        { "tipo": "melhoria", "texto": "Ajustado as aba do E-Gov para agrupar em submenu as opções relacionadas" },
+        { "tipo": "novidade", "texto": "Criado a aba de transparência dentro do menu do E-gov, trazendo os links das prefeituras que possuem portal da transparencia no E-Gov" },
+        { "tipo": "novidade", "texto": "Criado a aba do GCC com os links das prefeituras que usam este sistema" },
+        { "tipo": "novidade", "texto": "Criado a aba do SUPWEB com os links das prefeituras que usam este sistema" },
+        { "tipo": "novidade", "texto": "Criado a aba do Porta da Transparência com os links das prefeituras que usam este sistema" },
+        { "tipo": "melhoria", "texto": "Ajustado a responsividade do sistema possibilitando a visualização em celular" }
       ]
     },
     {
       "versao": "V2.26.08.01",
       "data": "04/08/2026",
       "descricao": [
-        "Criado a tela de notas de versão."
+        { "tipo": "novidade", "texto": "Criado a tela de notas de versão." }
       ]
     },
     {
       "versao": "V3.26.08.01",
       "data": "05/08/2026",
       "descricao": [
-        "Adicionado mecanismo de pesquisa de links no menu lateral",
-        "Adicionado busca por cliente, sistema e estado exibindo na seção de conteudo os resultados da busca.",
-        "Implementado opção de copiar link dos resultados da busca e também dos links do menu lateral."
+        { "tipo": "novidade", "texto": "Adicionado mecanismo de pesquisa de links no menu lateral" },
+        { "tipo": "novidade", "texto": "Adicionado busca por cliente, sistema e estado exibindo na seção de conteudo os resultados da busca." },
+        { "tipo": "novidade", "texto": "Implementado opção de copiar link dos resultados da busca e também dos links do menu lateral." }
       ]
     },
     {
       "versao": "V3.26.10.01",
       "data": "06/10/2026",
       "descricao": [
-        "Adicionado link para Lagoinha no Config E-Gov.",
-        "Adicionado links para Pindamonhangaba, Guararema e Lagoinha no Setup.",
-        "Adicionado link para Guararema no Config Login Novo.",
-        "Adicionado link para Guararema no ADM-Web, GCC e Novo Transparência."
+        { "tipo": "novidade", "texto": "Adicionado link para Lagoinha no Config E-Gov." },
+        { "tipo": "novidade", "texto": "Adicionado links para Pindamonhangaba, Guararema e Lagoinha no Setup." },
+        { "tipo": "novidade", "texto": "Adicionado link para Guararema no Config Login Novo." },
+        { "tipo": "novidade", "texto": "Adicionado link para Guararema no ADM-Web, GCC e Novo Transparência." }
       ]
     },
     {
       "versao": "V3.26.10.02",
       "data": "06/10/2026",
       "descricao": [
-        "Criada a tela de Clientes, reunindo em um só lugar todos os links de cada município.",
-        "A busca agora mostra os resultados enquanto digita, agrupados por cliente e indicando os links de homologação.",
-        "Adicionado o atalho Ctrl+K para abrir a busca.",
-        "Renomeado o menu Config Login Novo para Config Contas.",
-        "Atualizados os links de Pouso Alto no E-Gov, Config E-Gov, Config Contas e Pessoas, e adicionado o link no GoGlobal.",
-        "Removido São Vicente dos links.",
-        "Corrigida a paginação das listas, que sumia em algumas telas no Firefox.",
-        "As notas de versão passam a abrir automaticamente quando houver novidades.",
-        "Otimizadas as imagens, deixando as telas bem mais rápidas para abrir.",
-        "Itens marcados como Não Utilizado passam a ser apenas informativos, sem abrir nova aba.",
-        "Criada a opção ATEN no menu, com os links de todos os clientes do E-Gov.",
-        "Adicionados Favoritos e Recentes na tela inicial: clique na estrela ao lado de um link para fixá-lo.",
-        "Listas de clientes em ordem alfabética e com rolagem no lugar da paginação.",
-        "Agora é possível instalar o Atalhos como aplicativo pelo botão Instalar app no menu (Chrome e Edge)."
+        { "tipo": "novidade", "texto": "Criada a tela de Clientes, reunindo em um só lugar todos os links de cada município." },
+        { "tipo": "melhoria", "texto": "A busca agora mostra os resultados enquanto digita, agrupados por cliente e indicando os links de homologação." },
+        { "tipo": "novidade", "texto": "Adicionado o atalho Ctrl+K para abrir a busca." },
+        { "tipo": "melhoria", "texto": "Renomeado o menu Config Login Novo para Config Contas." },
+        { "tipo": "melhoria", "texto": "Atualizados os links de Pouso Alto no E-Gov, Config E-Gov, Config Contas e Pessoas, e adicionado o link no GoGlobal." },
+        { "tipo": "melhoria", "texto": "Removido São Vicente dos links." },
+        { "tipo": "correcao", "texto": "Corrigida a paginação das listas, que sumia em algumas telas no Firefox." },
+        { "tipo": "novidade", "texto": "As notas de versão passam a abrir automaticamente quando houver novidades." },
+        { "tipo": "melhoria", "texto": "Otimizadas as imagens, deixando as telas bem mais rápidas para abrir." },
+        { "tipo": "melhoria", "texto": "Itens marcados como Não Utilizado passam a ser apenas informativos, sem abrir nova aba." },
+        { "tipo": "novidade", "texto": "Criada a opção ATEN no menu, com os links de todos os clientes do E-Gov." },
+        { "tipo": "novidade", "texto": "Adicionados Favoritos e Recentes na tela inicial: clique na estrela ao lado de um link para fixá-lo." },
+        { "tipo": "melhoria", "texto": "Listas de clientes em ordem alfabética e com rolagem no lugar da paginação." },
+        { "tipo": "novidade", "texto": "Agora é possível instalar o Atalhos como aplicativo pelo botão Instalar app no menu (Chrome e Edge)." }
       ]
     },
     {
       "versao": "V3.26.10.03",
       "data": "16/10/2026",
       "descricao": [
-        "Criada a opção GPRO WEB no menu, com os links de todos os clientes.",
-        "Adicionada a versão de cada cliente ao lado do nome nas telas de E-Gov, Transparência E-Gov e Portal da Transparência. Em nomes longos, a versão aparece ao passar o mouse."
+        { "tipo": "novidade", "texto": "Criada a opção GPRO WEB no menu, com os links de todos os clientes." },
+        { "tipo": "novidade", "texto": "Adicionada a versão de cada cliente ao lado do nome nas telas de E-Gov, Transparência E-Gov e Portal da Transparência. Em nomes longos, a versão aparece ao passar o mouse." }
       ]
     },
     {
       "versao": "V3.26.10.04",
       "data": "16/10/2026",
       "descricao": [
-        "Adicionada a versão de cada cliente nas telas de ATEN e GPRO WEB.",
-        "Em nomes longos, a versão passa a aparecer abaixo do nome do cliente.",
-        "Agora toda a linha do cliente é clicável para abrir o link, não só o nome.",
-        "As versões carregam mais rápido, com o aviso Carregando versões ao lado do título.",
-        "A aba Infraestrutura saiu do menu: os links que só existiam nela (User GoGlobal e Bancos Geosiap) estão em Links Úteis.",
-        "Adicionado o link de Pompeia no GCC."
+        { "tipo": "novidade", "texto": "Adicionada a versão de cada cliente nas telas de ATEN e GPRO WEB." },
+        { "tipo": "melhoria", "texto": "Em nomes longos, a versão passa a aparecer abaixo do nome do cliente." },
+        { "tipo": "melhoria", "texto": "Agora toda a linha do cliente é clicável para abrir o link, não só o nome." },
+        { "tipo": "melhoria", "texto": "As versões carregam mais rápido, com o aviso Carregando versões ao lado do título." },
+        { "tipo": "melhoria", "texto": "A aba Infraestrutura saiu do menu: os links que só existiam nela (User GoGlobal e Bancos Geosiap) estão em Links Úteis." },
+        { "tipo": "novidade", "texto": "Adicionado o link de Pompeia no GCC." }
       ]
     },
     {
       "versao": "V3.26.10.05",
       "data": "16/10/2026",
       "descricao": [
-        "A tela aberta fica salva no endereço: ao atualizar a página ela continua aberta, e o link pode ser enviado para outra pessoa.",
-        "As versões de E-Gov, ATEN, GPRO WEB e Transparência E-Gov aparecem na hora ao trocar entre essas telas.",
-        "Clientes que não responderam na última verificação aparecem com um ponto vermelho, e o total aparece ao lado do título.",
-        "Adicionado o botão Sugestões no GitHub na tela inicial, com formulário para enviar a sugestão.",
-        "O filtro da tela Clientes agora também encontra pelo nome do estado (ex.: Rio, Minas).",
-        "O menu pode ser usado pelo teclado (Tab, Enter e Espaço)."
+        { "tipo": "novidade", "texto": "A tela aberta fica salva no endereço: ao atualizar a página ela continua aberta, e o link pode ser enviado para outra pessoa." },
+        { "tipo": "melhoria", "texto": "As versões de E-Gov, ATEN, GPRO WEB e Transparência E-Gov aparecem na hora ao trocar entre essas telas." },
+        { "tipo": "novidade", "texto": "Clientes que não responderam na última verificação aparecem com um ponto vermelho, e o total aparece ao lado do título." },
+        { "tipo": "novidade", "texto": "Adicionado o botão Sugestões no GitHub na tela inicial, com formulário para enviar a sugestão." },
+        { "tipo": "melhoria", "texto": "O filtro da tela Clientes agora também encontra pelo nome do estado (ex.: Rio, Minas)." },
+        { "tipo": "melhoria", "texto": "O menu pode ser usado pelo teclado (Tab, Enter e Espaço)." }
       ]
     },
     {
       "versao": "V4.26.10.01",
       "data": "19/10/2026",
       "descricao": [
-        "O Atalhos Tributário agora faz parte do Atalhos Embras: todos os sistemas num lugar só. Quem acessar o endereço antigo é levado para cá com os favoritos e recentes.",
-        "Adicionado o filtro de área no menu lateral (Arrecadação, Administração/RH, Finanças e Suprimentos), que fica lembrado para a próxima visita.",
-        "Novas telas: IssOnline, ITBI, Nova Segunda Via, Facilita-SP, Atende Mais e Inscritos em Dívida, com a versão dos clientes no IssOnline e no ITBI.",
-        "Links Úteis reúne agora os links das duas equipes.",
-        "A tela Clientes mostra a versão de cada sistema e ganhou a visão Versões: todos os clientes e sistemas numa tabela, com quem está desatualizado em vermelho e quem não respondeu.",
-        "Na busca, as setas percorrem os resultados e o Enter abre o link escolhido.",
-        "Adicionado o botão Atualizar visualização nas telas com versão e em Clientes, que busca na hora a versão de cada cliente."
+        { "tipo": "novidade", "texto": "O Atalhos Tributário agora faz parte do Atalhos Embras: todos os sistemas num lugar só. Quem acessar o endereço antigo é levado para cá com os favoritos e recentes." },
+        { "tipo": "novidade", "texto": "Adicionado o filtro de área no menu lateral (Arrecadação, Administração/RH, Finanças e Suprimentos), que fica lembrado para a próxima visita." },
+        { "tipo": "novidade", "texto": "Novas telas: IssOnline, ITBI, Nova Segunda Via, Facilita-SP, Atende Mais e Inscritos em Dívida, com a versão dos clientes no IssOnline e no ITBI." },
+        { "tipo": "melhoria", "texto": "Links Úteis reúne agora os links das duas equipes." },
+        { "tipo": "novidade", "texto": "A tela Clientes mostra a versão de cada sistema e ganhou a visão Versões: todos os clientes e sistemas numa tabela, com quem está desatualizado em vermelho e quem não respondeu." },
+        { "tipo": "melhoria", "texto": "Na busca, as setas percorrem os resultados e o Enter abre o link escolhido." },
+        { "tipo": "novidade", "texto": "Adicionado o botão Atualizar visualização nas telas com versão e em Clientes, que busca na hora a versão de cada cliente." }
       ]
     },
     {
       "versao": "V4.26.10.02",
       "data": "20/10/2026",
       "descricao": [
-        "O Setup agora mostra a versão de cada cliente, destacando quem está desatualizado e quem não respondeu.",
-        "A versão do Setup aparece também na tela Clientes, nos cartões e na visão Versões.",
-        "Atualizado o endereço dos links dos clientes que mudaram de servidor."
+        { "tipo": "novidade", "texto": "O Setup agora mostra a versão de cada cliente, destacando quem está desatualizado e quem não respondeu." },
+        { "tipo": "melhoria", "texto": "A versão do Setup aparece também na tela Clientes, nos cartões e na visão Versões." },
+        { "tipo": "correcao", "texto": "Atualizado o endereço dos links dos clientes que mudaram de servidor." }
       ]
     },
     {
       "versao": "V4.26.10.03",
       "data": "20/10/2026",
       "descricao": [
-        "Na busca, os Links Úteis aparecem agrupados por categoria, com o nome de cada link."
+        { "tipo": "melhoria", "texto": "Na busca, os Links Úteis aparecem agrupados por categoria, com o nome de cada link." }
       ]
     },
     {
       "versao": "V4.26.10.04",
       "data": "21/10/2026",
       "descricao": [
-        "Facilita-SP, Atende Mais, GCC, Suprimentos e Pessoas agora mostram a versão de cada cliente, destacando quem está desatualizado e quem não respondeu.",
-        "A versão desses sistemas aparece também na tela Clientes, nos cartões e na visão Versões.",
-        "Cliente com o servidor fora do ar passa a aparecer como \"não respondeu\", em vez de \"sem versão\".",
-        "Abrir o menu do botão direito sobre um link não coloca mais o link nos Recentes.",
-        "O botão Atualizar visualização sempre busca a versão na hora, mesmo com uma consulta em andamento.",
-        "Busca, visão Versões e ajuste da tela ao redimensionar mais leves; a tela inicial carrega menos arquivos."
+        { "tipo": "novidade", "texto": "Facilita-SP, Atende Mais, GCC, Suprimentos e Pessoas agora mostram a versão de cada cliente, destacando quem está desatualizado e quem não respondeu." },
+        { "tipo": "melhoria", "texto": "A versão desses sistemas aparece também na tela Clientes, nos cartões e na visão Versões." },
+        { "tipo": "correcao", "texto": "Cliente com o servidor fora do ar passa a aparecer como \"não respondeu\", em vez de \"sem versão\"." },
+        { "tipo": "correcao", "texto": "Abrir o menu do botão direito sobre um link não coloca mais o link nos Recentes." },
+        { "tipo": "correcao", "texto": "O botão Atualizar visualização sempre busca a versão na hora, mesmo com uma consulta em andamento." },
+        { "tipo": "melhoria", "texto": "Busca, visão Versões e ajuste da tela ao redimensionar mais leves; a tela inicial carrega menos arquivos." }
+      ]
+    },
+    {
+      "versao": "V4.26.10.05",
+      "data": "23/10/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "A busca agora mostra a versão de cada link, destacando quem está desatualizado e quem não respondeu." },
+        { "tipo": "novidade", "texto": "A tela Clientes virou uma grade com o brasão de cada município; clicar abre um painel com todos os links do cliente, versão, favorito e copiar." },
+        { "tipo": "novidade", "texto": "Meus clientes: a estrela no cartão fixa o cliente numa seção no topo da tela Clientes." },
+        { "tipo": "novidade", "texto": "O painel do cliente mostra endereço (com link para o mapa), telefone e site da prefeitura." },
+        { "tipo": "novidade", "texto": "Adicionados 49 links de clientes que faltavam, encontrados e testados automaticamente: Inscritos em Dívida (21 clientes), Novo Transparência (9), ADM-Web e GCC (4 cada), Setup e Pessoas (2 cada), Aparecida no E-Gov, ATEN, Config E-Gov, GPRO WEB e ITBI, e Nova Iguaçu no Portal da Transparência e Suprimentos." },
+        { "tipo": "melhoria", "texto": "Menu lateral organizado em Visão geral, Sistemas e Links; o filtro de área esconde só os sistemas." },
+        { "tipo": "melhoria", "texto": "Versões ganhou item próprio no menu, com a tabela de clientes × sistemas." },
+        { "tipo": "melhoria", "texto": "Na busca, clicar no nome do cliente abre o painel dele com todos os links." },
+        { "tipo": "melhoria", "texto": "No painel do cliente, Esc fecha e as setas ← → passam para o cliente ao lado; o endereço da página leva direto ao cliente aberto." },
+        { "tipo": "melhoria", "texto": "A verificação semanal de links passa a procurar também os links que faltam em cada sistema e sugere a inclusão para aprovação." },
+        { "tipo": "melhoria", "texto": "As notas de versão indicam se cada item é novidade, melhoria ou correção." }
       ]
     }
   ]

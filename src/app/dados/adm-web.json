@@ -30,7 +30,10 @@
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/administracao/" },
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/administracao/" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/administracao/" },
-        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/administracao/" }
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/administracao/" },
+        { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/administracao/" },
+        { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/administracao/" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/administracao/" }
       ]
     },
     {
@@ -38,7 +41,8 @@
       "itens": [
         { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/administracao/" },
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/administracao/" },
-        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/administracao/" }
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/administracao/" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/administracao/" }
       ]
     },
     {

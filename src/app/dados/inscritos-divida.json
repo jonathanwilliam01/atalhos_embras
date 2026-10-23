@@ -16,19 +16,39 @@
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/transparencia/inscritos-divida" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/transparencia/inscritos-divida" },
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/transparencia/inscritos-divida" },
-        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/transparencia/inscritos-divida" }
+        { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/transparencia/inscritos-divida" },
+        { "cliente": "Cachoeira Paulista", "url": "https://cachoeirapaulista.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Guaratinguetá", "url": "https://guaratingueta.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/transparencia/inscritos-divida" },
+        { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/transparencia/inscritos-divida" },
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/transparencia/inscritos-divida" }
       ]
     },
     {
       "nome": "Rio de Janeiro",
       "itens": [
-        { "cliente": "Não Utilizado", "url": "" }
+        { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/transparencia/inscritos-divida" }
       ]
     },
     {
       "nome": "Minas Gerais",
       "itens": [
-        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/transparencia/inscritos-divida" }
+        { "cliente": "Itamonte", "url": "https://pmitamonte.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Pouso Alto", "url": "https://pousoalto.geosiap.net.br/transparencia/inscritos-divida" }
       ]
     }
   ]

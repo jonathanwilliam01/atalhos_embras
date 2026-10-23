@@ -31,7 +31,8 @@
         { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/geosiap-setup/login" },
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/geosiap-setup/login" },
-        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/geosiap-setup/login" }
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/geosiap-setup/login" },
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/geosiap-setup/login" }
       ]
     },
     {
@@ -40,7 +41,8 @@
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/geosiap-setup/login" },
         { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/geosiap-setup/login" },
-        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/geosiap-setup/login" }
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/geosiap-setup/login" },
+        { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/geosiap-setup/login" }
       ]
     },
     {

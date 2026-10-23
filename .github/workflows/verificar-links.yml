@@ -24,12 +24,17 @@ jobs:
       - name: Testar e corrigir links
         run: node scripts/verificar-links.mjs relatorio.md --corrigir
 
-      # Trocas vão num PR para aprovar; a branch é recriada a cada execução a partir da main.
+      # Cliente sem link num sistema: tenta o servidor dele com o caminho padrão do sistema.
+      - name: Procurar links que faltam
+        run: node scripts/completar-links.mjs novos-links.md --inserir
+
+      # Trocas e links novos vão num PR para aprovar; a branch é recriada a cada execução a partir da main.
       - name: Abrir ou atualizar o PR das correções
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git diff --quiet -- src/app/dados && exit 0
+          cat correcoes.md novos-links.md > pr.md
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git switch -c correcao-links
@@ -37,9 +42,9 @@ jobs:
           git commit -m "Correção automática de links"
           git push --force origin correcao-links
           if gh pr view correcao-links --json state --jq .state 2>/dev/null | grep -q OPEN; then
-            gh pr edit correcao-links --body-file correcoes.md
+            gh pr edit correcao-links --body-file pr.md
           else
-            gh pr create --head correcao-links --base main --title "Correção automática de links" --body-file correcoes.md
+            gh pr create --head correcao-links --base main --title "Correção automática de links" --body-file pr.md
           fi
 
       # Uma issue aberta por vez: atualiza a existente, abre se não houver e fecha quando tudo voltar.

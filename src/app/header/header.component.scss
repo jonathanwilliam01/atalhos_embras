@@ -144,6 +144,26 @@ a{
   .area { font-size: 12px; }
 }
 
+.secao{
+  width: 100%;
+  margin: 0 0 4px;
+  padding: 0 4px 3px;
+  border-bottom: 1px solid rgb(58, 66, 71);
+  color: rgb(120, 132, 140);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 0.7vw;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+
+  &:first-child { margin-top: 0; }
+}
+
+@media (max-width: 1366px) {
+  .secao { font-size: 10px; }
+}
+
 // [hidden] perde para o display das classes do menu.
 .menu [hidden]{
   display: none !important;
@@ -520,6 +540,8 @@ a{
     width: 100%;
     margin: 0 0 10px;
   }
+
+  .secao { font-size: 12px; }
 
   .area { font-size: 14px; }
 

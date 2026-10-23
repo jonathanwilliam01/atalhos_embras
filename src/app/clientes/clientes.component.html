@@ -1,6 +1,6 @@
 <div class="container" [class.modo-tabela]="modo === 'versoes'">
   <div class="topo">
-    <div class="titulo"> Clientes </div>
+    <div class="titulo"> {{ modo === 'versoes' ? 'Versões' : 'Clientes' }} </div>
     <div class="acoes">
       @if (versoes.carregando) {
         <span class="carregando"><i class="fa-solid fa-spinner fa-spin"></i> Carregando versões</span>
@@ -9,14 +9,6 @@
           <i class="fa-solid fa-rotate-right"></i> Atualizar visualização
         </button>
       }
-      <div class="modos" role="tablist" aria-label="Visão">
-        <button type="button" role="tab" [class.ativo]="modo === 'cartoes'" [attr.aria-selected]="modo === 'cartoes'" (click)="mudarModo('cartoes')">
-          <i class="fa-solid fa-table-cells-large"></i> Cartões
-        </button>
-        <button type="button" role="tab" [class.ativo]="modo === 'versoes'" [attr.aria-selected]="modo === 'versoes'" (click)="mudarModo('versoes')">
-          <i class="fa-solid fa-code-branch"></i> Versões
-        </button>
-      </div>
       @if (modo === 'versoes') {
         <button type="button" class="pendencias" [class.ativo]="soPendencias" [attr.aria-pressed]="soPendencias" (click)="soPendencias = !soPendencias">
           <i class="fa-solid fa-triangle-exclamation"></i> Só desatualizados ou sem resposta
@@ -32,27 +24,20 @@
   @if (modo === 'versoes') {
     <app-versoes [filtro]="filtro" [soPendencias]="soPendencias"></app-versoes>
   } @else {
+    @if (meusClientes.length) {
+      <div class="secao"> Meus clientes </div>
+      <div class="grade">
+        @for (c of meusClientes; track c.id) {
+          <ng-container *ngTemplateOutlet="cartao; context: { $implicit: c }"></ng-container>
+        }
+      </div>
+      @if (demais.length) {
+        <div class="secao"> Demais clientes </div>
+      }
+    }
     <div class="grade">
-      @for (c of clientes; track c) {
-        <div class="cliente">
-          <div class="cliente-topo">
-            <span class="cliente-nome"> {{ c.cliente }} </span>
-            <span class="estado"> {{ c.estado }} </span>
-          </div>
-          <div class="chips">
-            @for (l of c.itens; track l) {
-              @let info = versoes.info(l.url);
-              <a class="chip" [href]="l.url" target="_blank" [class.homolog]="l.homolog" [title]="info.versao === false ? 'Não respondeu na última verificação' : l.url">
-                {{ l.nomeSistema }}{{ l.homolog ? ' Homolog.' : '' }}
-                @if (info.versao) {
-                  <span class="chip-versao" [class.desatualizada]="info.desatualizada">{{ info.versao }}</span>
-                } @else if (info.versao === false) {
-                  <span class="chip-fora"></span>
-                }
-              </a>
-            }
-          </div>
-        </div>
+      @for (c of demais; track c.id) {
+        <ng-container *ngTemplateOutlet="cartao; context: { $implicit: c }"></ng-container>
       }
     </div>
 
@@ -61,3 +46,98 @@
     }
   }
 </div>
+
+<ng-template #cartao let-c>
+  @let pendentes = pendencias(c);
+  <div class="cliente" role="button" tabindex="0" [class.selecionado]="aberto === c" (click)="abrir(c)" (keydown.enter)="abrir(c)">
+    <button type="button" class="cliente-estrela" [class.ativa]="meus.has(c.id)" (click)="alternarMeu(c, $event)"
+      [title]="meus.has(c.id) ? 'Tirar de Meus clientes' : 'Adicionar a Meus clientes'">
+      <i [class]="meus.has(c.id) ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+    </button>
+    <span class="brasao">
+      @if (semBrasao.has(c.id)) {
+        <span class="iniciais">{{ c.iniciais }}</span>
+      } @else {
+        <img [src]="'assets/brasoes/' + c.id + '.webp'" alt="" loading="lazy" width="64" height="64" (error)="semBrasao.add(c.id)">
+      }
+    </span>
+    <span class="cliente-nome"> {{ c.cliente }} </span>
+    <span class="cliente-info">
+      <span class="estado"> {{ c.estado }} </span>
+      {{ c.itens.length }} {{ c.itens.length === 1 ? 'link' : 'links' }}
+      @if (pendentes) {
+        <span class="pendente" [title]="pendentes + (pendentes === 1 ? ' sistema desatualizado' : ' sistemas desatualizados') + ' ou sem resposta'">
+          <i class="fa-solid fa-triangle-exclamation"></i> {{ pendentes }}
+        </span>
+      }
+    </span>
+  </div>
+</ng-template>
+
+@if (modo === 'clientes' && aberto; as c) {
+  <div class="painel-fundo" (click)="fechar()"></div>
+  <aside class="painel" role="dialog" [attr.aria-label]="'Links de ' + c.cliente">
+    <div class="painel-topo">
+      <span class="brasao">
+        @if (semBrasao.has(c.id)) {
+          <span class="iniciais">{{ c.iniciais }}</span>
+        } @else {
+          <img [src]="'assets/brasoes/' + c.id + '.webp'" alt="" width="64" height="64" (error)="semBrasao.add(c.id)">
+        }
+      </span>
+      <div class="painel-titulo">
+        <span class="cliente-nome"> {{ c.cliente }} </span>
+        <span class="cliente-info"><span class="estado"> {{ c.estado }} </span> {{ c.itens.length }} {{ c.itens.length === 1 ? 'link' : 'links' }}</span>
+      </div>
+      <button type="button" class="painel-fechar" [class.ativa]="meus.has(c.id)" (click)="alternarMeu(c, $event)"
+        [title]="meus.has(c.id) ? 'Tirar de Meus clientes' : 'Adicionar a Meus clientes'">
+        <i [class]="meus.has(c.id) ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+      </button>
+      <button type="button" class="painel-fechar" (click)="fechar()" title="Fechar (Esc)" aria-label="Fechar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    @if (ficha(c); as f) {
+      <div class="ficha">
+        @if (f.endereco) {
+          <a [href]="mapaLink(f.endereco)" target="_blank" title="Abrir no mapa"><i class="fa-solid fa-location-dot"></i> {{ f.endereco }}</a>
+        }
+        @if (f.telefone) {
+          <a [href]="telefoneLink(f.telefone)"><i class="fa-solid fa-phone"></i> {{ f.telefone }}</a>
+        }
+        @if (f.site) {
+          <a [href]="f.site" target="_blank"><i class="fa-solid fa-globe"></i> {{ f.site.replace('https://', '').replace('http://', '') }}</a>
+        }
+      </div>
+    }
+    <div class="painel-lista">
+      @for (l of c.itens; track l.url) {
+        @let info = versoes.info(l.url);
+        <a class="link" [href]="l.url" target="_blank">
+          <span class="link-texto">
+            <span class="link-nome">
+              {{ l.nomeSistema }}
+              @if (l.homolog) {
+                <span class="badge-homolog"> Homolog. </span>
+              }
+              @if (info.versao) {
+                <span class="chip-versao" [class.desatualizada]="info.desatualizada" [attr.title]="info.desatualizada ? 'Abaixo da versão atual' : null">{{ info.versao }}</span>
+              } @else if (info.versao === false) {
+                <span class="chip-fora" title="Não respondeu na última verificação"></span>
+              }
+            </span>
+            <span class="link-host"> {{ l.host }} </span>
+          </span>
+          <button type="button" class="link-acao" [class.ativa]="favoritos.isFavorito(l.url)" (click)="favoritos.alternar(l.url, $event)"
+            [title]="favoritos.isFavorito(l.url) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'">
+            <i [class]="favoritos.isFavorito(l.url) ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
+          </button>
+          <button type="button" class="link-acao" (click)="copiarLink(l.url, $event)" [title]="linkCopiado === l.url ? 'Copiado!' : 'Copiar link'">
+            <i class="fa-solid" [class.fa-copy]="linkCopiado !== l.url" [class.fa-check]="linkCopiado === l.url"></i>
+          </button>
+        </a>
+      }
+    </div>
+    <div class="painel-rodape"> ← → passam para o cliente ao lado </div>
+  </aside>
+}

@@ -13,7 +13,8 @@ for (const { versao, data, descricao } of versoes) {
     const d = data.match(/^(\d{2})\/(\d{2})\/\d{2}(\d{2})$/);
     assert.ok(d, 'data fora do formato DD/MM/AAAA');
     assert.deepEqual([v[1], v[2]], [d[3], d[2]], 'AA.MM da versão diferente da data');
-    assert.ok(descricao.length && descricao.every(l => l.trim()), 'descrição vazia');
+    assert.ok(descricao.length && descricao.every(l => l.texto?.trim()), 'descrição vazia');
+    assert.ok(descricao.every(l => ['novidade', 'melhoria', 'correcao'].includes(l.tipo)), 'tipo deve ser novidade, melhoria ou correcao');
   });
 }
 

@@ -115,23 +115,43 @@
   transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
 
   li {
-    position: relative;
-    padding: 6px 0 6px 16px;
+    padding: 6px 0;
     color: rgb(200, 208, 212);
     font-size: 0.88rem;
     line-height: 1.5;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 13px;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background-color: rgb(74, 194, 194);
-    }
   }
+}
+
+.tag {
+  display: inline-block;
+  min-width: 68px;
+  margin-right: 6px;
+  padding: 0 6px;
+  border-radius: 8px;
+  border: 1px solid;
+  font-size: 0.7rem;
+  font-weight: bold;
+  line-height: 1.6;
+  text-align: center;
+  vertical-align: 1px;
+}
+
+.tag-novidade {
+  border-color: rgba(74, 194, 194, 0.6);
+  background-color: rgba(74, 194, 194, 0.15);
+  color: rgb(110, 215, 215);
+}
+
+.tag-melhoria {
+  border-color: rgba(110, 150, 255, 0.6);
+  background-color: rgba(110, 150, 255, 0.15);
+  color: rgb(150, 180, 255);
+}
+
+.tag-correcao {
+  border-color: rgba(240, 173, 78, 0.6);
+  background-color: rgba(240, 173, 78, 0.15);
+  color: rgb(240, 173, 78);
 }
 
 .notas-item-desc.open {

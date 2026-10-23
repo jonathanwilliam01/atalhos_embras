@@ -5,12 +5,13 @@ import { SistemaLinksComponent } from './shared/sistema-links/sistema-links.comp
 import { Tela, telaPorId } from './sistemas';
 import { NotasVersaoComponent } from './notas-versao/notas-versao.component';
 import { ULTIMA_VERSAO } from './notas-versao/notas-versao.component';
-import { SearchService, GrupoBusca, host, slug } from './search/search.service';
+import { SearchService, GrupoBusca, host, idCliente, slug } from './search/search.service';
 import { pageview } from '@vercel/analytics';
 import { SwUpdate } from '@angular/service-worker';
 import { FavoritosService } from './favoritos/favoritos.service';
 import { ClientesComponent } from './clientes/clientes.component';
 import { SugestaoComponent } from './sugestao/sugestao.component';
+import { VersoesClientesService } from './versoes/versoes-clientes.service';
 
 const CHAVE_NOTAS = 'notasVersaoVistas';
 const EMAIL_CONTATO = 'jonathan.willian@embras.net';
@@ -38,6 +39,7 @@ export class AppComponent implements OnInit {
   verTodosFavoritos = false;
   verTodosRecentes = false;
   private swUpdate = inject(SwUpdate);
+  readonly versoes = inject(VersoesClientesService);
 
   termoBusca = '';
   resultadosBusca: GrupoBusca[] | null = null;
@@ -82,6 +84,8 @@ export class AppComponent implements OnInit {
       return;
     }
     this.termoBusca = query;
+    // Mesmas versões da tela Clientes: carrega uma vez e serve às duas.
+    if (isPlatformBrowser(this.platformId)) this.versoes.carregar();
     this.resultadosBusca = this.searchService.buscar(query);
     this.totalResultados = this.resultadosBusca.reduce((n, g) => n + g.itens.length, 0);
     this.currentComponent = 'busca';
@@ -94,6 +98,11 @@ export class AppComponent implements OnInit {
       this.linkCopiado = url;
       setTimeout(() => this.linkCopiado = null, 2000);
     });
+  }
+
+  // Grupo de cliente na busca leva ao painel dele na tela Clientes.
+  linkCliente(g: GrupoBusca): string | null {
+    return g.porSistema ? null : `#clientes/${idCliente(g.cliente, g.estado)}`;
   }
 
   focarResultado(indice: number) {

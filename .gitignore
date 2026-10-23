@@ -37,9 +37,11 @@ yarn-error.log
 testem.log
 /typings
 
-# Saída do scripts/verificar-links.mjs
+# Saída de scripts/verificar-links.mjs e completar-links.mjs
 relatorio.md
 correcoes.md
+novos-links.md
+pr.md
 notas.md
 
 # System files

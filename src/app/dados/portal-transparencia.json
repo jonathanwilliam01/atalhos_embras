@@ -42,7 +42,8 @@
         { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/portal-transparencia/home" },
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/portal-transparencia/home" },
         { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/portal-transparencia/home" },
-        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/portal-transparencia/home" }
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/portal-transparencia/home" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/portal-transparencia/home" }
       ]
     },
     {

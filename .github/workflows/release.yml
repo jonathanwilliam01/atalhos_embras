@@ -28,7 +28,7 @@ jobs:
           nota=$(node -e "
             const { versoes } = require('./src/app/notas-versao/notas_versao.json');
             const v = versoes.sort((a, b) => a.versao.localeCompare(b.versao, undefined, { numeric: true })).at(-1);
-            require('fs').writeFileSync('notas.md', v.descricao.map(l => '- ' + l).join('\n') + '\n');
+            require('fs').writeFileSync('notas.md', v.descricao.map(l => '- **' + { novidade: 'Novidade', melhoria: 'Melhoria', correcao: 'Correção' }[l.tipo] + ':** ' + l.texto).join('\n') + '\n');
             console.log(v.versao + ' · ' + v.data);
           ")
           versao=${nota%% *}
