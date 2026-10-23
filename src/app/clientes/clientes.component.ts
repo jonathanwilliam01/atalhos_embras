@@ -16,6 +16,8 @@ interface Ficha {
 const FICHAS: Record<string, Ficha> = fichas;
 const CHAVE_MEUS = 'clientesFavoritos';
 
+type Pendencia = 'desatualizado' | 'fora';
+
 interface Cliente extends GrupoBusca {
   // Usado no hash (#clientes/lorena-sp) e no nome do brasão.
   id: string;
@@ -38,6 +40,9 @@ export class ClientesComponent implements OnInit {
   meus = new Set<string>();
   meusClientes: Cliente[] = [];
   demais: Cliente[] = [];
+  totalLinks = 0;
+  // Clique no contador do subtítulo: mostra só os clientes com essa pendência.
+  pendencia: Pendencia | null = null;
   filtro = '';
   soPendencias = false;
   aberto: Cliente | null = null;
@@ -86,8 +91,30 @@ export class ClientesComponent implements OnInit {
   }
 
   private separar(): void {
+    this.totalLinks = this.clientes.reduce((n, c) => n + c.itens.length, 0);
     this.meusClientes = this.clientes.filter(c => this.meus.has(c.id));
     this.demais = this.clientes.filter(c => !this.meus.has(c.id));
+  }
+
+  // As versões chegam depois: contagem e filtro rodam a cada ciclo (poucos clientes, só consultas a Map).
+  tem(c: Cliente, pendencia: Pendencia): boolean {
+    return c.itens.some(l => {
+      const info = this.versoes.info(l.url);
+      return pendencia === 'fora' ? info.versao === false : info.desatualizada;
+    });
+  }
+
+  contar(pendencia: Pendencia): number {
+    return this.clientes.filter(c => this.tem(c, pendencia)).length;
+  }
+
+  visiveis(lista: Cliente[]): Cliente[] {
+    const pendencia = this.pendencia;
+    return pendencia ? lista.filter(c => this.tem(c, pendencia)) : lista;
+  }
+
+  filtrarPendencia(pendencia: Pendencia): void {
+    this.pendencia = this.pendencia === pendencia ? null : pendencia;
   }
 
   ficha(c: Cliente): Ficha | undefined {
@@ -120,7 +147,7 @@ export class ClientesComponent implements OnInit {
     if (event.key === 'Escape') return this.fechar();
     if ((event.target as Element).closest?.('input, textarea, select')) return;
     const passo = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
-    const ordem = [...this.meusClientes, ...this.demais];
+    const ordem = [...this.visiveis(this.meusClientes), ...this.visiveis(this.demais)];
     const proximo = ordem[ordem.indexOf(this.aberto) + passo];
     if (passo && proximo) this.abrir(proximo);
   }

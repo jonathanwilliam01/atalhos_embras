@@ -142,6 +142,7 @@
         { "tipo": "novidade", "texto": "Adicionados 49 links de clientes que faltavam, encontrados e testados automaticamente: Inscritos em Dívida (21 clientes), Novo Transparência (9), ADM-Web e GCC (4 cada), Setup e Pessoas (2 cada), Aparecida no E-Gov, ATEN, Config E-Gov, GPRO WEB e ITBI, e Nova Iguaçu no Portal da Transparência e Suprimentos." },
         { "tipo": "melhoria", "texto": "Menu lateral organizado em Visão geral, Sistemas e Links; o filtro de área esconde só os sistemas." },
         { "tipo": "melhoria", "texto": "Versões ganhou item próprio no menu, com a tabela de clientes × sistemas." },
+        { "tipo": "melhoria", "texto": "A tela Clientes mostra o total de clientes e links e quantos estão desatualizados ou sem resposta; clicar no contador filtra esses clientes." },
         { "tipo": "melhoria", "texto": "Na busca, clicar no nome do cliente abre o painel dele com todos os links." },
         { "tipo": "melhoria", "texto": "No painel do cliente, Esc fecha e as setas ← → passam para o cliente ao lado; o endereço da página leva direto ao cliente aberto." },
         { "tipo": "melhoria", "texto": "A verificação semanal de links passa a procurar também os links que faltam em cada sistema e sugere a inclusão para aprovação." },

@@ -1,6 +1,27 @@
 <div class="container" [class.modo-tabela]="modo === 'versoes'">
   <div class="topo">
-    <div class="titulo"> {{ modo === 'versoes' ? 'Versões' : 'Clientes' }} </div>
+    <div>
+      <div class="titulo"> {{ modo === 'versoes' ? 'Versões' : 'Clientes' }} </div>
+      @if (modo === 'clientes') {
+        @let desatualizados = contar('desatualizado');
+        @let fora = contar('fora');
+        <div class="subtitulo">
+          {{ clientes.length }} {{ clientes.length === 1 ? 'cliente' : 'clientes' }} · {{ totalLinks }} {{ totalLinks === 1 ? 'link' : 'links' }}
+          @if (desatualizados || pendencia === 'desatualizado') {
+            <button type="button" class="contador desatualizado" [class.ativo]="pendencia === 'desatualizado'" [attr.aria-pressed]="pendencia === 'desatualizado'"
+              (click)="filtrarPendencia('desatualizado')" title="Clientes com algum sistema abaixo da versão atual. Clique para filtrar.">
+              {{ desatualizados }} {{ desatualizados === 1 ? 'desatualizado' : 'desatualizados' }}
+            </button>
+          }
+          @if (fora || pendencia === 'fora') {
+            <button type="button" class="contador fora" [class.ativo]="pendencia === 'fora'" [attr.aria-pressed]="pendencia === 'fora'"
+              (click)="filtrarPendencia('fora')" title="Clientes com algum sistema que não respondeu na última verificação. Clique para filtrar.">
+              {{ fora }} sem resposta
+            </button>
+          }
+        </div>
+      }
+    </div>
     <div class="acoes">
       @if (versoes.carregando) {
         <span class="carregando"><i class="fa-solid fa-spinner fa-spin"></i> Carregando versões</span>
@@ -24,24 +45,26 @@
   @if (modo === 'versoes') {
     <app-versoes [filtro]="filtro" [soPendencias]="soPendencias"></app-versoes>
   } @else {
-    @if (meusClientes.length) {
+    @let meusVisiveis = visiveis(meusClientes);
+    @let demaisVisiveis = visiveis(demais);
+    @if (meusVisiveis.length) {
       <div class="secao"> Meus clientes </div>
       <div class="grade">
-        @for (c of meusClientes; track c.id) {
+        @for (c of meusVisiveis; track c.id) {
           <ng-container *ngTemplateOutlet="cartao; context: { $implicit: c }"></ng-container>
         }
       </div>
-      @if (demais.length) {
+      @if (demaisVisiveis.length) {
         <div class="secao"> Demais clientes </div>
       }
     }
     <div class="grade">
-      @for (c of demais; track c.id) {
+      @for (c of demaisVisiveis; track c.id) {
         <ng-container *ngTemplateOutlet="cartao; context: { $implicit: c }"></ng-container>
       }
     </div>
 
-    @if (!clientes.length) {
+    @if (!meusVisiveis.length && !demaisVisiveis.length) {
       <div class="vazio"> Nenhum cliente encontrado. </div>
     }
   }
