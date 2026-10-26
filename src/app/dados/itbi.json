@@ -21,7 +21,7 @@
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/pmcanas/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/pmcanas/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/pmpedrotoledo/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/pmarapei/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/websis/siapegov/arrecadacao/itbi/itbi_login.php" },

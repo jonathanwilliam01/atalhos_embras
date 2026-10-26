@@ -26,7 +26,7 @@
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/geosiap-setup/login" },
         { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/geosiap-setup/login" },
         { "cliente": "Cachoeira Paulista", "url": "https://cachoeirapaulista.geosiap.net.br/geosiap-setup/login" },
-        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/geosiap-setup/login" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/geosiap-setup/login" },

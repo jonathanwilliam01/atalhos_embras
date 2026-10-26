@@ -27,7 +27,7 @@
         { "cliente": "Lorena", "url": "https://siap.lorena.sp.gov.br/contas/login?returnUrl=https:%2F%2Fsiap.lorena.sp.gov.br%2Fconfig" },
         { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/contas/login?returnUrl=https:%2F%2Fpedrotoledo.geosiap.net.br:8843%2Fconfig" },
         { "cliente": "Cachoeira Paulista", "url": "https://cachoeirapaulista.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fcachoeirapaulista.geosiap.net.br%2Fconfig" },
-        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmcanas.geosiap.net.br%2Fconfig" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fpmcanas.geosiap.net.br%2Fconfig" },
         { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fguaratingueta.geosiap.net.br%2Fconfig" },
         { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fcaraguatatuba.geosiap.net.br%2Fconfig" },
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fguararema.geosiap.net.br%2Fconfig" },
