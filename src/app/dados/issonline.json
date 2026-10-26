@@ -18,7 +18,7 @@
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/issonline/iss.login.php" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/issonline/iss.login.php" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/issonline/iss.login.php" },
-        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/pmcanas/issonline/iss.login.php" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/pmcanas/issonline/iss.login.php" },
         { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/issonline/iss.login.php" },
         { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/pmredencaodaserra/issonline/iss.login.php" },
         { "cliente": "Salesópolis", "url": "https://pmsalesopolis.geosiap.net.br/pmsalesopolis/issonline/iss.login.php" },

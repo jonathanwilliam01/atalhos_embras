@@ -40,7 +40,7 @@
         { "cliente": "Geosiap Setup", "url": "https://dev.geosiap.net/geosiap-setup/login" },
         { "cliente": "CORE Local", "url": "https://dev.geosiap.net/core/entrar" },
         { "cliente": "EXEs Pessoas", "url": "http://dl.embras.net/dlpessoas/index.php" },
-        { "cliente": "Suporte CEBI", "url": "http://suporte.cebi.com.br/Login.php?ret_link=%2FChamados.php&type=notLogged" },
+        { "cliente": "Suporte CEBI", "url": "https://suporte.cebi.com.br/Login.php?ret_link=%2FChamados.php&type=notLogged" },
         { "cliente": "Tawk.To", "url": "https://dashboard.tawk.to/login#/dashboard/6172be7c86aee40a5737e13c" },
         { "cliente": "Testar XML", "url": "https://tools.chilkat.io/xmlDsigVerify" },
         { "cliente": "SIGCORP - Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/sigcorp/importar.php" },

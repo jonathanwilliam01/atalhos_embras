@@ -21,7 +21,7 @@
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/suprimentos" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/suprimentos" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/suprimentos" },
-        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/suprimentos" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/suprimentos" },
         { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/suprimentos" },
         { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/suprimentos" },
         { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/suprimentos" },

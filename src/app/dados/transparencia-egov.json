@@ -21,7 +21,7 @@
         { "cliente": "Biritiba Mirim", "url": "https://pmbiritibamirim.geosiap.net.br/pmbiritibamirim/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Cruzeiro", "url": "https://pmcruzeiro.geosiap.net.br/pmcruzeiro/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Lavrinhas", "url": "https://pmlavrinhas.geosiap.net.br/pmlavrinhas/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
-        { "cliente": "Canas", "url": "https://pmcanas.geosiap.net.br/pmcanas/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
+        { "cliente": "Canas", "url": "https://canas.geosiap.net.br/pmcanas/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/pmpedrotoledo/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Arapei", "url": "https://arapei.geosiap.net.br/pmarapei/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/pmpompeia/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
