@@ -33,7 +33,9 @@
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/silveiras/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
-        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pmaparecida/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" }
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pmaparecida/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/taubate/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
+        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/taubate/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" }
       ]
     },
     {

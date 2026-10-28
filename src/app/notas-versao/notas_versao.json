@@ -148,6 +148,13 @@
         { "tipo": "melhoria", "texto": "A verificação semanal de links passa a procurar também os links que faltam em cada sistema e sugere a inclusão para aprovação." },
         { "tipo": "melhoria", "texto": "As notas de versão indicam se cada item é novidade, melhoria ou correção." }
       ]
+    },
+    {
+      "versao": "V4.26.10.06",
+      "data": "28/10/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Adicionado Taubaté no E-Gov, ATEN, GPRO WEB, ITBI, Config E-Gov e Transparência E-Gov, com produção e homologação." }
+      ]
     }
   ]
 }

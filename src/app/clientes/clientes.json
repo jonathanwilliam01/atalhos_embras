@@ -30,5 +30,6 @@
   "salesopolis-sp": { "site": "http://www.salesopolis.sp.gov.br", "endereco": "Rua Pedro Rodrigues de Camargo, 215 - CEP: 08970-000", "telefone": "(11) 4696-3128" },
   "santa-branca-sp": { "site": "https://www.santabranca.sp.gov.br", "endereco": "Rua Prudente de Morais, 93 – Centro Santa Branca – SP Cep: 12380-053", "telefone": "(12) 3972-6620" },
   "sao-goncalo-rj": { "site": "http://www.saogoncalo.rj.gov.br", "endereco": "Rua Feliciano Sodré, 100 - CEP: 24440-440", "telefone": "(21) 2199-6300" },
-  "silveiras-sp": { "site": "https://silveiras.sp.gov.br", "endereco": "Praça Padre Antônio Pereira de Azevedo, 52, Centro", "telefone": "(12) 3106-4800" }
+  "silveiras-sp": { "site": "https://silveiras.sp.gov.br", "endereco": "Praça Padre Antônio Pereira de Azevedo, 52, Centro", "telefone": "(12) 3106-4800" },
+  "taubate-sp": { "site": "http://www.taubate.sp.gov.br", "endereco": "Av. Tiradentes nº 520 - Taubaté/SP - CEP: 12030-180", "telefone": "(12) 3131-6200" }
 }
