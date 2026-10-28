@@ -34,8 +34,8 @@
         { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/silveiras/websis/siapegov/administrativo/processos/processos_index.php" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/administrativo/processos/processos_index.php" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pmaparecida/websis/siapegov/administrativo/processos/processos_index.php" },
-        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/taubate/websis/siapegov/administrativo/processos/processos_index.php" },
-        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/taubate/websis/siapegov/administrativo/processos/processos_index.php" }
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/pmtaubate/websis/siapegov/administrativo/processos/processos_index.php" },
+        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/pmtaubate/websis/siapegov/administrativo/processos/processos_index.php" }
       ]
     },
     {

@@ -34,8 +34,8 @@
         { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/silveiras/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pmaparecida/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/taubate/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
-        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/taubate/websis/siapegov/arrecadacao/itbi/itbi_login.php" }
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/pmtaubate/websis/siapegov/arrecadacao/itbi/itbi_login.php" },
+        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/pmtaubate/websis/siapegov/arrecadacao/itbi/itbi_login.php" }
       ]
     },
     {

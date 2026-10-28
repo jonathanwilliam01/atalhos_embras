@@ -34,7 +34,7 @@
         { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/silveiras/websis/siapegov/portal/" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/siapegov/portal/index.php" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pmaparecida/websis/siapegov/portal/index.php" },
-        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/taubate/websis/siapegov/portal/index.php" }
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/pmtaubate/websis/siapegov/portal/index.php" }
       ]
     },
     {

@@ -33,7 +33,7 @@
         { "cliente": "Bananal", "url": "https://dev.geosiap.net/pmbananal/websis/siapegov/portal/index.php" },
         { "cliente": "Silveiras", "url": "https://dev.geosiap.net/pmsilveiras/websis/siapegov/portal/index.php" },
         { "cliente": "Lagoinha", "url": "https://dev.geosiap.net/pmlagoinha/websis/siapegov/portal/index.php" },
-        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/taubate/websis/siapegov/portal/index.php" }
+        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/pmtaubate/websis/siapegov/portal/index.php" }
       ]
     },
     {
