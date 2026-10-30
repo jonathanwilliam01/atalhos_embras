@@ -29,7 +29,8 @@
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/pmbananal/issonline/iss.login.php" },
         { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/pmroseira/issonline/iss.login.php" },
         { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/pmpedrotoledo/issonline/iss.login.php" },
-        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/pmlagoinha/issonline/iss.login.php" }
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/pmlagoinha/issonline/iss.login.php" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/pmtaubate/issonline/iss.login.php" }
       ]
     },
     {

@@ -31,7 +31,9 @@
         { "cliente": "Guaratingueta", "url": "https://guaratingueta.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fguaratingueta.geosiap.net.br%2Fconfig" },
         { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fcaraguatatuba.geosiap.net.br%2Fconfig" },
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fguararema.geosiap.net.br%2Fconfig" },
-        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/config/" }
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/config/" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/contas/login?returnUrl=https:%2F%2Ftaubate.geosiap.net.br%2Fconfig" },
+        { "cliente": "Ferraz de Vasconcelos", "url": "https://ferrazdevasconcelos.geosiap.net.br/contas/login?returnUrl=https:%2F%2Fferrazdevasconcelos.geosiap.net.br%2Fconfig" }
       ]
     },
     {

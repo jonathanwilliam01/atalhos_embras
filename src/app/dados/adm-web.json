@@ -33,7 +33,9 @@
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/administracao/" },
         { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/administracao/" },
         { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/administracao/" },
-        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/administracao/" }
+        { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/administracao/" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/administracao/" },
+        { "cliente": "Ferraz de Vasconcelos", "url": "https://ferrazdevasconcelos.geosiap.net.br/administracao/" }
       ]
     },
     {

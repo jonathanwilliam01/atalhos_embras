@@ -32,7 +32,8 @@
         { "cliente": "Santa Branca", "url": "https://pmsantabranca.geosiap.net.br/arrecadacao/debitos" },
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/arrecadacao/debitos" },
         { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/arrecadacao/debitos" },
-        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/arrecadacao/debitos" }
+        { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/arrecadacao/debitos" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/arrecadacao/debitos" }
       ]
     },
     {

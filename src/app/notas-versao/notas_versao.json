@@ -167,7 +167,9 @@
       "versao": "V4.26.10.08",
       "data": "30/10/2026",
       "descricao": [
-        { "tipo": "novidade", "texto": "Adicionado Taubaté no GoGlobal, com produção e homologação." }
+        { "tipo": "novidade", "texto": "Adicionado Taubaté no GoGlobal, com produção e homologação." },
+        { "tipo": "novidade", "texto": "Adicionado Taubaté no Config Contas, ADM-Web, Atende Mais, GCC, Inscritos em Dívida, Novo Transparência, Pessoas, Portal da Transparência, Setup, Suprimentos, ISS Online e JUCESP." },
+        { "tipo": "novidade", "texto": "Adicionado Ferraz de Vasconcelos no GoGlobal, E-Gov, ATEN, Config E-Gov, GPRO WEB, ITBI, Transparência E-Gov, Config Contas, ADM-Web, GCC, Inscritos em Dívida, Novo Transparência, Pessoas, Portal da Transparência, Setup e Suprimentos." }
       ]
     }
   ]

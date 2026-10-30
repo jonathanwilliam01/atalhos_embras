@@ -32,7 +32,9 @@
         { "cliente": "Pindamonhangaba", "url": "https://siapegov.pindamonhangaba.sp.gov.br/geosiap-setup/login" },
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/geosiap-setup/login" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/geosiap-setup/login" },
-        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/geosiap-setup/login" }
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/geosiap-setup/login" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/geosiap-setup/login" },
+        { "cliente": "Ferraz de Vasconcelos", "url": "https://ferrazdevasconcelos.geosiap.net.br/geosiap-setup/login" }
       ]
     },
     {

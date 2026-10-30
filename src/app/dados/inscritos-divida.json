@@ -32,7 +32,9 @@
         { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/transparencia/inscritos-divida" },
         { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/transparencia/inscritos-divida" },
         { "cliente": "Pompéia", "url": "https://siap.pompeia.sp.gov.br/transparencia/inscritos-divida" },
-        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/transparencia/inscritos-divida" }
+        { "cliente": "Roseira", "url": "https://pmroseira.geosiap.net.br:8443/transparencia/inscritos-divida" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/transparencia/inscritos-divida" },
+        { "cliente": "Ferraz de Vasconcelos", "url": "https://ferrazdevasconcelos.geosiap.net.br/transparencia/inscritos-divida" }
       ]
     },
     {

@@ -33,7 +33,9 @@
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/gcc-web" },
         { "cliente": "Pompeia", "url": "https://siap.pompeia.sp.gov.br/gcc-web" },
         { "cliente": "Pedro de Toledo", "url": "https://pedrotoledo.geosiap.net.br:8843/gcc-web" },
-        { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/gcc-web" }
+        { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/gcc-web" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/gcc-web" },
+        { "cliente": "Ferraz de Vasconcelos", "url": "https://ferrazdevasconcelos.geosiap.net.br/gcc-web" }
       ]
     },
     {

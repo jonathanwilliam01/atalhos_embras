@@ -35,7 +35,8 @@
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/lagoinha/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pmaparecida/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
         { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/pmtaubate/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
-        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/pmtaubate/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" }
+        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/pmtaubate/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" },
+        { "cliente": "Ferraz de Vasconcelos", "url": "https://ferrazdevasconcelos.geosiap.net.br/pmferrazdevasconcelos/websis/portal_transparencia/financeiro/contas_publicas/index.php?consulta=../lei_acesso/lai_remuneracoes" }
       ]
     },
     {

@@ -32,7 +32,9 @@
         { "cliente": "Guararema", "url": "https://guararema.geosiap.net.br/pessoas/" },
         { "cliente": "Caraguatatuba", "url": "https://caraguatatuba.geosiap.net.br/pessoas/" },
         { "cliente": "Jacarei", "url": "https://siap.jacarei.sp.gov.br/pessoas/" },
-        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pessoas/" }
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pessoas/" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/pessoas/" },
+        { "cliente": "Ferraz de Vasconcelos", "url": "https://ferrazdevasconcelos.geosiap.net.br/pessoas/" }
       ]
     },
     {

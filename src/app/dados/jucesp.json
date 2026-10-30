@@ -18,7 +18,8 @@
         { "cliente": "Queluz", "url": "https://pmqueluz.geosiap.net.br/jucesp/dashboard" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/jucesp/dashboard" },
         { "cliente": "Redenção da Serra", "url": "https://redencaodaserra.geosiap.net.br/jucesp/dashboard" },
-        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/jucesp/dashboard" }
+        { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/jucesp/dashboard" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/jucesp/dashboard" }
       ]
     },
     {

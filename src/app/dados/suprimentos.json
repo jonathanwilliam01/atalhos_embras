@@ -33,7 +33,9 @@
         { "cliente": "Bananal", "url": "https://pmbananal.geosiap.net.br/suprimentos" },
         { "cliente": "Silveiras", "url": "https://silveiras.geosiap.net.br/suprimentos" },
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/suprimentos" },
-        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/suprimentos" }
+        { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/suprimentos" },
+        { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/suprimentos" },
+        { "cliente": "Ferraz de Vasconcelos", "url": "https://ferrazdevasconcelos.geosiap.net.br/suprimentos" }
       ]
     },
     {

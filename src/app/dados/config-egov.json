@@ -35,7 +35,8 @@
         { "cliente": "Lagoinha", "url": "https://lagoinha.geosiap.net.br/pmlagoinha/websis/config/login.php" },
         { "cliente": "Aparecida", "url": "https://pmaparecida.geosiap.net.br/pmaparecida/websis/config/login.php" },
         { "cliente": "Taubaté", "url": "https://taubate.geosiap.net.br/pmtaubate/websis/config/login.php" },
-        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/pmtaubate/websis/config/login.php" }
+        { "cliente": "Taubaté Homolog.", "url": "https://taubate-homologacao.geosiap.net.br/pmtaubate/websis/config/login.php" },
+        { "cliente": "Ferraz de Vasconcelos", "url": "https://ferrazdevasconcelos.geosiap.net.br/pmferrazdevasconcelos/websis/config/login.php" }
       ]
     },
     {
