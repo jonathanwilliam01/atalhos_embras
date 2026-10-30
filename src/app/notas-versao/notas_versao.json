@@ -162,6 +162,13 @@
       "descricao": [
         { "tipo": "correcao", "texto": "Links de Taubaté nos sistemas do E-Gov passam a usar o endereço com \"pmtaubate\"." }
       ]
+    },
+    {
+      "versao": "V4.26.10.08",
+      "data": "30/10/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Adicionado Taubaté no GoGlobal, com produção e homologação." }
+      ]
     }
   ]
 }

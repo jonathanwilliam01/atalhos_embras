@@ -29,7 +29,9 @@
         { "cliente": "Caraguatatuba Homolog.", "url": "https://painel-caraguatatuba-homologacao.geosiap.net.br/" },
         { "cliente": "Silveiras", "url": "https://painel-silveiras.geosiap.net.br/" },
         { "cliente": "Santa Genebra", "url": "https://painel-santagenebra.geosiap.net.br/" },
-        { "cliente": "Imodernizar", "url": "https://painel-imodernizar.geosiap.net.br/" }
+        { "cliente": "Imodernizar", "url": "https://painel-imodernizar.geosiap.net.br/" },
+        { "cliente": "Taubaté", "url": "https://painel-taubate.geosiap.net.br/" },
+        { "cliente": "Taubaté Homolog.", "url": "https://painel-taubate-homologacao.geosiap.net.br/" }
       ]
     },
     {
