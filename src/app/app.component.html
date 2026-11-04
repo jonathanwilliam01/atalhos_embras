@@ -1,4 +1,4 @@
-<app-header (componentSelected)="setComponent($event)" (verNotasVersao)="abrirNotasVersao()" (pesquisar)="buscar($event)" (focarResultados)="focarResultado(0)"></app-header>
+<app-header (componentSelected)="setComponent($event)" (verNotasVersao)="abrirNotasVersao()" (pesquisar)="buscar($event)" (focarResultados)="irParaResultados($event)"></app-header>
 
 <app-notas-versao [visible]="notasVersaoVisivel" (close)="fecharNotasVersao()"></app-notas-versao>
 <app-sugestao [visible]="sugestaoVisivel" [link]="linkSugestao" [origem]="'Atalhos Embras ' + versaoAtual" (close)="sugestaoVisivel = false"></app-sugestao>
@@ -35,6 +35,11 @@
               }
             </div>
           }
+          <button class="atalhos-ver-todos atalhos-exportar" (click)="copiarLinkExportar()"
+            title="Copia um link que leva favoritos, recentes e meus clientes para outro computador ou navegador">
+            <i class="fa-solid" [class.fa-share-from-square]="!exportarCopiado" [class.fa-check]="exportarCopiado"></i>
+            {{ exportarCopiado ? 'Link copiado! Abra no outro navegador' : 'Levar meus favoritos para outro navegador' }}
+          </button>
         </div>
       }
       <ng-template #listaAtalhos let-itens let-todos="todos">
@@ -45,6 +50,9 @@
                 <span class="atalho-cliente">{{ r.cliente }}</span>
                 <span class="atalho-sistema">{{ r.sistema }}</span>
               </span>
+              @if (versoes.info(r.url).versao === false) {
+                <span class="atalho-fora" title="Não respondeu na última verificação de versão">fora do ar</span>
+              }
               <button class="estrela" [class.ativa]="favoritos.isFavorito(r.url)" (click)="favoritos.alternar(r.url, $event)"
                 [title]="favoritos.isFavorito(r.url) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'">
                 <i [class]="favoritos.isFavorito(r.url) ? 'fa-solid fa-star' : 'fa-regular fa-star'"></i>
@@ -138,7 +146,7 @@
     }
     @if (!resultadosBusca || !resultadosBusca.length) {
       <div class="busca-vazio">
-        Nenhum resultado encontrado.
+        {{ buscaPorVersao && versoes.carregando ? 'Carregando as versões dos clientes...' : 'Nenhum resultado encontrado.' }}
       </div>
     }
   </div>

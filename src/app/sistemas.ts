@@ -41,6 +41,8 @@ export interface Tela {
   areas?: Area[];
   // Sistema com scrap de versão no /api/versao.
   versao?: string;
+  // Outros nomes que a busca aceita, separados por espaço.
+  apelidos?: string;
 }
 
 // Seções do menu lateral. Item sem seção fica em Sistemas.
@@ -72,21 +74,21 @@ export const MENU: ItemMenu[] = [
   { nome: 'GoGlobal', icone: 'fa-solid fa-globe', tela: { id: 'GoGlobal', nome: 'GoGlobal', dados: goglobal } },
   {
     nome: 'E-Gov', icone: 'fa-solid fa-building-columns', grupo: 'egov', telas: [
-      { id: 'egov', nome: 'E-Gov Prod.', dados: egov, versao: 'egov' },
+      { id: 'egov', nome: 'E-Gov Prod.', dados: egov, versao: 'egov', apelidos: 'tributario' },
       { id: 'egov_dev', nome: 'E-Gov Homol.', dados: egovDev },
       { id: 'config', nome: 'Config E-Gov', dados: configEgov },
-      { id: 'segunda-via', nome: 'Nova Segunda Via', dados: segundaVia, areas: ['arrecadacao'] },
-      { id: 'itbi', nome: 'ITBI', dados: itbi, areas: ['arrecadacao'], versao: 'itbi' },
+      { id: 'segunda-via', nome: 'Nova Segunda Via', dados: segundaVia, areas: ['arrecadacao'], apelidos: 'guia boleto 2 via' },
+      { id: 'itbi', nome: 'ITBI', dados: itbi, areas: ['arrecadacao'], versao: 'itbi', apelidos: 'transmissao imoveis' },
       { id: 'transparencia-egov', nome: 'Transparência', dados: transparenciaEgov, areas: ['financas'], versao: 'transparencia-egov' }
     ]
   },
   {
     nome: 'IssOnline', icone: 'fa-regular fa-newspaper', grupo: 'IssOnline', telas: [
-      { id: 'IssOnline', nome: 'IssOnline Prod.', dados: issonline, areas: ['arrecadacao'], versao: 'issonline' },
-      { id: 'IssOnline-dev', nome: 'IssOnline Homol.', dados: issonlineDev, areas: ['arrecadacao'] }
+      { id: 'IssOnline', nome: 'IssOnline Prod.', dados: issonline, areas: ['arrecadacao'], versao: 'issonline', apelidos: 'nfse nota fiscal' },
+      { id: 'IssOnline-dev', nome: 'IssOnline Homol.', dados: issonlineDev, areas: ['arrecadacao'], apelidos: 'nfse nota fiscal' }
     ]
   },
-  { nome: 'Facilita-SP', icone: 'fa-solid fa-exchange', tela: { id: 'jucesp', nome: 'Facilita-SP', dados: jucesp, areas: ['arrecadacao'], versao: 'jucesp' } },
+  { nome: 'Facilita-SP', icone: 'fa-solid fa-exchange', tela: { id: 'jucesp', nome: 'Facilita-SP', dados: jucesp, areas: ['arrecadacao'], versao: 'jucesp', apelidos: 'redesim' } },
   { nome: 'Atende Mais', icone: 'fa-solid fa-phone', tela: { id: 'atende_mais', nome: 'Atende Mais', dados: atendeMais, areas: ['arrecadacao'], versao: 'atende-mais' } },
   { nome: 'ATEN', icone: 'fa-solid fa-clipboard-list', tela: { id: 'aten', nome: 'ATEN', dados: aten, areas: ['administracao'], versao: 'aten' } },
   { nome: 'GPRO WEB', icone: 'fa-solid fa-folder-open', tela: { id: 'gpro-web', nome: 'GPRO WEB', dados: gproWeb, areas: ['administracao'], versao: 'gpro-web' } },
@@ -97,10 +99,10 @@ export const MENU: ItemMenu[] = [
     nome: 'Transparência', icone: 'fa-solid fa-magnifying-glass-dollar', grupo: 'transparencia', telas: [
       { id: 'portal-transparencia', nome: 'Transparência', dados: portalTransparencia, areas: ['financas'], versao: 'portal-transparencia' },
       { id: 'novo-transparencia', nome: 'Novo Transparência', dados: novoTransparencia, areas: ['financas'] },
-      { id: 'inscritos-divida', nome: 'Inscritos em Dívida', dados: inscritosDivida, areas: ['arrecadacao'] }
+      { id: 'inscritos-divida', nome: 'Inscritos em Dívida', dados: inscritosDivida, areas: ['arrecadacao'], apelidos: 'divida ativa' }
     ]
   },
-  { nome: 'Config Contas', icone: 'fa-solid fa-user', tela: { id: 'login-novo', nome: 'Config Contas', dados: loginNovo } },
+  { nome: 'Config Contas', icone: 'fa-solid fa-user', tela: { id: 'login-novo', nome: 'Config Contas', dados: loginNovo, apelidos: 'login' } },
   { nome: 'Geosiap Setup', icone: 'fa-solid fa-sliders', tela: { id: 'setup', nome: 'Setup', dados: setup, versao: 'setup' } },
   { nome: 'Pessoas', icone: 'fa-solid fa-users', tela: { id: 'pessoas', nome: 'Pessoas', dados: pessoas, versao: 'pessoas' } },
   { nome: 'Links Úteis', icone: 'fa-solid fa-link', secao: 'links', tela: { id: 'links', nome: 'Links Úteis', dados: links } }

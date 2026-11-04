@@ -1,0 +1,41 @@
+name: Completar links de cliente novo
+
+# Cliente que entra num sistema: procura o mesmo cliente nos outros e abre PR com o que achar.
+on:
+  push:
+    branches: [main]
+    paths: ['src/app/dados/**']
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  completar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Procurar o cliente nos outros sistemas
+        run: node scripts/completar-links.mjs novos-links.md --desde=${{ github.event.before }} --inserir
+
+      # Uma branch por push, para não apagar o PR da verificação semanal (correcao-links).
+      - name: Abrir PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git diff --quiet -- src/app/dados && exit 0
+          branch="links-cliente-novo-${GITHUB_SHA::7}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add src/app/dados
+          git commit -m "Links de cliente novo"
+          git push origin "$branch"
+          gh pr create --head "$branch" --base main --title "Links de cliente novo" --body-file novos-links.md

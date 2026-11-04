@@ -17,6 +17,8 @@ const CHAVE_NOTAS = 'notasVersaoVistas';
 const EMAIL_CONTATO = 'jonathan.willian@embras.net';
 const LINK_SUGESTAO = 'https://github.com/jonathanwilliam01/atalhos_embras/issues/new';
 const DIAS_EXIBINDO_NOTAS = 7;
+// Termo que é número de versão (2.2.240): a busca lista quem está nela.
+const VERSAO = /^\d+(\.\d+)+$/;
 
 @Component({
     selector: 'app-root',
@@ -44,7 +46,9 @@ export class AppComponent implements OnInit {
   termoBusca = '';
   resultadosBusca: GrupoBusca[] | null = null;
   totalResultados = 0;
+  buscaPorVersao = false;
   linkCopiado: string | null = null;
+  exportarCopiado = false;
 
   constructor(private searchService: SearchService) {}
 
@@ -86,9 +90,21 @@ export class AppComponent implements OnInit {
     this.termoBusca = query;
     // Mesmas versões da tela Clientes: carrega uma vez e serve às duas.
     if (isPlatformBrowser(this.platformId)) this.versoes.carregar();
-    this.resultadosBusca = this.searchService.buscar(query);
+    const porVersao = this.buscarVersao(query);
+    this.resultadosBusca = this.favoritos.ordenarPorUso(porVersao.length ? porVersao : this.searchService.buscar(query));
     this.totalResultados = this.resultadosBusca.reduce((n, g) => n + g.itens.length, 0);
     this.currentComponent = 'busca';
+  }
+
+  // "2.2.240" pega 2.2.240 e 2.2.240.7, mas não 2.2.2401.
+  private buscarVersao(termo: string) {
+    const alvo = termo.replace(/\.$/, '');
+    this.buscaPorVersao = VERSAO.test(alvo);
+    if (!this.buscaPorVersao) return [];
+    return this.searchService.filtrar(r => {
+      const v = this.versoes.info(r.url).versao;
+      return !!v && (v === alvo || v.startsWith(`${alvo}.`));
+    });
   }
 
   copiarLink(url: string, event: Event) {
@@ -107,6 +123,20 @@ export class AppComponent implements OnInit {
 
   focarResultado(indice: number) {
     setTimeout(() => document.querySelectorAll<HTMLElement>('.busca-item')[indice]?.focus());
+  }
+
+  // Enter na busca com um único link de produção abre direto; senão foca o primeiro resultado.
+  irParaResultados(abrir: boolean) {
+    const itens = this.resultadosBusca?.flatMap(g => g.itens) ?? [];
+    const producao = itens.filter(r => !r.homolog);
+    if (!abrir || producao.length !== 1) return this.focarResultado(0);
+    const indice = itens.indexOf(producao[0]);
+    // click() no próprio link: abre em nova aba e entra nos Recentes como um clique normal.
+    setTimeout(() => {
+      const link = document.querySelectorAll<HTMLElement>('.busca-item')[indice];
+      link?.focus();
+      link?.click();
+    });
   }
 
   // Setas percorrem os resultados da busca; Enter abre o link em foco. Acima do primeiro volta para a busca.
@@ -135,8 +165,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     if (!isPlatformBrowser(this.platformId)) return;
+    this.importar();
     this.favoritos.carregar();
-    this.importarDoTributario();
+    // Busca por versão aberta enquanto as versões chegam: refaz o resultado.
+    this.versoes.atualizou.subscribe(() => {
+      if (this.currentComponent === 'busca' && this.buscaPorVersao) this.buscar(this.termoBusca);
+    });
+    this.versoes.carregarPara([...this.favoritos.favoritos, ...this.favoritos.recentes].map(r => r.url));
     // App instalado: quando o service worker baixa uma versão nova, recarrega para usá-la.
     if (this.swUpdate.isEnabled) {
       this.swUpdate.versionUpdates.subscribe(e => { if (e.type === 'VERSION_READY') document.location.reload(); });
@@ -144,15 +179,23 @@ export class AppComponent implements OnInit {
     if (this.deveExibirNotas()) this.notasVersaoVisivel = true;
   }
 
-  // O Atalhos Tributário redireciona para cá com ?importar={favoritos, recentes}.
-  private importarDoTributario() {
+  // ?importar={favoritos, recentes, clientes}: vem do Atalhos Tributário ou do link copiado em outro navegador.
+  private importar() {
     const dados = new URLSearchParams(location.search).get('importar');
     if (!dados) return;
     try {
-      const { favoritos = [], recentes = [] } = JSON.parse(dados);
-      this.favoritos.importar(favoritos, recentes);
+      const { favoritos, recentes, clientes } = JSON.parse(dados);
+      const lista = (v: unknown) => Array.isArray(v) ? v : [];
+      this.favoritos.importar(lista(favoritos), lista(recentes), lista(clientes));
     } catch {}
     history.replaceState(null, '', location.pathname + location.hash);
+  }
+
+  copiarLinkExportar() {
+    navigator.clipboard.writeText(this.favoritos.linkExportar()).then(() => {
+      this.exportarCopiado = true;
+      setTimeout(() => this.exportarCopiado = false, 2000);
+    });
   }
 
   // Versão nova abre sempre; depois, no máximo uma vez por dia enquanto a versão for recente.

@@ -17,7 +17,8 @@ export class HeaderComponent implements OnInit {
   @Output() componentSelected = new EventEmitter<string>();
   @Output() verNotasVersao = new EventEmitter<void>();
   @Output() pesquisar = new EventEmitter<string>();
-  @Output() focarResultados = new EventEmitter<void>();
+  // true: veio do Enter (pode abrir o link direto).
+  @Output() focarResultados = new EventEmitter<boolean>();
   @ViewChild('buscaInput') buscaInput?: ElementRef<HTMLInputElement>;
   selectedComponent = '';
   openSubmenu: string | null = null;
@@ -91,10 +92,10 @@ export class HeaderComponent implements OnInit {
   }
 
   // Enter ou seta para baixo: busca na hora e passa o foco para o primeiro resultado.
-  irParaResultados(termo: string) {
+  irParaResultados(termo: string, enter = false) {
     if (!termo.trim()) return;
     this.buscar(termo);
-    this.focarResultados.emit();
+    this.focarResultados.emit(enter);
   }
 
   limparBusca() {

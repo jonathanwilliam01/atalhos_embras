@@ -3,7 +3,7 @@ import { NgTemplateOutlet, isPlatformBrowser } from '@angular/common';
 import { SearchService, GrupoBusca, idCliente, normalizar } from '../search/search.service';
 import { VersoesComponent } from '../versoes/versoes.component';
 import { VersoesClientesService } from '../versoes/versoes-clientes.service';
-import { FavoritosService } from '../favoritos/favoritos.service';
+import { CHAVE_CLIENTES, FavoritosService } from '../favoritos/favoritos.service';
 import fichas from './clientes.json';
 
 // Gerado por scripts/fichas-clientes.mjs a partir do site de cada prefeitura.
@@ -14,7 +14,6 @@ interface Ficha {
 }
 
 const FICHAS: Record<string, Ficha> = fichas;
-const CHAVE_MEUS = 'clientesFavoritos';
 
 type Pendencia = 'desatualizado' | 'fora';
 
@@ -64,7 +63,7 @@ export class ClientesComponent implements OnInit {
 
   ngOnInit(): void {
     if (!isPlatformBrowser(this.platformId)) return;
-    try { this.meus = new Set(JSON.parse(localStorage.getItem(CHAVE_MEUS) ?? '[]')); } catch {}
+    try { this.meus = new Set(JSON.parse(localStorage.getItem(CHAVE_CLIENTES) ?? '[]')); } catch {}
     this.separar();
     this.versoes.carregar();
     this.abrirDoHash();
@@ -86,7 +85,7 @@ export class ClientesComponent implements OnInit {
   alternarMeu(c: Cliente, event: Event): void {
     event.stopPropagation();
     if (!this.meus.delete(c.id)) this.meus.add(c.id);
-    try { localStorage.setItem(CHAVE_MEUS, JSON.stringify([...this.meus])); } catch {}
+    try { localStorage.setItem(CHAVE_CLIENTES, JSON.stringify([...this.meus])); } catch {}
     this.separar();
   }
 

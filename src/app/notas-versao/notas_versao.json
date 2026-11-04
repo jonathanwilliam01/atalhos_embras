@@ -171,6 +171,18 @@
         { "tipo": "novidade", "texto": "Adicionado Taubaté no Config Contas, ADM-Web, Atende Mais, GCC, Inscritos em Dívida, Novo Transparência, Pessoas, Portal da Transparência, Setup, Suprimentos, ISS Online e JUCESP." },
         { "tipo": "novidade", "texto": "Adicionado Ferraz de Vasconcelos no GoGlobal, E-Gov, ATEN, Config E-Gov, GPRO WEB, ITBI, Transparência E-Gov, Config Contas, ADM-Web, GCC, Inscritos em Dívida, Novo Transparência, Pessoas, Portal da Transparência, Setup e Suprimentos." }
       ]
+    },
+    {
+      "versao": "V4.26.11.01",
+      "data": "04/11/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Favoritos e Recentes da tela inicial avisam quando o sistema está fora do ar." },
+        { "tipo": "novidade", "texto": "Buscar um número de versão (ex.: 2.2.240) lista os clientes que estão nela." },
+        { "tipo": "novidade", "texto": "Levar meus favoritos para outro navegador: copia um link que leva favoritos, recentes e meus clientes para outro computador ou navegador." },
+        { "tipo": "melhoria", "texto": "A busca entende outros nomes dos sistemas, como nfse, redesim, dívida ativa, guia e boleto, além do título de cada tela." },
+        { "tipo": "melhoria", "texto": "A busca mostra primeiro os clientes e links que você mais abre." },
+        { "tipo": "melhoria", "texto": "Enter na busca abre o link direto quando sobra um só link de produção." }
+      ]
     }
   ]
 }

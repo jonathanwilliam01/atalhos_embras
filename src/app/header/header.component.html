@@ -16,7 +16,7 @@
   <div class="bot-tit"> Atalhos Embras </div>
   <div class="busca">
     <i class="fa-solid fa-magnifying-glass busca-icon"></i>
-    <input #buscaInput type="text" class="busca-input" placeholder="Buscar links" (input)="buscarAoDigitar(buscaInput.value)" (keydown.enter)="irParaResultados(buscaInput.value); closeMenu()" (keydown.arrowdown)="$event.preventDefault(); irParaResultados(buscaInput.value)" (keyup.escape)="limparBusca()">
+    <input #buscaInput type="text" class="busca-input" placeholder="Buscar links" (input)="buscarAoDigitar(buscaInput.value)" (keydown.enter)="irParaResultados(buscaInput.value, true); closeMenu()" (keydown.arrowdown)="$event.preventDefault(); irParaResultados(buscaInput.value)" (keyup.escape)="limparBusca()">
     <kbd class="busca-atalho" title="Atalho para buscar"> Ctrl K </kbd>
   </div>
   <label class="area" title="Filtrar os sistemas por área">

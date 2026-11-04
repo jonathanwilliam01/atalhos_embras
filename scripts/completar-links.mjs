@@ -1,6 +1,10 @@
 // Procura clientes que faltam em cada sistema: monta o link com o servidor que o cliente já usa
 // e o caminho padrão do sistema, testa e lista os que abrem em <saida> (padrão: novos-links.md).
 // Com --inserir, grava nos JSONs os confirmados (versão lida ou mesma resposta dos outros clientes).
+// Só um cliente (novo ou já cadastrado em algum sistema):
+//   node scripts/completar-links.mjs --cliente="Taubaté" --estado=SP --servidor=https://x.com.br --alias=pmtaubate --inserir
+// Só os clientes que apareceram desde um commit: --desde=<ref>
+import { execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 
@@ -11,6 +15,8 @@ const PASTA = new URL('../src/app/dados/', import.meta.url);
 const ARGS = process.argv.slice(2);
 const SAIDA = ARGS.find(a => !a.startsWith('--')) ?? 'novos-links.md';
 const INSERIR = ARGS.includes('--inserir');
+const opcao = nome => ARGS.find(a => a.startsWith(`--${nome}=`))?.slice(nome.length + 3);
+const lista = nome => opcao(nome)?.split(',').map(v => v.trim()).filter(Boolean) ?? [];
 const TIMEOUT_MS = 15000;
 const PARALELOS = 8;
 const HEADERS = { 'user-agent': 'Mozilla/5.0 (Atalhos Embras - busca de links)' };
@@ -18,6 +24,7 @@ const HEADERS = { 'user-agent': 'Mozilla/5.0 (Atalhos Embras - busca de links)' 
 // Nova Segunda Via abre em todo servidor com E-Gov, mesmo em cliente que não usa.
 const IGNORAR = new Set(['links.json', 'goglobal.json', 'egov-dev.json', 'issonline-dev.json', 'login-novo.json', 'segunda-via.json']);
 const ESTADOS = new Set(['São Paulo', 'Rio de Janeiro', 'Minas Gerais']);
+const UF = { SP: 'São Paulo', RJ: 'Rio de Janeiro', MG: 'Minas Gerais' };
 const HOMOLOG = /\s+homolog\.?$/i;
 const MINIMO_PADRAO = 3;
 
@@ -46,6 +53,43 @@ for (const { dados } of telas) {
       if (alias) c.aliases.add(alias);
     }
   }
+}
+
+// Clientes a procurar: todos, um só (--cliente) ou os novos desde um commit (--desde).
+let alvos = null;
+const CLIENTE = opcao('cliente');
+const DESDE = opcao('desde');
+if (CLIENTE) {
+  const estado = UF[opcao('estado')?.toUpperCase()] ?? opcao('estado');
+  const existentes = [...clientes.values()].filter(c => normalizar(c.nome) === normalizar(CLIENTE) && (!estado || c.estado === estado));
+  if (existentes.length > 1) throw new Error(`"${CLIENTE}" existe em mais de um estado: use --estado=SP|RJ|MG`);
+  if (!existentes.length && !ESTADOS.has(estado)) throw new Error('Cliente novo: informe --estado=SP|RJ|MG');
+  const k = existentes.length ? chave(existentes[0].estado, existentes[0].nome) : chave(estado, CLIENTE);
+  const c = clientes.get(k) ?? { nome: CLIENTE, estado, origens: new Map(), aliases: new Set() };
+  clientes.set(k, c);
+  // Servidor informado vai na frente dos que o cliente já usa.
+  for (const s of lista('servidor')) c.origens.set(new URL(s).origin, 1e9);
+  for (const a of lista('alias')) c.aliases.add(a);
+  if (!c.origens.size) throw new Error('Cliente sem link em nenhum sistema: informe --servidor=https://...');
+  alvos = new Set([k]);
+} else if (DESDE) {
+  const chaves = dados => new Set(dados.grupos.filter(g => ESTADOS.has(g.nome))
+    .flatMap(g => g.itens.filter(i => i.url && !i.inativo && !HOMOLOG.test(i.cliente)).map(i => chave(g.nome, i.cliente))));
+  alvos = new Set();
+  for (const { arquivo, dados } of telas) {
+    let antes;
+    try {
+      antes = chaves(JSON.parse(execFileSync('git', ['show', `${DESDE}:src/app/dados/${arquivo}`], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })));
+    } catch {
+      antes = new Set();
+    }
+    for (const k of chaves(dados)) if (!antes.has(k)) alvos.add(k);
+  }
+}
+if (alvos && !alvos.size) {
+  writeFileSync(SAIDA, '');
+  console.log('Nenhum cliente novo para procurar.');
+  process.exit(0);
 }
 
 // Caminho do link sem o servidor; o 1º trecho vira {alias} quando é o alias do cliente.
@@ -124,9 +168,10 @@ for (const tela of telas) {
   }
   const [caminho, vezes] = [...contagem].sort((a, b) => b[1] - a[1])[0] ?? [];
   if (!caminho || vezes < MINIMO_PADRAO) continue;
+  const faltando = [...clientes].filter(([k]) => !presentes.has(k) && (!alvos || alvos.has(k))).map(([, c]) => c);
+  if (!faltando.length) continue;
   tela.assinatura = await assinaturaPadrao(exemplos.get(caminho));
 
-  const faltando = [...clientes].filter(([k]) => !presentes.has(k)).map(([, c]) => c);
   await emParalelo(faltando, async cliente => {
     const origens = [...cliente.origens].sort((a, b) => b[1] - a[1]).map(([o]) => o);
     const aliases = caminho.includes('{alias}') ? [...cliente.aliases] : [''];
@@ -177,6 +222,13 @@ if (INSERIR) {
   }
 }
 
+// Linha pronta para a nota de versão, por cliente.
+const juntar = nomes => nomes.length > 1 ? `${nomes.slice(0, -1).join(', ')} e ${nomes.at(-1)}` : nomes[0];
+const notas = [...new Set(confirmados.map(e => e.cliente))].map(cliente => {
+  const sistemas = confirmados.filter(e => e.cliente === cliente).map(e => e.tela.dados.sistema).sort((a, b) => a.localeCompare(b));
+  return `Adicionado ${cliente.nome} no ${juntar(sistemas)}.`;
+});
+
 const ordem = (a, b) => a.tela.dados.sistema.localeCompare(b.tela.dados.sistema) || a.cliente.nome.localeCompare(b.cliente.nome);
 const linha = e => `| ${e.tela.dados.sistema} | ${e.cliente.nome} (${e.cliente.estado}) | ${e.url} | ${e.detalhe} |`;
 const abertos = encontrados.filter(e => e.situacao === 'aberto');
@@ -193,6 +245,8 @@ writeFileSync(SAIDA, encontrados.length ? [
     '| Sistema | Cliente | Link | Resposta |',
     '| --- | --- | --- | --- |',
     ...abertos.sort(ordem).map(linha)
-  ] : [])
+  ] : []),
+  ...(notas.length ? ['', 'Nota de versão:', '', ...notas.map(n => `- ${n}`)] : [])
 ].join('\n') + '\n' : '');
 console.log(`${confirmados.length} confirmados, ${abertos.length} sem confirmação. Detalhes em ${SAIDA}.`);
+for (const n of notas) console.log(`Nota: ${n}`);

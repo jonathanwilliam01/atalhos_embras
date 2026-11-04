@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DadosSistema } from '../shared/sistema-links/sistema-links.component';
 import { TELAS } from '../sistemas';
 
 export interface ResultadoBusca {
@@ -20,8 +19,6 @@ export interface GrupoBusca {
   porSistema?: boolean;
   itens: ResultadoBusca[];
 }
-
-const SISTEMAS: DadosSistema[] = TELAS.map(t => t.dados);
 
 export const ESTADOS: Record<string, string> = { 'São Paulo': 'SP', 'Rio de Janeiro': 'RJ', 'Minas Gerais': 'MG' };
 export const SUFIXO_HOMOLOG = /\s+homolog\.?$/i;
@@ -62,29 +59,38 @@ function agruparPorCliente(itens: ResultadoBusca[]): GrupoBusca[] {
 
 @Injectable({ providedIn: 'root' })
 export class SearchService {
-  private indice: ResultadoBusca[] = SISTEMAS.flatMap(sistema =>
-    sistema.grupos.flatMap(grupo =>
+  // Texto já normalizado de cada item (com nome da tela, título e apelidos): a busca roda a cada tecla.
+  private entradas = TELAS.flatMap(tela =>
+    tela.dados.grupos.flatMap(grupo =>
       grupo.itens
         .filter(item => item.url && !item.inativo)
-        .map(item => ({
-          sistema: sistema.sistema,
-          nomeSistema: sistema.sistema.replace(SUFIXO_HOMOLOG, ''),
-          local: grupo.nome,
-          cliente: item.cliente,
-          url: item.url,
-          host: host(item.url),
-          homolog: SUFIXO_HOMOLOG.test(sistema.sistema) || SUFIXO_HOMOLOG.test(item.cliente)
-        }))
+        .map(item => {
+          const sistema = tela.dados.sistema;
+          const r: ResultadoBusca = {
+            sistema,
+            nomeSistema: sistema.replace(SUFIXO_HOMOLOG, ''),
+            local: grupo.nome,
+            cliente: item.cliente,
+            url: item.url,
+            host: host(item.url),
+            homolog: SUFIXO_HOMOLOG.test(sistema) || SUFIXO_HOMOLOG.test(item.cliente)
+          };
+          return { r, texto: normalizar(`${tela.nome} ${tela.dados.titulo} ${tela.apelidos ?? ''} ${sistema} ${grupo.nome} ${item.cliente} ${item.url}`) };
+        })
     )
   );
-  // Texto já normalizado de cada item, na ordem do índice: a busca roda a cada tecla.
-  private textos = this.indice.map(r => normalizar(`${r.sistema} ${r.local} ${r.cliente} ${r.url}`));
+  private indice = this.entradas.map(e => e.r);
+  private textos = this.entradas.map(e => e.texto);
 
   buscar(termo: string): GrupoBusca[] {
     const termos = normalizar(termo).split(/\s+/).filter(Boolean);
     if (!termos.length) return [];
 
     return agruparPorCliente(this.indice.filter((_, i) => termos.every(t => this.textos[i].includes(t))));
+  }
+
+  filtrar(teste: (r: ResultadoBusca) => boolean): GrupoBusca[] {
+    return agruparPorCliente(this.indice.filter(teste));
   }
 
   porUrl(url: string): ResultadoBusca | undefined {

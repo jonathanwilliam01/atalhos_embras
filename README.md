@@ -9,8 +9,8 @@ O antigo Atalhos Tributário (https://projeto-tributario.vercel.app/) redirecion
 ## Funcionalidades
 
 - **Filtro de área** no menu lateral: Arrecadação, Administração/RH, Finanças ou Suprimentos.
-- **Favoritos e Recentes**: marque links com estrela e veja os últimos abertos na tela inicial.
-- **Busca rápida (Ctrl K)**: encontra qualquer link; setas percorrem os resultados e Enter abre.
+- **Favoritos e Recentes**: marque links com estrela e veja os últimos abertos na tela inicial, com aviso de **fora do ar**; **Levar meus favoritos para outro navegador** copia um link que leva favoritos, recentes e meus clientes.
+- **Busca rápida (Ctrl K)**: encontra qualquer link, também por apelido (nfse, redesim, dívida ativa, guia...) ou número de versão (`2.2.240` lista quem está nela); os mais abertos por você vêm primeiro; setas percorrem os resultados e Enter abre (direto, quando sobra um só link de produção).
 - **Clientes**: grade com o brasão de cada município, **Meus clientes** fixados no topo pela estrela e filtro por nome ou estado; clicar abre um painel com endereço, telefone e site da prefeitura e todos os links do cliente com a versão de cada um (`#clientes/<cidade>-<uf>` abre direto).
 - **Versões**: clientes × sistemas numa tabela, destacando desatualizados e quem não respondeu.
 - **E-Gov**: produção, homologação, configurações, Nova Segunda Via, ITBI e Transparência E-Gov.
@@ -19,6 +19,7 @@ O antigo Atalhos Tributário (https://projeto-tributario.vercel.app/) redirecion
 - **Transparência**: Portal da Transparência, Novo Transparência e Inscritos em Dívida.
 - **GoGlobal**, **Setup**, **Pessoas**, **Config Contas** e **Links Úteis** (documentação, wiki, demandas e planilhas).
 - **Versão dos clientes**: E-Gov, ITBI, IssOnline, Setup, ATEN, GPRO WEB, Transparência E-Gov, Portal da Transparência, Facilita-SP, Atende Mais, GCC, Suprimentos e Pessoas mostram a versão de cada município, destacam quem está desatualizado e quem não respondeu, com o botão **Atualizar visualização** para buscar de novo na hora.
-- **Links sempre em dia**: toda segunda os links são testados; endereços que mudaram e links que faltam num sistema (servidor do cliente + caminho padrão do sistema, confirmado pela versão ou pela resposta da página) vão num PR para aprovar.
+- **Links sempre em dia**: toda segunda os links são testados; endereços que mudaram e links que faltam num sistema (servidor do cliente + caminho padrão do sistema, confirmado pela versão ou pela resposta da página) vão num PR para aprovar. Cliente que entra num sistema é procurado nos outros logo no push.
+- **Cliente novo**: `node scripts/completar-links.mjs --cliente="Nome" --estado=SP --servidor=https://... --alias=pmnome --inserir` testa o cliente em todos os sistemas, inclui os confirmados e mostra a linha da nota de versão.
 - **Link direto para a tela** (ex.: `#egov`) e **sugestões pelo GitHub** na tela inicial.
 - Pode ser instalado como aplicativo pelo botão **Instalar app**.

@@ -524,6 +524,19 @@
   border-color: rgba(240, 173, 78, 0.5);
 }
 
+.atalho-fora {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: rgb(255, 120, 130);
+  font-size: 0.7rem;
+}
+
+.atalhos-exportar {
+  grid-column: 1 / -1;
+  justify-self: start;
+  color: rgb(150, 160, 166);
+}
+
 .atalhos-dica {
   color: rgb(150, 160, 166);
   font-size: 0.82rem;
