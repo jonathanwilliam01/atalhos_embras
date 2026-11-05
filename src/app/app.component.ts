@@ -16,6 +16,8 @@ import { VersoesClientesService } from './versoes/versoes-clientes.service';
 const CHAVE_NOTAS = 'notasVersaoVistas';
 const EMAIL_CONTATO = 'jonathan.willian@embras.net';
 const LINK_SUGESTAO = 'https://github.com/jonathanwilliam01/atalhos_embras/issues/new';
+const LINK_APP = 'https://atalhos-embras.vercel.app';
+const TEXTO_CONVITE = 'Conhece o Atalhos Embras? Reúne os links dos sistemas de todos os clientes em um só lugar, com busca, favoritos e versões. Acesse:';
 const DIAS_EXIBINDO_NOTAS = 7;
 // Termo que é número de versão (2.2.240): a busca lista quem está nela.
 const VERSAO = /^\d+(\.\d+)+$/;
@@ -49,6 +51,7 @@ export class AppComponent implements OnInit {
   buscaPorVersao = false;
   linkCopiado: string | null = null;
   exportarCopiado = false;
+  conviteCopiado = false;
 
   constructor(private searchService: SearchService) {}
 
@@ -210,6 +213,18 @@ export class AppComponent implements OnInit {
     } catch {
       return false;
     }
+  }
+
+  // Celular: menu de compartilhar do sistema. Sem ele: copia o convite.
+  compartilhar() {
+    if (navigator.share) {
+      navigator.share({ title: 'Atalhos Embras', text: TEXTO_CONVITE, url: LINK_APP }).catch(() => {});
+      return;
+    }
+    navigator.clipboard.writeText(`${TEXTO_CONVITE} ${LINK_APP}`).then(() => {
+      this.conviteCopiado = true;
+      setTimeout(() => this.conviteCopiado = false, 2000);
+    });
   }
 
   copyEmail() {

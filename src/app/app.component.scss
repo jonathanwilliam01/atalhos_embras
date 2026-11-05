@@ -250,7 +250,7 @@
   i { font-size: 1.1rem; flex-shrink: 0; }
 }
 
-.welcome-notas-btn {
+.welcome-notas-btn, .welcome-compartilhar-btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -272,6 +272,23 @@
     transform: translateY(-1px);
     box-shadow: 0 5px 14px rgba(74, 194, 194, 0.55);
   }
+}
+
+.welcome-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.welcome-compartilhar-btn {
+  background: transparent;
+  border: 1px solid rgba(74, 194, 194, 0.6);
+  color: rgb(84, 210, 210);
+  box-shadow: none;
+
+  i { color: inherit; }
+  &:hover { box-shadow: none; background-color: rgba(74, 194, 194, 0.12); }
 }
 
 .welcome-notas-btn-versao {

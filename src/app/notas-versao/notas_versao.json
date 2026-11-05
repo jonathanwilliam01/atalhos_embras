@@ -183,6 +183,13 @@
         { "tipo": "melhoria", "texto": "A busca mostra primeiro os clientes e links que você mais abre." },
         { "tipo": "melhoria", "texto": "Enter na busca abre o link direto quando sobra um só link de produção." }
       ]
+    },
+    {
+      "versao": "V4.26.11.02",
+      "data": "05/11/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Botão Compartilhar na tela inicial: envia um convite com o link do Atalhos Embras para um colega." }
+      ]
     }
   ]
 }

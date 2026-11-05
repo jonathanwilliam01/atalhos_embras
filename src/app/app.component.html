@@ -72,11 +72,17 @@
           <i class="fa-regular fa-star"></i> Clique na estrela ao lado de um link para fixá-lo aqui
         </div>
       }
-      <button class="welcome-notas-btn" (click)="abrirNotasVersao()">
-        <i class="fa-solid fa-clock-rotate-left"></i>
-        Notas de versão
-        <span class="welcome-notas-btn-versao">{{ versaoAtual }}</span>
-      </button>
+      <div class="welcome-botoes">
+        <button class="welcome-notas-btn" (click)="abrirNotasVersao()">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          Notas de versão
+          <span class="welcome-notas-btn-versao">{{ versaoAtual }}</span>
+        </button>
+        <button class="welcome-compartilhar-btn" (click)="compartilhar()" title="Convidar um colega para usar o Atalhos Embras">
+          <i class="fa-solid" [class.fa-share-nodes]="!conviteCopiado" [class.fa-check]="conviteCopiado"></i>
+          {{ conviteCopiado ? 'Convite copiado!' : 'Compartilhar' }}
+        </button>
+      </div>
       <div class="welcome-sugestoes">
         <i class="fa-solid fa-envelope"></i>
         <div class="sugestoes-texto">
