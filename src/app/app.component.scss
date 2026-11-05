@@ -276,8 +276,8 @@
 
 .welcome-botoes {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
@@ -369,6 +369,8 @@
 }
 
 @media (max-width: 900px) {
+  .welcome-botoes { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+
   .welcome-box {
     position: fixed;
     margin-left: 0;
