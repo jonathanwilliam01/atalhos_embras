@@ -296,7 +296,6 @@
 
 .welcome-botoes {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 10px;
 }
@@ -456,9 +455,26 @@
   .busca-item-meta { max-width: 100%; }
 }
 
+// Com favoritos/recentes o cartão encolhe o cabeçalho para caber sem rolagem.
 .welcome-content.com-atalhos {
   max-width: 820px;
   width: 80%;
+
+  @media (min-width: 901px) {
+    gap: 12px;
+    padding: 26px 40px;
+
+    .welcome-logo { width: 130px; }
+    .welcome-title { font-size: 1.7rem; }
+  }
+
+  @media (min-width: 901px) and (max-height: 680px) {
+    gap: 8px;
+    padding: 18px 32px;
+
+    .welcome-logo { width: 100px; }
+    .welcome-desc { display: none; }
+  }
 }
 
 .atalhos-pessoais {
