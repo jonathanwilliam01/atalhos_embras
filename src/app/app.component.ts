@@ -12,6 +12,7 @@ import { FavoritosService } from './favoritos/favoritos.service';
 import { ClientesComponent } from './clientes/clientes.component';
 import { SugestaoComponent } from './sugestao/sugestao.component';
 import { VersoesClientesService } from './versoes/versoes-clientes.service';
+import { copiarVersao } from './shared/copiar-versao';
 
 const CHAVE_NOTAS = 'notasVersaoVistas';
 const EMAIL_CONTATO = 'jonathan.willian@embras.net';
@@ -44,6 +45,7 @@ export class AppComponent implements OnInit {
   verTodosRecentes = false;
   private swUpdate = inject(SwUpdate);
   readonly versoes = inject(VersoesClientesService);
+  readonly copiarVersao = copiarVersao;
 
   termoBusca = '';
   resultadosBusca: GrupoBusca[] | null = null;

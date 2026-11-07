@@ -1,4 +1,4 @@
-<app-header (componentSelected)="setComponent($event)" (verNotasVersao)="abrirNotasVersao()" (pesquisar)="buscar($event)" (focarResultados)="irParaResultados($event)"></app-header>
+<app-header #cabecalho (componentSelected)="setComponent($event)" (verNotasVersao)="abrirNotasVersao()" (pesquisar)="buscar($event)" (focarResultados)="irParaResultados($event)"></app-header>
 
 <app-notas-versao [visible]="notasVersaoVisivel" (close)="fecharNotasVersao()"></app-notas-versao>
 <app-sugestao [visible]="sugestaoVisivel" [link]="linkSugestao" [origem]="'Atalhos Embras ' + versaoAtual" (close)="sugestaoVisivel = false"></app-sugestao>
@@ -11,6 +11,11 @@
       <p class="welcome-desc">
         Acesso rápido aos sistemas utilizados pelas equipes da Embras.
       </p>
+      <button type="button" class="welcome-busca" (click)="cabecalho.focarBusca()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Buscar cliente, sistema ou versão</span>
+        <kbd>Ctrl K</kbd>
+      </button>
       @if (favoritos.favoritos.length || favoritos.recentes.length) {
         <div class="atalhos-pessoais">
           @if (favoritos.favoritos.length) {
@@ -61,12 +66,6 @@
           }
         </div>
       </ng-template>
-      @if (!favoritos.favoritos.length && !favoritos.recentes.length) {
-        <div class="welcome-hint">
-          <i class="fa-solid fa-hand-pointer"></i>
-          <span>Selecione uma opção no menu lateral para visualizar os links</span>
-        </div>
-      }
       @if (!favoritos.favoritos.length) {
         <div class="atalhos-dica">
           <i class="fa-regular fa-star"></i> Clique na estrela ao lado de um link para fixá-lo aqui
@@ -132,7 +131,7 @@
                 }
                 @let info = versoes.info(r.url);
                 @if (info.versao) {
-                  <span class="busca-versao" [class.desatualizada]="info.desatualizada" [attr.title]="info.desatualizada ? 'Abaixo da versão atual' : null">{{ info.versao }}</span>
+                  <span class="busca-versao" [class.desatualizada]="info.desatualizada" (click)="copiarVersao(r.cliente, r.nomeSistema, info.versao, $event)" [attr.title]="(info.desatualizada ? 'Abaixo da versão atual. ' : '') + 'Clique para copiar'">{{ info.versao }}</span>
                 } @else if (info.versao === false) {
                   <span class="busca-fora" title="Não respondeu na última verificação"></span>
                 }
@@ -164,5 +163,5 @@
 
 <!-- Um bloco por tela: trocar de tela recria o componente e recarrega as versões. -->
 @for (t of tela ? [tela] : []; track t.id) {
-  <app-sistema-links [titulo]="t.dados.titulo" [grupos]="t.dados.grupos" [imagens]="t.dados.imagens" [versaoSistema]="t.versao"></app-sistema-links>
+  <app-sistema-links [titulo]="t.dados.titulo" [sistema]="t.dados.sistema" [grupos]="t.dados.grupos" [imagens]="t.dados.imagens" [versaoSistema]="t.versao"></app-sistema-links>
 }

@@ -4,6 +4,7 @@ import { ULTIMA_VERSAO } from '../notas-versao/notas-versao.component';
 import { AREAS, Area, ItemMenu, MENU, SECOES, Secao, TELAS_GERAIS, Tela, naArea, telaPorId } from '../sistemas';
 
 const CHAVE_AREA = 'areaMenu';
+const CHAVE_TEMA = 'tema';
 
 @Component({
     selector: 'app-header',
@@ -28,6 +29,7 @@ export class HeaderComponent implements OnInit {
   private telaAnterior: { tela: string; grupo: string | null } | null = null;
 
   versaoAtual = ULTIMA_VERSAO?.versao ?? '';
+  temaClaro = false;
 
   private platformId = inject(PLATFORM_ID);
   readonly menu = MENU;
@@ -42,7 +44,22 @@ export class HeaderComponent implements OnInit {
     // Fora do ciclo atual: abrir a tela altera o AppComponent.
     if (!isPlatformBrowser(this.platformId)) return;
     try { this.area = (localStorage.getItem(CHAVE_AREA) ?? '') as Area | ''; } catch {}
+    this.temaClaro = document.documentElement.getAttribute('data-tema') === 'claro';
+    this.aplicarCorDaBarra();
     setTimeout(() => this.abrirTelaDaUrl());
+  }
+
+  // O index.html aplica o tema salvo antes do Angular carregar.
+  alternarTema() {
+    this.temaClaro = !this.temaClaro;
+    if (this.temaClaro) document.documentElement.setAttribute('data-tema', 'claro');
+    else document.documentElement.removeAttribute('data-tema');
+    try { localStorage.setItem(CHAVE_TEMA, this.temaClaro ? 'claro' : 'escuro'); } catch {}
+    this.aplicarCorDaBarra();
+  }
+
+  private aplicarCorDaBarra() {
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', this.temaClaro ? '#fbfcfd' : '#293135');
   }
 
   mudarArea(area: Area | '') {
@@ -141,6 +158,12 @@ export class HeaderComponent implements OnInit {
 
   closeMenu() {
     this.menuOpen = false;
+  }
+
+  // Campo de busca da tela inicial: no celular a busca fica dentro do menu.
+  focarBusca() {
+    this.menuOpen = true;
+    setTimeout(() => this.buscaInput?.nativeElement.focus());
   }
 
   // Chrome/Edge disparam este evento quando o site pode ser instalado como app.

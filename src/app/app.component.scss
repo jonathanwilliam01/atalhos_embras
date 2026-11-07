@@ -13,20 +13,20 @@
 
 .busca-resultados {
   margin-left: 21%;
-  background-color: rgb(41, 49, 53);
+  background-color: var(--painel);
   border-radius: 7px;
   width: 76%;
   height: 97%;
   top: 9px;
   position: absolute;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  box-shadow: 4px 3px 15px 0px black;
-  border: 1px solid rgb(80, 80, 80);
+  box-shadow: 4px 3px 15px 0px var(--sombra);
+  border: 1px solid var(--borda-2);
   box-sizing: border-box;
   padding: 0 2% 20px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgb(80, 80, 80) transparent;
+  scrollbar-color: var(--borda-2) transparent;
 
   .titulo {
     position: sticky;
@@ -36,15 +36,15 @@
     align-items: baseline;
     gap: 14px;
     padding: 24px 0 16px;
-    background-color: rgb(41, 49, 53);
+    background-color: var(--painel);
     font-size: 30px;
-    color: aliceblue;
+    color: var(--texto);
     font-weight: bold;
   }
 }
 
 .busca-total {
-  color: rgb(150, 160, 166);
+  color: var(--texto-4);
   font-size: 0.95rem;
   font-weight: normal;
 }
@@ -58,7 +58,7 @@
   align-items: center;
   gap: 10px;
   margin: 0 0 8px 2px;
-  color: rgb(74, 194, 194);
+  color: var(--destaque);
   font-size: 1.1rem;
   font-weight: bold;
 }
@@ -84,8 +84,8 @@
 .estado {
   padding: 1px 8px;
   border-radius: 10px;
-  border: 1px solid rgb(80, 90, 96);
-  color: rgb(150, 160, 166);
+  border: 1px solid var(--borda-3);
+  color: var(--texto-4);
   font-size: 0.72rem;
   font-weight: bold;
 }
@@ -108,7 +108,7 @@
 }
 
 .busca-item:focus-visible {
-  outline: 2px solid rgb(74, 194, 194);
+  outline: 2px solid var(--destaque);
   outline-offset: 2px;
 }
 
@@ -119,16 +119,16 @@
   gap: 16px;
   padding: 12px 18px;
   border-radius: 8px;
-  background-color: rgb(55, 65, 71);
-  border: 1px solid rgb(80, 90, 96);
-  color: rgb(233, 233, 233);
+  background-color: var(--botao);
+  border: 1px solid var(--borda-3);
+  color: var(--texto);
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .busca-item:hover {
-  background-color: rgb(74, 89, 97);
-  color: rgb(74, 194, 194);
+  background-color: var(--botao-hover);
+  color: var(--destaque);
   transform: translateX(5px);
 }
 
@@ -147,15 +147,15 @@
   width: 30px;
   height: 30px;
   border-radius: 6px;
-  border: 1px solid rgb(80, 90, 96);
-  background-color: rgba(255, 255, 255, 0.04);
-  color: rgb(150, 160, 166);
+  border: 1px solid var(--borda-3);
+  background-color: rgb(var(--tinta) / 0.04);
+  color: var(--texto-4);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .busca-item-copy:hover {
-  color: rgb(74, 194, 194);
+  color: var(--destaque);
   border-color: rgba(74, 194, 194, 0.5);
   background-color: rgba(74, 194, 194, 0.12);
 }
@@ -165,10 +165,11 @@
 }
 
 .busca-versao {
+  cursor: copy;
   padding: 1px 6px;
   border-radius: 8px;
   background: rgba(74, 194, 194, 0.22);
-  color: rgb(140, 225, 225);
+  color: var(--destaque-texto);
   font-size: 0.75rem;
   white-space: nowrap;
 
@@ -188,7 +189,7 @@
 }
 
 .busca-item-meta {
-  color: rgb(150, 160, 166);
+  color: var(--texto-4);
   font-size: 0.85rem;
   min-width: 0;
   overflow: hidden;
@@ -197,7 +198,7 @@
 }
 
 .busca-vazio {
-  color: rgb(180, 190, 196);
+  color: var(--texto-3);
   font-size: 1rem;
 }
 
@@ -210,10 +211,10 @@
   padding: 36px 40px;
   max-width: 560px;
   width: 70%;
-  background-color: rgb(41, 49, 53);
+  background-color: var(--painel);
   border-radius: 10px;
-  border: 1px solid rgb(80, 80, 80);
-  box-shadow: 4px 3px 15px 0px black;
+  border: 1px solid var(--borda-2);
+  box-shadow: 4px 3px 15px 0px var(--sombra);
 }
 
 .welcome-logo {
@@ -222,32 +223,51 @@
 }
 
 .welcome-title {
-  color: rgb(233, 233, 233);
+  color: var(--texto);
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
 }
 
 .welcome-desc {
-  color: rgb(180, 190, 196);
+  color: var(--texto-3);
   font-size: 1rem;
   margin: 0;
   line-height: 1.6;
 }
 
-.welcome-hint {
+.welcome-busca {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background-color: rgba(74, 194, 194, 0.12);
-  border: 1px solid rgba(74, 194, 194, 0.35);
+  gap: 12px;
+  width: 100%;
+  max-width: 480px;
+  padding: 12px 16px;
+  border: 1px solid rgba(74, 194, 194, 0.45);
   border-radius: 8px;
-  padding: 12px 20px;
-  color: rgb(74, 194, 194);
+  background-color: var(--campo-escuro);
+  color: var(--texto-4);
+  font-family: inherit;
   font-size: 0.95rem;
-  font-weight: bold;
+  text-align: left;
+  cursor: text;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 
-  i { font-size: 1.1rem; flex-shrink: 0; }
+  i { color: var(--destaque); }
+  span { flex: 1; }
+
+  kbd {
+    padding: 1px 6px;
+    border: 1px solid var(--borda-3);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.75rem;
+  }
+
+  &:hover, &:focus-visible {
+    border-color: var(--destaque);
+    background-color: rgba(74, 194, 194, 0.08);
+  }
 }
 
 .welcome-notas-btn, .welcome-compartilhar-btn {
@@ -292,7 +312,7 @@
 }
 
 .welcome-notas-btn-versao {
-  background-color: rgba(0, 0, 0, 0.18);
+  background-color: var(--campo-escuro);
   border-radius: 10px;
   padding: 2px 8px;
   color: rgb(22, 30, 33);
@@ -308,13 +328,13 @@
   border: 1px solid rgba(74, 194, 194, 0.3);
   border-radius: 8px;
   padding: 12px 16px;
-  color: rgb(180, 190, 196);
+  color: var(--texto-3);
   font-size: 0.88rem;
   width: 100%;
   box-sizing: border-box;
   text-align: center;
 
-  > i { color: rgb(74, 194, 194); flex-shrink: 0; }
+  > i { color: var(--destaque); flex-shrink: 0; }
 }
 
 .sugestoes-texto {
@@ -332,7 +352,7 @@
 }
 
 .email-text {
-  color: rgb(74, 194, 194);
+  color: var(--destaque);
   font-weight: bold;
   font-size: 0.87rem;
 }
@@ -345,7 +365,7 @@
   cursor: pointer;
   align-items: center;
   gap: 6px;
-  color: rgb(74, 194, 194);
+  color: var(--destaque);
   font-size: 0.82rem;
   text-decoration: none;
   padding: 3px 8px;
@@ -359,13 +379,13 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: rgb(130, 142, 150);
+  color: var(--texto-5);
   font-size: 0.78rem;
   padding: 2px 5px;
   border-radius: 4px;
   transition: color 0.2s ease, background-color 0.2s ease;
 
-  &:hover { color: rgb(74, 194, 194); background-color: rgba(74, 194, 194, 0.12); }
+  &:hover { color: var(--destaque); background-color: rgba(74, 194, 194, 0.12); }
 }
 
 @media (max-width: 900px) {
@@ -399,9 +419,11 @@
 
   .welcome-desc { font-size: 0.88rem; }
 
-  .welcome-hint {
-    font-size: 0.84rem;
+  .welcome-busca {
+    font-size: 0.88rem;
     padding: 10px 14px;
+
+    kbd { display: none; }
   }
 
   .welcome-sugestoes { font-size: 0.84rem; padding: 10px 14px; }
@@ -452,7 +474,7 @@
   align-items: center;
   gap: 6px;
   margin-bottom: 6px;
-  color: rgb(74, 194, 194);
+  color: var(--destaque);
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -469,7 +491,7 @@
     overflow-y: auto;
     padding-right: 4px;
     scrollbar-width: thin;
-    scrollbar-color: rgb(80, 90, 96) transparent;
+    scrollbar-color: var(--borda-3) transparent;
   }
 }
 
@@ -480,12 +502,12 @@
   gap: 8px;
   padding: 5px 6px 5px 10px;
   border-radius: 6px;
-  background-color: rgb(55, 65, 71);
-  border: 1px solid rgb(70, 80, 86);
+  background-color: var(--botao);
+  border: 1px solid var(--borda);
   text-decoration: none;
   transition: background-color 0.2s ease;
 
-  &:hover { background-color: rgb(74, 89, 97); }
+  &:hover { background-color: var(--botao-hover); }
 }
 
 .atalho-texto {
@@ -498,13 +520,13 @@
 
 .atalho-cliente {
   flex-shrink: 0;
-  color: rgb(233, 233, 233);
+  color: var(--texto);
   font-weight: bold;
   font-size: 0.85rem;
 }
 
 .atalho-sistema {
-  color: rgb(150, 160, 166);
+  color: var(--texto-4);
   font-size: 0.75rem;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -517,7 +539,7 @@
   padding: 2px 0;
   border: none;
   background: none;
-  color: rgb(74, 194, 194);
+  color: var(--destaque);
   font-family: inherit;
   font-size: 0.75rem;
   cursor: pointer;
@@ -529,7 +551,7 @@
   flex-shrink: 0;
   border: none;
   background: none;
-  color: rgb(130, 142, 150);
+  color: var(--texto-5);
   cursor: pointer;
   padding: 2px 4px;
   border-radius: 6px;
@@ -546,18 +568,18 @@
 .atalho-fora {
   flex-shrink: 0;
   margin-left: auto;
-  color: rgb(255, 120, 130);
+  color: var(--erro-texto);
   font-size: 0.7rem;
 }
 
 .atalhos-exportar {
   grid-column: 1 / -1;
   justify-self: start;
-  color: rgb(150, 160, 166);
+  color: var(--texto-4);
 }
 
 .atalhos-dica {
-  color: rgb(150, 160, 166);
+  color: var(--texto-4);
   font-size: 0.82rem;
 
   i { color: rgb(240, 173, 78); margin-right: 4px; }

@@ -25,14 +25,15 @@
           <div class="est"> {{ grupo.nome }} </div>
           <div class="itens">
             @for (item of grupo.itens; track item) {
-              <div class="li" [class.sem-link]="!item.url">
+              <div class="li" [class.sem-link]="!item.url" [class.fixa]="item.url && favoritos.isFavorito(item.url)">
                 @if (item.url) {
-                  <a [href]="item.url" target="_blank" [attr.title]="foraDoAr(item) ? 'Não respondeu na última verificação' : espaco.get(item.url) === 'aperta' ? dicaVersao(item) : null"> {{ item.cliente }}
+                  <a [href]="item.url" target="_blank" [attr.title]="foraDoAr(item) ? 'Não respondeu na última verificação' : dicaVersao(item)">
+                    <span class="nome">{{ item.cliente }}</span>
                     @if (foraDoAr(item)) {
                       <span class="fora-do-ar"></span>
                     }
                     @if (versao(item)) {
-                      <span class="versao" [class.aperta]="espaco.get(item.url) === 'aperta'" [class.quebra]="espaco.get(item.url) === 'quebra'" [class.desatualizada]="desatualizada(item)" [attr.title]="desatualizada(item) ? dicaVersao(item) : null">{{ versao(item) }}</span>
+                      <span class="versao" [class.desatualizada]="desatualizada(item)" (click)="copiarVersao(item.cliente, sistema, versao(item)!, $event)">{{ versao(item) }}</span>
                     }
                   </a>
                   <span class="li-acoes">

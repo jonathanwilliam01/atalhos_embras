@@ -64,6 +64,11 @@
       <i class="fa-solid fa-download"></i> Instalar app
     </p>
   }
-  <p class="versao" (click)="abrirNotasVersao($event)" title="Ver notas de versão"> {{ versaoAtual }} </p>
+  <p class="versao">
+    <span (click)="abrirNotasVersao($event)" title="Ver notas de versão">{{ versaoAtual }}</span>
+    <button type="button" class="tema" (click)="alternarTema()" [title]="temaClaro ? 'Usar tema escuro' : 'Usar tema claro'">
+      <i class="fa-solid" [class.fa-moon]="temaClaro" [class.fa-sun]="!temaClaro"></i>
+    </button>
+  </p>
   <p class="creditos"> Criado por Jonathan William </p>
 </div>

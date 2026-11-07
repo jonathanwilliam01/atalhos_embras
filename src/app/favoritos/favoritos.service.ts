@@ -23,6 +23,22 @@ function gravar(chave: string, urls: string[]): void {
   try { localStorage.setItem(chave, JSON.stringify(urls)); } catch {}
 }
 
+// url -> "sistema|estado|cliente" dos favoritos e recentes.
+const CHAVE_IDS = 'linksIdentidade';
+
+function lerIds(): Record<string, string> {
+  try {
+    const valor = JSON.parse(localStorage.getItem(CHAVE_IDS) ?? '{}');
+    return valor && typeof valor === 'object' && !Array.isArray(valor) ? valor : {};
+  } catch {
+    return {};
+  }
+}
+
+function gravarIds(ids: Record<string, string>): void {
+  try { localStorage.setItem(CHAVE_IDS, JSON.stringify(ids)); } catch {}
+}
+
 function lerUso(): Record<string, number> {
   try {
     const valor = JSON.parse(localStorage.getItem(CHAVE_USO) ?? '{}');
@@ -44,8 +60,13 @@ export class FavoritosService {
 
   carregar(): void {
     this.uso = lerUso();
-    this.favoritos = this.resolver(ler(CHAVE_FAVORITOS));
-    this.recentes = this.resolver(ler(CHAVE_RECENTES)).filter(r => !this.isFavorito(r.url)).slice(0, MAX_RECENTES);
+    const ids = lerIds();
+    this.favoritos = this.resolver(CHAVE_FAVORITOS, ids);
+    this.recentes = this.resolver(CHAVE_RECENTES, ids).filter(r => !this.isFavorito(r.url)).slice(0, MAX_RECENTES);
+    // Guarda a identidade só dos links salvos, para achar o link de novo se a URL mudar.
+    const urls = [...ler(CHAVE_FAVORITOS), ...ler(CHAVE_RECENTES)];
+    const novos = Object.fromEntries(urls.filter(u => ids[u]).map(u => [u, ids[u]]));
+    if (JSON.stringify(novos) !== JSON.stringify(lerIds())) gravarIds(novos);
   }
 
   isFavorito(url: string): boolean {
@@ -55,7 +76,8 @@ export class FavoritosService {
   alternar(url: string, event?: Event): void {
     event?.preventDefault();
     event?.stopPropagation();
-    const urls = this.favoritos.map(f => f.url);
+    // Parte do que está salvo, não do que aparece: link fora dos JSONs (inativo, removido) não é apagado.
+    const urls = ler(CHAVE_FAVORITOS);
     gravar(CHAVE_FAVORITOS, this.isFavorito(url) ? urls.filter(u => u !== url) : [...urls, url]);
     this.carregar();
   }
@@ -93,7 +115,22 @@ export class FavoritosService {
     return `${location.origin}${location.pathname}?importar=${encodeURIComponent(JSON.stringify(dados))}`;
   }
 
-  private resolver(urls: string[]): ResultadoBusca[] {
-    return urls.map(u => this.searchService.porUrl(u)).filter((r): r is ResultadoBusca => !!r);
+  // URL que mudou no JSON (correção de links) é trocada pela atual do mesmo sistema + estado + cliente.
+  private resolver(chave: string, ids: Record<string, string>): ResultadoBusca[] {
+    const busca = this.searchService;
+    const urls = ler(chave);
+    let mudou = false;
+    const itens = urls.map((u, i) => {
+      let r = busca.porUrl(u);
+      if (!r) {
+        r = (ids[u] && busca.porChave(ids[u])) || busca.porUrlParecida(u);
+        if (r) { urls[i] = r.url; mudou = true; }
+      }
+      if (r) ids[r.url] = busca.chave(r);
+      return r;
+    });
+    if (mudou) gravar(chave, [...new Set(urls)]);
+    const vistos = new Set<string>();
+    return itens.filter((r): r is ResultadoBusca => !!r && !vistos.has(r.url) && !!vistos.add(r.url));
   }
 }

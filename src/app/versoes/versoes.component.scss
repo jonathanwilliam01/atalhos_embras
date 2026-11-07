@@ -10,22 +10,57 @@
   margin-bottom: 4px;
   min-height: 0;
   overflow: auto;
-  border: 1px solid rgb(70, 78, 83);
+  border: 1px solid var(--borda);
   border-radius: 8px;
   scrollbar-width: thin;
-  scrollbar-color: rgb(80, 90, 96) transparent;
+  scrollbar-color: var(--borda-3) transparent;
+}
+
+:host {
+  position: relative;
+}
+
+:host::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: var(--barra-v, 1px);
+  bottom: var(--barra-h, 5px);
+  width: 64px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background: linear-gradient(to left, var(--painel), rgb(var(--painel-rgb) / 0));
+}
+
+:host(.tem-mais)::after {
+  opacity: 1;
+}
+
+.esqueleto {
+  display: inline-block;
+  width: 52px;
+  height: 12px;
+  border-radius: 4px;
+  vertical-align: middle;
+  background: rgb(var(--tinta) / 0.08);
+  animation: piscar 1.2s ease-in-out infinite;
+}
+
+@keyframes piscar {
+  50% { background: rgb(var(--tinta) / 0.16); }
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  color: rgb(220, 226, 230);
+  color: var(--texto);
   font-size: 0.9rem;
 }
 
 th, td {
   padding: 8px 10px;
-  border-bottom: 1px solid rgb(58, 66, 71);
+  border-bottom: 1px solid var(--linha);
   text-align: center;
   white-space: nowrap;
 }
@@ -34,13 +69,13 @@ thead th {
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: rgb(48, 57, 62);
+  background-color: var(--painel-2);
   vertical-align: bottom;
 }
 
 .sistema {
   display: block;
-  color: rgb(233, 233, 233);
+  color: var(--texto);
   font-weight: bold;
 }
 
@@ -50,7 +85,7 @@ thead th {
   padding: 1px 6px;
   border-radius: 4px;
   background: rgba(74, 194, 194, 0.25);
-  color: rgb(140, 225, 225);
+  color: var(--destaque-texto);
   font-size: 0.75rem;
   font-weight: normal;
 
@@ -61,20 +96,20 @@ thead th {
   position: sticky;
   left: 0;
   text-align: left;
-  background-color: rgb(41, 49, 53);
+  background-color: var(--painel);
   font-weight: bold;
 }
 
 thead .col-cliente {
   z-index: 2;
-  background-color: rgb(48, 57, 62);
+  background-color: var(--painel-2);
 }
 
-tbody tr:hover td { background-color: rgb(50, 59, 64); }
+tbody tr:hover td { background-color: var(--hover); }
 
 .estado {
   margin-left: 4px;
-  color: rgb(130, 142, 150);
+  color: var(--texto-5);
   font-size: 0.75rem;
   font-weight: normal;
 }
@@ -93,7 +128,7 @@ td a {
   padding: 1px 6px;
   border-radius: 4px;
   background: rgba(74, 194, 194, 0.25);
-  color: rgb(140, 225, 225);
+  color: var(--destaque-texto);
   font-size: 0.8rem;
 
   &.desatualizada {
@@ -103,7 +138,7 @@ td a {
 }
 
 .sem-versao {
-  color: rgb(110, 122, 130);
+  color: var(--texto-5);
   font-size: 0.75rem;
 }
 
@@ -118,5 +153,5 @@ td a {
 
 .vazio {
   padding: 20px;
-  color: rgb(180, 190, 196);
+  color: var(--texto-3);
 }

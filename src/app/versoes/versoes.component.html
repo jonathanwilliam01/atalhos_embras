@@ -26,7 +26,7 @@
                   @switch (versao(c, l)) {
                     @case (false) { <span class="fora-do-ar" title="Não respondeu na última verificação"></span> }
                     @case (null) { <span class="sem-versao">sem versão</span> }
-                    @case (undefined) { <span class="sem-versao">…</span> }
+                    @case (undefined) { <span class="esqueleto"></span> }
                     @default { <span class="versao" [class.desatualizada]="desatualizada(c, l)">{{ versao(c, l) }}</span> }
                   }
                 </a>

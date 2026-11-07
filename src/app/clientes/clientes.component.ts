@@ -5,6 +5,7 @@ import { VersoesComponent } from '../versoes/versoes.component';
 import { VersoesClientesService } from '../versoes/versoes-clientes.service';
 import { CHAVE_CLIENTES, FavoritosService } from '../favoritos/favoritos.service';
 import fichas from './clientes.json';
+import { copiarVersao } from '../shared/copiar-versao';
 
 // Gerado por scripts/fichas-clientes.mjs a partir do site de cada prefeitura.
 interface Ficha {
@@ -49,6 +50,7 @@ export class ClientesComponent implements OnInit {
   semBrasao = new Set<string>();
   linkCopiado: string | null = null;
   readonly versoes = inject(VersoesClientesService);
+  readonly copiarVersao = copiarVersao;
   readonly favoritos = inject(FavoritosService);
   private platformId = inject(PLATFORM_ID);
 

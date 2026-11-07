@@ -190,6 +190,23 @@
       "descricao": [
         { "tipo": "novidade", "texto": "Botão Compartilhar na tela inicial: envia um convite com o link do Atalhos Embras para um colega." }
       ]
+    },
+    {
+      "versao": "V4.26.11.03",
+      "data": "07/11/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Tema claro: o botão ao lado da versão, no rodapé do menu, alterna entre escuro e claro." },
+        { "tipo": "novidade", "texto": "Clicar na versão de um link copia \"Cliente · Sistema · versão\", pronto para colar em chamado ou conversa." },
+        { "tipo": "novidade", "texto": "A tela inicial ganhou um campo de busca: clique e digite o cliente, sistema ou versão." },
+        { "tipo": "melhoria", "texto": "Nas listas de cada estado, a versão fica alinhada à direita e o nome do cliente não é mais cortado." },
+        { "tipo": "melhoria", "texto": "Fotos de fundo mais escuras e versões com mais contraste, para ler melhor os nomes." },
+        { "tipo": "melhoria", "texto": "O fim de cada lista esmaece quando há mais clientes para rolar." },
+        { "tipo": "melhoria", "texto": "No celular, a lista de cada estado aparece inteira, sem rolagem dentro do cartão." },
+        { "tipo": "melhoria", "texto": "Na tela Versões, a borda direita esmaece enquanto houver sistemas escondidos e as versões em carregamento aparecem com animação." },
+        { "tipo": "correcao", "texto": "Favoritos e Recentes não se perdem mais quando o endereço de um link é corrigido: o portal acha o link novo do mesmo cliente e sistema." },
+        { "tipo": "correcao", "texto": "Favoritar ou desfavoritar um link não apaga mais os favoritos que estavam temporariamente fora da lista." },
+        { "tipo": "correcao", "texto": "O logo geoSiap do fundo não sai mais cortado na tela inicial." }
+      ]
     }
   ]
 }

@@ -144,7 +144,7 @@
                 <span class="badge-homolog"> Homolog. </span>
               }
               @if (info.versao) {
-                <span class="chip-versao" [class.desatualizada]="info.desatualizada" [attr.title]="info.desatualizada ? 'Abaixo da versão atual' : null">{{ info.versao }}</span>
+                <span class="chip-versao" [class.desatualizada]="info.desatualizada" (click)="copiarVersao(c.cliente, l.nomeSistema, info.versao, $event)" [attr.title]="(info.desatualizada ? 'Abaixo da versão atual. ' : '') + 'Clique para copiar'">{{ info.versao }}</span>
               } @else if (info.versao === false) {
                 <span class="chip-fora" title="Não respondeu na última verificação"></span>
               }

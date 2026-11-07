@@ -15,10 +15,10 @@
   max-width: 520px;
   max-height: 85vh;
   margin: 0;
-  background-color: rgb(41, 49, 53);
-  border: 1px solid rgb(80, 80, 80);
+  background-color: var(--painel);
+  border: 1px solid var(--borda-2);
   border-radius: 10px;
-  box-shadow: 4px 3px 15px 0px black;
+  box-shadow: 4px 3px 15px 0px var(--sombra);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   overflow: hidden;
 }
@@ -28,30 +28,30 @@
   align-items: center;
   justify-content: space-between;
   padding: 18px 22px;
-  border-bottom: 1px solid rgb(80, 80, 80);
+  border-bottom: 1px solid var(--borda-2);
 
   h2 {
     margin: 0;
-    color: rgb(233, 233, 233);
+    color: var(--texto);
     font-size: 1.2rem;
     display: flex;
     align-items: center;
     gap: 10px;
 
-    i { color: rgb(74, 194, 194); }
+    i { color: var(--destaque); }
   }
 }
 
 .sug-close {
   background: none;
   border: none;
-  color: rgb(180, 190, 196);
+  color: var(--texto-3);
   font-size: 1.1rem;
   cursor: pointer;
   padding: 6px 8px;
   border-radius: 6px;
 
-  &:hover { color: rgb(74, 194, 194); background-color: rgba(74, 194, 194, 0.12); }
+  &:hover { color: var(--destaque); background-color: rgba(74, 194, 194, 0.12); }
 }
 
 .sug-body {
@@ -69,22 +69,22 @@
 }
 
 .sug-tipo {
-  border: 1px solid rgb(80, 90, 96);
+  border: 1px solid var(--borda-3);
   border-radius: 16px;
   padding: 5px 14px;
   background: none;
-  color: rgb(200, 208, 212);
+  color: var(--texto-2);
   font-family: inherit;
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s ease;
 
-  &:hover { border-color: rgb(74, 194, 194); }
+  &:hover { border-color: var(--destaque); }
 
   &.ativo {
-    border-color: rgb(74, 194, 194);
+    border-color: var(--destaque);
     background-color: rgba(74, 194, 194, 0.18);
-    color: rgb(74, 194, 194);
+    color: var(--destaque);
     font-weight: bold;
   }
 }
@@ -93,32 +93,32 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  color: rgb(200, 208, 212);
+  color: var(--texto-2);
   font-size: 0.88rem;
   font-weight: bold;
 
-  small { font-weight: normal; color: rgb(140, 150, 156); }
+  small { font-weight: normal; color: var(--texto-4); }
 
   input, textarea {
     width: 100%;
     padding: 9px 12px;
-    border: 1px solid rgb(80, 90, 96);
+    border: 1px solid var(--borda-3);
     border-radius: 6px;
-    background-color: rgb(33, 40, 44);
-    color: rgb(233, 233, 233);
+    background-color: var(--campo);
+    color: var(--texto);
     font-family: inherit;
     font-size: 0.92rem;
     font-weight: normal;
     resize: vertical;
 
-    &::placeholder { color: rgb(120, 130, 136); }
-    &:focus { outline: none; border-color: rgb(74, 194, 194); }
+    &::placeholder { color: var(--texto-5); }
+    &:focus { outline: none; border-color: var(--destaque); }
   }
 }
 
 .sug-dica {
   margin: 0;
-  color: rgb(140, 150, 156);
+  color: var(--texto-4);
   font-size: 0.8rem;
 }
 
@@ -127,7 +127,7 @@
   justify-content: flex-end;
   gap: 10px;
   padding: 12px 20px;
-  border-top: 1px solid rgb(70, 78, 83);
+  border-top: 1px solid var(--borda);
 }
 
 .sug-cancelar, .sug-enviar {
@@ -139,11 +139,11 @@
 }
 
 .sug-cancelar {
-  border: 1px solid rgb(80, 90, 96);
+  border: 1px solid var(--borda-3);
   background: none;
-  color: rgb(200, 208, 212);
+  color: var(--texto-2);
 
-  &:hover { border-color: rgb(140, 150, 156); }
+  &:hover { border-color: var(--texto-4); }
 }
 
 .sug-enviar {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, ElementRef, Input, afterNextRender, inject } from '@angular/core';
 import { TELAS } from '../sistemas';
 import { ESTADOS, SUFIXO_HOMOLOG, normalizar, temAcento } from '../search/search.service';
 import { ColunaVersao, VersoesClientesService } from './versoes-clientes.service';
@@ -28,6 +28,25 @@ export class VersoesComponent {
   readonly colunas = this.versoes.colunas;
   private todas = montarLinhas();
   private ultimas?: { chave: unknown[]; linhas: Linha[] };
+
+  // Esmaecido na borda direita enquanto houver colunas escondidas (classe direto no DOM, sem ciclo de detecção).
+  constructor() {
+    const host = inject(ElementRef<HTMLElement>).nativeElement;
+    const destroy = inject(DestroyRef);
+    afterNextRender(() => {
+      const caixa: HTMLElement = host.querySelector('.tabela-rolagem');
+      const medir = () => {
+        host.classList.toggle('tem-mais', caixa.scrollLeft + caixa.clientWidth < caixa.scrollWidth - 2);
+        host.style.setProperty('--barra-v', `${caixa.offsetWidth - caixa.clientWidth - 1}px`);
+        host.style.setProperty('--barra-h', `${caixa.offsetHeight - caixa.clientHeight + 3}px`);
+      };
+      const obs = new ResizeObserver(medir);
+      obs.observe(caixa);
+      obs.observe(caixa.querySelector('table')!);
+      caixa.addEventListener('scroll', medir, { passive: true });
+      destroy.onDestroy(() => obs.disconnect());
+    });
+  }
 
   // O getter roda a cada ciclo: só refiltra quando filtro, pendências ou versões mudam.
   get linhas(): Linha[] {

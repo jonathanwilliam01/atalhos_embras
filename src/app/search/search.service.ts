@@ -31,6 +31,15 @@ export function host(url: string): string {
   try { return new URL(url).host; } catch { return url; }
 }
 
+function semVariacao(url: string): string {
+  try {
+    const u = new URL(url);
+    return `${u.hostname.replace(/^(www\.)?pm/, '')}${u.pathname.replace(/\/+$/, '')}${u.search}`.toLowerCase();
+  } catch {
+    return url;
+  }
+}
+
 export function slug(texto: string): string {
   return normalizar(texto).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
@@ -95,6 +104,22 @@ export class SearchService {
 
   porUrl(url: string): ResultadoBusca | undefined {
     return this.indice.find(r => r.url === url);
+  }
+
+  // Identidade do link que não muda quando a URL é corrigida: sistema + estado + cliente.
+  chave(r: ResultadoBusca): string {
+    return `${r.sistema}|${r.local}|${r.cliente}`;
+  }
+
+  porChave(chave: string): ResultadoBusca | undefined {
+    return this.indice.find(r => this.chave(r) === chave);
+  }
+
+  // URL antiga sem identidade salva: aceita só se um único link bate ignorando http/https, porta e o "pm" do servidor.
+  porUrlParecida(url: string): ResultadoBusca | undefined {
+    const alvo = semVariacao(url);
+    const achados = this.indice.filter(r => semVariacao(r.url) === alvo);
+    return achados.length === 1 ? achados[0] : undefined;
   }
 
   clientes(): GrupoBusca[] {

@@ -3,6 +3,63 @@
 @import '@fortawesome/fontawesome-free/css/solid.min.css';
 @import '@fortawesome/fontawesome-free/css/regular.min.css';
 
+// Cores do tema. Escuro é o padrão; o claro vem do botão no rodapé do menu (localStorage "tema").
+// As listas sobre as fotos dos estados continuam escuras nos dois temas.
+:root {
+  --painel-rgb: 41 49 53;
+  --painel: rgb(var(--painel-rgb));
+  --painel-2: rgb(48, 57, 62);
+  --campo: rgb(30, 36, 39);
+  --campo-escuro: rgba(0, 0, 0, 0.2);
+  --hover: rgb(50, 59, 64);
+  --botao: rgb(55, 65, 71);
+  --botao-hover: rgb(74, 89, 97);
+  --linha: rgb(58, 66, 71);
+  --borda: rgb(70, 78, 83);
+  --borda-2: rgb(80, 80, 80);
+  --borda-3: rgb(80, 90, 96);
+  --texto: rgb(233, 233, 233);
+  --texto-2: rgb(200, 208, 212);
+  --texto-3: rgb(180, 190, 196);
+  --texto-4: rgb(150, 160, 166);
+  --texto-5: rgb(130, 142, 150);
+  --destaque: rgb(74, 194, 194);
+  --destaque-texto: rgb(140, 225, 225);
+  --erro-texto: rgb(255, 120, 130);
+  --azul-texto: rgb(150, 180, 255);
+  --tinta: 255 255 255;
+  --sombra: black;
+}
+
+[data-tema="claro"] {
+  --painel-rgb: 251 252 253;
+  --painel-2: rgb(239, 243, 245);
+  --campo: rgb(255, 255, 255);
+  --campo-escuro: rgb(255, 255, 255);
+  --hover: rgb(232, 238, 241);
+  --botao: rgb(228, 234, 238);
+  --botao-hover: rgb(212, 221, 227);
+  --linha: rgb(226, 231, 235);
+  --borda: rgb(206, 214, 219);
+  --borda-2: rgb(200, 207, 212);
+  --borda-3: rgb(186, 195, 201);
+  --texto: rgb(28, 36, 40);
+  --texto-2: rgb(48, 58, 64);
+  --texto-3: rgb(64, 74, 80);
+  --texto-4: rgb(88, 98, 104);
+  --texto-5: rgb(104, 114, 120);
+  --destaque: rgb(14, 122, 122);
+  --destaque-texto: rgb(8, 96, 96);
+  --erro-texto: rgb(178, 28, 44);
+  --azul-texto: rgb(40, 80, 180);
+  --tinta: 0 0 0;
+  --sombra: rgba(0, 0, 0, 0.18);
+  color-scheme: light;
+
+  // Logo branco vira escuro sobre o fundo claro.
+  img[src*="Logo_(white)"] { filter: brightness(0.25); }
+}
+
 /* ===================== Base / Reset ===================== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -39,7 +96,8 @@ html {
   height: 100%;
   overflow: hidden;
   background-image: url('/assets/download.webp');
-  background-position: center;
+  // Âncora à direita: o logo geoSiap não sai cortado em tela 16:10.
+  background-position: right bottom;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -103,10 +161,6 @@ app-root > * {
     gap: 16px !important;
   }
 
-  .overlay {
-    background-color: rgba(0, 0, 0, 0.55) !important;
-  }
-
   .est {
     width: auto !important;
     margin: 10px 16px 6px 16px !important;
@@ -127,7 +181,6 @@ app-root > * {
 
   .li a {
     margin-left: 0 !important;
-    display: block;
   }
 }
 
@@ -138,4 +191,27 @@ app-root > * {
     padding: 10px !important;
   }
   .titulo { font-size: 20px !important; }
+}
+
+// Aviso de "Copiado" (versão): criado direto no body por shared/copiar-versao.ts.
+.aviso-copia {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 1000;
+  max-width: calc(100% - 32px);
+  padding: 10px 16px;
+  border: 1px solid rgba(74, 194, 194, 0.45);
+  border-radius: 8px;
+  background: var(--painel-2);
+  color: var(--texto);
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 16px var(--sombra);
+  transform: translateX(-50%);
+  animation: aviso-copia-entra 0.2s ease-out;
+}
+
+@keyframes aviso-copia-entra {
+  from { opacity: 0; transform: translate(-50%, 8px); }
 }
