@@ -1,64 +1,58 @@
+@use 'sass:color';
 // Sem brands nem compatibilidade v4: o único ícone de marca (GitHub) é o .icone-github abaixo.
 @import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 @import '@fortawesome/fontawesome-free/css/solid.min.css';
 @import '@fortawesome/fontawesome-free/css/regular.min.css';
 
-// Cores do tema. Escuro é o padrão; o claro vem do botão no rodapé do menu (localStorage "tema").
-// As listas sobre as fotos dos estados continuam escuras nos dois temas.
-:root {
-  --painel-rgb: 41 49 53;
+// Temas escuros: cada um nasce de 2 cores (painel e destaque); o resto é derivado.
+// Escolha no rodapé do menu (localStorage "tema", aplicado no index.html antes do Angular).
+// As listas sobre as fotos dos estados continuam escuras em todos.
+@mixin tema($painel, $destaque) {
+  $branco: #fff;
+  --painel-rgb: #{color.channel($painel, "red", $space: rgb)} #{color.channel($painel, "green", $space: rgb)} #{color.channel($painel, "blue", $space: rgb)};
   --painel: rgb(var(--painel-rgb));
-  --painel-2: rgb(48, 57, 62);
-  --campo: rgb(30, 36, 39);
+  --painel-2: #{color.mix($branco, $painel, 4%)};
+  --campo: #{color.mix(#000, $painel, 26%)};
   --campo-escuro: rgba(0, 0, 0, 0.2);
-  --hover: rgb(50, 59, 64);
-  --botao: rgb(55, 65, 71);
-  --botao-hover: rgb(74, 89, 97);
-  --linha: rgb(58, 66, 71);
-  --borda: rgb(70, 78, 83);
-  --borda-2: rgb(80, 80, 80);
-  --borda-3: rgb(80, 90, 96);
+  --hover: #{color.mix($branco, $painel, 5%)};
+  --botao: #{color.mix($branco, $painel, 8%)};
+  --botao-hover: #{color.mix($branco, $painel, 18%)};
+  --linha: #{color.mix($branco, $painel, 8%)};
+  --borda: #{color.mix($branco, $painel, 14%)};
+  --borda-2: #{color.mix($branco, $painel, 16%)};
+  --borda-3: #{color.mix($branco, $painel, 19%)};
   --texto: rgb(233, 233, 233);
-  --texto-2: rgb(200, 208, 212);
-  --texto-3: rgb(180, 190, 196);
-  --texto-4: rgb(150, 160, 166);
-  --texto-5: rgb(130, 142, 150);
-  --destaque: rgb(74, 194, 194);
-  --destaque-texto: rgb(140, 225, 225);
+  --texto-2: #{color.mix($branco, $painel, 78%)};
+  --texto-3: #{color.mix($branco, $painel, 70%)};
+  --texto-4: #{color.mix($branco, $painel, 55%)};
+  --texto-5: #{color.mix($branco, $painel, 47%)};
+  --destaque-rgb: #{color.channel($destaque, "red", $space: rgb)} #{color.channel($destaque, "green", $space: rgb)} #{color.channel($destaque, "blue", $space: rgb)};
+  --destaque: rgb(var(--destaque-rgb));
+  --destaque-claro: #{color.mix($branco, $destaque, 10%)};
+  --destaque-escuro: #{color.mix(#000, $destaque, 30%)};
+  --destaque-texto: #{color.mix($branco, $destaque, 45%)};
+  --sobre-destaque: #{color.mix(#000, $painel, 45%)};
+  --chip-fundo: #{rgba(color.mix(#000, $destaque, 80%), 0.85)};
+}
+
+:root {
+  @include tema(#293135, #4ac2c2);
   --erro-texto: rgb(255, 120, 130);
   --azul-texto: rgb(150, 180, 255);
   --tinta: 255 255 255;
   --sombra: black;
+  color-scheme: dark;
 }
 
-[data-tema="claro"] {
-  --painel-rgb: 251 252 253;
-  --painel-2: rgb(239, 243, 245);
-  --campo: rgb(255, 255, 255);
-  --campo-escuro: rgb(255, 255, 255);
-  --hover: rgb(232, 238, 241);
-  --botao: rgb(228, 234, 238);
-  --botao-hover: rgb(212, 221, 227);
-  --linha: rgb(226, 231, 235);
-  --borda: rgb(206, 214, 219);
-  --borda-2: rgb(200, 207, 212);
-  --borda-3: rgb(186, 195, 201);
-  --texto: rgb(28, 36, 40);
-  --texto-2: rgb(48, 58, 64);
-  --texto-3: rgb(64, 74, 80);
-  --texto-4: rgb(88, 98, 104);
-  --texto-5: rgb(104, 114, 120);
-  --destaque: rgb(14, 122, 122);
-  --destaque-texto: rgb(8, 96, 96);
-  --erro-texto: rgb(178, 28, 44);
-  --azul-texto: rgb(40, 80, 180);
-  --tinta: 0 0 0;
-  --sombra: rgba(0, 0, 0, 0.18);
-  color-scheme: light;
-
-  // Logo branco vira escuro sobre o fundo claro.
-  img[src*="Logo_(white)"] { filter: brightness(0.25); }
-}
+// Também valem num elemento solto: as amostras do seletor usam [data-tema].
+[data-tema="grafite"] { @include tema(#293135, #4ac2c2); }
+[data-tema="nanquim"] { @include tema(#17191c, #3fd0b4); }
+[data-tema="meia-noite"] { @include tema(#18213a, #74a9ff); }
+[data-tema="floresta"] { @include tema(#17261f, #5fd08f); }
+[data-tema="ameixa"] { @include tema(#251d33, #b48dff); }
+[data-tema="oceano"] { @include tema(#0f2a35, #4cc9f0); }
+[data-tema="vinho"] { @include tema(#2c161b, #ff8fa6); }
+[data-tema="cafe"] { @include tema(#251d18, #e2b07e); }
 
 /* ===================== Base / Reset ===================== */
 *, *::before, *::after {

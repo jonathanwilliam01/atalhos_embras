@@ -71,7 +71,7 @@
   cursor: copy;
   padding: 0 6px;
   border-radius: 8px;
-  background: rgba(74, 194, 194, 0.22);
+  background: rgb(var(--destaque-rgb) / 0.22);
   color: var(--destaque-texto);
   font-size: 0.7rem;
 
@@ -230,7 +230,7 @@
 
   // Sem translate no hover: a 1ª linha passaria por baixo do topo fixo.
   &:hover, &.selecionado {
-    border-color: rgba(74, 194, 194, 0.7);
+    border-color: rgb(var(--destaque-rgb) / 0.7);
     background-color: var(--botao-hover);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
   }
@@ -485,7 +485,7 @@
 
   &:hover, &.ativa {
     color: var(--destaque);
-    border-color: rgba(74, 194, 194, 0.5);
+    border-color: rgb(var(--destaque-rgb) / 0.5);
   }
 
   &.ativa { color: rgb(240, 200, 80); }
@@ -541,4 +541,47 @@
   .painel-rodape { display: none; }
 
   .cliente-estrela { opacity: 1; }
+}
+
+.tem-anotacao {
+  margin-left: 6px;
+  color: var(--destaque);
+  font-size: 0.8em;
+}
+
+.anotacao {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--linha);
+
+  .anotacao-titulo {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    color: var(--texto-3);
+    font-size: 0.8rem;
+    i { color: var(--destaque); }
+    small { margin-left: auto; color: var(--texto-5); font-size: 0.72rem; }
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 44px;
+    max-height: 30vh;
+    resize: vertical;
+    field-sizing: content;
+    padding: 8px 10px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    background-color: var(--campo);
+    color: var(--texto);
+    font: inherit;
+    font-size: 0.85rem;
+    line-height: 1.4;
+
+    &::placeholder { color: var(--texto-5); }
+    &:focus { outline: none; border-color: var(--destaque); }
+  }
 }

@@ -88,6 +88,9 @@
     <span class="cliente-info">
       <span class="estado"> {{ c.estado }} </span>
       {{ c.itens.length }} {{ c.itens.length === 1 ? 'link' : 'links' }}
+      @if (anotacoes[c.id]) {
+        <i class="fa-regular fa-note-sticky tem-anotacao" title="Tem anotação"></i>
+      }
       @if (pendentes) {
         <span class="pendente" [title]="pendentes + (pendentes === 1 ? ' sistema desatualizado' : ' sistemas desatualizados') + ' ou sem resposta'">
           <i class="fa-solid fa-triangle-exclamation"></i> {{ pendentes }}
@@ -133,6 +136,11 @@
         }
       </div>
     }
+    <label class="anotacao">
+      <span class="anotacao-titulo"><i class="fa-regular fa-note-sticky"></i> Minhas anotações <small>só neste navegador</small></span>
+      <textarea rows="2" placeholder="Login de teste, contato, observação…" [value]="anotacoes[c.id] ?? ''"
+        (input)="anotar(c, $any($event.target).value)"></textarea>
+    </label>
     <div class="painel-lista">
       @for (l of c.itens; track l.url) {
         @let info = versoes.info(l.url);

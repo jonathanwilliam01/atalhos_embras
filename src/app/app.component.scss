@@ -156,8 +156,8 @@
 
 .busca-item-copy:hover {
   color: var(--destaque);
-  border-color: rgba(74, 194, 194, 0.5);
-  background-color: rgba(74, 194, 194, 0.12);
+  border-color: rgb(var(--destaque-rgb) / 0.5);
+  background-color: rgb(var(--destaque-rgb) / 0.12);
 }
 
 .busca-item-cliente {
@@ -168,7 +168,7 @@
   cursor: copy;
   padding: 1px 6px;
   border-radius: 8px;
-  background: rgba(74, 194, 194, 0.22);
+  background: rgb(var(--destaque-rgb) / 0.22);
   color: var(--destaque-texto);
   font-size: 0.75rem;
   white-space: nowrap;
@@ -243,7 +243,7 @@
   width: 100%;
   max-width: 480px;
   padding: 12px 16px;
-  border: 1px solid rgba(74, 194, 194, 0.45);
+  border: 1px solid rgb(var(--destaque-rgb) / 0.45);
   border-radius: 8px;
   background-color: var(--campo-escuro);
   color: var(--texto-4);
@@ -266,7 +266,7 @@
 
   &:hover, &:focus-visible {
     border-color: var(--destaque);
-    background-color: rgba(74, 194, 194, 0.08);
+    background-color: rgb(var(--destaque-rgb) / 0.08);
   }
 }
 
@@ -274,23 +274,23 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, rgb(84, 210, 210), rgb(50, 150, 150));
+  background: linear-gradient(135deg, var(--destaque-claro), var(--destaque-escuro));
   border: none;
   border-radius: 20px;
   padding: 12px 16px;
-  color: rgb(22, 30, 33);
+  color: var(--sobre-destaque);
   font-size: 0.82rem;
   font-weight: bold;
   font-family: inherit;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(74, 194, 194, 0.4);
+  box-shadow: 0 3px 10px rgb(var(--destaque-rgb) / 0.4);
   transition: all 0.2s ease;
 
-  i { color: rgb(22, 30, 33); }
+  i { color: var(--sobre-destaque); }
 
   &:hover {
     transform: translateY(-1px);
-    box-shadow: 0 5px 14px rgba(74, 194, 194, 0.55);
+    box-shadow: 0 5px 14px rgb(var(--destaque-rgb) / 0.55);
   }
 }
 
@@ -302,19 +302,19 @@
 
 .welcome-compartilhar-btn {
   background: transparent;
-  border: 1px solid rgba(74, 194, 194, 0.6);
-  color: rgb(84, 210, 210);
+  border: 1px solid rgb(var(--destaque-rgb) / 0.6);
+  color: var(--destaque-claro);
   box-shadow: none;
 
   i { color: inherit; }
-  &:hover { box-shadow: none; background-color: rgba(74, 194, 194, 0.12); }
+  &:hover { box-shadow: none; background-color: rgb(var(--destaque-rgb) / 0.12); }
 }
 
 .welcome-notas-btn-versao {
   background-color: var(--campo-escuro);
   border-radius: 10px;
   padding: 2px 8px;
-  color: rgb(22, 30, 33);
+  color: var(--sobre-destaque);
   font-size: 0.72rem;
 }
 
@@ -323,8 +323,8 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  background-color: rgba(74, 194, 194, 0.08);
-  border: 1px solid rgba(74, 194, 194, 0.3);
+  background-color: rgb(var(--destaque-rgb) / 0.08);
+  border: 1px solid rgb(var(--destaque-rgb) / 0.3);
   border-radius: 8px;
   padding: 12px 16px;
   color: var(--texto-3);
@@ -371,7 +371,7 @@
   border-radius: 4px;
   transition: background-color 0.2s ease;
 
-  &:hover { background-color: rgba(74, 194, 194, 0.12); }
+  &:hover { background-color: rgb(var(--destaque-rgb) / 0.12); }
 }
 
 .copy-btn {
@@ -384,7 +384,7 @@
   border-radius: 4px;
   transition: color 0.2s ease, background-color 0.2s ease;
 
-  &:hover { color: var(--destaque); background-color: rgba(74, 194, 194, 0.12); }
+  &:hover { color: var(--destaque); background-color: rgb(var(--destaque-rgb) / 0.12); }
 }
 
 @media (max-width: 900px) {

@@ -207,6 +207,17 @@
         { "tipo": "correcao", "texto": "Favoritar ou desfavoritar um link não apaga mais os favoritos que estavam temporariamente fora da lista." },
         { "tipo": "correcao", "texto": "O logo geoSiap do fundo não sai mais cortado na tela inicial." }
       ]
+    },
+    {
+      "versao": "V4.26.11.04",
+      "data": "09/11/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Temas de cores: o botão de paleta no rodapé do menu troca entre Grafite, Nanquim, Meia-noite, Oceano, Floresta, Ameixa, Vinho e Café. O tema claro saiu." },
+        { "tipo": "novidade", "texto": "Decoração por época do ano, ligada sozinha pela data: gorro e neve no Natal, chapéu de festa e fogos no Ano Novo, além de Carnaval, Páscoa, Festa Junina e Halloween." },
+        { "tipo": "novidade", "texto": "Minhas anotações: no painel de cada cliente (tela Clientes) dá para guardar login de teste, contato ou qualquer observação. Cliente com anotação ganha um ícone no cartão e a busca da tela também acha pelo texto anotado." },
+        { "tipo": "melhoria", "texto": "O link de levar para outro navegador agora leva também as anotações e o tema escolhido." },
+        { "tipo": "correcao", "texto": "Nomes longos não são mais partidos no meio da palavra nas listas dos estados: quando falta espaço, a versão desce para a linha de baixo. Nessas listas, alguns nomes aparecem abreviados: Pinda, Guará, Caraguá, Cachoeira P., Pedro Toledo e Redenção (a busca continua achando pelo nome completo)." }
+      ]
     }
   ]
 }

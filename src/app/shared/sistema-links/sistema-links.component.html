@@ -28,7 +28,7 @@
               <div class="li" [class.sem-link]="!item.url" [class.fixa]="item.url && favoritos.isFavorito(item.url)">
                 @if (item.url) {
                   <a [href]="item.url" target="_blank" [attr.title]="foraDoAr(item) ? 'Não respondeu na última verificação' : dicaVersao(item)">
-                    <span class="nome">{{ item.cliente }}</span>
+                    <span class="nome" [style.--letras]="letras(nomeCurto(item.cliente))">{{ nomeCurto(item.cliente) }}</span>
                     @if (foraDoAr(item)) {
                       <span class="fora-do-ar"></span>
                     }

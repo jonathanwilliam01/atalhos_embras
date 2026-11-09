@@ -84,7 +84,7 @@ thead th {
   margin-top: 4px;
   padding: 1px 6px;
   border-radius: 4px;
-  background: rgba(74, 194, 194, 0.25);
+  background: rgb(var(--destaque-rgb) / 0.25);
   color: var(--destaque-texto);
   font-size: 0.75rem;
   font-weight: normal;
@@ -121,13 +121,13 @@ td a {
   border-radius: 4px;
   padding: 2px 4px;
 
-  &:hover { background-color: rgba(74, 194, 194, 0.12); }
+  &:hover { background-color: rgb(var(--destaque-rgb) / 0.12); }
 }
 
 .versao {
   padding: 1px 6px;
   border-radius: 4px;
-  background: rgba(74, 194, 194, 0.25);
+  background: rgb(var(--destaque-rgb) / 0.25);
   color: var(--destaque-texto);
   font-size: 0.8rem;
 

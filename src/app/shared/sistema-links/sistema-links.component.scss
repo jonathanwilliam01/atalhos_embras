@@ -82,7 +82,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
-  scrollbar-color: rgb(74, 194, 194) rgba(255, 255, 255, 0.15);
+  scrollbar-color: var(--destaque) rgba(255, 255, 255, 0.15);
 }
 
 .blocos:has(> .bloco:nth-child(4)){
@@ -145,7 +145,8 @@
   padding-bottom: 32px;
   overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-color: rgb(74, 194, 194) rgba(255, 255, 255, 0.15);
+  scrollbar-color: var(--destaque) rgba(255, 255, 255, 0.15);
+  container-type: inline-size;
   mask-image: linear-gradient(to bottom, #000 calc(100% - 32px), transparent);
 }
 
@@ -164,8 +165,9 @@
 // Nome quebra linha em vez de cortar; versão fica sempre na ponta direita.
 .li a{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 2px 8px;
   flex: 1 1 auto;
   min-width: 0;
   margin-left: 3%;
@@ -186,27 +188,31 @@
 }
 
 .nome{
-  flex: 1 1 auto;
-  min-width: 0;
+  flex: 1 1 0;
+  min-width: min-content;
   line-height: 1.15;
-  overflow-wrap: anywhere;
+  // Nunca parte palavra: se a maior não cabe ao lado da versão, a versão desce;
+  // se não cabe nem na linha toda, a fonte encolhe.
+  font-size: min(1em, calc(84cqi / (var(--letras, 10) * 0.6)));
+  overflow-wrap: break-word;
 }
 
 // Acima do ::after do link: o clique copia em vez de abrir.
 .versao{
   position: relative;
   z-index: 1;
+  margin-left: auto;
   cursor: copy;
   flex-shrink: 0;
   padding: 1px 6px;
-  border: 1px solid rgba(74, 194, 194, 0.45);
+  border: 1px solid rgb(var(--destaque-rgb) / 0.45);
   border-radius: 4px;
   font-size: 0.5em;
   font-weight: 600;
   line-height: 1.5;
   text-shadow: none;
-  background: rgba(10, 45, 45, 0.85);
-  color: rgb(150, 235, 235);
+  background: var(--chip-fundo);
+  color: var(--destaque-texto);
 }
 
 .versao.desatualizada{
@@ -269,8 +275,8 @@
 }
 
 .li-copy:hover{
-  background: rgba(74, 194, 194, 0.35);
-  color: rgb(74, 194, 194);
+  background: rgb(var(--destaque-rgb) / 0.35);
+  color: var(--destaque);
 }
 
 .li-fav.ativa{

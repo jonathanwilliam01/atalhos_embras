@@ -1,11 +1,10 @@
 import { Component, Output, EventEmitter, HostListener, ElementRef, ViewChild, OnInit, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ULTIMA_VERSAO } from '../notas-versao/notas-versao.component';
+import { TEMAS, aplicarTema, temaAtual } from '../tema';
 import { AREAS, Area, ItemMenu, MENU, SECOES, Secao, TELAS_GERAIS, Tela, naArea, telaPorId } from '../sistemas';
 
 const CHAVE_AREA = 'areaMenu';
-const CHAVE_TEMA = 'tema';
-
 @Component({
     selector: 'app-header',
     imports: [],
@@ -29,7 +28,9 @@ export class HeaderComponent implements OnInit {
   private telaAnterior: { tela: string; grupo: string | null } | null = null;
 
   versaoAtual = ULTIMA_VERSAO?.versao ?? '';
-  temaClaro = false;
+  tema = 'grafite';
+  escolhendoTema = false;
+  readonly temas = TEMAS;
 
   private platformId = inject(PLATFORM_ID);
   readonly menu = MENU;
@@ -44,22 +45,15 @@ export class HeaderComponent implements OnInit {
     // Fora do ciclo atual: abrir a tela altera o AppComponent.
     if (!isPlatformBrowser(this.platformId)) return;
     try { this.area = (localStorage.getItem(CHAVE_AREA) ?? '') as Area | ''; } catch {}
-    this.temaClaro = document.documentElement.getAttribute('data-tema') === 'claro';
-    this.aplicarCorDaBarra();
+    this.tema = temaAtual();
+    aplicarTema(this.tema);
     setTimeout(() => this.abrirTelaDaUrl());
   }
 
   // O index.html aplica o tema salvo antes do Angular carregar.
-  alternarTema() {
-    this.temaClaro = !this.temaClaro;
-    if (this.temaClaro) document.documentElement.setAttribute('data-tema', 'claro');
-    else document.documentElement.removeAttribute('data-tema');
-    try { localStorage.setItem(CHAVE_TEMA, this.temaClaro ? 'claro' : 'escuro'); } catch {}
-    this.aplicarCorDaBarra();
-  }
-
-  private aplicarCorDaBarra() {
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', this.temaClaro ? '#fbfcfd' : '#293135');
+  escolherTema(id: string) {
+    this.tema = id;
+    aplicarTema(id);
   }
 
   mudarArea(area: Area | '') {
@@ -204,6 +198,7 @@ export class HeaderComponent implements OnInit {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.openSubmenu = null;
     }
+    if (!(event.target as Element).closest?.('.temas, .tema')) this.escolhendoTema = false;
   }
 }
 

@@ -1,0 +1,15 @@
+@if (epoca(); as e) {
+  <div class="epoca epoca-{{ e }}" [class.epoca-frente]="frente()" aria-hidden="true">
+    @for (p of particulas(); track $index) {
+      <i [style]="p"></i>
+    }
+    @for (f of fogos(); track $index) {
+      <span class="fogo" [style]="f">
+        @for (r of raios; track $index) { <b></b> }
+      </span>
+    }
+  </div>
+  @if (e === 'junina') {
+    <div class="bandeirinhas" aria-hidden="true"></div>
+  }
+}

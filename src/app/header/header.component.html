@@ -9,7 +9,7 @@
 
 <div class="lateral_menu" [class.open]="menuOpen">
   <div class="logo">
-    <a href="/" title="Início">
+    <a class="logo-epoca" href="/" title="Início">
       <img src="assets/Logo_(white).png" alt="Embras">
     </a>
   </div>
@@ -66,9 +66,20 @@
   }
   <p class="versao">
     <span (click)="abrirNotasVersao($event)" title="Ver notas de versão">{{ versaoAtual }}</span>
-    <button type="button" class="tema" (click)="alternarTema()" [title]="temaClaro ? 'Usar tema escuro' : 'Usar tema claro'">
-      <i class="fa-solid" [class.fa-moon]="temaClaro" [class.fa-sun]="!temaClaro"></i>
+    <button type="button" class="tema" (click)="escolhendoTema = !escolhendoTema" (keyup.escape)="escolhendoTema = false"
+      title="Escolher tema" [attr.aria-expanded]="escolhendoTema">
+      <i class="fa-solid fa-palette"></i>
     </button>
   </p>
+  @if (escolhendoTema) {
+    <div class="temas" role="listbox" aria-label="Tema" (keyup.escape)="escolhendoTema = false">
+      @for (t of temas; track t.id) {
+        <button type="button" role="option" class="amostra" [attr.data-tema]="t.id" [class.ativa]="t.id === tema"
+          [attr.aria-selected]="t.id === tema" (click)="escolherTema(t.id)">
+          <span class="cor"><span></span></span> <span class="nome">{{ t.nome }}</span>
+        </button>
+      }
+    </div>
+  }
   <p class="creditos"> Criado por Jonathan William </p>
 </div>

@@ -52,7 +52,7 @@
   border-radius: 6px;
   transition: color 0.2s ease, background-color 0.2s ease;
 
-  &:hover { color: var(--destaque); background-color: rgba(74, 194, 194, 0.12); }
+  &:hover { color: var(--destaque); background-color: rgb(var(--destaque-rgb) / 0.12); }
 }
 
 .notas-body {
@@ -137,8 +137,8 @@
 }
 
 .tag-novidade {
-  border-color: rgba(74, 194, 194, 0.6);
-  background-color: rgba(74, 194, 194, 0.15);
+  border-color: rgb(var(--destaque-rgb) / 0.6);
+  background-color: rgb(var(--destaque-rgb) / 0.15);
   color: var(--destaque-texto);
 }
 
@@ -174,14 +174,14 @@
   border: none;
   border-radius: 18px;
   padding: 8px 22px;
-  background: linear-gradient(135deg, rgb(84, 210, 210), rgb(50, 150, 150));
-  color: rgb(22, 30, 33);
+  background: linear-gradient(135deg, var(--destaque-claro), var(--destaque-escuro));
+  color: var(--sobre-destaque);
   font-family: inherit;
   font-weight: bold;
   cursor: pointer;
   transition: box-shadow 0.2s ease;
 
-  &:hover { box-shadow: 0 3px 10px rgba(74, 194, 194, 0.45); }
+  &:hover { box-shadow: 0 3px 10px rgb(var(--destaque-rgb) / 0.45); }
 }
 
 @media (max-width: 600px) {

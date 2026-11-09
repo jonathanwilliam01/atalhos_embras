@@ -51,7 +51,7 @@
   padding: 6px 8px;
   border-radius: 6px;
 
-  &:hover { color: var(--destaque); background-color: rgba(74, 194, 194, 0.12); }
+  &:hover { color: var(--destaque); background-color: rgb(var(--destaque-rgb) / 0.12); }
 }
 
 .sug-body {
@@ -83,7 +83,7 @@
 
   &.ativo {
     border-color: var(--destaque);
-    background-color: rgba(74, 194, 194, 0.18);
+    background-color: rgb(var(--destaque-rgb) / 0.18);
     color: var(--destaque);
     font-weight: bold;
   }
@@ -148,10 +148,10 @@
 
 .sug-enviar {
   border: none;
-  background: linear-gradient(135deg, rgb(84, 210, 210), rgb(50, 150, 150));
-  color: rgb(22, 30, 33);
+  background: linear-gradient(135deg, var(--destaque-claro), var(--destaque-escuro));
+  color: var(--sobre-destaque);
   transition: box-shadow 0.2s ease, opacity 0.2s ease;
 
-  &:hover:not(:disabled) { box-shadow: 0 3px 10px rgba(74, 194, 194, 0.45); }
+  &:hover:not(:disabled) { box-shadow: 0 3px 10px rgb(var(--destaque-rgb) / 0.45); }
   &:disabled { opacity: 0.45; cursor: default; }
 }

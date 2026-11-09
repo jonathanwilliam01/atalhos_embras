@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { CHAVE_TEMA, aplicarTema } from '../tema';
+import { lerAnotacoes, mesclarAnotacoes } from '../clientes/anotacoes';
 import { GrupoBusca, ResultadoBusca, SearchService } from '../search/search.service';
 
 const CHAVE_FAVORITOS = 'linksFavoritos';
@@ -101,7 +103,9 @@ export class FavoritosService {
   }
 
   // Junta o que veio no ?importar= (Atalhos Tributário ou link de outro navegador), sem repetir.
-  importar(favoritos: unknown[], recentes: unknown[], clientes: unknown[] = []): void {
+  importar(favoritos: unknown[], recentes: unknown[], clientes: unknown[] = [], anotacoes?: unknown, tema?: unknown): void {
+    mesclarAnotacoes(anotacoes);
+    if (typeof tema === 'string') aplicarTema(tema);
     const unir = (atuais: string[], novos: unknown[]) => [...new Set([...atuais, ...novos.filter((u): u is string => typeof u === 'string')])];
     gravar(CHAVE_FAVORITOS, unir(ler(CHAVE_FAVORITOS), favoritos));
     gravar(CHAVE_RECENTES, unir(ler(CHAVE_RECENTES), recentes).slice(0, MAX_HISTORICO));
@@ -109,9 +113,11 @@ export class FavoritosService {
     this.carregar();
   }
 
-  // Link que leva favoritos, recentes e meus clientes para outro navegador.
+  // Link que leva favoritos, recentes, meus clientes, anotações e tema para outro navegador.
   linkExportar(): string {
-    const dados = { favoritos: ler(CHAVE_FAVORITOS), recentes: ler(CHAVE_RECENTES), clientes: ler(CHAVE_CLIENTES) };
+    let tema: string | null = null;
+    try { tema = localStorage.getItem(CHAVE_TEMA); } catch {}
+    const dados = { favoritos: ler(CHAVE_FAVORITOS), recentes: ler(CHAVE_RECENTES), clientes: ler(CHAVE_CLIENTES), anotacoes: lerAnotacoes(), tema };
     return `${location.origin}${location.pathname}?importar=${encodeURIComponent(JSON.stringify(dados))}`;
   }
 

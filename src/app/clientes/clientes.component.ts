@@ -6,6 +6,7 @@ import { VersoesClientesService } from '../versoes/versoes-clientes.service';
 import { CHAVE_CLIENTES, FavoritosService } from '../favoritos/favoritos.service';
 import fichas from './clientes.json';
 import { copiarVersao } from '../shared/copiar-versao';
+import { gravarAnotacoes, lerAnotacoes } from './anotacoes';
 
 // Gerado por scripts/fichas-clientes.mjs a partir do site de cada prefeitura.
 interface Ficha {
@@ -49,6 +50,7 @@ export class ClientesComponent implements OnInit {
   // Cliente sem brasão em assets/brasoes: mostra as iniciais.
   semBrasao = new Set<string>();
   linkCopiado: string | null = null;
+  anotacoes: Record<string, string> = {};
   readonly versoes = inject(VersoesClientesService);
   readonly copiarVersao = copiarVersao;
   readonly favoritos = inject(FavoritosService);
@@ -66,6 +68,7 @@ export class ClientesComponent implements OnInit {
   ngOnInit(): void {
     if (!isPlatformBrowser(this.platformId)) return;
     try { this.meus = new Set(JSON.parse(localStorage.getItem(CHAVE_CLIENTES) ?? '[]')); } catch {}
+    this.anotacoes = lerAnotacoes();
     this.separar();
     this.versoes.carregar();
     this.abrirDoHash();
@@ -80,7 +83,7 @@ export class ClientesComponent implements OnInit {
   filtrar(termo: string): void {
     this.filtro = termo;
     const alvo = normalizar(termo);
-    this.clientes = this.todos.filter(c => normalizar(`${c.cliente} ${c.estado} ${c.itens[0]?.local ?? ''}`).includes(alvo));
+    this.clientes = this.todos.filter(c => normalizar(`${c.cliente} ${c.estado} ${c.itens[0]?.local ?? ''} ${this.anotacoes[c.id] ?? ''}`).includes(alvo));
     this.separar();
   }
 
@@ -116,6 +119,12 @@ export class ClientesComponent implements OnInit {
 
   filtrarPendencia(pendencia: Pendencia): void {
     this.pendencia = this.pendencia === pendencia ? null : pendencia;
+  }
+
+  anotar(c: Cliente, texto: string): void {
+    if (texto.trim()) this.anotacoes[c.id] = texto;
+    else delete this.anotacoes[c.id];
+    gravarAnotacoes(this.anotacoes);
   }
 
   ficha(c: Cliente): Ficha | undefined {

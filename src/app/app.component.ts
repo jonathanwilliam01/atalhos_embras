@@ -13,6 +13,7 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { SugestaoComponent } from './sugestao/sugestao.component';
 import { VersoesClientesService } from './versoes/versoes-clientes.service';
 import { copiarVersao } from './shared/copiar-versao';
+import { EpocaComponent } from './epoca/epoca.component';
 
 const CHAVE_NOTAS = 'notasVersaoVistas';
 const EMAIL_CONTATO = 'jonathan.willian@embras.net';
@@ -25,7 +26,7 @@ const VERSAO = /^\d+(\.\d+)+$/;
 
 @Component({
     selector: 'app-root',
-    imports: [CommonModule, HeaderComponent, SistemaLinksComponent, NotasVersaoComponent, SugestaoComponent, ClientesComponent],
+    imports: [CommonModule, HeaderComponent, SistemaLinksComponent, NotasVersaoComponent, SugestaoComponent, ClientesComponent, EpocaComponent],
     templateUrl: './app.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./app.component.scss']
@@ -184,14 +185,14 @@ export class AppComponent implements OnInit {
     if (this.deveExibirNotas()) this.notasVersaoVisivel = true;
   }
 
-  // ?importar={favoritos, recentes, clientes}: vem do Atalhos Tributário ou do link copiado em outro navegador.
+  // ?importar={favoritos, recentes, clientes, anotacoes, tema}: vem do Atalhos Tributário ou do link copiado em outro navegador.
   private importar() {
     const dados = new URLSearchParams(location.search).get('importar');
     if (!dados) return;
     try {
-      const { favoritos, recentes, clientes } = JSON.parse(dados);
+      const { favoritos, recentes, clientes, anotacoes, tema } = JSON.parse(dados);
       const lista = (v: unknown) => Array.isArray(v) ? v : [];
-      this.favoritos.importar(lista(favoritos), lista(recentes), lista(clientes));
+      this.favoritos.importar(lista(favoritos), lista(recentes), lista(clientes), anotacoes, tema);
     } catch {}
     history.replaceState(null, '', location.pathname + location.hash);
   }

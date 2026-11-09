@@ -1,3 +1,4 @@
+<app-epoca></app-epoca>
 <app-header #cabecalho (componentSelected)="setComponent($event)" (verNotasVersao)="abrirNotasVersao()" (pesquisar)="buscar($event)" (focarResultados)="irParaResultados($event)"></app-header>
 
 <app-notas-versao [visible]="notasVersaoVisivel" (close)="fecharNotasVersao()"></app-notas-versao>
@@ -6,7 +7,7 @@
 @if (!currentComponent) {
   <div class="welcome-box">
     <div class="welcome-content" [class.com-atalhos]="favoritos.favoritos.length || favoritos.recentes.length">
-      <img class="welcome-logo" src="assets/Logo_(white).png" alt="Embras">
+      <span class="logo-epoca"><img class="welcome-logo" src="assets/Logo_(white).png" alt="Embras"></span>
       <h1 class="welcome-title">Atalhos Embras</h1>
       <p class="welcome-desc">
         Acesso rápido aos sistemas utilizados pelas equipes da Embras.
@@ -41,9 +42,9 @@
             </div>
           }
           <button class="atalhos-ver-todos atalhos-exportar" (click)="copiarLinkExportar()"
-            title="Copia um link que leva favoritos, recentes e meus clientes para outro computador ou navegador">
+            title="Copia um link que leva favoritos, recentes, meus clientes, anotações e tema para outro computador ou navegador">
             <i class="fa-solid" [class.fa-share-from-square]="!exportarCopiado" [class.fa-check]="exportarCopiado"></i>
-            {{ exportarCopiado ? 'Link copiado! Abra no outro navegador' : 'Levar meus favoritos para outro navegador' }}
+            {{ exportarCopiado ? 'Link copiado! Abra no outro navegador' : 'Levar meus dados para outro navegador' }}
           </button>
         </div>
       }

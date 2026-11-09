@@ -392,6 +392,75 @@ a{
   &:hover { border-color: var(--destaque); color: var(--destaque); }
 }
 
+// Cada amostra tem o próprio data-tema: herda as cores dele.
+// Desktop: abre ao lado do menu (fixed escapa do overflow do menu). Mobile: dentro da gaveta.
+.temas{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 112px), 1fr));
+  gap: 6px;
+  position: fixed;
+  left: calc(17vw + 18px);
+  bottom: 3vh;
+  z-index: 1003;
+  width: min(270px, calc(100vw - 17vw - 36px));
+  max-height: calc(100vh - 6vh);
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background-color: var(--campo);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  animation: temas-abre 0.15s ease-out;
+}
+
+@media (max-width: 900px) {
+  .temas {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 64px;
+    width: auto;
+    max-height: calc(100% - 140px);
+  }
+}
+
+@keyframes temas-abre {
+  from { opacity: 0; transform: translateY(6px); }
+}
+
+.amostra{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 7px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background-color: var(--painel);
+  color: var(--texto-2);
+  min-width: 0;
+  font-size: 12px;
+  white-space: nowrap;
+  text-align: left;
+
+  .nome { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+
+  .cor {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--botao-hover);
+    span { width: 8px; height: 8px; border-radius: 50%; background-color: var(--destaque); }
+  }
+
+  &:hover { border-color: var(--destaque); }
+  &.ativa { border-color: var(--destaque); color: var(--destaque-texto); box-shadow: 0 0 0 1px var(--destaque) inset; }
+}
+
 .instalar{
   display: flex;
   align-items: center;
@@ -400,7 +469,7 @@ a{
   margin: 6px 0 2px;
   padding: 4px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(74, 194, 194, 0.4);
+  border: 1px solid rgb(var(--destaque-rgb) / 0.4);
   color: var(--destaque);
   font-size: 12px;
   cursor: pointer;
@@ -408,7 +477,7 @@ a{
 }
 
 .instalar:hover{
-  background-color: rgba(74, 194, 194, 0.12);
+  background-color: rgb(var(--destaque-rgb) / 0.12);
 }
 
 

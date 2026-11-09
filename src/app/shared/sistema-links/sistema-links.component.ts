@@ -2,6 +2,7 @@ import { Component, DestroyRef, Input, OnInit, PLATFORM_ID, inject, ChangeDetect
 import { isPlatformBrowser } from '@angular/common';
 import { FavoritosService } from '../../favoritos/favoritos.service';
 import { copiarVersao } from '../copiar-versao';
+import { normalizar } from '../../search/search.service';
 import { Versoes, carregarVersoes, compararVersao, recarregarVersoes, versaoMaisRecente } from '../../versoes/versoes';
 
 export interface ItemLink {
@@ -21,6 +22,16 @@ export interface DadosSistema {
   imagens: string[];
   grupos: GrupoLinks[];
 }
+
+// Nome sem acento → apelido. Sufixo (" Homolog.") é mantido.
+const NOMES_CURTOS: [string, string][] = [
+  ['pindamonhangaba', 'Pinda'],
+  ['guaratingueta', 'Guará'],
+  ['pedro de toledo', 'Pedro Toledo'],
+  ['caraguatatuba', 'Caraguá'],
+  ['redencao da serra', 'Redenção'],
+  ['cachoeira paulista', 'Cachoeira P.'],
+];
 
 @Component({
     selector: 'app-sistema-links',
@@ -89,6 +100,18 @@ export class SistemaLinksComponent implements OnInit {
   desatualizada(item: ItemLink): boolean {
     const v = this.versao(item);
     return !!v && !!this.versaoAtual && compararVersao(v, this.versaoAtual) < 0;
+  }
+
+  // Só na lista dos estados: busca, clientes e dados continuam com o nome completo.
+  nomeCurto(cliente: string): string {
+    const nome = normalizar(cliente);
+    const par = NOMES_CURTOS.find(([longo]) => nome === longo || nome.startsWith(longo + ' '));
+    return par ? par[1] + cliente.trim().normalize('NFC').slice(par[0].length) : cliente;
+  }
+
+  // Maior palavra do nome: define até onde a fonte encolhe para não partir a palavra.
+  letras(cliente: string): number {
+    return Math.max(...cliente.split(/\s+/).map(p => p.length));
   }
 
   dicaVersao(item: ItemLink): string | null {
