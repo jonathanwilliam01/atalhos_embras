@@ -218,6 +218,13 @@
         { "tipo": "melhoria", "texto": "O link de levar para outro navegador agora leva também as anotações e o tema escolhido." },
         { "tipo": "correcao", "texto": "Nomes longos não são mais partidos no meio da palavra nas listas dos estados: quando falta espaço, a versão desce para a linha de baixo. Nessas listas, alguns nomes aparecem abreviados: Pinda, Guará, Caraguá, Cachoeira P., Pedro Toledo e Redenção (a busca continua achando pelo nome completo)." }
       ]
+    },
+    {
+      "versao": "V4.26.11.05",
+      "data": "10/11/2026",
+      "descricao": [
+        { "tipo": "melhoria", "texto": "Na tela Versões, o sistema que o cliente não usa aparece como \"não utilizado\" em vez de ficar em branco." }
+      ]
     }
   ]
 }

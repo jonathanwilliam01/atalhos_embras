@@ -142,6 +142,13 @@ td a {
   font-size: 0.75rem;
 }
 
+.nao-utilizado {
+  color: var(--texto-5);
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.6;
+}
+
 .fora-do-ar {
   display: inline-block;
   width: 9px;

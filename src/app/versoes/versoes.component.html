@@ -30,6 +30,8 @@
                     @default { <span class="versao" [class.desatualizada]="desatualizada(c, l)">{{ versao(c, l) }}</span> }
                   }
                 </a>
+              } @else {
+                <span class="nao-utilizado">não utilizado</span>
               }
             </td>
           }
