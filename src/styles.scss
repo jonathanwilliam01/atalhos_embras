@@ -38,6 +38,11 @@
 :root {
   @include tema(#293135, #4ac2c2);
   --erro-texto: rgb(255, 120, 130);
+  // Versão em dia/desatualizada: mesma cor em todos os temas.
+  --versao-ok: rgba(24, 80, 40, 0.85);
+  --versao-ok-texto: rgb(120, 220, 145);
+  --versao-velha: rgb(205, 42, 58);
+  --versao-atual: rgb(225, 228, 232);
   --azul-texto: rgb(150, 180, 255);
   --tinta: 255 255 255;
   --sombra: black;
@@ -57,6 +62,17 @@
 [data-tema="oceano"] { @include tema(#0f2a35, #4cc9f0); }
 [data-tema="vinho"] { @include tema(#2c161b, #ff8fa6); }
 [data-tema="cafe"] { @include tema(#251d18, #e2b07e); }
+
+// Ícone na versão desatualizada: não depender só da cor.
+.versao.desatualizada::before,
+.busca-versao.desatualizada::before,
+.chip-versao.desatualizada::before {
+  content: "\f063";
+  margin-right: 3px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.85em;
+}
 
 /* ===================== Base / Reset ===================== */
 *, *::before, *::after {

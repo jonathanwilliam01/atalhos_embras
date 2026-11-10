@@ -168,13 +168,13 @@
   cursor: copy;
   padding: 1px 6px;
   border-radius: 8px;
-  background: rgb(var(--destaque-rgb) / 0.22);
-  color: var(--destaque-texto);
+  background: var(--versao-ok);
+  color: var(--versao-ok-texto);
   font-size: 0.75rem;
   white-space: nowrap;
 
   &.desatualizada {
-    background: rgba(220, 53, 69, 0.85);
+    background: var(--versao-velha);
     color: #fff;
   }
 }

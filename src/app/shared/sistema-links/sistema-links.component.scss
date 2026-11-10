@@ -205,19 +205,18 @@
   cursor: copy;
   flex-shrink: 0;
   padding: 1px 6px;
-  border: 1px solid rgb(var(--destaque-rgb) / 0.45);
+  border: 1px solid transparent;
   border-radius: 4px;
   font-size: 0.5em;
   font-weight: 600;
   line-height: 1.5;
   text-shadow: none;
-  background: var(--chip-fundo);
-  color: var(--destaque-texto);
+  background: var(--versao-ok);
+  color: var(--versao-ok-texto);
 }
 
 .versao.desatualizada{
-  border-color: transparent;
-  background: rgb(200, 40, 55);
+  background: var(--versao-velha);
   color: #fff;
 }
 

@@ -71,12 +71,12 @@
   cursor: copy;
   padding: 0 6px;
   border-radius: 8px;
-  background: rgb(var(--destaque-rgb) / 0.22);
-  color: var(--destaque-texto);
+  background: var(--versao-ok);
+  color: var(--versao-ok-texto);
   font-size: 0.7rem;
 
   &.desatualizada {
-    background: rgba(220, 53, 69, 0.85);
+    background: var(--versao-velha);
     color: #fff;
   }
 }
@@ -153,15 +153,15 @@
       margin-right: 5px;
       border-radius: 50%;
       vertical-align: 1px;
-      background: rgb(220, 53, 69);
+      background: var(--versao-velha);
     }
   }
 
   &:hover { filter: brightness(1.2); }
 
   &.ativo {
-    background-color: rgba(220, 53, 69, 0.85);
-    border-color: rgb(220, 53, 69);
+    background-color: var(--versao-velha);
+    border-color: var(--versao-velha);
     color: #fff;
   }
 }
@@ -312,7 +312,7 @@
 .pendente {
   padding: 0 6px;
   border-radius: 8px;
-  background: rgba(220, 53, 69, 0.85);
+  background: var(--versao-velha);
   color: #fff;
   font-size: 0.72rem;
 }

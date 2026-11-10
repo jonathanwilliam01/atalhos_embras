@@ -232,6 +232,13 @@
       "descricao": [
         { "tipo": "novidade", "texto": "Novos temas com o preto do Nanquim: Vermelho, Royal (azul), Âmbar (amarelo alaranjado) e Roxo." }
       ]
+    },
+    {
+      "versao": "V4.26.11.07",
+      "data": "10/11/2026",
+      "descricao": [
+        { "tipo": "melhoria", "texto": "As versões têm a mesma cor em todos os temas: verde discreto quando o cliente está em dia e vermelho com seta para baixo quando está desatualizado. A versão atual de cada sistema, no topo da tela Versões, aparece só com contorno." }
+      ]
     }
   ]
 }
