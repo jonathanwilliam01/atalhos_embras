@@ -225,6 +225,13 @@
       "descricao": [
         { "tipo": "melhoria", "texto": "Na tela Versões, o sistema que o cliente não usa aparece como \"não utilizado\" em vez de ficar em branco." }
       ]
+    },
+    {
+      "versao": "V4.26.11.06",
+      "data": "10/11/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Novos temas com o preto do Nanquim: Vermelho, Royal (azul), Âmbar (amarelo alaranjado) e Roxo." }
+      ]
     }
   ]
 }

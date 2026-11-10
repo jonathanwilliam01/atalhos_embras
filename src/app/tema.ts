@@ -6,6 +6,10 @@ export interface Tema { id: string; nome: string; }
 export const TEMAS: Tema[] = [
   { id: 'grafite', nome: 'Grafite' },
   { id: 'nanquim', nome: 'Nanquim' },
+  { id: 'nanquim-vermelho', nome: 'Nanquim Vermelho' },
+  { id: 'nanquim-royal', nome: 'Nanquim Royal' },
+  { id: 'nanquim-ambar', nome: 'Nanquim Âmbar' },
+  { id: 'nanquim-roxo', nome: 'Nanquim Roxo' },
   { id: 'meia-noite', nome: 'Meia-noite' },
   { id: 'oceano', nome: 'Oceano' },
   { id: 'floresta', nome: 'Floresta' },

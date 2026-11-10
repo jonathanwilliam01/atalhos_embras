@@ -47,6 +47,10 @@
 // Também valem num elemento solto: as amostras do seletor usam [data-tema].
 [data-tema="grafite"] { @include tema(#293135, #4ac2c2); }
 [data-tema="nanquim"] { @include tema(#17191c, #3fd0b4); }
+[data-tema="nanquim-vermelho"] { @include tema(#17191c, #f0484e); }
+[data-tema="nanquim-royal"] { @include tema(#17191c, #4a72f0); }
+[data-tema="nanquim-ambar"] { @include tema(#17191c, #ffa31a); }
+[data-tema="nanquim-roxo"] { @include tema(#17191c, #8b5cf6); }
 [data-tema="meia-noite"] { @include tema(#18213a, #74a9ff); }
 [data-tema="floresta"] { @include tema(#17261f, #5fd08f); }
 [data-tema="ameixa"] { @include tema(#251d33, #b48dff); }
