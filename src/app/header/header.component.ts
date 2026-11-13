@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, HostListener, ElementRef, ViewChild, OnInit, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { ULTIMA_VERSAO } from '../notas-versao/notas-versao.component';
+import { ULTIMA_VERSAO } from '../notas-versao/notas';
 import { TEMAS, aplicarTema, temaAtual } from '../tema';
 import { AREAS, Area, ItemMenu, MENU, SECOES, Secao, TELAS_GERAIS, Tela, naArea, telaPorId } from '../sistemas';
 

@@ -1,8 +1,6 @@
 @use 'sass:color';
-// Sem brands nem compatibilidade v4: o único ícone de marca (GitHub) é o .icone-github abaixo.
-@import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
-@import '@fortawesome/fontawesome-free/css/solid.min.css';
-@import '@fortawesome/fontawesome-free/css/regular.min.css';
+// Ícones do Font Awesome em SVG, só os usados (scripts/icones.mjs). GitHub é o .icone-github abaixo.
+@use 'icones';
 
 // Temas escuros: cada um nasce de 2 cores (painel e destaque); o resto é derivado.
 // Escolha no rodapé do menu (localStorage "tema", aplicado no index.html antes do Angular).
@@ -67,11 +65,14 @@
 .versao.desatualizada::before,
 .busca-versao.desatualizada::before,
 .chip-versao.desatualizada::before {
-  content: "\f063";
+  content: "";
+  display: inline-block;
+  width: 0.65em;
+  height: 0.85em;
   margin-right: 3px;
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 0.85em;
+  vertical-align: -0.1em;
+  background: currentColor;
+  mask: var(--fa-arrow-down) center / contain no-repeat;
 }
 
 /* ===================== Base / Reset ===================== */
@@ -228,4 +229,53 @@ app-root > * {
 
 @keyframes aviso-copia-entra {
   from { opacity: 0; transform: translate(-50%, 8px); }
+}
+
+// Tela inicial/busca (fora do app.component.scss pelo limite de tamanho do componente).
+.busca-teclas {
+  display: block;
+  margin-top: 4px;
+  color: var(--texto-5);
+  font-size: 0.72rem;
+  font-weight: normal;
+
+  kbd {
+    padding: 0 4px;
+    border: 1px solid var(--borda-3);
+    border-radius: 3px;
+    font-family: inherit;
+  }
+
+  @media (max-width: 900px), (pointer: coarse) { display: none; }
+}
+
+.aviso-backup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 8px 12px;
+  border: 1px solid rgb(240 173 78 / 0.45);
+  border-radius: 8px;
+  color: var(--texto-3);
+  font-size: 0.82rem;
+  text-align: left;
+
+  > i { color: rgb(240, 173, 78); }
+  span { flex: 1; }
+
+  button {
+    border: 1px solid var(--borda-3);
+    border-radius: 6px;
+    padding: 4px 10px;
+    background: none;
+    color: inherit;
+    font: inherit;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover { border-color: var(--destaque); }
+  }
+
+  .aviso-fechar { border: none; padding: 4px; color: var(--texto-4); }
 }

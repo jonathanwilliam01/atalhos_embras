@@ -1,8 +1,13 @@
 <app-epoca></app-epoca>
 <app-header #cabecalho (componentSelected)="setComponent($event)" (verNotasVersao)="abrirNotasVersao()" (pesquisar)="buscar($event)" (focarResultados)="irParaResultados($event)"></app-header>
 
-<app-notas-versao [visible]="notasVersaoVisivel" (close)="fecharNotasVersao()"></app-notas-versao>
-<app-sugestao [visible]="sugestaoVisivel" [link]="linkSugestao" [origem]="'Atalhos Embras ' + versaoAtual" (close)="sugestaoVisivel = false"></app-sugestao>
+<!-- Modais e tela Clientes só baixam quando usados. -->
+@defer (when notasVersaoVisivel) {
+  <app-notas-versao [visible]="notasVersaoVisivel" (close)="fecharNotasVersao()"></app-notas-versao>
+}
+@defer (when sugestaoVisivel) {
+  <app-sugestao [visible]="sugestaoVisivel" [link]="linkSugestao" [origem]="'Atalhos Embras ' + versaoAtual" (close)="sugestaoVisivel = false"></app-sugestao>
+}
 
 @if (!currentComponent) {
   <div class="welcome-box">
@@ -46,6 +51,14 @@
             <i class="fa-solid" [class.fa-share-from-square]="!exportarCopiado" [class.fa-check]="exportarCopiado"></i>
             {{ exportarCopiado ? 'Link copiado! Abra no outro navegador' : 'Levar meus dados para outro navegador' }}
           </button>
+        </div>
+      }
+      @if (avisoBackup) {
+        <div class="aviso-backup">
+          <i class="fa-solid fa-note-sticky"></i>
+          <span>Suas anotações de clientes ficam só neste navegador. Guarde uma cópia: o link leva tudo para outro navegador ou restaura se algo for apagado.</span>
+          <button type="button" (click)="copiarLinkExportar()">Copiar link de backup</button>
+          <button type="button" class="aviso-fechar" (click)="adiarBackup()" title="Lembrar daqui a uma semana"><i class="fa-solid fa-xmark"></i></button>
         </div>
       }
       <ng-template #listaAtalhos let-itens let-todos="todos">
@@ -109,6 +122,7 @@
       @if (totalResultados) {
         <span class="busca-total"> {{ totalResultados }} {{ totalResultados === 1 ? 'link' : 'links' }} </span>
       }
+      <span class="busca-teclas"><kbd>↑</kbd><kbd>↓</kbd> navega · <kbd>Enter</kbd> abre · <kbd>Ctrl</kbd>+<kbd>Enter</kbd> abre sem sair daqui · <kbd>Ctrl</kbd>+<kbd>C</kbd> copia o link</span>
     </div>
     @for (g of resultadosBusca; track g) {
       <div class="busca-grupo">
@@ -159,7 +173,11 @@
 }
 
 @if (currentComponent === 'clientes' || currentComponent === 'versoes') {
-  <app-clientes [modo]="currentComponent"></app-clientes>
+  @defer {
+    <app-clientes [modo]="currentComponent"></app-clientes>
+  } @loading (after 150ms) {
+    <div class="busca-vazio">Carregando...</div>
+  }
 }
 
 <!-- Um bloco por tela: trocar de tela recria o componente e recarrega as versões. -->

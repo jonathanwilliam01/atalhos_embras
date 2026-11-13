@@ -4,8 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { SistemaLinksComponent } from './shared/sistema-links/sistema-links.component';
 import { Tela, telaPorId } from './sistemas';
 import { NotasVersaoComponent } from './notas-versao/notas-versao.component';
-import { ULTIMA_VERSAO } from './notas-versao/notas-versao.component';
-import { SearchService, GrupoBusca, host, idCliente, slug } from './search/search.service';
+import { ULTIMA_VERSAO } from './notas-versao/notas';
+import { SearchService, GrupoBusca, casaVersao, ehVersao, host, idCliente, slug } from './search/search.service';
 import { pageview } from '@vercel/analytics';
 import { SwUpdate } from '@angular/service-worker';
 import { FavoritosService } from './favoritos/favoritos.service';
@@ -14,6 +14,7 @@ import { SugestaoComponent } from './sugestao/sugestao.component';
 import { VersoesClientesService } from './versoes/versoes-clientes.service';
 import { copiarVersao } from './shared/copiar-versao';
 import { EpocaComponent } from './epoca/epoca.component';
+import { adiarBackupAnotacoes, marcarBackupAnotacoes, precisaBackupAnotacoes } from './clientes/anotacoes';
 
 const CHAVE_NOTAS = 'notasVersaoVistas';
 const EMAIL_CONTATO = 'jonathan.willian@embras.net';
@@ -21,8 +22,6 @@ const LINK_SUGESTAO = 'https://github.com/jonathanwilliam01/atalhos_embras/issue
 const LINK_APP = 'https://atalhos-embras.vercel.app';
 const TEXTO_CONVITE = 'Conhece o Atalhos Embras? Reúne os links dos sistemas de todos os clientes em um só lugar, com busca, favoritos e versões. Acesse:';
 const DIAS_EXIBINDO_NOTAS = 7;
-// Termo que é número de versão (2.2.240): a busca lista quem está nela.
-const VERSAO = /^\d+(\.\d+)+$/;
 
 @Component({
     selector: 'app-root',
@@ -55,6 +54,7 @@ export class AppComponent implements OnInit {
   linkCopiado: string | null = null;
   exportarCopiado = false;
   conviteCopiado = false;
+  avisoBackup = false;
 
   constructor(private searchService: SearchService) {}
 
@@ -102,15 +102,10 @@ export class AppComponent implements OnInit {
     this.currentComponent = 'busca';
   }
 
-  // "2.2.240" pega 2.2.240 e 2.2.240.7, mas não 2.2.2401.
   private buscarVersao(termo: string) {
-    const alvo = termo.replace(/\.$/, '');
-    this.buscaPorVersao = VERSAO.test(alvo);
+    this.buscaPorVersao = ehVersao(termo);
     if (!this.buscaPorVersao) return [];
-    return this.searchService.filtrar(r => {
-      const v = this.versoes.info(r.url).versao;
-      return !!v && (v === alvo || v.startsWith(`${alvo}.`));
-    });
+    return this.searchService.filtrar(r => casaVersao(this.versoes.info(r.url).versao, termo));
   }
 
   copiarLink(url: string, event: Event) {
@@ -145,9 +140,15 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // Setas percorrem os resultados da busca; Enter abre o link em foco. Acima do primeiro volta para a busca.
+  // Setas percorrem os resultados da busca; Enter abre o link em foco (Ctrl+Enter em segundo plano, nativo do navegador).
+  // Ctrl+C copia o link em foco. Acima do primeiro volta para a busca.
   @HostListener('document:keydown', ['$event'])
   navegarResultados(event: KeyboardEvent) {
+    const foco = document.activeElement as HTMLElement;
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'c' && foco?.classList.contains('busca-item') && !getSelection()?.toString()) {
+      this.copiarLink(foco.getAttribute('href') ?? '', event);
+      return;
+    }
     if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
     const itens = [...document.querySelectorAll<HTMLElement>('.busca-item')];
     const atual = itens.indexOf(document.activeElement as HTMLElement);
@@ -183,6 +184,7 @@ export class AppComponent implements OnInit {
       this.swUpdate.versionUpdates.subscribe(e => { if (e.type === 'VERSION_READY') document.location.reload(); });
     }
     if (this.deveExibirNotas()) this.notasVersaoVisivel = true;
+    this.avisoBackup = precisaBackupAnotacoes();
   }
 
   // ?importar={favoritos, recentes, clientes, anotacoes, tema}: vem do Atalhos Tributário ou do link copiado em outro navegador.
@@ -197,8 +199,15 @@ export class AppComponent implements OnInit {
     history.replaceState(null, '', location.pathname + location.hash);
   }
 
+  adiarBackup() {
+    adiarBackupAnotacoes();
+    this.avisoBackup = false;
+  }
+
   copiarLinkExportar() {
     navigator.clipboard.writeText(this.favoritos.linkExportar()).then(() => {
+      marcarBackupAnotacoes();
+      this.avisoBackup = false;
       this.exportarCopiado = true;
       setTimeout(() => this.exportarCopiado = false, 2000);
     });

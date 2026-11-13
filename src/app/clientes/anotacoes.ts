@@ -25,3 +25,32 @@ export function mesclarAnotacoes(novas: unknown): void {
   }
   gravarAnotacoes(atuais);
 }
+
+// Último link de exportar copiado: { quando, conteudo } para lembrar o backup das anotações.
+const CHAVE_BACKUP = 'backupAnotacoes';
+const DIAS_LEMBRAR_BACKUP = 7;
+
+export function marcarBackupAnotacoes(): void {
+  try { localStorage.setItem(CHAVE_BACKUP, JSON.stringify({ quando: Date.now(), conteudo: JSON.stringify(lerAnotacoes()) })); } catch {}
+}
+
+// "Lembrar depois": mantém o conteúdo do último backup e só renova a data.
+export function adiarBackupAnotacoes(): void {
+  try {
+    const backup = JSON.parse(localStorage.getItem(CHAVE_BACKUP) ?? 'null');
+    localStorage.setItem(CHAVE_BACKUP, JSON.stringify({ quando: Date.now(), conteudo: backup?.conteudo ?? null }));
+  } catch {}
+}
+
+// Há anotação mudada desde o último backup e ele foi há mais de uma semana (ou nunca houve).
+export function precisaBackupAnotacoes(agora = Date.now()): boolean {
+  try {
+    const atual = lerAnotacoes();
+    if (!Object.values(atual).some(t => t.trim())) return false;
+    const backup = JSON.parse(localStorage.getItem(CHAVE_BACKUP) ?? 'null');
+    if (backup?.conteudo === JSON.stringify(atual)) return false;
+    return !backup?.quando || agora - backup.quando > DIAS_LEMBRAR_BACKUP * 86400000;
+  } catch {
+    return false;
+  }
+}

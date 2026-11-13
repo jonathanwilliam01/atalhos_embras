@@ -239,6 +239,15 @@
       "descricao": [
         { "tipo": "melhoria", "texto": "As versões têm a mesma cor em todos os temas: verde discreto quando o cliente está em dia e vermelho com seta para baixo quando está desatualizado. A versão atual de cada sistema, no topo da tela Versões, aparece só com contorno." }
       ]
+    },
+    {
+      "versao": "V4.26.11.08",
+      "data": "13/11/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Nos resultados da busca, Ctrl+C copia o link em foco e Ctrl+Enter abre sem sair do portal. A lista de atalhos aparece no topo dos resultados." },
+        { "tipo": "novidade", "texto": "Quem tem anotações de clientes ganha um lembrete na tela inicial para guardar uma cópia, já que elas ficam só no navegador. O botão copia o link de backup; o X lembra de novo em uma semana." },
+        { "tipo": "melhoria", "texto": "O portal abre mais rápido: os ícones ficaram bem mais leves e a tela Clientes, as notas de versão e a sugestão só carregam quando abertas." }
+      ]
     }
   ]
 }
