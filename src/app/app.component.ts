@@ -187,14 +187,14 @@ export class AppComponent implements OnInit {
     this.avisoBackup = precisaBackupAnotacoes();
   }
 
-  // ?importar={favoritos, recentes, clientes, anotacoes, tema}: vem do Atalhos Tributário ou do link copiado em outro navegador.
+  // ?importar={favoritos, recentes, clientes, anotacoes, tema, temaPersonalizado}: vem do Atalhos Tributário ou do link copiado em outro navegador.
   private importar() {
     const dados = new URLSearchParams(location.search).get('importar');
     if (!dados) return;
     try {
-      const { favoritos, recentes, clientes, anotacoes, tema } = JSON.parse(dados);
+      const { favoritos, recentes, clientes, anotacoes, tema, temaPersonalizado } = JSON.parse(dados);
       const lista = (v: unknown) => Array.isArray(v) ? v : [];
-      this.favoritos.importar(lista(favoritos), lista(recentes), lista(clientes), anotacoes, tema);
+      this.favoritos.importar(lista(favoritos), lista(recentes), lista(clientes), anotacoes, tema, temaPersonalizado);
     } catch {}
     history.replaceState(null, '', location.pathname + location.hash);
   }

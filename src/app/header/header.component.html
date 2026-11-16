@@ -79,6 +79,14 @@
           <span class="cor"><span></span></span> <span class="nome">{{ t.nome }}</span>
         </button>
       }
+      <div class="personalizar">
+        <button type="button" role="option" class="amostra" [style]="varsPersonalizado" [class.ativa]="tema === personalizado"
+          [attr.aria-selected]="tema === personalizado" (click)="escolherTema(personalizado)">
+          <span class="cor"><span></span></span> <span class="nome">Personalizado</span>
+        </button>
+        <label title="Cor do fundo"><input type="color" [value]="cores.painel" (input)="mudarCor('painel', $any($event.target).value)"> Fundo</label>
+        <label title="Cor de destaque"><input type="color" [value]="cores.destaque" (input)="mudarCor('destaque', $any($event.target).value)"> Destaque</label>
+      </div>
     </div>
   }
   <p class="creditos"> Criado por Jonathan William </p>

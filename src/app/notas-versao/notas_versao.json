@@ -248,6 +248,13 @@
         { "tipo": "novidade", "texto": "Quem tem anotações de clientes ganha um lembrete na tela inicial para guardar uma cópia, já que elas ficam só no navegador. O botão copia o link de backup; o X lembra de novo em uma semana." },
         { "tipo": "melhoria", "texto": "O portal abre mais rápido: os ícones ficaram bem mais leves e a tela Clientes, as notas de versão e a sugestão só carregam quando abertas." }
       ]
+    },
+    {
+      "versao": "V4.26.11.09",
+      "data": "16/11/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Agora dá para montar o próprio tema: no seletor de temas, escolha a cor do fundo e a de destaque em Personalizado. O tema vai junto no link para levar os favoritos a outro navegador." }
+      ]
     }
   ]
 }

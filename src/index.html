@@ -9,7 +9,8 @@
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#293135">
   <!-- Tema antes do primeiro desenho: evita piscar o padrão ao abrir em outro tema. -->
-  <script>try { var t = localStorage.getItem('tema'); if (t && t !== 'grafite' && t !== 'claro' && t !== 'escuro') document.documentElement.setAttribute('data-tema', t); } catch (e) {}</script>
+  <script>try { var t = localStorage.getItem('tema'), h = document.documentElement; if (t && t !== 'grafite' && t !== 'claro' && t !== 'escuro') h.setAttribute('data-tema', t);
+    if (t === 'personalizado') { var v = JSON.parse(localStorage.getItem('temaPersonalizado')).vars; for (var k in v) h.style.setProperty(k, v[k]); } } catch (e) {}</script>
 </head>
 <body>
   <app-root></app-root>

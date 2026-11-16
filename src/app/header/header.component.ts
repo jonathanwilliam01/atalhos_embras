@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, HostListener, ElementRef, ViewChild, OnInit, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ULTIMA_VERSAO } from '../notas-versao/notas';
-import { TEMAS, aplicarTema, temaAtual } from '../tema';
+import { CoresTema, PERSONALIZADO, TEMAS, aplicarTema, coresPersonalizadas, salvarPersonalizado, temaAtual, variaveisTema } from '../tema';
 import { AREAS, Area, ItemMenu, MENU, SECOES, Secao, TELAS_GERAIS, Tela, naArea, telaPorId } from '../sistemas';
 
 const CHAVE_AREA = 'areaMenu';
@@ -31,6 +31,9 @@ export class HeaderComponent implements OnInit {
   tema = 'grafite';
   escolhendoTema = false;
   readonly temas = TEMAS;
+  readonly personalizado = PERSONALIZADO;
+  cores: CoresTema = { painel: '#293135', destaque: '#4ac2c2' };
+  varsPersonalizado: Record<string, string> = {};
 
   private platformId = inject(PLATFORM_ID);
   readonly menu = MENU;
@@ -45,6 +48,8 @@ export class HeaderComponent implements OnInit {
     // Fora do ciclo atual: abrir a tela altera o AppComponent.
     if (!isPlatformBrowser(this.platformId)) return;
     try { this.area = (localStorage.getItem(CHAVE_AREA) ?? '') as Area | ''; } catch {}
+    this.cores = coresPersonalizadas();
+    this.varsPersonalizado = variaveisTema(this.cores);
     this.tema = temaAtual();
     aplicarTema(this.tema);
     setTimeout(() => this.abrirTelaDaUrl());
@@ -54,6 +59,13 @@ export class HeaderComponent implements OnInit {
   escolherTema(id: string) {
     this.tema = id;
     aplicarTema(id);
+  }
+
+  // Cada mudança no seletor de cor já aplica o personalizado.
+  mudarCor(qual: keyof CoresTema, valor: string) {
+    this.cores = salvarPersonalizado({ ...this.cores, [qual]: valor }) ?? this.cores;
+    this.varsPersonalizado = variaveisTema(this.cores);
+    this.escolherTema(PERSONALIZADO);
   }
 
   mudarArea(area: Area | '') {
