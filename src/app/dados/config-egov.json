@@ -45,7 +45,8 @@
         { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/pmbarradopirai/websis/config/login.php" },
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/pmjaperi/websis/config/login.php" },
         { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/pmnilopolis/websis/config/login.php" },
-        { "cliente": "São Gonçalo", "url": "https://servidor.pmsg.rj.gov.br/pmsaogoncalo/websis/config/login.php" }
+        { "cliente": "São Gonçalo", "url": "https://servidor.pmsg.rj.gov.br/pmsaogoncalo/websis/config/login.php" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/pmnovaiguacu/websis/config/login.php" }
       ]
     },
     {
