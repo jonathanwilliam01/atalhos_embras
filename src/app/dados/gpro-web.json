@@ -45,7 +45,8 @@
         { "cliente": "Barra do Piraí", "url": "https://barradopirai.geosiap.net.br/pmbarradopirai/websis/siapegov/administrativo/processos/processos_index.php" },
         { "cliente": "Japeri", "url": "https://japeri.geosiap.net.br/pmjaperi/websis/siapegov/administrativo/processos/processos_index.php" },
         { "cliente": "Nilópolis", "url": "https://pmnilopolis.geosiap.net.br/pmnilopolis/websis/siapegov/administrativo/processos/processos_index.php" },
-        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pmsaogoncalo/websis/siapegov/administrativo/processos/processos_index.php" }
+        { "cliente": "São Gonçalo", "url": "https://sistema.pmsg.rj.gov.br/pmsaogoncalo/websis/siapegov/administrativo/processos/processos_index.php" },
+        { "cliente": "Nova Iguaçu", "url": "https://pmnovaiguacu.geosiap.net.br/pmnovaiguacu/websis/siapegov/administrativo/processos/processos_index.php" }
       ]
     },
     {
