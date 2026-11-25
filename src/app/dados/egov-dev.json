@@ -42,6 +42,7 @@
         { "cliente": "Barra do Piraí", "url": "https://dev.geosiap.net/pmbarradopirai/websis/siapegov/portal/index.php" },
         { "cliente": "Japeri", "url": "https://dev.geosiap.net/pmjaperi/websis/siapegov/portal/index.php" },
         { "cliente": "Nilópolis", "url": "https://dev.geosiap.net/pmnilopolis/websis/siapegov/portal/index.php" },
+        { "cliente": "Nova Iguaçu", "url": "https://dev.geosiap.net/pmnovaiguacu/websis/siapegov/portal/index.php" },
         { "cliente": "São Gonçalo", "url": "https://dev.geosiap.net/pmsaogoncalo/websis/siapegov/portal/index.php" },
         { "cliente": "São Gonçalo Homolog.", "url": "https://homolog-embras.pmsg.rj.gov.br/pmsaogoncalo/websis/siapegov/portal/index.php" }
       ]

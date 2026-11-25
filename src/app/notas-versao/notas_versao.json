@@ -255,6 +255,13 @@
       "descricao": [
         { "tipo": "novidade", "texto": "Agora dá para montar o próprio tema: no seletor de temas, escolha a cor do fundo e a de destaque em Personalizado. O tema vai junto no link para levar os favoritos a outro navegador." }
       ]
+    },
+    {
+      "versao": "V4.26.11.10",
+      "data": "25/11/2026",
+      "descricao": [
+        { "tipo": "novidade", "texto": "Adicionado Nova Iguaçu no E-Gov e no E-Gov Homolog." }
+      ]
     }
   ]
 }
